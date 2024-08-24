@@ -1,0 +1,3 @@
+➡️ [Chat Completions w/ Image Output](#chapter-29-chat-completions-w-image-output)  
+
+...

@@ -1,11 +1,12 @@
-site_name: MkDocs YouTube Tutorial
+site_name: BOOK of AI
 theme:
   name: material
   features:
-  - navigation.tabs
+  - navigation.tabs     # once there are multiple books, uncomment this
   - navigation.sections
   - navigation.footer
-  - toc.integrate
+  - navigation.indexes
+  # - toc.integrate
   - navigation.top
   - search.suggest
   - search.highlight
@@ -18,40 +19,90 @@ theme:
     toggle: 
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
-    primary: indigo
-    accent: deep purple
+    primary: black
+    accent: indigo
   - scheme: slate
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
-    primary: indigo
-    accent: deep purple
-extra:
-  social:
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/spacetimeglitch
-    - icon: fontawesome/brands/github
-      link: https://github.com/robch
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/chambersrob/
+    primary: black
+    accent: indigo
 
-markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - admonition
-  - pymdownx.arithmatex:
-      generic: true
-  - footnotes
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.mark
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      
-copyright: |
-  &copy; 2024 <a href="https://github.com/robch/" target="_blank" rel="noopener">Rob Chambers</a>
+extra:
+  generator: false
+  # social:
+#     - icon: fontawesome/brands/x-twitter
+#       link: https://x.com/spacetimeglitch
+#     - icon: fontawesome/brands/github
+#       link: https://github.com/robch
+#     - icon: fontawesome/brands/linkedin
+#       link: https://www.linkedin.com/in/chambersrob/
+
+# markdown_extensions:
+#   - pymdownx.highlight:
+#       anchor_linenums: true
+#   - pymdownx.superfences
+#   - pymdownx.inlinehilite
+#   - pymdownx.snippets
+#   - admonition
+#   - pymdownx.arithmatex:
+#       generic: true
+#   - footnotes
+#   - pymdownx.details
+#   - pymdownx.superfences
+#   - pymdownx.mark
+#   - attr_list
+#   - pymdownx.emoji:
+#       emoji_index: !!python/name:materialx.emoji.twemoji
+#       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# copyright: |
+#   &copy; 2024 <a href="https://github.com/robch/" target="_blank" rel="noopener">Rob Chambers</a>
+
+nav:
+  - BOOK of AI: index.md
+  - AI CLI:
+    - INSTALLATION and SETUP:
+      - "\u2460 CLI Installation": chapter-1-cli-installation.md
+      - "\u2461 Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
+  - OPENAI:
+    - CHAT COMPLETIONS:
+      - "\u2460 Chat Basics": chapter-3-openai-chat-completions-basics.md
+      - "\u2461 w/ Function Calling": chapter-4-openai-chat-completions-w-function-calling.md
+      - "\u2462 w/ RAG + AI Search": chapter-5-openai-chat-completions-w-rag--ai-search.md
+    - ASSISTANTS API:
+      - "\u2463 Assistants Overview": chapter-6-openai-assistants-api.md
+      - "\u2464 Assistants Basics": chapter-7-openai-assistants-basics.md
+      - "\u2465 w/ Code Interpreter": chapter-8-openai-assistants-w-code-interpreter.md
+      - "\u2466 w/ Function Calling": chapter-9-openai-assistants-w-function-calling.md
+      - "\u2467 w/ File Search": chapter-10-openai-assistants-w-file-search.md
+  - GITHUB:
+    - "\u2460 GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
+    - "\u2461 GitHub Model Basics": chapter-12-github-model-chat-completion-basics.md
+    - "\u2462 w/ Function Calling": chapter-13-github-model-chat-completions-w-function-calling.md
+  - AZURE AI:
+    - "\u2460 AI Studio Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
+    - "\u2461 AI Studio Basics": chapter-15-ai-studio-chat-completions-basics.md
+    - "\u2462 w/ Function Calling": chapter-16-ai-studio-chat-completions-w-function-calling.md
+  - ONNX and PHI-3:
+    - "\u2460 ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
+    - "\u2461 ONNX Basics": chapter-18-onnx-chat-completions.md
+    - "\u2462 w/ Function Calling": chapter-19-onnx-chat-completions-w-function-calling.md
+  - SPEECH:
+    - "\u2460 Speech Setup": chapter-20-setup-w-speech.md
+    - "\u2461 Synthesis": chapter-21-speech-synthesis.md
+    - "\u2462 Recognition": chapter-22-speech-recognition.md
+    - "\u2463 Translation": chapter-23-speech-translation.md
+    - "\u2464 w/ Keyword": chapter-24-speech-recognition-w-keyword-spotting.md
+  - MULTI_MODAL:
+    - "\u2460 Multi-Modal AI": chapter-25-multi-modal-ai.md
+    - "\u2461 w/ Speech Input": chapter-26-chat-completions-w-speech-input.md
+    - "\u2462 w/ Speech Input and Output": chapter-27-chat-completions-w-speech-input-and-output.md
+    - "\u2463 w/ Image Input": chapter-28-chat-completions-w-image-input.md
+    - "\u2464 w/ Image Output": chapter-29-chat-completions-w-image-output.md
+  - AGENTS:
+    - SEMANTIC KERNEL:
+      - "\u2460 Semantic Kernel Basics": chapter-30-semantic-kernel-basics.md
+      - "\u2461 w/ Function Calling": chapter-31-semantic-kernel-w-function-calling.md
+      - "\u2462 w/ Basic Agents": chapter-32-semantic-kernel-w-basic-agents.md
+      - "\u2463 w/ Advanced Agents": chapter-33-semantic-kernel-w-advanced-agents.md

@@ -1,0 +1,3 @@
+➡️ [Chat Completions w/ Image Input](#chapter-28-chat-completions-w-image-input)  
+
+...

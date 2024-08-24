@@ -1,0 +1,3 @@
+➡️ [Semantic Kernel w/ Function Calling](#chapter-31-semantic-kernel-w-function-calling)  
+
+...
