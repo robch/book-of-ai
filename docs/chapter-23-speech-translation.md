@@ -1,7 +1,5 @@
 ➡️ [Speech Translation](#chapter-23-speech-translation)  
 
-🛑 Setup w/ Speech in [chapter 20](#chapter-20-setup-w-speech)  
-
 **Translate speech from one language to another**  
 `ai speech translate --microphone --source en-uS --target es-ES`  
 `ai speech translate --file hello-world.wav --source en-uS --target es-ES`  

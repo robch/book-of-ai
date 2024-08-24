@@ -1,7 +1,5 @@
 ➡️ [Speech Recognition w/ Keyword Spotting](#chapter-24-speech-recognition-w-keyword-spotting)  
 
-🛑 Setup w/ Speech in [chapter 20](#chapter-20-setup-w-speech)  
-
 **Create and download custom keyword model**  
 ◦ https://speech.microsoft.com/portal/customkeyword  
 ◦ https://learn.microsoft.com/azure/ai-services/speech-service/custom-keyword-basics  

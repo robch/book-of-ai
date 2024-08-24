@@ -1,7 +1,5 @@
 ➡️ [Speech Recognition](#chapter-22-speech-recognition)  
 
-🛑 Setup w/ Speech in [chapter 20](#chapter-20-setup-w-speech)  
-
 **Recognize speech from audio**  
 `ai speech recognize --microphone`  
 `ai speech recognize --file hello-world.wav`  

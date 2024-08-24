@@ -1,7 +1,5 @@
 ➡️ [ONNX Chat Completions](#chapter-18-onnx-chat-completions)
 
-🛑 Setup w/ ONNX and PHI-3 Models in [chapter 17](#chapter-17-setup-w-onnx-and-phi-3-models)  
-
 **Use the model in chat completions**  
 `ai chat --model-path @mp --user "What is the capital of France?"`  
 `ai chat --model-path @mp --interactive`  

@@ -1,7 +1,5 @@
 ➡️ [Chat Completions Basics](#chapter-15-ai-studio-chat-completions-basics)  
 
-🛑 Setup w/ AI Studio and the Model Catalog in [chapter 14](#chapter-14-setup-w-ai-studio-and-the-model-catalog)  
-
 **Use the model in chat completions**  
 `ai chat --user "What is the capital of France?"`  
 `ai chat --user "What is the population of the United States?" --interactive`  

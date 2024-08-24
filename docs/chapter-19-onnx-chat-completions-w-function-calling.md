@@ -1,7 +1,5 @@
 ➡️ [ONNX Chat Completions w/ Function Calling](#chapter-19-onnx-chat-completions-w-function-calling)  
 
-🛑 Setup w/ ONNX and PHI-3 Models in [chapter 17](#chapter-17-setup-w-onnx-and-phi-3-models)  
-
 🚧 COMING SOON 🚧 ◦ Extending the Phi-3's world knowledge with functions  
 🚧 COMING SOON 🚧 ◦ `ai chat --model-path @mp --user "What time is it?"` => doesn't know the time  
 🚧 COMING SOON 🚧 ◦ `ai chat --model-path @mp --user "What time is it?" --built-in-functions` => works!  

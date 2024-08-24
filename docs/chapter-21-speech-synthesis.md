@@ -1,7 +1,5 @@
 ➡️ [Speech Synthesis](#chapter-21-speech-synthesis)  
 
-🛑 Setup w/ Speech in [chapter 20](#chapter-20-setup-w-speech)  
-
 **Synthesize speech from text**  
 `ai speech synthesize --interactive`  
 `ai speech synthesize --text "Hello, world!"`  
