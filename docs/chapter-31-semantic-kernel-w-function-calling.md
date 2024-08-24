@@ -1,3 +1,3 @@
-➡️ [Semantic Kernel w/ Function Calling](#chapter-31-semantic-kernel-w-function-calling)  
+➡️ [Semantic Kernel w/ Function Calling](todo.md#chapter-31-semantic-kernel-w-function-calling)
 
 ...

@@ -1,4 +1,4 @@
-➡️ [AI Studio and the Model Catalog](#chapter-14-setup-w-ai-studio-and-the-model-catalog)  
+➡️ [AI Studio and the Model Catalog](todo.md#chapter-14-setup-w-ai-studio-and-the-model-catalog)
 
 **Explore the Azure AI Model Catalog**  
 ◦ https://ai.azure.com/explore/models  

@@ -1,4 +1,4 @@
-➡️ [**CLI Installation**](#chapter-1-cli-installation)  
+➡️ [**CLI Installation**](todo.md#chapter-1-cli-installation)
 
 **Install the pre-requisites for the Azure AI CLI (`ai`)**  
 `winget install Microsoft.DotNet.SDK.8`  

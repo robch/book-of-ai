@@ -1,3 +1,3 @@
-➡️ [Chat Completions w/ Speech Input and Output](#chapter-27-chat-completions-w-speech-input-and-output)  
+➡️ [Chat Completions w/ Speech Input and Output](todo.md#chapter-27-chat-completions-w-speech-input-and-output)
 
 ...

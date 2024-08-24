@@ -1,4 +1,4 @@
-➡️ [Setup w/ GitHub Model Marketplace](chapter-11-setup-w-github-model-marketplace.md)  
+➡️ [Setup w/ GitHub Model Marketplace](todo.md#chapter-11-setup-w-github-model-marketplace.md)  
 
 **See the available models**  
 ◦ https://github.com/marketplace/models/  

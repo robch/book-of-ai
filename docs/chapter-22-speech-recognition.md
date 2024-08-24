@@ -1,4 +1,4 @@
-➡️ [Speech Recognition](#chapter-22-speech-recognition)  
+➡️ [Speech Recognition](todo.md#chapter-22-speech-recognition)
 
 **Recognize speech from audio**  
 `ai speech recognize --microphone`  

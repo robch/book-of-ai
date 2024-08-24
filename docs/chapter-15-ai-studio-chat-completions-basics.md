@@ -1,4 +1,4 @@
-➡️ [Chat Completions Basics](#chapter-15-ai-studio-chat-completions-basics)  
+➡️ [Chat Completions Basics](todo.md#chapter-15-ai-studio-chat-completions-basics)
 
 **Use the model in chat completions**  
 `ai chat --user "What is the capital of France?"`  

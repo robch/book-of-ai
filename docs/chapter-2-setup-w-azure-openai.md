@@ -1,4 +1,4 @@
-➡️ [**Setup w/ Azure OpenAI**](#chapter-2-setup-w-azure-openai)  
+➡️ [**Setup w/ Azure OpenAI**](todo.md#chapter-2-setup-w-azure-openai)
 
 **Initialize Azure OpenAI resource (select or create)**  
 `ai init openai`  

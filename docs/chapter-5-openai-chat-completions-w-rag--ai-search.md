@@ -1,4 +1,4 @@
-➡️ [**OpenAI Chat Completions w/ RAG + AI Search**](#chapter-5-openai-chat-completions-w-rag--ai-search)  
+➡️ [**OpenAI Chat Completions w/ RAG + AI Search**](todo.md#chapter-5-openai-chat-completions-w-rag--ai-search)
 
 **Initialize Azure AI Search resource (select or create)**  
 `ai init search`  

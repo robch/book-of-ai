@@ -1,10 +1,11 @@
 site_name: BOOK of AI
 theme:
+  logo: assets/ai.png
   name: material
   features:
   - navigation.tabs     # once there are multiple books, uncomment this
   - navigation.sections
-  - navigation.footer
+  # - navigation.footer
   - navigation.indexes
   # - toc.integrate
   - navigation.top
@@ -15,13 +16,13 @@ theme:
   - content.code.copy
   language: en
   palette:
-  - scheme: slate
+  - scheme: default
     toggle: 
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
     primary: black
     accent: indigo
-  - scheme: default
+  - scheme: slate
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
@@ -106,3 +107,17 @@ nav:
       - "\u2461 w/ Function Calling": chapter-31-semantic-kernel-w-function-calling.md
       - "\u2462 w/ Basic Agents": chapter-32-semantic-kernel-w-basic-agents.md
       - "\u2463 w/ Advanced Agents": chapter-33-semantic-kernel-w-advanced-agents.md
+  - REFERENCE:
+    - "":
+      - "ai help": todo-ai-help.md
+    - "":
+      - "ai init": todo-ai-init.md
+      - "ai config": todo-ai-config.md
+    - "":
+      - "ai chat": todo-ai-chat.md
+    - "":
+      - "ai dev": todo-ai-dev.md
+      - "ai test": todo-ai-test.md
+    - "":
+      - "ai search": todo-ai-search.md
+      - "ai speech": todo-ai-speech.md

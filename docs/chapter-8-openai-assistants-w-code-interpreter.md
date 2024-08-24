@@ -1,4 +1,4 @@
-➡️ [OpenAI Assistants w/ Code Interpreter](#chapter-8-openai-assistants-w-code-interpreter)  
+➡️ [OpenAI Assistants w/ Code Interpreter](todo.md#chapter-8-openai-assistants-w-code-interpreter)
 
 **Create or update an assistant with a code interpreter**  
 `ai chat assistant create --name MyCodeAssistant --code-interpreter`  

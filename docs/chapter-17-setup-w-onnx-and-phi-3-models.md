@@ -1,4 +1,4 @@
-➡️ [PHI-3 Models](#chapter-17-setup-w-onnx-and-phi-3-models)  
+➡️ [PHI-3 Models](todo.md#chapter-17-setup-w-onnx-and-phi-3-models)
 
 🚧 COMING SOON 🚧 ◦ `ai init phi-3` or `ai init onnx`  
 

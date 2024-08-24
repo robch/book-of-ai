@@ -1,4 +1,4 @@
-➡️ [OpenAI Assistants API](#chapter-6-openai-assistants-api)  
+➡️ [OpenAI Assistants API](todo.md#chapter-6-openai-assistants-api)
 
 **Differences between chat completions and assistants**  
 ◦ stateless vs stateful  

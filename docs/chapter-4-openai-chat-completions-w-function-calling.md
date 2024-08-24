@@ -1,4 +1,4 @@
-➡️ [**OpenAI Chat Completions w/ Function Calling**](#chapter-4-openai-chat-completions-w-function-calling)  
+➡️ [**OpenAI Chat Completions w/ Function Calling**](todo.md#chapter-4-openai-chat-completions-w-function-calling)
 
 **Extending the LLM's world knowledge with functions**  
 `ai chat --user "What time is it?" --built-in-functions`  

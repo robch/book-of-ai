@@ -1,4 +1,4 @@
-➡️ [Speech Recognition w/ Keyword Spotting](#chapter-24-speech-recognition-w-keyword-spotting)  
+➡️ [Speech Recognition w/ Keyword Spotting](todo.md#chapter-24-speech-recognition-w-keyword-spotting)
 
 **Create and download custom keyword model**  
 ◦ https://speech.microsoft.com/portal/customkeyword  

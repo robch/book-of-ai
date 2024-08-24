@@ -1,4 +1,4 @@
-➡️ [**OpenAI Chat Completion Basics**](#chapter-3-openai-chat-completions-basics)  
+➡️ [**OpenAI Chat Completion Basics**](todo.md#chapter-3-openai-chat-completions-basics)
 
 **User prompts, system prompts, and interactive use**  
 `ai chat --user "What is the capital of France?"`  

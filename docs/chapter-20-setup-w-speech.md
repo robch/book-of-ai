@@ -1,4 +1,4 @@
-➡️ [Setup w/ Speech](#chapter-20-setup-w-speech)  
+➡️ [Setup w/ Speech](todo.md#chapter-20-setup-w-speech)
 
 **Initialize Azure Speech resource (select or create)**  
 `ai init speech`  

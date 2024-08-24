@@ -1,4 +1,4 @@
-➡️ [OpenAI Assistants Basics](#chapter-7-openai-assistants-basics)  
+➡️ [OpenAI Assistants Basics](todo.md#chapter-7-openai-assistants-basics)
 
 **Create a simple assistant**  
 `ai chat assistant create --name MyAssistant`  

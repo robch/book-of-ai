@@ -1,4 +1,4 @@
-➡️ [OpenAI Assistants w/ Function Calling](#chapter-9-openai-assistants-w-function-calling)  
+➡️ [OpenAI Assistants w/ Function Calling](todo.md#chapter-9-openai-assistants-w-function-calling)
 
 **Create or update an assistant for use with function calling**  
 `ai chat assistant create --name MyFunctionAssistant`  

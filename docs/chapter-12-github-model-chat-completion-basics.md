@@ -1,4 +1,4 @@
-➡️ [Chat Completion Basics](#chapter-12-github-model-chat-completion-basics)  
+➡️ [Chat Completion Basics](todo.md#chapter-12-github-model-chat-completion-basics)
 
 **Use the model in chat completions**  
 `ai chat --user "What is the capital of France?"`  

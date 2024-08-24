@@ -1,3 +1,3 @@
-➡️ [Chat Completions w/ Image Output](#chapter-29-chat-completions-w-image-output)  
+➡️ [Chat Completions w/ Image Output](todo.md#chapter-29-chat-completions-w-image-output)
 
 ...

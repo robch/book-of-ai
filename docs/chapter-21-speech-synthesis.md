@@ -1,4 +1,4 @@
-➡️ [Speech Synthesis](#chapter-21-speech-synthesis)  
+➡️ [Speech Synthesis](todo.md#chapter-21-speech-synthesis)
 
 **Synthesize speech from text**  
 `ai speech synthesize --interactive`  

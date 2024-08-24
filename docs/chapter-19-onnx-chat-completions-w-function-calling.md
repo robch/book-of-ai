@@ -1,4 +1,4 @@
-➡️ [ONNX Chat Completions w/ Function Calling](#chapter-19-onnx-chat-completions-w-function-calling)  
+➡️ [ONNX Chat Completions w/ Function Calling](todo.md#chapter-19-onnx-chat-completions-w-function-calling)
 
 🚧 COMING SOON 🚧 ◦ Extending the Phi-3's world knowledge with functions  
 🚧 COMING SOON 🚧 ◦ `ai chat --model-path @mp --user "What time is it?"` => doesn't know the time  

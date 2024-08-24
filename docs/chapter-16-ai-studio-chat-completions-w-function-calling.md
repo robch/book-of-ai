@@ -1,3 +1,3 @@
-➡️ [Chat Completions w/ Function Calling](#chapter-16-ai-studio-chat-completions-w-function-calling)  
+➡️ [Chat Completions w/ Function Calling](todo.md#chapter-16-ai-studio-chat-completions-w-function-calling)
 
 ... 🚧 UNDER CONSTRUCTION ...  
