@@ -1,4 +1,4 @@
-➡️ [ONNX Chat Completions](#chapter-18-onnx-chat-completions)
+➡️ [ONNX Chat Completions](todo.md#chapter-18-onnx-chat-completions)
 
 **Use the model in chat completions**  
 `ai chat --model-path @mp --user "What is the capital of France?"`  
