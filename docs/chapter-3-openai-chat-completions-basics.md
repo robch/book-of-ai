@@ -1,9 +1,5 @@
 ➡️ [**OpenAI Chat Completion Basics**](#chapter-3-openai-chat-completions-basics)  
 
-**Pre-reqs**:  
-🛑 [Install CLI](chapter-1-cli-installation.md)  
-🛑 [Setup Azure OpenAI](chapter-2-setup-w-azure-openai.md)  
-
 **User prompts, system prompts, and interactive use**  
 `ai chat --user "What is the capital of France?"`  
 `ai chat --interactive`  

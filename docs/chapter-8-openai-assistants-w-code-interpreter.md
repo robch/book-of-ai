@@ -1,9 +1,5 @@
 ➡️ [OpenAI Assistants w/ Code Interpreter](#chapter-8-openai-assistants-w-code-interpreter)  
 
-**Pre-reqs**:  
-🛑 [Install CLI](chapter-1-cli-installation.md)  
-🛑 [Setup Azure OpenAI](chapter-2-setup-w-azure-openai.md)  
-
 **Create or update an assistant with a code interpreter**  
 `ai chat assistant create --name MyCodeAssistant --code-interpreter`  
 `ai chat assistant update --code-interpreter`  

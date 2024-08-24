@@ -1,9 +1,5 @@
 ➡️ [OpenAI Assistants API](#chapter-6-openai-assistants-api)  
 
-**Pre-reqs**:  
-🛑 [Install CLI](chapter-1-cli-installation.md)  
-🛑 [Setup Azure OpenAI](chapter-2-setup-w-azure-openai.md)  
-
 **Differences between chat completions and assistants**  
 ◦ stateless vs stateful  
 ◦ customer controlled chat history vs threads  

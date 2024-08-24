@@ -1,9 +1,5 @@
 ➡️ [**OpenAI Chat Completions w/ RAG + AI Search**](#chapter-5-openai-chat-completions-w-rag--ai-search)  
 
-**Pre-reqs**:  
-🛑 [Install CLI](chapter-1-cli-installation.md)  
-🛑 [Setup Azure OpenAI](chapter-2-setup-w-azure-openai.md)  
-
 **Initialize Azure AI Search resource (select or create)**  
 `ai init search`  
 ◦ => Select your Azure subscription  

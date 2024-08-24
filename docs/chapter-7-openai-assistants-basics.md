@@ -1,9 +1,5 @@
 ➡️ [OpenAI Assistants Basics](#chapter-7-openai-assistants-basics)  
 
-**Pre-reqs**:  
-🛑 [Install CLI](chapter-1-cli-installation.md)  
-🛑 [Setup Azure OpenAI](chapter-2-setup-w-azure-openai.md)  
-
 **Create a simple assistant**  
 `ai chat assistant create --name MyAssistant`  
 

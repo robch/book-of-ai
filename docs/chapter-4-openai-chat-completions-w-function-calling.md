@@ -1,9 +1,5 @@
 ➡️ [**OpenAI Chat Completions w/ Function Calling**](#chapter-4-openai-chat-completions-w-function-calling)  
 
-**Pre-reqs**:  
-🛑 [Install CLI](chapter-1-cli-installation.md)  
-🛑 [Setup Azure OpenAI](chapter-2-setup-w-azure-openai.md)  
-
 **Extending the LLM's world knowledge with functions**  
 `ai chat --user "What time is it?" --built-in-functions`  
 `ai chat --user "What is 3.5 to the power of 9?" --built-in-functions`  

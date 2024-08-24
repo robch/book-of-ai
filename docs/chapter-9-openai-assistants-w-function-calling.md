@@ -1,9 +1,5 @@
 ➡️ [OpenAI Assistants w/ Function Calling](#chapter-9-openai-assistants-w-function-calling)  
 
-**Pre-reqs**:  
-🛑 [Install CLI](chapter-1-cli-installation.md)  
-🛑 [Setup Azure OpenAI](chapter-2-setup-w-azure-openai.md)  
-
 **Create or update an assistant for use with function calling**  
 `ai chat assistant create --name MyFunctionAssistant`  
 
