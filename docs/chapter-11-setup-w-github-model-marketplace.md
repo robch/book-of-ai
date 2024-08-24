@@ -1,33 +1,11 @@
-➡️ [OpenAI Assistants w/ Function Calling](#chapter-9-openai-assistants-w-function-calling)  
+➡️ [Setup w/ GitHub Model Marketplace](chapter-11-setup-w-github-model-marketplace.md)  
 
-**Create or update an assistant for use with function calling**  
-`ai chat assistant create --name MyFunctionAssistant`  
+**See the available models**  
+◦ https://github.com/marketplace/models/  
+◦ Discuss how this is similar to Azure AI Model Catalog in chapter 14  
+◦ Discuss how this is similar to OpenAI API in chapters 3-5  
 
-**Use the assistant with function calling, via built-in CLI functions**  
-◦ This is similar to Chapter 4's chat completions w/ function calling  
-`ai chat --user "What time is it?" --built-in-functions`  
-`ai chat --user "What is 3.5 to the power of 9?" --built-in-functions`  
-`ai chat --user "What is in the README.md file?" --built-in-functions`  
-`ai chat --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions`  
-
-**Generating code for function calling**  
-`ai dev new list function`  
-`ai dev new openai-asst-streaming-with-functions --csharp` or `--python` or `--javascript` ...  
-
-**Go over what was generated in the console app**  
-◦ builds on chapter 7's console app  
-◦ see how functions are defined, given to "function factory"  
-◦ in helper class, see how functions are given to the LLM  
-◦ see how the LLM streams back the function call requests  
-◦ see how the helper class processes the function call responses  
-
-**Install the dependencies**  
-`dotnet restore` or `pip install -r requirements.txt` or `npm install` ...  
-
-**Run the console app**  
-`ai dev shell`  
-`dotnet run` or `python main.py` or `node main.js` ...  
-
-**Delete the assistant**  
-`ai chat assistant delete`  
-`ai config --clear assistant.id`  
+**Initialize connection to GitHub Model Marketplace**  
+`ai init github`  
+◦ ⇛ Enter your GitHub personal access token from https://github.com/settings/tokens  
+◦ ⇛ Enter the model you want to use (e.g. `gpt-4o`, `gpt-4o-mini`, `Mistral-large-2407`, etc.)  

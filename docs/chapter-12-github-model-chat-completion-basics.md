@@ -1,25 +1,24 @@
-➡️ [OpenAI Assistants w/ Function Calling](#chapter-9-openai-assistants-w-function-calling)  
+➡️ [Chat Completion Basics](#chapter-12-github-model-chat-completion-basics)  
 
-**Create or update an assistant for use with function calling**  
-`ai chat assistant create --name MyFunctionAssistant`  
+**Use the model in chat completions**  
+`ai chat --user "What is the capital of France?"`  
+`ai chat --user "What is the population of the United States?" --interactive`  
 
-**Use the assistant with function calling, via built-in CLI functions**  
-◦ This is similar to Chapter 4's chat completions w/ function calling  
-`ai chat --user "What time is it?" --built-in-functions`  
-`ai chat --user "What is 3.5 to the power of 9?" --built-in-functions`  
-`ai chat --user "What is in the README.md file?" --built-in-functions`  
-`ai chat --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions`  
+**Use a different model in chat completions**  
+`ai chat --interactive --model Mistral-large-2407` or `--model gpt-4o-mini` ...  
 
-**Generating code for function calling**  
-`ai dev new list function`  
-`ai dev new openai-asst-streaming-with-functions --csharp` or `--python` or `--javascript` ...  
+`ai config @chat.model`  
+`ai config --set chat.model gpt-4o` or `--set chat.model gpt-4o-mini`  
+`ai chat --interactive`  
+
+**Generate code for chat completions with GitHub models**  
+`ai dev new list inference`  
+`ai dev new az-inference-chat-streaming --csharp` or `--python` or `--javascript` ...  
 
 **Go over what was generated in the console app**  
-◦ builds on chapter 7's console app  
-◦ see how functions are defined, given to "function factory"  
-◦ in helper class, see how functions are given to the LLM  
-◦ see how the LLM streams back the function call requests  
-◦ see how the helper class processes the function call responses  
+◦ builds on previous chapters' console apps  
+◦ gets connection info/secrets from environment variables  
+◦ see how use of the Azure.AI.Inference namespace is similar/different from OpenAI  
 
 **Install the dependencies**  
 `dotnet restore` or `pip install -r requirements.txt` or `npm install` ...  
@@ -28,6 +27,3 @@
 `ai dev shell`  
 `dotnet run` or `python main.py` or `node main.js` ...  
 
-**Delete the assistant**  
-`ai chat assistant delete`  
-`ai config --clear assistant.id`  
