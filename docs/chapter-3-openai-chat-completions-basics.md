@@ -1,35 +1,258 @@
-➡️ [**OpenAI Chat Completion Basics**](todo.md#chapter-3-openai-chat-completions-basics)
+---
+hide:
+- toc
+---
+# OpenAI Chat Completion Basics
 
-**User prompts, system prompts, and interactive use**  
-`ai chat --user "What is the capital of France?"`  
-`ai chat --interactive`  
-`ai chat --interactive --system @prompt.txt`  
-`ai chat --interactive --system @prompt.txt --user "Tell me a joke"`  
- 
-**Output answers and/or chat history**  
-`ai chat --interactive --output-answer answer.txt`  
-`ai chat --interactive --output-chat-history history.jsonl`  
+=== "w/ CLI"
 
-**Input chat history**  
-`ai chat --interactive --input-chat-history history.jsonl`  
+    ### Prompts
 
-**Generate console apps for chat completions**  
-`ai dev new list`  
-`ai dev new list chat`  
-`ai dev new openai-chat --csharp` or `--python` or `--javascript` ...  
-`ai dev new openai-chat-streaming --csharp` or `--python` or `--javascript` ...  
+    ``` bash title="One prompt"
+    ai chat --user "What is the capital of France?"
+    ```
+    ``` bash title="Interactive chat"
+    ai chat --interactive
+    ```
 
-**Go over what was generated in the console app**  
-◦ getting connection info/secrets from environment variables  
-◦ using a helper class to encapsulate the OpenAI API calls  
-◦ getting input from the user  
-◦ sending the input to the helper class  
-◦ getting the response from the helper class  
-◦ deeper dive into the helper class  
+    ``` bash title="System prompts"
+    ai chat --interactive --system @prompt.txt
+    ```
 
-**Install the dependencies**  
-`dotnet restore` or `pip install -r requirements.txt` or `npm install` ...  
+    ``` bash title="User and system prompts"
+    ai chat --interactive --system @prompt.txt --user "Tell me a joke"
+    ```
+    
+    ### Answers and chat history
 
-**Run the console app**  
-`ai dev shell`  
-`dotnet run` or `python main.py` or `node main.js` ...  
+    ``` bash title="Output answer to a file"
+    ai chat --interactive --output-answer answer.txt
+    ```
+
+    ``` bash title="Output chat history to a file"
+    ai chat --interactive --output-chat-history history.jsonl
+    ```
+
+    ``` bash title="Input chat history"
+    ai chat --interactive --input-chat-history history.jsonl
+    ```
+
+=== "C#"
+
+    ### List samples
+
+    ``` bash title="List all samples"
+    ai dev new list
+    ```
+
+    ``` bash title="Filter the list"
+    ai dev new list --csharp
+    ai dev new list openai-chat --csharp
+    ```
+
+    ### Generate, build, and run
+
+    ``` bash title="Generate sample code"
+    ai dev new openai-chat --csharp
+    cd openai-chat-cs
+    ```
+
+    ``` bash title="Install dependencies"
+    dotnet restore
+    ```
+
+    ``` bash title="Run the sample"
+    ai dev shell
+    dotnet run
+    ```
+
+=== "Go"
+
+    ### List samples
+
+    ``` bash title="List all samples"
+    ai dev new list
+    ```
+
+    ``` bash title="Filter the list"
+    ai dev new list --go
+    ai dev new list openai-chat --go
+    ```
+
+    ### Generate, build, and run
+
+    ``` bash title="Generate sample code"
+    ai dev new openai-chat --go
+    cd openai-chat-go
+    ```
+
+    ``` bash title="Install dependencies"
+    go mod tidy
+    ```
+
+    ``` bash title="Run the sample"
+    go run main.go
+    ```
+
+=== "Java"
+
+    ### List samples
+
+    ``` bash title="List all samples"
+    ai dev new list
+    ```
+
+    ``` bash title="Filter the list"
+    ai dev new list --java
+    ai dev new list openai-chat --java
+    ```
+
+    ### Generate, build, and run
+
+    ``` bash title="Generate sample code"
+    ai dev new openai-chat --java
+    cd openai-chat-java
+    ```
+
+    ``` bash title="Restore packages"
+    mvn clean package
+    ```
+
+    === "Windows"
+
+        ``` bash title="Build the sample"
+        ai dev shell
+        javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+        ```
+
+        ``` bash title="Run the sample"
+        java -cp "out;target/lib/*" Main
+        ```
+
+    === "macOS"
+
+        ``` bash title="Build the sample"
+        ai dev shell
+        javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+        ```
+
+        ``` bash title="Run the sample"
+        java -cp "out:target/lib/*" Main
+        ```
+
+    === "Linux"
+
+        ``` bash title="Build the sample"
+        ai dev shell
+        javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+        ```
+
+        ``` bash title="Run the sample"
+        java -cp "out:target/lib/*" Main
+        ```
+
+=== "JavaScript"
+
+    ### List samples
+
+    ``` bash title="List all samples"
+    ai dev new list
+    ```
+
+    ``` bash title="Filter the list"
+    ai dev new list --javascript
+    ai dev new list openai-chat --javascript
+    ```
+
+    ### Generate, build, and run
+
+    ``` bash title="Generate sample code"
+    ai dev new openai-chat --javascript
+    cd openai-chat-js
+    ```
+
+    ``` bash title="Install dependencies"
+    npm install
+    ```
+
+    ``` bash title="Run the sample"
+    node Main.js
+    ```
+
+=== "Python"
+
+    ### List samples
+
+    ``` bash title="List all samples"
+    ai dev new list
+    ```
+
+    ``` bash title="Filter the list"
+    ai dev new list --python
+    ai dev new list openai-chat --python
+    ```
+
+    ### Generate, build, and run
+
+    ``` bash title="Generate sample code"
+    ai dev new openai-chat --python
+    cd openai-chat-py
+    ```
+
+    === "Windows"
+
+        ``` bash title="Create virtual environment"
+        python -m venv env
+        env/Scripts/activate
+        ```
+
+        ``` bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        python openai_chat_completions.py
+        ```
+
+    === "macOS"
+
+        ``` bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ``` bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        python openai_chat_completions.py
+        ```
+
+    === "Linux"
+
+        ``` bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ``` bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        python openai_chat_completions.py
+        ```
+
+=== "..."
+
+    **Go over what was generated in the console app**  
+    ◦ getting connection info/secrets from environment variables  
+    ◦ using a helper class to encapsulate the OpenAI API calls  
+    ◦ getting input from the user  
+    ◦ sending the input to the helper class  
+    ◦ getting the response from the helper class  
+    ◦ deeper dive into the helper class  
