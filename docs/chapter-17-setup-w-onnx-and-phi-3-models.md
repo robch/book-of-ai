@@ -4,11 +4,8 @@ hide:
 ---
 # Setup with ONNX and Phi-3 Models
 
-```bash title="Install Git LFS"
+```bash title="Clone/download the Phi-3 ONNX Model"
 git lfs install
-```
-
-```bash title="Clone the Phi-3 ONNX Model Repository"
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 cd Phi-3-mini-4k-instruct-onnx
 git lfs checkout
@@ -18,7 +15,7 @@ git lfs checkout
 ai config --set mp Phi-3-mini-4k-instruct-onnx/directml/directml-int4-awq-block-128
 ```
 
-??? tip "Alternatively, you can use the AI Toolkit to Visual Studio Code to download the model"
+??? tip "If you want to use the AI Toolkit VS Code Extension's downloaded models"
 
     [AI Toolkit VS Code Extension](https://aka.ms/WindowsAI-Studio)  
     Download the AI Toolkit VS Code Extension.  

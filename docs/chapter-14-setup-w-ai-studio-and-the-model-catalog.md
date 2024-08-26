@@ -1,18 +1,21 @@
-➡️ [AI Studio and the Model Catalog](todo.md#chapter-14-setup-w-ai-studio-and-the-model-catalog)
+# AI Studio Setup
 
-**Explore the Azure AI Model Catalog**  
-◦ https://ai.azure.com/explore/models  
-◦ Discuss how this is similar to GitHub Model Marketplace in chapter 11  
-◦ Discuss how this is similar to OpenAI API in chapters 3-5  
+``` bash title="Initialize Azure AI Inference Endpoint"
+ai init inference
+```
 
-**Deploy a model w/ Azure AI Studio**  
-◦ https://learn.microsoft.com/en-us/azure/ai-studio/how-to/deploy-models-serverless  
+⇛ Enter your Azure AI Inference endpoint  
+⇛ Enter your Azure AI Inference key  
 
-**Initialize connection to Azure AI Inference endpoint**  
-`ai init inference`  
-◦ ⇛ Enter your Azure AI Inference endpoint  
-◦ ⇛ Enter your Azure AI Inference key  
+``` bash title="See the persisted config from `ai init inference`"
+ai config @chat.endpoint
+ai config @chat.key
+```
 
-**See the persisted config from `ai init inference`**  
-`ai config @chat.endpoint`  
-`ai config @chat.key`  
+??? tip "If you don't have an Azure AI Inference endpoint..."
+    [Model Catalog](https://ai.azure.com/explore/models)  
+    Explore the Azure AI Model Catalog and Deploy a model to an endpoint
+
+    [Azure AI Serverless Model Documentation](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/deploy-models-serverless)  
+    Learn how to deploy an Azure AI Serverless Model to a new Azure AI Inference endpoint.
+
