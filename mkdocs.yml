@@ -59,16 +59,15 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - md_in_html
 
 copyright: |
   &copy; 2024 <a href="https://github.com/robch/" target="_blank" rel="noopener">Rob Chambers</a>
 
 nav:
-  - BOOK of AI: index.md
   - AI CLI:
-    - INSTALLATION and SETUP:
-      - "\u2460 CLI Installation": chapter-1-cli-installation.md
-      - "\u2461 Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
+    - "\u2460 CLI Installation": chapter-1-cli-installation.md
+    - "\u2461 Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
   - OPENAI:
     - CHAT COMPLETIONS:
       - "\u2460 Chat Basics": chapter-3-openai-chat-completions-basics.md
@@ -83,11 +82,11 @@ nav:
   - GITHUB:
     - "\u2460 GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
     - "\u2461 GitHub Model Basics": chapter-12-github-model-chat-completion-basics.md
-    - "\u2462 w/ Function Calling": chapter-13-github-model-chat-completions-w-function-calling.md
+    # - "\u2462 w/ Function Calling": chapter-13-github-model-chat-completions-w-function-calling.md
   - AZURE AI:
     - "\u2460 AI Studio Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
     - "\u2461 AI Studio Basics": chapter-15-ai-studio-chat-completions-basics.md
-    - "\u2462 w/ Function Calling": chapter-16-ai-studio-chat-completions-w-function-calling.md
+    # - "\u2462 w/ Function Calling": chapter-16-ai-studio-chat-completions-w-function-calling.md
   - ONNX and PHI-3:
     - "\u2460 ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
     - "\u2461 ONNX Basics": chapter-18-onnx-chat-completions.md

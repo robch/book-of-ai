@@ -1,17 +1,15 @@
-➡️ [**Setup w/ Azure OpenAI**](todo.md#chapter-2-setup-w-azure-openai)
+# Azure OpenAI Setup
 
-**Initialize Azure OpenAI resource (select or create)**  
-```bash
+```bash title="Select or create Azure OpenAI resource"
 ai init openai
 ```
 
 ⇛ Select your Azure subscription  
 ⇛ Select or create your Azure OpenAI resource  
 ⇛ Select or create an OpenAI chat model deployment (e.g. gpt-4o)  
-⇛ Select or create an OpenAi embeddings model deployment  
+⇛ Select or create an OpenAI embeddings model deployment  
 
-**See the persisted config from `ai init openai`**  
-```bash
+```bash title="View persisted config"
 ai config @chat.endpoint
 ai config @chat.key
 ```

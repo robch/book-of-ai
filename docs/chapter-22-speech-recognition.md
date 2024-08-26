@@ -79,23 +79,12 @@ hide:
 
     ```bash title="Filter the list"
     ai dev new list --go
-    ai dev new list speech --go
+    ai dev new list text-to-speech --go
     ```
 
     ### Generate, build, and run
 
-    ```bash title="Generate sample code"
-    ai dev new speech-to-text --go
-    cd speech-to-text-go
-    ```
-
-    ```bash title="Install dependencies"
-    go mod tidy
-    ```
-
-    ```bash title="Run the sample"
-    go run main.go
-    ```
+    ... 🚧 UNDER CONSTRUCTION ...  
 
 === "Java"
 
@@ -107,52 +96,12 @@ hide:
 
     ```bash title="Filter the list"
     ai dev new list --java
-    ai dev new list speech --java
+    ai dev new list text-to-speech --java
     ```
 
     ### Generate, build, and run
 
-    ```bash title="Generate sample code"
-    ai dev new speech-to-text --java
-    cd speech-to-text-java
-    ```
-
-    ```bash title="Restore packages"
-    mvn clean package
-    ```
-
-    === "Windows"
-
-        ```bash title="Build the sample"
-        ai dev shell
-        javac -cp "target/lib/*" src/SpeechToTextClass.java src/Main.java -d out
-        ```
-
-        ```bash title="Run the sample"
-        java -cp "out;target/lib/*" Main
-        ```
-
-    === "macOS"
-
-        ```bash title="Build the sample"
-        ai dev shell
-        javac -cp "target/lib/*" src/SpeechToTextClass.java src/Main.java -d out
-        ```
-
-        ```bash title="Run the sample"
-        java -cp "out:target/lib/*" Main
-        ```
-
-    === "Linux"
-
-        ```bash title="Build the sample"
-        ai dev shell
-        javac -cp "target/lib/*" src/SpeechToTextClass.java src/Main.java -d out
-        ```
-
-        ```bash title="Run the sample"
-        java -cp "out:target/lib/*" Main
-        ```
+    ... 🚧 UNDER CONSTRUCTION ...  
 
 === "JavaScript"
 
@@ -164,23 +113,12 @@ hide:
 
     ```bash title="Filter the list"
     ai dev new list --javascript
-    ai dev new list speech --javascript
+    ai dev new list text-to-speech --javascript
     ```
 
     ### Generate, build, and run
 
-    ```bash title="Generate sample code"
-    ai dev new speech-to-text --javascript
-    cd speech-to-text-js
-    ```
-
-    ```bash title="Install dependencies"
-    npm install
-    ```
-
-    ```bash title="Run the sample"
-    node Main.js
-    ```
+    ... 🚧 UNDER CONSTRUCTION ...  
 
 === "Python"
 
