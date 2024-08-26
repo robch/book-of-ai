@@ -1,36 +1,264 @@
-➡️ [**OpenAI Chat Completions w/ RAG + AI Search**](todo.md#chapter-5-openai-chat-completions-w-rag--ai-search)
+---
+hide:
+- toc
+---
+# OpenAI Chat Completions with RAG + AI Search
 
-**Initialize Azure AI Search resource (select or create)**  
-`ai init search`  
-◦ => Select your Azure subscription  
-◦ => Select or create your Azure AI Search resource  
+=== "w/ CLI"
 
-**See the persisted config from `ai init search`**  
-`ai config @search.endpoint`  
-`ai config @search.key`  
+    ### Initialize Azure AI Search resource
 
-**Create or update your Azure AI Search index**  
-`ai search index create --name MyFiles --files *.md --blob-container https://...`  
-`ai search index update --name MyFiles --files *.md --blob-container https://...`  
+    ```bash title="Initialize Azure AI Search"
+    ai init search
+    ```
+    Follow the prompts to select your Azure subscription and Azure AI Search resource.
 
-**See the persisted config from `ai search index create/update`**  
-`ai config @search.index.name`  
+    ### See the persisted config from `ai init search`
 
-**Use the search index in chat completions**  
-`ai chat --user "What is the capital of France?" --index MyFiles`  
+    ```bash title="Get search endpoint"
+    ai config @search.endpoint
+    ```
+    ```bash title="Get search key"
+    ai config @search.key
+    ```
 
-**Generate code for RAG + AI Search**  
-`ai dev new openai-chat-streaming-with-data --csharp` or `--python` or `--javascript` ...  
+    ### Create or update your Azure AI Search index
 
-**Go over what was generated in the console app**  
-◦ builds on Chapter 4's console app  
-◦ see how the helper class gives the LLM access to the AI Search index  
-◦ see how the LLM sends back citations to the helper class  
-◦ see how the helper class processes the citations  
+    ```bash title="Create search index"
+    ai search index create --name MyFiles --files *.md --blob-container https://...
+    ```
+    ```bash title="Update search index"
+    ai search index update --name MyFiles --files *.md --blob-container https://...
+    ```
 
-**Install the dependencies**  
-`dotnet restore` or `pip install -r requirements.txt` or `npm install` ...  
+    ### See the persisted config from `ai search index create/update`
 
-**Run the console app**  
-`ai dev shell`  
-`dotnet run` or `python main.py` or `node main.js` ...  
+    ```bash title="Get search index name"
+    ai config @search.index.name
+    ```
+
+    ### Use the search index in chat completions
+
+    ```bash title="Use search index in chat"
+    ai chat --user "What is the capital of France?" --index MyFiles
+    ```
+
+=== "C#"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --csharp
+    ai dev new list openai-chat-streaming-with-data --csharp
+    ```
+
+    ### Generate, build, and run
+
+    ```bash title="Generate sample code"
+    ai dev new openai-chat-streaming-with-data --csharp
+    cd openai-chat-streaming-with-data-cs
+    ```
+
+    ```bash title="Install dependencies"
+    dotnet restore
+    ```
+
+    ```bash title="Run the sample"
+    ai dev shell
+    dotnet run
+    ```
+
+=== "Go"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --go
+    ai dev new list openai-chat-streaming-with-data --go
+    ```
+
+    ### Generate, build, and run
+
+    ```bash title="Generate sample code"
+    ai dev new openai-chat-streaming-with-data --go
+    cd openai-chat-streaming-with-data-go
+    ```
+
+    ```bash title="Install dependencies"
+    go mod tidy
+    ```
+
+    ```bash title="Run the sample"
+    ai dev shell
+    go run main.go
+    ```
+
+=== "Java"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --java
+    ai dev new list openai-chat-streaming-with-data --java
+    ```
+
+    ### Generate, build, and run
+
+    ```bash title="Generate sample code"
+    ai dev new openai-chat-streaming-with-data --java
+    cd openai-chat-streaming-with-data-java
+    ```
+
+    ```bash title="Restore packages"
+    mvn clean package
+    ```
+
+    === "Windows"
+
+        ```bash title="Build the sample"
+        ai dev shell
+        javac -cp "target/lib/*" src/OpenAIChatCompletionsWithDataStreamingClass.java src/Main.java -d out
+        ```
+
+        ```bash title="Run the sample"
+        java -cp "out;target/lib/*" Main
+        ```
+
+    === "macOS"
+
+        ```bash title="Build the sample"
+        ai dev shell
+        javac -cp "target/lib/*" src/OpenAIChatCompletionsWithDataStreamingClass.java src/Main.java -d out
+        ```
+
+        ```bash title="Run the sample"
+        java -cp "out:target/lib/*" Main
+        ```
+
+    === "Linux"
+
+        ```bash title="Build the sample"
+        ai dev shell
+        javac -cp "target/lib/*" src/OpenAIChatCompletionsWithDataStreamingClass.java src/Main.java -d out
+        ```
+
+        ```bash title="Run the sample"
+        java -cp "out:target/lib/*" Main
+        ```
+
+=== "JavaScript"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --javascript
+    ai dev new list openai-chat-streaming-with-data --javascript
+    ```
+
+    ### Generate, build, and run
+
+    ```bash title="Generate sample code"
+    ai dev new openai-chat-streaming-with-data --javascript
+    cd openai-chat-streaming-with-data-js
+    ```
+
+    ```bash title="Install dependencies"
+    npm install
+    ```
+
+    ```bash title="Run the sample"
+    ai dev shell
+    node Main.js
+    ```
+
+=== "Python"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --python
+    ai dev new list openai-chat-streaming-with-data --python
+    ```
+
+    ### Generate, build, and run
+
+    ```bash title="Generate sample code"
+    ai dev new openai-chat-streaming-with-data --python
+    cd openai-chat-streaming-with-data-py
+    ```
+
+    === "Windows"
+
+        ```bash title="Create virtual environment"
+        python -m venv env
+        env/Scripts/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python main.py
+        ```
+
+    === "macOS"
+
+        ```bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python3 main.py
+        ```
+
+    === "Linux"
+
+        ```bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python3 main.py
+        ```
+
+=== "..."
+
+    **Go over what was generated in the console app**  
+    ◦ builds on Chapter 4's console app  
+    ◦ see how the helper class gives the LLM access to the AI Search index  
+    ◦ see how the LLM sends back citations to the helper class  
+    ◦ see how the helper class processes the citations  

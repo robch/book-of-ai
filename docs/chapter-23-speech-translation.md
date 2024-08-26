@@ -1,23 +1,185 @@
-➡️ [Speech Translation](todo.md#chapter-23-speech-translation)
+---
+hide:
+- toc
+---
+# Speech Translation
 
-**Translate speech from one language to another**  
-`ai speech translate --microphone --source en-uS --target es-ES`  
-`ai speech translate --file hello-world.wav --source en-uS --target es-ES`  
-`ai speech translate --file hello-world.wav --source en-uS --targets es-ES;fr-FR;zh-CN`  
+=== "w/ CLI"
 
-**Output SRT or VTT subtitles**  
-`ai speech translate --file hello-world.wav --source en-uS --target es-ES --output-srt-file captions.srt`  
+    ### Translate Speech
 
-**Generate code for speech translation**  
-`ai dev new list translate`  
-`ai dev new speech-to-text-with-translation --csharp` or `--python` or `--javascript` ...  
+    ```bash title="Translate from microphone"
+    ai speech translate --microphone --source en-US --target es-ES
+    ```
 
-**Go over what was generated in the console app**  
-◦ getting connection info/secrets from environment variables  
+    ```bash title="Translate from file"
+    ai speech translate --file hello-world.wav --source en-US --target es-ES
+    ```
 
-**Install the dependencies**  
-`dotnet restore` or `pip install -r requirements.txt` or `npm install` ...  
+    ```bash title="Translate to multiple languages"
+    ai speech translate --file hello-world.wav --source en-US --targets es-ES;fr-FR;zh-CN
+    ```
 
-**Run the console app**  
-`ai dev shell`  
-`dotnet run` or `python main.py` or `node main.js` ...  
+    ### Output Subtitles
+
+    ```bash title="Output SRT subtitles"
+    ai speech translate --file hello-world.wav --source en-US --target es-ES --output-srt-file captions.srt
+    ```
+
+=== "C#"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --csharp
+    ai dev new list translate --csharp
+    ```
+
+    ### Generate, build, and run
+
+    ```bash title="Generate sample code"
+    ai dev new speech-to-text-with-translation --csharp
+    cd speech-to-text-with-translation-cs
+    ```
+
+    ```bash title="Install dependencies"
+    dotnet restore
+    ```
+
+    ```bash title="Run the sample"
+    ai dev shell
+    dotnet run
+    ```
+
+=== "Go"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --go
+    ai dev new list translate --go
+    ```
+
+    ### Generate, build, and run
+
+    ... 🚧 UNDER CONSTRUCTION ...  
+
+=== "Java"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --java
+    ai dev new list translate --java
+    ```
+
+    ### Generate, build, and run
+
+    ... 🚧 UNDER CONSTRUCTION ...  
+
+=== "JavaScript"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --javascript
+    ai dev new list translate --javascript
+    ```
+
+    ### Generate, build, and run
+
+    ... 🚧 UNDER CONSTRUCTION ...  
+
+=== "Python"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --python
+    ai dev new list translate --python
+    ```
+
+    ### Generate, build, and run
+
+    ```bash title="Generate sample code"
+    ai dev new speech-to-text-with-translation --python
+    cd speech-to-text-with-translation-py
+    ```
+
+    === "Windows"
+
+        ```bash title="Create virtual environment"
+        python -m venv env
+        env/Scripts/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python main.py
+        ```
+
+    === "macOS"
+
+        ```bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python3 main.py
+        ```
+
+    === "Linux"
+
+        ```bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python3 main.py
+        ```
+
+=== "..."
+
+    **Go over what was generated in the console app**  
+    • getting connection info/secrets from environment variables  
+    • using a helper class to encapsulate the Speech Translation API calls  
+    • getting input from the user  
+    • sending the input to the helper class  
+    • getting the response from the helper class  
+    • deeper dive into the helper class  

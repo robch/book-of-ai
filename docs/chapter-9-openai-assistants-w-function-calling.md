@@ -1,33 +1,174 @@
-➡️ [OpenAI Assistants w/ Function Calling](todo.md#chapter-9-openai-assistants-w-function-calling)
+---
+hide:
+  - toc
+---
+# OpenAI Assistants with Function Calling
 
-**Create or update an assistant for use with function calling**  
-`ai chat assistant create --name MyFunctionAssistant`  
+=== "w/ CLI"
 
-**Use the assistant with function calling, via built-in CLI functions**  
-◦ This is similar to Chapter 4's chat completions w/ function calling  
-`ai chat --user "What time is it?" --built-in-functions`  
-`ai chat --user "What is 3.5 to the power of 9?" --built-in-functions`  
-`ai chat --user "What is in the README.md file?" --built-in-functions`  
-`ai chat --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions`  
+    ### Create an Assistant
 
-**Generating code for function calling**  
-`ai dev new list function`  
-`ai dev new openai-asst-streaming-with-functions --csharp` or `--python` or `--javascript` ...  
+    ```bash title="Create an assistant"
+    ai chat assistant create --name MyFunctionAssistant
+    ```
 
-**Go over what was generated in the console app**  
-◦ builds on chapter 7's console app  
-◦ see how functions are defined, given to "function factory"  
-◦ in helper class, see how functions are given to the LLM  
-◦ see how the LLM streams back the function call requests  
-◦ see how the helper class processes the function call responses  
+    ### Use the Assistant with Built-in Function Calling
 
-**Install the dependencies**  
-`dotnet restore` or `pip install -r requirements.txt` or `npm install` ...  
+    ```bash title="Ask the assistant the current time"
+    ai chat --user "What time is it?" --built-in-functions
+    ```
 
-**Run the console app**  
-`ai dev shell`  
-`dotnet run` or `python main.py` or `node main.js` ...  
+    ```bash title="Calculate a power"
+    ai chat --user "What is 3.5 to the power of 9?" --built-in-functions
+    ```
 
-**Delete the assistant**  
-`ai chat assistant delete`  
-`ai config --clear assistant.id`  
+    ```bash title="Read a file"
+    ai chat --user "What is in the README.md file?" --built-in-functions
+    ```
+
+    ```bash title="Save content to a file"
+    ai chat --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions
+    ```
+
+    ### Delete the Assistant
+
+    ```bash title="Delete the assistant"
+    ai chat assistant delete
+    ai config --clear assistant.id
+    ```
+
+=== "C#"
+
+    ### List Samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --csharp
+    ai dev new list openai-asst --csharp
+    ```
+
+    ### Generate, Build, and Run
+
+    ```bash title="Generate sample code"
+    ai dev new openai-asst-streaming-with-functions --csharp
+    cd openai-asst-streaming-with-functions-cs
+    ```
+
+    ```bash title="Install dependencies"
+    dotnet restore
+    ```
+
+    ```bash title="Run the sample"
+    ai dev shell
+    dotnet run
+    ```
+
+=== "JavaScript"
+
+    ### List Samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --javascript
+    ai dev new list openai-asst --javascript
+    ```
+
+    ### Generate, Build, and Run
+
+    ```bash title="Generate sample code"
+    ai dev new openai-asst-streaming-with-functions --javascript
+    cd openai-asst-streaming-with-functions-js
+    ```
+
+    ```bash title="Install dependencies"
+    npm install
+    ```
+
+    ```bash title="Run the sample"
+    ai dev shell
+    node main.js
+    ```
+
+=== "Python"
+
+    ### List Samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --python
+    ai dev new list openai-asst --python
+    ```
+
+    ### Generate, Build, and Run
+
+    ```bash title="Generate sample code"
+    ai dev new openai-asst-streaming-with-functions --python
+    cd openai-asst-streaming-with-functions-py
+    ```
+
+    === "Windows"
+
+        ```bash title="Create virtual environment"
+        python -m venv env
+        env/Scripts/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python main.py
+        ```
+
+    === "macOS"
+
+        ```bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python3 main.py
+        ```
+
+    === "Linux"
+
+        ```bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ```bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        python3 main.py
+        ```
+
+=== "..."
+
+    **Go over what was generated in the console app**
+    
+    - Builds on Chapter 7's console app.
+    - See how functions are defined and given to the "function factory".
+    - In the helper class, see how functions are given to the LLM.
+    - See how the LLM streams back the function call requests.
+    - See how the helper class processes the function call responses.

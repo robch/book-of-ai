@@ -1,11 +1,12 @@
-➡️ [Setup w/ GitHub Model Marketplace](todo.md#chapter-11-setup-w-github-model-marketplace.md)  
+``` bash title="Initialize connection to GitHub Model Marketplace"
+ai init github
+```
 
-**See the available models**  
-◦ https://github.com/marketplace/models/  
-◦ Discuss how this is similar to Azure AI Model Catalog in chapter 14  
-◦ Discuss how this is similar to OpenAI API in chapters 3-5  
+⇛ Enter your GitHub personal access token from [https://github.com/settings/tokens](https://github.com/settings/tokens)  
+⇛ Enter the model you want to use (e.g. `gpt-4o`, `gpt-4o-mini`, `Mistral-large-2407`, etc.)  
 
-**Initialize connection to GitHub Model Marketplace**  
-`ai init github`  
-◦ ⇛ Enter your GitHub personal access token from https://github.com/settings/tokens  
-◦ ⇛ Enter the model you want to use (e.g. `gpt-4o`, `gpt-4o-mini`, `Mistral-large-2407`, etc.)  
+??? tip "If you don't know what models are available..."
+    [GitHub Model Marketplace](https://github.com/marketplace/models/)  
+    See what models you can experiment with for free.
+
+

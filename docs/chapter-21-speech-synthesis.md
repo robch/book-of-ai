@@ -1,28 +1,195 @@
-➡️ [Speech Synthesis](todo.md#chapter-21-speech-synthesis)
+---
+hide:
+- toc
+---
+# Speech Synthesis
 
-**Synthesize speech from text**  
-`ai speech synthesize --interactive`  
-`ai speech synthesize --text "Hello, world!"`  
-`ai speech synthesize --text "Hello, world!" --audio-output hello-world.wav`  
-`ai speech synthesize --text "Hello, world!" --audio-output hello-world.mp3 --format mp3`  
+=== "w/ CLI"
 
-**List available voices**  
-`ai speech synthesize --voices`  
+    ### Synthesize speech from text
 
-**Synthesize speech with a specific voice**  
-`ai speech synthesize --text "Hello, world!" --voice en-US-AriaNeural`  
+    ``` bash title="Interactive mode"
+    ai speech synthesize --interactive
+    ```
 
-**Generate code for speech synthesis**  
-`ai dev new list speech`  
-`ai dev new text-to-speech --csharp` or `--python` or `--javascript` ...  
-`ai dev new text-to-speech-with-file --csharp` or `--python` or `--javascript` ...  
+    ``` bash title="Synthesize text"
+    ai speech synthesize --text "Hello, world!"
+    ```
 
-**Go over what was generated in the console app**  
-◦ getting connection info/secrets from environment variables  
+    ``` bash title="Synthesize text with audio output"
+    ai speech synthesize --text "Hello, world!" --audio-output hello-world.wav
+    ```
 
-**Install the dependencies**  
-`dotnet restore` or `pip install -r requirements.txt` or `npm install` ...  
+    ``` bash title="Synthesize text with specific format"
+    ai speech synthesize --text "Hello, world!" --audio-output hello-world.mp3 --format mp3
+    ```
 
-**Run the console app**  
-`ai dev shell`  
-`dotnet run` or `python main.py` or `node main.js` ...  
+    ### List available voices
+
+    ``` bash title="List voices"
+    ai speech synthesize --voices
+    ```
+
+    ### Synthesize speech with a specific voice
+
+    ``` bash title="Synthesize with specific voice"
+    ai speech synthesize --text "Hello, world!" --voice en-US-AriaNeural
+    ```
+
+=== "C#"
+
+    ### List samples
+
+    ``` bash title="List all samples"
+    ai dev new list
+    ```
+
+    ``` bash title="Filter the list"
+    ai dev new list --csharp
+    ai dev new list text-to-speech --csharp
+    ```
+
+    ### Generate, build, and run
+
+    ``` bash title="Generate sample code"
+    ai dev new text-to-speech --csharp
+    cd text-to-speech-cs
+    ```
+
+    ``` bash title="Install dependencies"
+    dotnet restore
+    ```
+
+    ``` bash title="Run the sample"
+    ai dev shell
+    dotnet run
+    ```
+
+=== "Go"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --go
+    ai dev new list text-to-speech --go
+    ```
+
+    ### Generate, build, and run
+
+    ... 🚧 UNDER CONSTRUCTION ...  
+
+=== "Java"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --java
+    ai dev new list text-to-speech --java
+    ```
+
+    ### Generate, build, and run
+
+    ... 🚧 UNDER CONSTRUCTION ...  
+
+=== "JavaScript"
+
+    ### List samples
+
+    ```bash title="List all samples"
+    ai dev new list
+    ```
+
+    ```bash title="Filter the list"
+    ai dev new list --javascript
+    ai dev new list text-to-speech --javascript
+    ```
+
+    ### Generate, build, and run
+
+    ... 🚧 UNDER CONSTRUCTION ...  
+
+=== "Python"
+
+    ### List samples
+
+    ``` bash title="List all samples"
+    ai dev new list
+    ```
+
+    ``` bash title="Filter the list"
+    ai dev new list --python
+    ai dev new list text-to-speech --python
+    ```
+
+    ### Generate, build, and run
+
+    ``` bash title="Generate sample code"
+    ai dev new text-to-speech --python
+    cd text-to-speech-py
+    ```
+
+    === "Windows"
+
+        ``` bash title="Create virtual environment"
+        python -m venv env
+        env/Scripts/activate
+        ```
+
+        ``` bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        python main.py
+        ```
+
+    === "macOS"
+
+        ``` bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ``` bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        python3 main.py
+        ```
+
+    === "Linux"
+
+        ``` bash title="Create virtual environment"
+        python3 -m venv env
+        source env/bin/activate
+        ```
+
+        ``` bash title="Install requirements"
+        pip install -r requirements.txt
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        python3 main.py
+        ```
+
+=== "..."
+
+    **Go over what was generated in the console app**  
+    ◦ getting connection info/secrets from environment variables  
+    ◦ using a helper class to encapsulate the Azure Speech API calls  
+    ◦ getting input from the user  
+    ◦ sending the input to the helper class  
+    ◦ getting the response from the helper class  
+    ◦ deeper dive into the helper class  

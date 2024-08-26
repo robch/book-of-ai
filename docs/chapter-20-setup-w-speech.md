@@ -1,10 +1,17 @@
-➡️ [Setup w/ Speech](todo.md#chapter-20-setup-w-speech)
+---
+hide:
+- toc
+---
+# Setup with Speech
 
-**Initialize Azure Speech resource (select or create)**  
-`ai init speech`  
-◦ ⇛ Select your Azure subscription  
-◦ ⇛ Select or create your Azure Speech resource  
+```bash title="Select or create Azure Speech resource"
+ai init speech
+```
 
-**See the persisted config from `ai init speech`**  
-`ai config @speech.endpoint`  
-`ai config @speech.key`  
+⇛ Select your Azure subscription  
+⇛ Select or create your Azure Speech resource  
+
+```bash title="View persisted config"
+ai config @speech.endpoint
+ai config @speech.key
+```

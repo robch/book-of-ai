@@ -228,7 +228,7 @@ hide:
 
         ``` bash title="Run the sample"
         ai dev shell
-        python openai_chat_completions.py
+        python3 openai_chat_completions.py
         ```
 
     === "Linux"
@@ -244,7 +244,7 @@ hide:
 
         ``` bash title="Run the sample"
         ai dev shell
-        python openai_chat_completions.py
+        python3 openai_chat_completions.py
         ```
 
 === "..."

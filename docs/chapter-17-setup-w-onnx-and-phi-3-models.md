@@ -1,16 +1,29 @@
-➡️ [PHI-3 Models](todo.md#chapter-17-setup-w-onnx-and-phi-3-models)
+---
+hide:
+- toc
+---
+# Setup with ONNX and Phi-3 Models
 
-🚧 COMING SOON 🚧 ◦ `ai init phi-3` or `ai init onnx`  
+```bash title="Install Git LFS"
+git lfs install
+```
 
-◦ https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx  
+```bash title="Clone the Phi-3 ONNX Model Repository"
+git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
+cd Phi-3-mini-4k-instruct-onnx
+git lfs checkout
+```
 
-**Setup locally:**  
-`git lfs install`  
-`git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx`  
-`git lfs checkout`  
+```bash title="Configure the Model Path"
+ai config --set mp Phi-3-mini-4k-instruct-onnx/directml/directml-int4-awq-block-128
+```
 
-◦ OR: Use the VS Code AI Toolkit to download the model  
-◦ https://learn.microsoft.com/windows/ai/toolkit/  
+??? tip "Alternatively, you can use the AI Toolkit to Visual Studio Code to download the model"
 
-**Setup the model path in the config so we can use it later**  
-`ai config --set mp Phi-3-mini-4k-instruct-onnx\directml\directml-int4-awq-block-128`  
+    [AI Toolkit VS Code Extension](https://aka.ms/WindowsAI-Studio)  
+    Download the AI Toolkit VS Code Extension.  
+
+    [AI Toolkit Documentation](https://learn.microsoft.com/windows/ai/toolkit/)  
+    Learn more about the AI Toolkit on learn.microsoft.com.
+
+
