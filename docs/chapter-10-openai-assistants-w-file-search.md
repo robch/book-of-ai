@@ -1,25 +1,33 @@
-➡️ [OpenAI Assistants w/ Function Calling](todo.md#chapter-9-openai-assistants-w-function-calling)
+➡️ [OpenAI Assistants w/ File Search](#chapter-10-openai-assistants-w-file-search)  
 
-**Create or update an assistant for use with function calling**  
-`ai chat assistant create --name MyFunctionAssistant`  
+**Create or update an assistant for use with file search**  
+`ai chat assistant create --name MyFileAssistant --files "**/*.md"`  
+`ai chat assistant update --files "**/*.txt"` or `--files "**/*.cs"` or `--files "**/*.ts"` ...  
 
-**Use the assistant with function calling, via built-in CLI functions**  
-◦ This is similar to Chapter 4's chat completions w/ function calling  
-`ai chat --user "What time is it?" --built-in-functions`  
-`ai chat --user "What is 3.5 to the power of 9?" --built-in-functions`  
-`ai chat --user "What is in the README.md file?" --built-in-functions`  
-`ai chat --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions`  
+**See that it created a vector store for the files**  
+`ai chat assistant vector-store`  
+`ai chat assistant vector-store list`  
+`ai chat assistant vector-store get`  
 
-**Generating code for function calling**  
-`ai dev new list function`  
-`ai dev new openai-asst-streaming-with-functions --csharp` or `--python` or `--javascript` ...  
+**See the persisted config from `ai chat assistant create/update`**  
+`ai config @assistant.id`  
+`ai config @vector.store.id`  
+
+**You can update the vector-store directly as well**  
+`ai chat assistant vector-store update --file README.md`  
+
+**Use the assistant with file search**  
+`ai chat --user "..."`  
+`ai chat --user "..." --interactive`  
+
+**Generating code for file search**  
+`ai dev new list file`  
+`ai dev new openai-asst-streaming-with-file-search --csharp` or `--python` or `--javascript` ...  
 
 **Go over what was generated in the console app**  
 ◦ builds on chapter 7's console app  
-◦ see how functions are defined, given to "function factory"  
-◦ in helper class, see how functions are given to the LLM  
-◦ see how the LLM streams back the function call requests  
-◦ see how the helper class processes the function call responses  
+◦ see how the LLM sends back citations to the helper class  
+◦ see how the helper class processes the citations  
 
 **Install the dependencies**  
 `dotnet restore` or `pip install -r requirements.txt` or `npm install` ...  
@@ -31,3 +39,8 @@
 **Delete the assistant**  
 `ai chat assistant delete`  
 `ai config --clear assistant.id`  
+
+**Delete the vector store**  
+`ai chat assistant vector-store delete`  
+`ai config --clear vector.store.id`  
+
