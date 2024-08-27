@@ -55,6 +55,14 @@ hide:
     dotnet run
     ```
 
+    ??? example "See the code; learn what it does..."
+
+        [:material-file-code: Program.cs](./samples/openai-chat-streaming-with-functions-cs/Program.cs)  
+        [:material-file-code: OpenAIChatCompletionsCustomFunctions.cs](./samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsCustomFunctions.cs)  
+        [:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.cs](./samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsFunctionsStreamingClass.cs)  
+
+        [:material-file-document-outline: Deep dive on how it works](./chapter-4-sample-overview-openai-chat-streaming-with-functions-cs.md)  
+
 === "Go"
 
     ### List samples
@@ -170,6 +178,14 @@ hide:
     node Main.js
     ```
 
+    ??? example "See the code; learn what it does..."
+
+        [:material-file-code: Main.js](./samples/openai-chat-streaming-with-functions-js/Main.js)  
+        [:material-file-code: OpenAIChatCompletionsCustomFunctions.js](./samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsCustomFunctions.js)  
+        [:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.js](./samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsFunctionsStreamingClass.js)  
+
+        [:material-file-document-outline: Deep dive on how it works](./chapter-4-sample-overview-openai-chat-streaming-with-functions-js.md)  
+
 === "Python"
 
     ### List samples
@@ -238,11 +254,10 @@ hide:
         python3 main.py
         ```
 
-=== "..."
+    ??? example "See the code; learn what it does..."
 
-    **Go over what was generated in the console app**  
-    ◦ builds on previous chapter's console app  
-    ◦ see how functions are defined, given to "function factory"  
-    ◦ in helper class, see how functions are given to the LLM  
-    ◦ see how the LLM streams back the function call requests  
-    ◦ see how the helper class processes the function call responses  
+        [:material-file-code: main.py](./samples/openai-chat-streaming-with-functions-py/main.py)  
+        [:material-file-code: openai_chat_completions_custom_functions.py](./samples/openai-chat-streaming-with-functions-py/openai_chat_completions_custom_functions.py)  
+        [:material-file-code: openai_chat_completions_functions_streaming.py](./samples/openai-chat-streaming-with-functions-py/openai_chat_completions_functions_streaming.py)  
+
+        [:material-file-document-outline: Deep dive on how it works](./chapter-4-sample-overview-openai-chat-streaming-with-functions-py.md)

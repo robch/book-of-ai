@@ -36,7 +36,7 @@ This sample demonstrates how to use the OpenAI Chat Completions API in a C# cons
 
 **STEP 1**: Read the configuration settings from environment variables:
 
-``` csharp title="Program.cs", linenums="12"
+``` csharp title="Program.cs"
 var openAIAPIKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? "...";
 var openAIEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? "...";
 var openAIChatDeploymentName = Environment.GetEnvironmentVariable("AZURE_OPENAI_CHAT_DEPLOYMENT") ?? "...";
@@ -45,13 +45,13 @@ var openAISystemPrompt = Environment.GetEnvironmentVariable("AZURE_OPENAI_SYSTEM
 
 **STEP 2**: Initialize the helper class with the configuration settings:
 
-``` csharp title="Program.cs", linenums="17"
+``` csharp title="Program.cs"
 var chat = new OpenAIChatCompletionsClass(openAIEndpoint, openAIAPIKey, openAIChatDeploymentName, openAISystemPrompt);
 ```
 
 **STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display the response:
 
-``` csharp title="Program.cs", linenums="19", hl_lines="7"
+``` csharp title="Program.cs"
 while (true)
 {
     Console.Write("User: ");
@@ -67,7 +67,7 @@ while (true)
 
 **STEP 1**: Create the client and initialize chat message history with a system message:
 
-``` csharp title="OpenAIChatCompletionsClass.cs", linenums="15", hl_lines="5 6 7 8 17"
+``` csharp title="OpenAIChatCompletionsClass.cs"
 public OpenAIChatCompletionsClass(string openAIEndpoint, string openAIAPIKey, string openAIChatDeploymentName, string openAISystemPrompt)
 {
     _openAISystemPrompt = openAISystemPrompt;
@@ -90,7 +90,7 @@ public void ClearConversation()
 
 **STEP 2**: When the user provides input, add the user message to the chat message history:
 
-``` csharp title="OpenAIChatCompletionsClass.cs", linenums="34", hl_lines="3"
+``` csharp title="OpenAIChatCompletionsClass.cs"
 public string GetChatCompletion(string userPrompt)
 {
     _messages.Add(ChatMessage.CreateUserMessage(userPrompt));
@@ -98,7 +98,7 @@ public string GetChatCompletion(string userPrompt)
 
 **STEP 3**: Send the chat message history to the OpenAI Chat Completions API and process the response:
 
-``` csharp title="OpenAIChatCompletionsClass.cs", linenums="38"
+``` csharp title="OpenAIChatCompletionsClass.cs"
     var response = _chatClient.CompleteChat(_messages);
     var responseText = string.Join("", response.Value.Content
         .Where(x => x.Kind == ChatMessageContentPartKind.Text)
@@ -108,7 +108,7 @@ public string GetChatCompletion(string userPrompt)
 
 **STEP 4**: Add the assistant's response to the chat message history:
 
-``` csharp title="OpenAIChatCompletionsClass.cs", linenums="44"
+``` csharp title="OpenAIChatCompletionsClass.cs"
     _messages.Add(ChatMessage.CreateAssistantMessage(responseText));
     return responseText;
 }

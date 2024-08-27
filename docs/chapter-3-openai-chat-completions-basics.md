@@ -281,6 +281,13 @@ hide:
         node Main.js
         ```
 
+        ??? example "See the code; learn what it does..."
+
+            [:material-file-code: Main.js](./samples/openai-chat-streaming-js/Main.js)  
+            [:material-file-code: OpenAIChatCompletionsStreamingClass.js](./samples/openai-chat-streaming-js/OpenAIChatCompletionsStreamingClass.js)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-js.md)  
+
     === "Non-streaming"
 
         ``` bash title="Generate sample code"
@@ -366,6 +373,13 @@ hide:
             ai dev shell
             python3 main.py
             ```
+
+        ??? example "See the code; learn what it does..."
+
+            [:material-file-code: main.py](./samples/openai-chat-streaming-py/main.py)  
+            [:material-file-code: openai_chat_completions_streaming.py](./samples/openai-chat-streaming-py/openai_chat_completions_streaming.py)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-py.md)  
 
     === "Non-streaming"
 
