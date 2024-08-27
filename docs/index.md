@@ -13,23 +13,30 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
 
     ---
 
-    [:octicons-arrow-right-24: Install the `ai` CLI](./chapter-1-cli-installation.md)  
-    [:octicons-arrow-right-24: Setup OpenAI](./chapter-2-setup-w-azure-openai.md)  
+    **Install and Setup**  
+    [:octicons-arrow-right-24: `ai` CLI Installation](./chapter-1-cli-installation.md)  
+    [:octicons-arrow-right-24: Azure OpenAI Setup](./chapter-2-setup-w-azure-openai.md)  
 
--   :material-chat-outline:{ .lg .middle } __Azure OpenAI__
-
-    ---
-
-    [:octicons-arrow-right-24: Chat Completions](./chapter-3-openai-chat-completions-basics.md)  
-    [:octicons-arrow-right-24: OpenAI Assistants](./chapter-6-openai-assistants-api.md)  
-
--   :material-chat-plus-outline:{ .lg .middle } __GitHub, Azure AI, ONNX__
+-   :material-microsoft-azure:{ .lg .middle } __Azure AI__
 
     ---
 
-    [:octicons-arrow-right-24: Azure AI Studio / Serverless Models](./chapter-14-setup-w-ai-studio-and-the-model-catalog.md)  
+    **Azure OpenAI**  
+    [:octicons-arrow-right-24: Azure OpenAI Chat](./chapter-3-openai-chat-completions-basics.md)  
+    [:octicons-arrow-right-24: Azure OpenAI Assistants](./chapter-6-openai-assistants-api.md)  
+
+    **Azure.AI.Inference**  
+    [:octicons-arrow-right-24: Azure AI Studio / Model Catalog](./chapter-14-setup-w-ai-studio-and-the-model-catalog.md)  
     [:octicons-arrow-right-24: GitHub Model Marketplace](./chapter-11-setup-w-github-model-marketplace.md)  
-    [:octicons-arrow-right-24: Local ONNX Gen AI w/ Phi-3](./chapter-17-setup-w-onnx-and-phi-3-models.md)  
+
+
+-   :simple-onnx:{ .lg .middle } __ONNX GenAI__
+
+    ---
+
+    **Phi-3 Models**  
+    [:octicons-arrow-right-24: ONNX w/ Phi-3 Models](./chapter-17-setup-w-onnx-and-phi-3-models.md)  
+    [:octicons-arrow-right-24: ONNX Chat Basics](./chapter-18-onnx-chat-completions.md)  
 
 
 </div>
