@@ -69,6 +69,13 @@ hide:
         dotnet run
         ```
 
+        ??? example "See the code; learn what it does..."
+
+            [:material-file-code: Program.cs](./samples/openai-chat-streaming-cs/Program.cs)  
+            [:material-file-code: OpenAIChatCompletionsStreamingClass.cs](./samples/openai-chat-streaming-cs/OpenAIChatCompletionsStreamingClass.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-cs.md)  
+
     === "Non-streaming"
 
         ``` bash title="Generate sample code"
@@ -84,6 +91,14 @@ hide:
         ai dev shell
         dotnet run
         ```
+
+        ??? example "See the code; learn what it does..."
+
+            [:material-file-code: Program.cs](./samples/openai-chat-cs/Program.cs)  
+            [:material-file-code: OpenAIChatCompletionsClass.cs](./samples/openai-chat-cs/OpenAIChatCompletionsClass.cs)
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-cs.md)  
+
 
 === "Go"
 
@@ -410,9 +425,10 @@ hide:
 === "..."
 
     **Go over what was generated in the console app**  
-    ◦ getting connection info/secrets from environment variables  
-    ◦ using a helper class to encapsulate the OpenAI API calls  
-    ◦ getting input from the user  
-    ◦ sending the input to the helper class  
-    ◦ getting the response from the helper class  
-    ◦ deeper dive into the helper class  
+    
+    - getting connection info/secrets from environment variables  
+    - using a helper class to encapsulate the OpenAI API calls  
+    - getting input from the user  
+    - sending the input to the helper class  
+    - getting the response from the helper class  
+    - deeper dive into the helper class  
