@@ -39,22 +39,39 @@ hide:
     ```
     ```bash title="Filter the list"
     ai dev new list --csharp
+    ai dev new list openai-asst --csharp
     ai dev new list openai-asst-streaming --csharp
     ```
 
     ### Generate, build, and run
 
-    ```bash title="Generate sample code"
-    ai dev new openai-asst-streaming --csharp
-    cd openai-asst-streaming-cs
-    ```
-    ```bash title="Install dependencies"
-    dotnet restore
-    ```
-    ```bash title="Run the sample"
-    ai dev shell
-    dotnet run
-    ```
+    === "Streaming"
+
+        ```bash title="Generate sample code"
+        ai dev new openai-asst-streaming --csharp
+        cd openai-asst-streaming-cs
+        ```
+        ```bash title="Install dependencies"
+        dotnet restore
+        ```
+        ```bash title="Run the sample"
+        ai dev shell
+        dotnet run
+        ```
+
+    === "Non-streaming"
+
+        ```bash title="Generate sample code"
+        ai dev new openai-asst --csharp
+        cd openai-asst-cs
+        ```
+        ```bash title="Install dependencies"
+        dotnet restore
+        ```
+        ```bash title="Run the sample"
+        ai dev shell
+        dotnet run
+        ```
 
 === "JavaScript"
 
@@ -70,17 +87,33 @@ hide:
 
     ### Generate, build, and run
 
-    ```bash title="Generate sample code"
-    ai dev new openai-asst-streaming --javascript
-    cd openai-asst-streaming-js
-    ```
-    ```bash title="Install dependencies"
-    npm install
-    ```
-    ```bash title="Run the sample"
-    ai dev shell
-    node main.js
-    ```
+    === "Streaming"
+
+        ```bash title="Generate sample code"
+        ai dev new openai-asst-streaming --javascript
+        cd openai-asst-streaming-js
+        ```
+        ```bash title="Install dependencies"
+        npm install
+        ```
+        ```bash title="Run the sample"
+        ai dev shell
+        node main.js
+        ```
+
+    === "Non-streaming"
+
+        ```bash title="Generate sample code"
+        ai dev new openai-asst --javascript
+        cd openai-asst-js
+        ```
+        ```bash title="Install dependencies"
+        npm install
+        ```
+        ```bash title="Run the sample"
+        ai dev shell
+        node main.js
+        ```
 
 === "Python"
 
@@ -96,51 +129,101 @@ hide:
 
     ### Generate, build, and run
 
-    ```bash title="Generate sample code"
-    ai dev new openai-asst-streaming --python
-    cd openai-asst-streaming-py
-    ```
-    === "Windows"
+    === "Streaming"
 
-        ```bash title="Create virtual environment"
-        python -m venv env
-        env/Scripts/activate
+        ```bash title="Generate sample code"
+        ai dev new openai-asst-streaming --python
+        cd openai-asst-streaming-py
         ```
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
-        ```
-        ```bash title="Run the sample"
-        ai dev shell
-        python main.py
-        ```
+        === "Windows"
 
-    === "macOS"
+            ```bash title="Create virtual environment"
+            python -m venv env
+            env/Scripts/activate
+            ```
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+            ```bash title="Run the sample"
+            ai dev shell
+            python main.py
+            ```
 
-        ```bash title="Create virtual environment"
-        python3 -m venv env
-        source env/bin/activate
-        ```
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
-        ```
-        ```bash title="Run the sample"
-        ai dev shell
-        python3 main.py
-        ```
+        === "macOS"
 
-    === "Linux"
+            ```bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+            ```bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
 
-        ```bash title="Create virtual environment"
-        python3 -m venv env
-        source env/bin/activate
+        === "Linux"
+
+            ```bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+            ```bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
+
+    === "Non-streaming"
+
+        ```bash title="Generate sample code"
+        ai dev new openai-asst --python
+        cd openai-asst-py
         ```
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
-        ```
-        ```bash title="Run the sample"
-        ai dev shell
-        python3 main.py
-        ```
+        === "Windows"
+
+            ```bash title="Create virtual environment"
+            python -m venv env
+            env/Scripts/activate
+            ```
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+            ```bash title="Run the sample"
+            ai dev shell
+            python main.py
+            ```
+
+        === "macOS"
+
+            ```bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+            ```bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
+
+        === "Linux"
+
+            ```bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+            ```bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
 
 === "..."
 

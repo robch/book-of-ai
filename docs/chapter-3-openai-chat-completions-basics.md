@@ -48,23 +48,42 @@ hide:
     ``` bash title="Filter the list"
     ai dev new list --csharp
     ai dev new list openai-chat --csharp
+    ai dev new list openai-chat-streaming --csharp
     ```
 
     ### Generate, build, and run
 
-    ``` bash title="Generate sample code"
-    ai dev new openai-chat --csharp
-    cd openai-chat-cs
-    ```
+    === "Streaming"
 
-    ``` bash title="Install dependencies"
-    dotnet restore
-    ```
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat-streaming --csharp
+        cd openai-chat-streaming-cs
+        ```
 
-    ``` bash title="Run the sample"
-    ai dev shell
-    dotnet run
-    ```
+        ``` bash title="Install dependencies"
+        dotnet restore
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        dotnet run
+        ```
+
+    === "Non-streaming"
+
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat --csharp
+        cd openai-chat-cs
+        ```
+
+        ``` bash title="Install dependencies"
+        dotnet restore
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        dotnet run
+        ```
 
 === "Go"
 
@@ -77,22 +96,40 @@ hide:
     ``` bash title="Filter the list"
     ai dev new list --go
     ai dev new list openai-chat --go
+    ai dev new list openai-chat-streaming --go
     ```
 
     ### Generate, build, and run
 
-    ``` bash title="Generate sample code"
-    ai dev new openai-chat --go
-    cd openai-chat-go
-    ```
+    === "Streaming"
 
-    ``` bash title="Install dependencies"
-    go mod tidy
-    ```
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat-streaming --go
+        cd openai-chat-streaming-go
+        ```
 
-    ``` bash title="Run the sample"
-    go run main.go
-    ```
+        ``` bash title="Install dependencies"
+        go mod tidy
+        ```
+
+        ``` bash title="Run the sample"
+        go run main.go
+        ```
+
+    === "Non-streaming"
+
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat --go
+        cd openai-chat-go
+        ```
+
+        ``` bash title="Install dependencies"
+        go mod tidy
+        ```
+
+        ``` bash title="Run the sample"
+        go run main.go
+        ```
 
 === "Java"
 
@@ -105,51 +142,98 @@ hide:
     ``` bash title="Filter the list"
     ai dev new list --java
     ai dev new list openai-chat --java
+    ai dev new list openai-chat-streaming --java
     ```
 
     ### Generate, build, and run
 
-    ``` bash title="Generate sample code"
-    ai dev new openai-chat --java
-    cd openai-chat-java
-    ```
+    === "Streaming"
 
-    ``` bash title="Restore packages"
-    mvn clean package
-    ```
-
-    === "Windows"
-
-        ``` bash title="Build the sample"
-        ai dev shell
-        javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat-streaming --java
+        cd openai-chat-streaming-java
         ```
 
-        ``` bash title="Run the sample"
-        java -cp "out;target/lib/*" Main
+        ``` bash title="Restore packages"
+        mvn clean package
         ```
 
-    === "macOS"
+        === "Windows"
 
-        ``` bash title="Build the sample"
-        ai dev shell
-        javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+            ``` bash title="Build the sample"
+            ai dev shell
+            javac -cp "target/lib/*" src/OpenAIChatCompletionsStreamingClass.java src/Main.java -d out
+            ```
+
+            ``` bash title="Run the sample"
+            java -cp "out;target/lib/*" Main
+            ```
+
+        === "macOS"
+
+            ``` bash title="Build the sample"
+            ai dev shell
+            javac -cp "target/lib/*" src/OpenAIChatCompletionsStreamingClass.java src/Main.java -d out
+            ```
+
+            ``` bash title="Run the sample"
+            java -cp "out:target/lib/*" Main
+            ```
+
+        === "Linux"
+
+            ``` bash title="Build the sample"
+            ai dev shell
+            javac -cp "target/lib/*" src/OpenAIChatCompletionsStreamingClass.java src/Main.java -d out
+            ```
+
+            ``` bash title="Run the sample"
+            java -cp "out:target/lib/*" Main
+            ```
+
+    === "Non-streaming"
+
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat --java
+        cd openai-chat-java
         ```
 
-        ``` bash title="Run the sample"
-        java -cp "out:target/lib/*" Main
+        ``` bash title="Restore packages"
+        mvn clean package
         ```
 
-    === "Linux"
+        === "Windows"
 
-        ``` bash title="Build the sample"
-        ai dev shell
-        javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
-        ```
+            ``` bash title="Build the sample"
+            ai dev shell
+            javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+            ```
 
-        ``` bash title="Run the sample"
-        java -cp "out:target/lib/*" Main
-        ```
+            ``` bash title="Run the sample"
+            java -cp "out;target/lib/*" Main
+            ```
+
+        === "macOS"
+
+            ``` bash title="Build the sample"
+            ai dev shell
+            javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+            ```
+
+            ``` bash title="Run the sample"
+            java -cp "out:target/lib/*" Main
+            ```
+
+        === "Linux"
+
+            ``` bash title="Build the sample"
+            ai dev shell
+            javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+            ```
+
+            ``` bash title="Run the sample"
+            java -cp "out:target/lib/*" Main
+            ```
 
 === "JavaScript"
 
@@ -162,22 +246,40 @@ hide:
     ``` bash title="Filter the list"
     ai dev new list --javascript
     ai dev new list openai-chat --javascript
+    ai dev new list openai-chat-streaming --javascript
     ```
 
     ### Generate, build, and run
 
-    ``` bash title="Generate sample code"
-    ai dev new openai-chat --javascript
-    cd openai-chat-js
-    ```
+    === "Streaming"
 
-    ``` bash title="Install dependencies"
-    npm install
-    ```
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat-streaming --javascript
+        cd openai-chat-streaming-js
+        ```
 
-    ``` bash title="Run the sample"
-    node Main.js
-    ```
+        ``` bash title="Install dependencies"
+        npm install
+        ```
+
+        ``` bash title="Run the sample"
+        node Main.js
+        ```
+
+    === "Non-streaming"
+
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat --javascript
+        cd openai-chat-js
+        ```
+
+        ``` bash title="Install dependencies"
+        npm install
+        ```
+
+        ``` bash title="Run the sample"
+        node Main.js
+        ```
 
 === "Python"
 
@@ -190,62 +292,120 @@ hide:
     ``` bash title="Filter the list"
     ai dev new list --python
     ai dev new list openai-chat --python
+    ai dev new list openai-chat-streaming --python
     ```
 
     ### Generate, build, and run
 
-    ``` bash title="Generate sample code"
-    ai dev new openai-chat --python
-    cd openai-chat-py
-    ```
+    === "Streaming"
 
-    === "Windows"
-
-        ``` bash title="Create virtual environment"
-        python -m venv env
-        env/Scripts/activate
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat-streaming --python
+        cd openai-chat-streaming-py
         ```
 
-        ``` bash title="Install requirements"
-        pip install -r requirements.txt
+        === "Windows"
+
+            ``` bash title="Create virtual environment"
+            python -m venv env
+            env/Scripts/activate
+            ```
+
+            ``` bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ``` bash title="Run the sample"
+            ai dev shell
+            python main.py
+            ```
+
+        === "macOS"
+
+            ``` bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+
+            ``` bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ``` bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
+
+        === "Linux"
+
+            ``` bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+
+            ``` bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ``` bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
+
+    === "Non-streaming"
+
+        ``` bash title="Generate sample code"
+        ai dev new openai-chat --python
+        cd openai-chat-py
         ```
 
-        ``` bash title="Run the sample"
-        ai dev shell
-        python openai_chat_completions.py
-        ```
+        === "Windows"
 
-    === "macOS"
+            ``` bash title="Create virtual environment"
+            python -m venv env
+            env/Scripts/activate
+            ```
 
-        ``` bash title="Create virtual environment"
-        python3 -m venv env
-        source env/bin/activate
-        ```
+            ``` bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
 
-        ``` bash title="Install requirements"
-        pip install -r requirements.txt
-        ```
+            ``` bash title="Run the sample"
+            ai dev shell
+            python openai_chat_completions.py
+            ```
 
-        ``` bash title="Run the sample"
-        ai dev shell
-        python3 openai_chat_completions.py
-        ```
+        === "macOS"
 
-    === "Linux"
+            ``` bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
 
-        ``` bash title="Create virtual environment"
-        python3 -m venv env
-        source env/bin/activate
-        ```
+            ``` bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
 
-        ``` bash title="Install requirements"
-        pip install -r requirements.txt
-        ```
+            ``` bash title="Run the sample"
+            ai dev shell
+            python3 openai_chat_completions.py
+            ```
 
-        ``` bash title="Run the sample"
-        ai dev shell
-        python3 openai_chat_completions.py
-        ```
+        === "Linux"
+
+            ``` bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+
+            ``` bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ``` bash title="Run the sample"
+            ai dev shell
+            python3 openai_chat_completions.py
+            ```
 
 === "..."
 

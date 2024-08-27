@@ -80,6 +80,7 @@ hide:
     ```
 
     ``` bash title="Run the sample"
+    ai dev shell
     go run main.go
     ```
 
@@ -165,6 +166,7 @@ hide:
     ```
 
     ``` bash title="Run the sample"
+    ai dev shell
     node Main.js
     ```
 
