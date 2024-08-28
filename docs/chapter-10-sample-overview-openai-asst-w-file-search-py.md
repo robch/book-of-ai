@@ -5,6 +5,8 @@ hide:
 ---
 # OpenAI Assistants with File Search in Python
 
+--8<-- "docs/warning-ai-generated.md"
+
 This sample demonstrates how to use the OpenAI Assistants API with file search and streaming in a Python console application.
 
 [:material-file-code: main.py](./samples/openai-asst-streaming-with-file-search-py/main.py)  

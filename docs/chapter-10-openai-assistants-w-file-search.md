@@ -212,7 +212,7 @@ hide:
             [:material-file-code: main.py](./samples/openai-asst-streaming-with-file-search-py/main.py)  
             [:material-file-code: openai_assistants_file_search_streaming.py](./samples/openai-asst-streaming-with-file-search-py/openai_assistants_file_search_streaming.py)  
 
-            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-assistants-w-file-search-py.md)  
+            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-w-file-search-py.md)  
 
     === "..."
 

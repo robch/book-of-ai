@@ -94,6 +94,17 @@ hide:
         go run main.go
         ```
 
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.go](./samples/openai-chat-streaming-with-functions-go/main.go)  
+            [:material-file-code: function_call_context.go](./samples/openai-chat-streaming-with-functions-go/function_call_context.go)  
+            [:material-file-code: function_factory.go](./samples/openai-chat-streaming-with-functions-go/function_factory.go)  
+            [:material-file-code: openai_chat_completions_custom_functions.go](./samples/openai-chat-streaming-with-functions-go/openai_chat_completions_custom_functions.go)  
+            [:material-file-code: openai_chat_completions_functions_streaming_hello_world.go](./samples/openai-chat-streaming-with-functions-go/openai_chat_completions_functions_streaming_hello_world.go)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-4-sample-overview-openai-chat-streaming-with-functions-go.md)
+
+
     === "Java"
 
         ### List samples
@@ -109,47 +120,7 @@ hide:
 
         ### Generate, build, and run
 
-        ``` bash title="Generate sample code"
-        ai dev new openai-chat-streaming-with-functions --java
-        cd openai-chat-streaming-with-functions-java
-        ```
-
-        ``` bash title="Restore packages"
-        mvn clean package
-        ```
-
-        === "Windows"
-
-            ``` bash title="Build the sample"
-            ai dev shell
-            javac -cp "target/lib/*" src/OpenAIChatCompletionsFunctionsStreamingClass.java src/Main.java -d out
-            ```
-
-            ``` bash title="Run the sample"
-            java -cp "out;target/lib/*" Main
-            ```
-
-        === "macOS"
-
-            ``` bash title="Build the sample"
-            ai dev shell
-            javac -cp "target/lib/*" src/OpenAIChatCompletionsFunctionsStreamingClass.java src/Main.java -d out
-            ```
-
-            ``` bash title="Run the sample"
-            java -cp "out:target/lib/*" Main
-            ```
-
-        === "Linux"
-
-            ``` bash title="Build the sample"
-            ai dev shell
-            javac -cp "target/lib/*" src/OpenAIChatCompletionsFunctionsStreamingClass.java src/Main.java -d out
-            ```
-
-            ``` bash title="Run the sample"
-            java -cp "out:target/lib/*" Main
-            ```
+        ... 🚧 UNDER CONSTRUCTION ...  
 
     === "JavaScript"
 

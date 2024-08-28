@@ -68,6 +68,7 @@ copyright: |
   &copy; 2024 <a href="https://github.com/robch/" target="_blank" rel="noopener">Rob Chambers</a>
 
 nav:
+  - HOME: index.md
   - AI CLI:
     - "\u2460 CLI Installation": chapter-1-cli-installation.md
     - "\u2461 Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md

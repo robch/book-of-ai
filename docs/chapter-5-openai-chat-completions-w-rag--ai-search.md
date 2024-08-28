@@ -112,6 +112,13 @@ hide:
         go run main.go
         ```
 
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.go](./samples/openai-chat-streaming-with-data-go/main.go)  
+            [:material-file-code: openai_chat_completions_streaming_with_data_hello_world.go](./samples/openai-chat-streaming-with-data-go/openai_chat_completions_streaming_with_data_hello_world.go)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-go.md)  
+
     === "Java"
 
         ### List samples
@@ -283,7 +290,4 @@ hide:
     === "..."
 
         **Go over what was generated in the console app**  
-        
-    
-        
         

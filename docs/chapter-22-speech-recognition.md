@@ -57,25 +57,71 @@ hide:
 
         ### Generate, build, and run
 
-        ```bash title="Generate sample code"
-        ai dev new speech-to-text --csharp
-        cd speech-to-text-cs
-        ```
+        === "Once w/ Microphone"
 
-        ```bash title="Install dependencies"
-        dotnet restore
-        ```
+            ```bash title="Generate sample code"
+            ai dev new speech-to-text --csharp
+            cd speech-to-text-cs
+            ```
 
-        ```bash title="Run the sample"
-        ai dev shell
-        dotnet run
-        ```
+            ```bash title="Install dependencies"
+            dotnet restore
+            ```
 
-        ??? example "See the code; learn how it works..."
+            ```bash title="Run the sample"
+            ai dev shell
+            dotnet run
+            ```
 
-            [:material-file-code: Program.cs](./samples/speech-to-text-cs/Program.cs)  
+            ??? example "See the code; learn how it works..."
 
-            [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-cs.md)  
+                [:material-file-code: Program.cs](./samples/speech-to-text-cs/Program.cs)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-cs.md)  
+
+        === "Continuous w/ Microphone"
+
+            ```bash title="Generate sample code"
+            ai dev new speech-to-text-continuous-reco --csharp
+            cd speech-to-text-continuous-reco-cs
+            ```
+
+            ```bash title="Install dependencies"
+            dotnet restore
+            ```
+
+            ```bash title="Run the sample"
+            ai dev shell
+            dotnet run
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Program.cs](./samples/speech-to-text-continuous-reco-cs/Program.cs)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-continuous-reco-cs.md)  
+
+        === "Continuous w/ File"
+
+            ```bash title="Generate sample code"
+            ai dev new speech-to-text-with-file --csharp
+            cd speech-to-text-with-file-cs
+            ```
+
+            ```bash title="Install dependencies"
+            dotnet restore
+            ```
+
+            ```bash title="Run the sample"
+            ai dev shell
+            dotnet run
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Program.cs](./samples/speech-to-text-with-file-cs/Program.cs)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-with-file-cs.md)  
 
 
     === "Go"
@@ -93,7 +139,13 @@ hide:
 
         ### Generate, build, and run
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        === "Once w/ Microphone"
+
+        === "Continuous w/ Microphone"
+
+        === "Continuous w/ Flie"
+
+        ... 
 
     === "Java"
 
@@ -110,7 +162,13 @@ hide:
 
         ### Generate, build, and run
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        === "Once w/ Microphone"
+
+        === "Continuous w/ Microphone"
+
+        === "Continuous w/ File"
+
+        ... 
 
     === "JavaScript"
 
@@ -127,7 +185,13 @@ hide:
 
         ### Generate, build, and run
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        === "Once w/ Microphone"
+
+        === "Continuous w/ Microphone"
+
+        === "Continuous w/ File"
+
+        ... 
 
     === "Python"
 
@@ -144,65 +208,189 @@ hide:
 
         ### Generate, build, and run
 
-        ```bash title="Generate sample code"
-        ai dev new speech-to-text --python
-        cd speech-to-text-py
-        ```
+        === "Once w/ Microphone"
 
-        === "Windows"
-
-            ```bash title="Create virtual environment"
-            python -m venv env
-            env/Scripts/activate
+            ```bash title="Generate sample code"
+            ai dev new speech-to-text --python
+            cd speech-to-text-py
             ```
 
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
+            === "Windows"
+
+                ```bash title="Create virtual environment"
+                python -m venv env
+                env/Scripts/activate
+                ```
+
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ```bash title="Run the sample"
+                ai dev shell
+                python main.py
+                ```
+
+            === "macOS"
+
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            === "Linux"
+
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](./samples/speech-to-text-py/main.py)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-py.md)  
+
+        === "Continuous w/ Microphone"
+
+            ```bash title="Generate sample code"
+            ai dev new speech-to-text-continuous-reco --python
+            cd speech-to-text-continuous-reco-py
             ```
 
-            ```bash title="Run the sample"
-            ai dev shell
-            python main.py
+            === "Windows"
+
+                ```bash title="Create virtual environment"
+                python -m venv env
+                env/Scripts/activate
+                ```
+
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ```bash title="Run the sample"
+                ai dev shell
+                python main.py
+                ```
+
+            === "macOS"
+
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            === "Linux"
+
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](./samples/speech-to-text-continuous-reco-py/main.py)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-continuous-reco-py.md)
+
+        === "Continuous w/ File"
+
+            ```bash title="Generate sample code"
+            ai dev new speech-to-text-with-file --python
+            cd speech-to-text-with-file-py
             ```
 
-        === "macOS"
+            === "Windows"
 
-            ```bash title="Create virtual environment"
-            python3 -m venv env
-            source env/bin/activate
-            ```
+                ```bash title="Create virtual environment"
+                python -m venv env
+                env/Scripts/activate
+                ```
 
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
-            ```
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
 
-            ```bash title="Run the sample"
-            ai dev shell
-            python3 main.py
-            ```
+                ```bash title="Run the sample"
+                ai dev shell
+                python main.py
+                ```
 
-        === "Linux"
+            === "macOS"
 
-            ```bash title="Create virtual environment"
-            python3 -m venv env
-            source env/bin/activate
-            ```
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
 
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
-            ```
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
 
-            ```bash title="Run the sample"
-            ai dev shell
-            python3 main.py
-            ```
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
 
-        ??? example "See the code; learn how it works..."
+            === "Linux"
 
-            [:material-file-code: main.py](./samples/speech-to-text-py/main.py)  
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
 
-            [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-py.md)  
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
 
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](./samples/speech-to-text-with-file-py/main.py)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-with-file-py.md)
+                
     === "..."
 
         **Go over what was generated in the console app**  
