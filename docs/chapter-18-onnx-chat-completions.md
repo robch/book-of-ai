@@ -72,7 +72,7 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-cs/Program.cs)  
             [:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](./samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  

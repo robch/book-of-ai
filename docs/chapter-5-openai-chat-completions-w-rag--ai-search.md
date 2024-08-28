@@ -18,6 +18,7 @@ hide:
     ```bash title="Get search endpoint"
     ai config @search.endpoint
     ```
+
     ```bash title="Get search key"
     ai config @search.key
     ```
@@ -27,6 +28,7 @@ hide:
     ```bash title="Create search index"
     ai search index create --name MyFiles --files *.md --blob-container https://...
     ```
+
     ```bash title="Update search index"
     ai search index update --name MyFiles --files *.md --blob-container https://...
     ```
@@ -73,6 +75,13 @@ hide:
         ai dev shell
         dotnet run
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Program.cs](./samples/openai-chat-streaming-with-data-cs/Program.cs)  
+            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.cs](./samples/openai-chat-streaming-with-data-cs/OpenAIChatCompletionsWithDataStreamingClass.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-cs.md)  
 
     === "Go"
 
@@ -189,7 +198,7 @@ hide:
         node Main.js
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Main.js](./samples/openai-chat-streaming-with-data-js/Main.js)  
             [:material-file-code: OpenAIChatCompletionsStreamingWithDataClass.js](./samples/openai-chat-streaming-with-data-js/OpenAIChatCompletionsStreamingWithDataClass.js)  
@@ -264,7 +273,7 @@ hide:
             python3 main.py
             ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.py](./samples/openai-chat-streaming-with-data-py/main.py)  
             [:material-file-code: requirements.txt](./samples/openai-chat-streaming-with-data-py/requirements.txt)  
@@ -278,4 +287,3 @@ hide:
     
         
         
-

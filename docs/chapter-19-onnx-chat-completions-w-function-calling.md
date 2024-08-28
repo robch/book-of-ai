@@ -69,12 +69,12 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-cs/Program.cs)  
-            [:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](./samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
+            [:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-with-functions-cs/Program.cs)  
+            [:material-file-code: ONNXChatCompletionsStreamingWithFunctions.cs](./samples/phi3-onnx-chat-streaming-with-functions-cs/ONNXChatCompletionsStreamingWithFunctions.cs)  
 
-            [:material-file-document-outline: Deep dive on how it works](./chapter-19-sample-overview-phi3-onnx-chat-streaming-cs.md)  
+            [:material-file-document-outline: Deep dive on how it works](./chapter-19-sample-overview-phi3-onnx-chat-streaming-with-functions-cs.md)  
 
     === "Go"
 
@@ -91,7 +91,8 @@ hide:
 
         ### Generate, build, and run
 
-        ... \\uD83D\uDEA7 UNDER CONSTRUCTION ...  
+        ... 🚧 UNDER CONSTRUCTION ...  
+
 
     === "Java"
 
@@ -108,7 +109,8 @@ hide:
 
         ### Generate, build, and run
 
-        ... \\uD83D\uDEA7 UNDER CONSTRUCTION ...  
+        ... 🚧 UNDER CONSTRUCTION ...  
+
 
     === "JavaScript"
 
@@ -125,19 +127,8 @@ hide:
 
         ### Generate, build, and run
 
-        ``` bash title="Generate sample code"
-        ai dev new onnx-chat-completions-with-functions --javascript
-        cd onnx-chat-completions-with-functions-js
-        ```
+        ... 🚧 UNDER CONSTRUCTION ...  
 
-        ``` bash title="Install dependencies"
-        npm install
-        ```
-
-        ``` bash title="Run the sample"
-        ai dev shell
-        node index.js
-        ```
 
     === "Python"
 
@@ -154,4 +145,4 @@ hide:
 
         ### Generate, build, and run
 
-        ... \\uD83D\uDEA7 UNDER CONSTRUCTION ...  
+        ... 🚧 UNDER CONSTRUCTION ...  

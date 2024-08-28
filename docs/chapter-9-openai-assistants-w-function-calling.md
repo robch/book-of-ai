@@ -68,7 +68,7 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/openai-asst-streaming-with-functions-cs/Program.cs)  
             [:material-file-code: FunctionFactory.cs](./samples/openai-asst-streaming-with-functions-cs/FunctionFactory.cs)  
@@ -108,7 +108,7 @@ hide:
         node main.js
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.js](./samples/openai-asst-streaming-with-functions-js/main.js)  
             [:material-file-code: OpenAIAssistantsCustomFunctions.js](./samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsCustomFunctions.js)  
@@ -184,7 +184,7 @@ hide:
             python3 main.py
             ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.py](./samples/openai-asst-streaming-with-functions-py/main.py)  
             [:material-file-code: openai_assistants_custom_functions.py](./samples/openai-asst-streaming-with-functions-py/openai_assistants_custom_functions.py)  

@@ -11,7 +11,6 @@ This sample demonstrates how to use the Azure AI Inference Chat Completions API 
 
 [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
 [:material-file-code: azureml_chat_completions_streaming.py](./samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
-[:material-file-code: requirements.txt](./samples/az-inference-chat-streaming-py/requirements.txt)  
 
 ??? tip "How to generate this sample"
 

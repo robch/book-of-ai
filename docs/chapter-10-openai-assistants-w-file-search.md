@@ -94,7 +94,7 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
             [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.cs](./samples/openai-asst-streaming-with-file-search-cs/OpenAIAssistantsFileSearchStreamingClass.cs)  
@@ -130,7 +130,7 @@ hide:
         node main.js
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Main.js](./samples/openai-asst-streaming-with-file-search-js/main.js)  
             [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.js](./samples/openai-asst-streaming-with-file-search-js/OpenAIAssistantsFileSearchStreamingClass.js)  
@@ -205,6 +205,14 @@ hide:
             ai dev shell
             python3 main.py
             ```
+
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.py](./samples/openai-asst-streaming-with-file-search-py/main.py)  
+            [:material-file-code: openai_assistants_file_search_streaming.py](./samples/openai-asst-streaming-with-file-search-py/openai_assistants_file_search_streaming.py)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-assistants-w-file-search-py.md)  
 
     === "..."
 

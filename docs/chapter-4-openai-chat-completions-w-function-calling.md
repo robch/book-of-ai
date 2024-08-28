@@ -57,7 +57,7 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/openai-chat-streaming-with-functions-cs/Program.cs)  
             [:material-file-code: OpenAIChatCompletionsCustomFunctions.cs](./samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsCustomFunctions.cs)  
@@ -180,7 +180,7 @@ hide:
         node Main.js
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Main.js](./samples/openai-chat-streaming-with-functions-js/Main.js)  
             [:material-file-code: OpenAIChatCompletionsCustomFunctions.js](./samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsCustomFunctions.js)  
@@ -256,7 +256,7 @@ hide:
             python3 main.py
             ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.py](./samples/openai-chat-streaming-with-functions-py/main.py)  
             [:material-file-code: openai_chat_completions_custom_functions.py](./samples/openai-chat-streaming-with-functions-py/openai_chat_completions_custom_functions.py)  

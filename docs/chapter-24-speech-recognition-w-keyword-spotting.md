@@ -55,11 +55,9 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/speech-to-text-with-keyword-cs/Program.cs)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-24-sample-overview-speech-to-text-with-keyword-cs.md)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-24-sample-overview-speech-to-text-with-keyword-py.md)  
             
@@ -182,7 +180,7 @@ hide:
             python3 main.py
             ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.py](./samples/speech-to-text-with-keyword-py/main.py)  
 

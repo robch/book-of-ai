@@ -67,7 +67,7 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/text-to-speech-cs/Program.cs)  
             [:material-file-code: TextToSpeechClass.cs](./samples/text-to-speech-cs/TextToSpeechClass.cs)  
@@ -193,7 +193,7 @@ hide:
             python3 main.py
             ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.py](./samples/text-to-speech-py/main.py)  
             [:material-file-code: requirements.txt](./samples/text-to-speech-py/requirements.txt)  

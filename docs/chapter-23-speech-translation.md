@@ -57,6 +57,12 @@ hide:
         dotnet run
         ```
 
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Program.cs](./samples/speech-to-text-with-translation-cs/Program.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-23-sample-overview-speech-to-text-with-translation-cs.md)  
+
     === "Go"
 
         ### List samples
@@ -72,8 +78,8 @@ hide:
 
         ### Generate, build, and run
 
-        ... 🚧 UNDER CONSTRUCTION ...  
-
+        ... 
+        
     === "Java"
 
         ### List samples
@@ -88,8 +94,7 @@ hide:
         ```
 
         ### Generate, build, and run
-
-        ... 🚧 UNDER CONSTRUCTION ...  
+        ... 
 
     === "JavaScript"
 
@@ -105,8 +110,7 @@ hide:
         ```
 
         ### Generate, build, and run
-
-        ... 🚧 UNDER CONSTRUCTION ...  
+        ... 
 
     === "Python"
 
@@ -122,7 +126,6 @@ hide:
         ```
 
         ### Generate, build, and run
-
         ```bash title="Generate sample code"
         ai dev new speech-to-text-with-translation --python
         cd speech-to-text-with-translation-py
@@ -176,19 +179,13 @@ hide:
             python3 main.py
             ```
             
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.py](./samples/speech-to-text-with-translation-py/main.py)  
-            [:material-file-code: requirements.txt](./samples/speech-to-text-with-translation-py/requirements.txt)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-23-sample-overview-speech-to-text-with-translation-py.md)  
 
     === "..."
 
         **Go over what was generated in the console app**  
-        • getting connection info/secrets from environment variables  
-        • using a helper class to encapsulate the Speech Translation API calls  
-        • getting input from the user  
-        • sending the input to the helper class  
-        • getting the response from the helper class  
-        • deeper dive into the helper class  
+        

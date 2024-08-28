@@ -3,7 +3,7 @@ hide:
 - navigation
 - toc
 ---
-# Speech to Text with Translation in C\#
+# Speech-to-Text with Translation in C#
 
 --8<-- "docs/warning-ai-generated.md"
 
@@ -42,18 +42,11 @@ var speechKey = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_KEY") ?? "<i
 var speechRegion = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_REGION") ?? "<insert your Speech Service region here>";
 var speechLanguage = "en-US"; // BCP-47 language code
 var targetLanguages = new string[] { "de", "fr" };
-var inputFileName = args.Length == 1 ? args[0] : null;
 ```
 
-**STEP 2**: Check if the input file exists and create configuration instances:
+**STEP 2**: Initialize the speech translation config and audio config with the configuration settings:
 
 ``` csharp title="Program.cs"
-if (inputFileName != null && !File.Exists(inputFileName))
-{
-    Console.WriteLine($"ERROR: Cannot find audio input file: {inputFileName}");
-    return 1;
-}
-
 var config = SpeechTranslationConfig.FromSubscription(speechKey, speechRegion);
 var audioConfig = inputFileName != null
     ? AudioConfig.FromWavFileInput(inputFileName)
@@ -70,7 +63,7 @@ foreach (var targetLanguage in targetLanguages)
 }
 ```
 
-**STEP 4**: Create the speech recognizer and subscribe to events:
+**STEP 4**: Create the speech recognizer from the configuration information and handle events:
 
 ``` csharp title="Program.cs"
 using (var recognizer = new TranslationRecognizer(config, audioConfig))
@@ -80,6 +73,13 @@ using (var recognizer = new TranslationRecognizer(config, audioConfig))
     recognizer.SessionStarted += (s, e) => HandleSessionStartedEvent(e);
     recognizer.SessionStopped += (s, e) => HandleSessionStoppedEvent(e, sessionStoppedNoError);
     recognizer.Canceled += (s, e) => HandleCanceledEvent(e, sessionStoppedNoError);
+```
+
+**STEP 5**: Start continuous recognition and wait for the user to stop it:
+
+``` csharp title="Program.cs"
+    await recognizer.StartContinuousRecognitionAsync();
+    Console.WriteLine("Listening; press ENTER to stop ...\n");
 
     Task.Run(() =>
     {
@@ -153,26 +153,4 @@ private static void HandleCanceledEvent(TranslationRecognitionCanceledEventArgs 
     }
     sessionStoppedNoError.TrySetResult(e.Reason != CancellationReason.Error);
 }
-```
-
-## SpeechToTextWithTranslation.csproj
-
-The project file defines the target framework and the package dependencies for the application.
-
-``` xml title="SpeechToTextWithTranslation.csproj"
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
-    <OutputType>Exe</OutputType>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.35.0" />
-  </ItemGroup>
-
-</Project>
 ```

@@ -63,7 +63,7 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/openai-asst-streaming-with-code-cs/Program.cs)  
             [:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.cs](./samples/openai-asst-streaming-with-code-cs/OpenAIAssistantsCodeInterpreterStreamingClass.cs)  
@@ -99,7 +99,7 @@ hide:
         node main.js
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.js](./samples/openai-asst-streaming-with-code-js/main.js)  
             [:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.js](./samples/openai-asst-streaming-with-code-js/OpenAIAssistantsCodeInterpreterStreamingClass.js)  
@@ -174,7 +174,7 @@ hide:
             python3 main.py
             ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.py](./samples/openai-asst-streaming-with-code-py/main.py)  
             [:material-file-code: openai_assistants_code_interpreter_streaming.py](./samples/openai-asst-streaming-with-code-py/openai_assistants_code_interpreter_streaming.py)  

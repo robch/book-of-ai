@@ -11,6 +11,7 @@ hide:
     ``` bash title="One prompt"
     ai chat --user "What is the capital of France?"
     ```
+
     ``` bash title="Interactive chat"
     ai chat --interactive
     ```
@@ -71,7 +72,7 @@ hide:
             dotnet run
             ```
 
-            ??? example "See the code; learn what it does..."
+            ??? example "See the code; learn how it works..."
 
                 [:material-file-code: Program.cs](./samples/openai-chat-streaming-cs/Program.cs)  
                 [:material-file-code: OpenAIChatCompletionsStreamingClass.cs](./samples/openai-chat-streaming-cs/OpenAIChatCompletionsStreamingClass.cs)  
@@ -94,7 +95,7 @@ hide:
             dotnet run
             ```
 
-            ??? example "See the code; learn what it does..."
+            ??? example "See the code; learn how it works..."
 
                 [:material-file-code: Program.cs](./samples/openai-chat-cs/Program.cs)  
                 [:material-file-code: OpenAIChatCompletionsClass.cs](./samples/openai-chat-cs/OpenAIChatCompletionsClass.cs)
@@ -133,6 +134,13 @@ hide:
             go run main.go
             ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.go](./samples/openai-chat-streaming-go/main.go)  
+                [:material-file-code: openai_chat_completions_streaming_hello_world.go](./samples/openai-chat-streaming-go/openai_chat_completions_streaming_hello_world.go)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-go.md)  
+
         === "Non-streaming"
 
             ``` bash title="Generate sample code"
@@ -147,6 +155,14 @@ hide:
             ``` bash title="Run the sample"
             go run main.go
             ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.go](./samples/openai-chat-go/main.go)  
+                [:material-file-code: openai_chat_completions_hello_world.go](./samples/openai-chat-go/openai_chat_completions_hello_world.go)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-go.md)  
+
 
     === "Java"
 
@@ -208,6 +224,13 @@ hide:
                 java -cp "out:target/lib/*" Main
                 ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Main.java](./samples/openai-chat-streaming-java/src/Main.java)  
+                [:material-file-code: OpenAIChatCompletionsStreamingClass.java](./samples/openai-chat-streaming-java/src/OpenAIChatCompletionsStreamingClass.java)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-java.md)  
+
         === "Non-streaming"
 
             ``` bash title="Generate sample code"
@@ -252,6 +275,14 @@ hide:
                 java -cp "out:target/lib/*" Main
                 ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Main.java](./samples/openai-chat-java/src/Main.java)  
+                [:material-file-code: OpenAIChatCompletionsClass.java](./samples/openai-chat-java/src/OpenAIChatCompletionsClass.java)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-java.md)  
+
+
     === "JavaScript"
 
         ### List samples
@@ -283,7 +314,7 @@ hide:
             node Main.js
             ```
 
-            ??? example "See the code; learn what it does..."
+            ??? example "See the code; learn how it works..."
 
                 [:material-file-code: Main.js](./samples/openai-chat-streaming-js/Main.js)  
                 [:material-file-code: OpenAIChatCompletionsStreamingClass.js](./samples/openai-chat-streaming-js/OpenAIChatCompletionsStreamingClass.js)  
@@ -304,6 +335,14 @@ hide:
             ``` bash title="Run the sample"
             node Main.js
             ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Main.js](./samples/openai-chat-js/Main.js)  
+                [:material-file-code: OpenAIChatCompletionsClass.js](./samples/openai-chat-js/OpenAIChatCompletionsClass.js)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-js.md)  
+
 
     === "Python"
 
@@ -376,7 +415,7 @@ hide:
                 python3 main.py
                 ```
 
-            ??? example "See the code; learn what it does..."
+            ??? example "See the code; learn how it works..."
 
                 [:material-file-code: main.py](./samples/openai-chat-streaming-py/main.py)  
                 [:material-file-code: openai_chat_completions_streaming.py](./samples/openai-chat-streaming-py/openai_chat_completions_streaming.py)  
@@ -438,6 +477,13 @@ hide:
                 python3 openai_chat_completions.py
                 ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](./samples/openai-chat-py/main.py)  
+                [:material-file-code: openai_chat_completions.py](./samples/openai-chat-py/openai_chat_completions.py)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-py.md)  
+
     === "..."
 
         **Go over what was generated in the console app**  
@@ -447,4 +493,4 @@ hide:
         - getting input from the user  
         - sending the input to the helper class  
         - getting the response from the helper class  
-        - deeper dive into the helper class  
+        - deeper dive into the helper class

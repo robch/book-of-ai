@@ -17,15 +17,19 @@ hide:
     ```bash title="Start an interactive chat"
     ai chat --interactive
     ```
+
     ```bash title="Continue with a previous thread"
     ai chat --interactive --thread-id ID
     ```
+
     ```bash title="Ask a question and save the thread ID"
     ai chat --question "..." --output-thread-id myNewThread.txt
     ```
+
     ```bash title="Use a saved thread ID"
     ai chat --question "..." --thread-id @myNewThread.txt
     ```
+
     ```bash title="Interactive chat with thread ID and save history"
     ai chat --interactive --thread-id @myNewThread.txt --output-chat-history history.jsonl
     ```
@@ -39,6 +43,7 @@ hide:
         ```bash title="List all samples"
         ai dev new list
         ```
+
         ```bash title="Filter the list"
         ai dev new list --csharp
         ai dev new list openai-asst --csharp
@@ -53,15 +58,17 @@ hide:
             ai dev new openai-asst-streaming --csharp
             cd openai-asst-streaming-cs
             ```
+
             ```bash title="Install dependencies"
             dotnet restore
             ```
+
             ```bash title="Run the sample"
             ai dev shell
             dotnet run
             ```
 
-            ??? example "See the code; learn what it does..."
+            ??? example "See the code; learn how it works..."
 
                 [:material-file-code: Program.cs](./samples/openai-asst-streaming-cs/Program.cs)  
                 [:material-file-code: OpenAIAssistantsStreamingClass.cs](./samples/openai-asst-streaming-cs/OpenAIAssistantsStreamingClass.cs)  
@@ -74,15 +81,17 @@ hide:
             ai dev new openai-asst --csharp
             cd openai-asst-cs
             ```
+
             ```bash title="Install dependencies"
             dotnet restore
             ```
+
             ```bash title="Run the sample"
             ai dev shell
             dotnet run
             ```
 
-            ??? example "See the code; learn what it does..."
+            ??? example "See the code; learn how it works..."
 
                 [:material-file-code: Program.cs](./samples/openai-asst-cs/Program.cs)  
                 [:material-file-code: OpenAIAssistantsClass.cs](./samples/openai-asst-cs/OpenAIAssistantsClass.cs)  
@@ -96,6 +105,7 @@ hide:
         ```bash title="List all samples"
         ai dev new list
         ```
+
         ```bash title="Filter the list"
         ai dev new list --javascript
         ai dev new list openai-asst --javascript
@@ -110,13 +120,22 @@ hide:
             ai dev new openai-asst-streaming --javascript
             cd openai-asst-streaming-js
             ```
+
             ```bash title="Install dependencies"
             npm install
             ```
+
             ```bash title="Run the sample"
             ai dev shell
             node main.js
             ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.js](./samples/openai-asst-streaming-js/main.js)  
+                [:material-file-code: OpenAIAssistantsStreamingClass.js](./samples/openai-asst-streaming-js/OpenAIAssistantsStreamingClass.js)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-js.md)  
 
         === "Non-streaming"
 
@@ -124,14 +143,17 @@ hide:
             ai dev new openai-asst --javascript
             cd openai-asst-js
             ```
+
             ```bash title="Install dependencies"
             npm install
             ```
+
             ```bash title="Run the sample"
             ai dev shell
             node main.js
             ```
-            ??? example "See the code; learn what it does..."
+
+            ??? example "See the code; learn how it works..."
 
                 [:material-file-code: main.js](./samples/openai-asst-js/main.js)  
                 [:material-file-code: OpenAIAssistantsClass.js](./samples/openai-asst-js/OpenAIAssistantsClass.js)  
@@ -145,6 +167,7 @@ hide:
         ```bash title="List all samples"
         ai dev new list
         ```
+
         ```bash title="Filter the list"
         ai dev new list --python
         ai dev new list openai-asst --python
@@ -165,9 +188,11 @@ hide:
                 python -m venv env
                 env/Scripts/activate
                 ```
+
                 ```bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
+
                 ```bash title="Run the sample"
                 ai dev shell
                 python main.py
@@ -179,9 +204,11 @@ hide:
                 python3 -m venv env
                 source env/bin/activate
                 ```
+
                 ```bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
+
                 ```bash title="Run the sample"
                 ai dev shell
                 python3 main.py
@@ -193,13 +220,22 @@ hide:
                 python3 -m venv env
                 source env/bin/activate
                 ```
+
                 ```bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
+
                 ```bash title="Run the sample"
                 ai dev shell
                 python3 main.py
                 ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](./samples/openai-asst-streaming-py/main.py)  
+                [:material-file-code: openai_assistants_streaming.py](./samples/openai-asst-streaming-py/openai_assistants_streaming.py)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-py.md)  
 
         === "Non-streaming"
 
@@ -213,9 +249,11 @@ hide:
                 python -m venv env
                 env/Scripts/activate
                 ```
+
                 ```bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
+
                 ```bash title="Run the sample"
                 ai dev shell
                 python main.py
@@ -227,9 +265,11 @@ hide:
                 python3 -m venv env
                 source env/bin/activate
                 ```
+
                 ```bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
+
                 ```bash title="Run the sample"
                 ai dev shell
                 python3 main.py
@@ -241,24 +281,27 @@ hide:
                 python3 -m venv env
                 source env/bin/activate
                 ```
+
                 ```bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
+
                 ```bash title="Run the sample"
                 ai dev shell
                 python3 main.py
                 ```
-                
-            ??? example "See the code; learn what it does..."
+
+            ??? example "See the code; learn how it works..."
 
                 [:material-file-code: main.py](./samples/openai-asst-py/main.py)  
                 [:material-file-code: openai_assistants.py](./samples/openai-asst-py/openai_assistants.py)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-py.md)  
+
     === "..."
 
         **Go over what was generated in the console app**  
-        
+
         - similar to console apps generated in earlier chapters  
         - see how the LLM sends back citations to the helper class  
         - see how the helper class processes the citations  
@@ -268,6 +311,7 @@ hide:
         ```bash title="Delete the assistant"
         ai chat assistant delete
         ```
+
         ```bash title="Clear assistant configuration"
         ai config --clear assistant.id
         ```

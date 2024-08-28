@@ -11,6 +11,7 @@ hide:
     ``` bash title="One prompt"
     ai chat --user "What is the capital of France?"
     ```
+
     ``` bash title="Interactive chat"
     ai chat --interactive
     ```
@@ -68,7 +69,7 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/az-inference-chat-streaming-cs/Program.cs)  
             [:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](./samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
@@ -124,25 +125,7 @@ hide:
 
         ### Generate, build, and run
 
-        ``` bash title="Generate sample code"
-        ai dev new openai-chat-streaming --javascript
-        cd openai-chat-streaming-js
-        ```
-
-        ``` bash title="Install dependencies"
-        npm install
-        ```
-
-        ``` bash title="Run the sample"
-        node Main.js
-        ```
-
-        ??? example "See the code; learn what it does..."
-
-            [:material-file-code: Main.js](./samples/openai-chat-streaming-js/Main.js)  
-            [:material-file-code: package.json](./samples/openai-chat-streaming-js/package.json)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-12-sample-overview-openai-chat-streaming-js.md)  
+        ... 🚧 UNDER CONSTRUCTION ...  
 
     === "Python"
 
@@ -212,16 +195,16 @@ hide:
             python3 main.py
             ```
 
-    === "..."
-
-        **Go over what was generated in the console app**  
-        \\u25e6 builds on previous chapters' console apps  
-        \\u25e6 gets connection info/secrets from environment variables  
-        \\u25e6 see how use of the Azure.AI.Inference namespace is similar/different from OpenAI  
-
         ??? example "See the code; learn what it does..."
 
             [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
             [:material-file-code: requirements.txt](./samples/az-inference-chat-streaming-py/requirements.txt)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-12-sample-overview-az-inference-chat-streaming-py.md)  
+
+    === "..."
+
+        **Go over what was generated in the console app**  
+        \\u25e6 builds on previous chapters' console apps  
+        \\u25e6 gets connection info/secrets from environment variables  
+        \\u25e6 see how use of the Azure.AI.Inference namespace is similar/different from OpenAI  

@@ -11,6 +11,7 @@ hide:
     ``` bash title="One prompt"
     ai chat --user "What is the capital of France?"
     ```
+
     ``` bash title="Interactive chat"
     ai chat --interactive
     ```
@@ -54,7 +55,7 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: Program.cs](./samples/az-inference-chat-streaming-cs/Program.cs)  
             [:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](./samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
@@ -180,7 +181,7 @@ hide:
             python3 main.py
             ```
 
-        ??? example "See the code; learn what it does..."
+        ??? example "See the code; learn how it works..."
 
             [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
             [:material-file-code: azureml_chat_completions_streaming.py](./samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
