@@ -4,7 +4,7 @@ hide:
 ---
 # OpenAI Assistants Basics
 
-=== "w/ CLI"
+=== "Overview"
 
     ### Create an Assistant
 
@@ -30,213 +30,244 @@ hide:
     ai chat --interactive --thread-id @myNewThread.txt --output-chat-history history.jsonl
     ```
 
-=== "C#"
+=== "Sample Code"
 
-    ### List samples
+    === "C#"
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-    ```bash title="Filter the list"
-    ai dev new list --csharp
-    ai dev new list openai-asst --csharp
-    ai dev new list openai-asst-streaming --csharp
-    ```
+        ### List samples
 
-    ### Generate, build, and run
-
-    === "Streaming"
-
-        ```bash title="Generate sample code"
-        ai dev new openai-asst-streaming --csharp
-        cd openai-asst-streaming-cs
+        ```bash title="List all samples"
+        ai dev new list
         ```
-        ```bash title="Install dependencies"
-        dotnet restore
-        ```
-        ```bash title="Run the sample"
-        ai dev shell
-        dotnet run
+        ```bash title="Filter the list"
+        ai dev new list --csharp
+        ai dev new list openai-asst --csharp
+        ai dev new list openai-asst-streaming --csharp
         ```
 
-    === "Non-streaming"
+        ### Generate, build, and run
 
-        ```bash title="Generate sample code"
-        ai dev new openai-asst --csharp
-        cd openai-asst-cs
-        ```
-        ```bash title="Install dependencies"
-        dotnet restore
-        ```
-        ```bash title="Run the sample"
-        ai dev shell
-        dotnet run
-        ```
+        === "Streaming"
 
-=== "JavaScript"
-
-    ### List samples
-
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-    ```bash title="Filter the list"
-    ai dev new list --javascript
-    ai dev new list openai-asst-streaming --javascript
-    ```
-
-    ### Generate, build, and run
-
-    === "Streaming"
-
-        ```bash title="Generate sample code"
-        ai dev new openai-asst-streaming --javascript
-        cd openai-asst-streaming-js
-        ```
-        ```bash title="Install dependencies"
-        npm install
-        ```
-        ```bash title="Run the sample"
-        ai dev shell
-        node main.js
-        ```
-
-    === "Non-streaming"
-
-        ```bash title="Generate sample code"
-        ai dev new openai-asst --javascript
-        cd openai-asst-js
-        ```
-        ```bash title="Install dependencies"
-        npm install
-        ```
-        ```bash title="Run the sample"
-        ai dev shell
-        node main.js
-        ```
-
-=== "Python"
-
-    ### List samples
-
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-    ```bash title="Filter the list"
-    ai dev new list --python
-    ai dev new list openai-asst-streaming --python
-    ```
-
-    ### Generate, build, and run
-
-    === "Streaming"
-
-        ```bash title="Generate sample code"
-        ai dev new openai-asst-streaming --python
-        cd openai-asst-streaming-py
-        ```
-        === "Windows"
-
-            ```bash title="Create virtual environment"
-            python -m venv env
-            env/Scripts/activate
+            ```bash title="Generate sample code"
+            ai dev new openai-asst-streaming --csharp
+            cd openai-asst-streaming-cs
             ```
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
+            ```bash title="Install dependencies"
+            dotnet restore
             ```
             ```bash title="Run the sample"
             ai dev shell
-            python main.py
+            dotnet run
             ```
 
-        === "macOS"
+            ??? example "See the code; learn what it does..."
 
-            ```bash title="Create virtual environment"
-            python3 -m venv env
-            source env/bin/activate
+                [:material-file-code: Program.cs](./samples/openai-asst-streaming-cs/Program.cs)  
+                [:material-file-code: OpenAIAssistantsStreamingClass.cs](./samples/openai-asst-streaming-cs/OpenAIAssistantsStreamingClass.cs)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-cs.md)  
+
+        === "Non-streaming"
+
+            ```bash title="Generate sample code"
+            ai dev new openai-asst --csharp
+            cd openai-asst-cs
             ```
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
+            ```bash title="Install dependencies"
+            dotnet restore
             ```
             ```bash title="Run the sample"
             ai dev shell
-            python3 main.py
+            dotnet run
             ```
 
-        === "Linux"
+            ??? example "See the code; learn what it does..."
 
-            ```bash title="Create virtual environment"
-            python3 -m venv env
-            source env/bin/activate
-            ```
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
-            ```
-            ```bash title="Run the sample"
-            ai dev shell
-            python3 main.py
-            ```
+                [:material-file-code: Program.cs](./samples/openai-asst-cs/Program.cs)  
+                [:material-file-code: OpenAIAssistantsClass.cs](./samples/openai-asst-cs/OpenAIAssistantsClass.cs)  
 
-    === "Non-streaming"
+                [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-cs.md)  
 
-        ```bash title="Generate sample code"
-        ai dev new openai-asst --python
-        cd openai-asst-py
+    === "JavaScript"
+
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
         ```
-        === "Windows"
+        ```bash title="Filter the list"
+        ai dev new list --javascript
+        ai dev new list openai-asst --javascript
+        ai dev new list openai-asst-streaming --javascript
+        ```
 
-            ```bash title="Create virtual environment"
-            python -m venv env
-            env/Scripts/activate
-            ```
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
-            ```
-            ```bash title="Run the sample"
-            ai dev shell
-            python main.py
-            ```
+        ### Generate, build, and run
 
-        === "macOS"
+        === "Streaming"
 
-            ```bash title="Create virtual environment"
-            python3 -m venv env
-            source env/bin/activate
+            ```bash title="Generate sample code"
+            ai dev new openai-asst-streaming --javascript
+            cd openai-asst-streaming-js
             ```
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
+            ```bash title="Install dependencies"
+            npm install
             ```
             ```bash title="Run the sample"
             ai dev shell
-            python3 main.py
+            node main.js
             ```
 
-        === "Linux"
+        === "Non-streaming"
 
-            ```bash title="Create virtual environment"
-            python3 -m venv env
-            source env/bin/activate
+            ```bash title="Generate sample code"
+            ai dev new openai-asst --javascript
+            cd openai-asst-js
             ```
-            ```bash title="Install requirements"
-            pip install -r requirements.txt
+            ```bash title="Install dependencies"
+            npm install
             ```
             ```bash title="Run the sample"
             ai dev shell
-            python3 main.py
+            node main.js
             ```
+            ??? example "See the code; learn what it does..."
 
-=== "..."
+                [:material-file-code: main.js](./samples/openai-asst-js/main.js)  
+                [:material-file-code: OpenAIAssistantsClass.js](./samples/openai-asst-js/OpenAIAssistantsClass.js)  
 
-    **Go over what was generated in the console app**  
-    ◦ similar to console apps generated in earlier chapters  
-    ◦ see how the LLM sends back citations to the helper class  
-    ◦ see how the helper class processes the citations  
+                [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-js.md)  
 
-    ### Delete the Assistant
+    === "Python"
 
-    ```bash title="Delete the assistant"
-    ai chat assistant delete
-    ```
-    ```bash title="Clear assistant configuration"
-    ai config --clear assistant.id
-    ```
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
+        ```
+        ```bash title="Filter the list"
+        ai dev new list --python
+        ai dev new list openai-asst --python
+        ai dev new list openai-asst-streaming --python
+        ```
+
+        ### Generate, build, and run
+
+        === "Streaming"
+
+            ```bash title="Generate sample code"
+            ai dev new openai-asst-streaming --python
+            cd openai-asst-streaming-py
+            ```
+            === "Windows"
+
+                ```bash title="Create virtual environment"
+                python -m venv env
+                env/Scripts/activate
+                ```
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+                ```bash title="Run the sample"
+                ai dev shell
+                python main.py
+                ```
+
+            === "macOS"
+
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            === "Linux"
+
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+        === "Non-streaming"
+
+            ```bash title="Generate sample code"
+            ai dev new openai-asst --python
+            cd openai-asst-py
+            ```
+            === "Windows"
+
+                ```bash title="Create virtual environment"
+                python -m venv env
+                env/Scripts/activate
+                ```
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+                ```bash title="Run the sample"
+                ai dev shell
+                python main.py
+                ```
+
+            === "macOS"
+
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            === "Linux"
+
+                ```bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+                ```bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+                ```bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+                
+            ??? example "See the code; learn what it does..."
+
+                [:material-file-code: main.py](./samples/openai-asst-py/main.py)  
+                [:material-file-code: openai_assistants.py](./samples/openai-asst-py/openai_assistants.py)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-py.md)  
+    === "..."
+
+        **Go over what was generated in the console app**  
+        
+        - similar to console apps generated in earlier chapters  
+        - see how the LLM sends back citations to the helper class  
+        - see how the helper class processes the citations  
+
+        ### Delete the Assistant
+
+        ```bash title="Delete the assistant"
+        ai chat assistant delete
+        ```
+        ```bash title="Clear assistant configuration"
+        ai config --clear assistant.id
+        ```

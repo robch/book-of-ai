@@ -4,7 +4,7 @@ hide:
 ---
 # ONNX Chat Completions
 
-=== "w/ CLI"
+=== "Overview"
 
     ### Prompts
 
@@ -38,113 +38,124 @@ hide:
     ai chat --model-path @mp --interactive --input-chat-history history.jsonl
     ```
 
-=== "C#"
+=== "Sample Code"
 
-    ### List samples
+    === "C#"
 
-    ```bash title="List all samples"
-    ai dev new list onnx
-    ```
+        ### List samples
 
-    ```bash title="Filter the list"
-    ai dev new list phi3-onnx-chat-streaming --csharp
-    ```
+        ```bash title="List all samples"
+        ai dev new list onnx
+        ```
 
-    ### Generate, build, and run
+        ```bash title="Filter the list"
+        ai dev new list phi3-onnx-chat-streaming --csharp
+        ```
 
-    ```bash title="Generate sample code"
-    ai dev new phi3-onnx-chat-streaming --csharp
-    cd phi3-onnx-chat-streaming-cs
-    ```
+        ### Generate, build, and run
 
-    ```bash title="Install dependencies"
-    dotnet restore
-    ```
+        ```bash title="Generate sample code"
+        ai dev new phi3-onnx-chat-streaming --csharp
+        cd phi3-onnx-chat-streaming-cs
+        ```
 
-    ```bash title="Get models"
-    ./get-phi3-mini-onnx.cmd
-    ```
+        ```bash title="Install dependencies"
+        dotnet restore
+        ```
 
-    ```bash title="Run the sample"
-    ai dev shell
-    dotnet run
-    ```
+        ```bash title="Get models"
+        ./get-phi3-mini-onnx.cmd
+        ```
 
-=== "Go"
+        ```bash title="Run the sample"
+        ai dev shell
+        dotnet run
+        ```
 
-    ### List samples
+        ??? example "See the code; learn what it does..."
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+            [:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-cs/Program.cs)  
+            [:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](./samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
+            [:material-file-code: get-phi3-mini-onnx.cmd](./samples/phi3-onnx-chat-streaming-cs/get-phi3-mini-onnx.cmd)  
+            [:material-file-code: Phi3ChatStreaming.csproj](./samples/phi3-onnx-chat-streaming-cs/Phi3ChatStreaming.csproj)  
 
-    ```bash title="Filter the list"
-    ai dev new list --go
-    ai dev new list onnx --go
-    ```
+            [:material-file-document-outline: Deep dive on how it works](./chapter-18-sample-overview-phi3-onnx-chat-streaming-cs.md)  
 
-    ### Generate, build, and run
+    === "Go"
 
-    ... 🚧 UNDER CONSTRUCTION ...  
+        ### List samples
 
-=== "Java"
+        ```bash title="List all samples"
+        ai dev new list
+        ```
 
-    ### List samples
+        ```bash title="Filter the list"
+        ai dev new list --go
+        ai dev new list onnx --go
+        ```
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+        ### Generate, build, and run
 
-    ```bash title="Filter the list"
-    ai dev new list --java
-    ai dev new list onnx --java
-    ```
+        ... 🚧 UNDER CONSTRUCTION ...  
 
-    ### Generate, build, and run
+    === "Java"
 
-    ... 🚧 UNDER CONSTRUCTION ...  
+        ### List samples
 
-=== "JavaScript"
+        ```bash title="List all samples"
+        ai dev new list
+        ```
 
-    ### List samples
+        ```bash title="Filter the list"
+        ai dev new list --java
+        ai dev new list onnx --java
+        ```
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+        ### Generate, build, and run
 
-    ```bash title="Filter the list"
-    ai dev new list --javascript
-    ai dev new list onnx --javascript
-    ```
+        ... 🚧 UNDER CONSTRUCTION ...  
 
-    ### Generate, build, and run
+    === "JavaScript"
 
-    ... 🚧 UNDER CONSTRUCTION ...  
+        ### List samples
 
-=== "Python"
+        ```bash title="List all samples"
+        ai dev new list
+        ```
 
-    ### List samples
+        ```bash title="Filter the list"
+        ai dev new list --javascript
+        ai dev new list onnx --javascript
+        ```
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+        ### Generate, build, and run
 
-    ```bash title="Filter the list"
-    ai dev new list --python
-    ai dev new list onnx --python
-    ```
+        ... 🚧 UNDER CONSTRUCTION ...  
 
-    ### Generate, build, and run
+    === "Python"
 
-    ... 🚧 UNDER CONSTRUCTION ...  
+        ### List samples
 
-=== "..."
+        ```bash title="List all samples"
+        ai dev new list
+        ```
 
-    **Go over what was generated in the console app**  
-    ◦ similar to console apps generated in earlier chapters  
-    ◦ getting connection info/secrets from environment variables  
-    ◦ using a helper class to encapsulate the ONNX API calls  
-    ◦ getting input from the user  
-    ◦ sending the input to the helper class  
-    ◦ getting the response from the helper class  
-    ◦ deeper dive into the helper class  
+        ```bash title="Filter the list"
+        ai dev new list --python
+        ai dev new list onnx --python
+        ```
+
+        ### Generate, build, and run
+
+        ... 🚧 UNDER CONSTRUCTION ...  
+
+    === "..."
+
+        **Go over what was generated in the console app**  
+        ◦ similar to console apps generated in earlier chapters  
+        ◦ getting connection info/secrets from environment variables  
+        ◦ using a helper class to encapsulate the ONNX API calls  
+        ◦ getting input from the user  
+        ◦ sending the input to the helper class  
+        ◦ getting the response from the helper class  
+        ◦ deeper dive into the helper class  

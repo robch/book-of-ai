@@ -1,0 +1,16 @@
+{
+  "name": "openai-asst-streaming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@azure/identity": "4.1.0",
+    "openai": "~4.46.0"
+  }
+}

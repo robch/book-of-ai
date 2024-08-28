@@ -4,7 +4,7 @@ hide:
 ---
 # Speech Recognition
 
-=== "w/ CLI"
+=== "Overview"
 
     ### Recognize speech from audio
 
@@ -40,161 +40,177 @@ hide:
     ai speech recognize --file hello-world.wav --output-vtt-file captions.vtt
     ```
 
-=== "C#"
+=== "Sample Code"
 
-    ### List samples
+    === "C#"
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+        ### List samples
 
-    ```bash title="Filter the list"
-    ai dev new list --csharp
-    ai dev new list speech --csharp
-    ```
-
-    ### Generate, build, and run
-
-    ```bash title="Generate sample code"
-    ai dev new speech-to-text --csharp
-    cd speech-to-text-cs
-    ```
-
-    ```bash title="Install dependencies"
-    dotnet restore
-    ```
-
-    ```bash title="Run the sample"
-    ai dev shell
-    dotnet run
-    ```
-
-=== "Go"
-
-    ### List samples
-
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-
-    ```bash title="Filter the list"
-    ai dev new list --go
-    ai dev new list text-to-speech --go
-    ```
-
-    ### Generate, build, and run
-
-    ... 🚧 UNDER CONSTRUCTION ...  
-
-=== "Java"
-
-    ### List samples
-
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-
-    ```bash title="Filter the list"
-    ai dev new list --java
-    ai dev new list text-to-speech --java
-    ```
-
-    ### Generate, build, and run
-
-    ... 🚧 UNDER CONSTRUCTION ...  
-
-=== "JavaScript"
-
-    ### List samples
-
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-
-    ```bash title="Filter the list"
-    ai dev new list --javascript
-    ai dev new list text-to-speech --javascript
-    ```
-
-    ### Generate, build, and run
-
-    ... 🚧 UNDER CONSTRUCTION ...  
-
-=== "Python"
-
-    ### List samples
-
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-
-    ```bash title="Filter the list"
-    ai dev new list --python
-    ai dev new list speech --python
-    ```
-
-    ### Generate, build, and run
-
-    ```bash title="Generate sample code"
-    ai dev new speech-to-text --python
-    cd speech-to-text-py
-    ```
-
-    === "Windows"
-
-        ```bash title="Create virtual environment"
-        python -m venv env
-        env/Scripts/activate
+        ```bash title="List all samples"
+        ai dev new list
         ```
 
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
+        ```bash title="Filter the list"
+        ai dev new list --csharp
+        ai dev new list speech --csharp
+        ```
+
+        ### Generate, build, and run
+
+        ```bash title="Generate sample code"
+        ai dev new speech-to-text --csharp
+        cd speech-to-text-cs
+        ```
+
+        ```bash title="Install dependencies"
+        dotnet restore
         ```
 
         ```bash title="Run the sample"
         ai dev shell
-        python main.py
+        dotnet run
         ```
 
-    === "macOS"
+        ??? example "See the code; learn what it does..."
 
-        ```bash title="Create virtual environment"
-        python3 -m venv env
-        source env/bin/activate
+            [:material-file-code: Program.cs](./samples/speech-to-text-cs/Program.cs)  
+            [:material-file-code: SpeechToText.csproj](./samples/speech-to-text-cs/SpeechToText.csproj)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-cs.md)  
+
+
+    === "Go"
+
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
         ```
 
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
+        ```bash title="Filter the list"
+        ai dev new list --go
+        ai dev new list text-to-speech --go
         ```
 
-        ```bash title="Run the sample"
-        ai dev shell
-        python3 main.py
+        ### Generate, build, and run
+
+        ... 🚧 UNDER CONSTRUCTION ...  
+
+    === "Java"
+
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
         ```
 
-    === "Linux"
-
-        ```bash title="Create virtual environment"
-        python3 -m venv env
-        source env/bin/activate
+        ```bash title="Filter the list"
+        ai dev new list --java
+        ai dev new list text-to-speech --java
         ```
 
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
+        ### Generate, build, and run
+
+        ... 🚧 UNDER CONSTRUCTION ...  
+
+    === "JavaScript"
+
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
         ```
 
-        ```bash title="Run the sample"
-        ai dev shell
-        python3 main.py
+        ```bash title="Filter the list"
+        ai dev new list --javascript
+        ai dev new list text-to-speech --javascript
         ```
 
-=== "..."
+        ### Generate, build, and run
 
-    **Go over what was generated in the console app**  
-    
-    - Getting connection info/secrets from environment variables  
-    - Using a helper class to encapsulate the Speech API calls  
-    - Getting input from the user  
-    - Sending the input to the helper class  
-    - Getting the response from the helper class  
-    - Deeper dive into the helper class  
+        ... 🚧 UNDER CONSTRUCTION ...  
+
+    === "Python"
+
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
+        ```
+
+        ```bash title="Filter the list"
+        ai dev new list --python
+        ai dev new list speech --python
+        ```
+
+        ### Generate, build, and run
+
+        ```bash title="Generate sample code"
+        ai dev new speech-to-text --python
+        cd speech-to-text-py
+        ```
+
+        === "Windows"
+
+            ```bash title="Create virtual environment"
+            python -m venv env
+            env/Scripts/activate
+            ```
+
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ```bash title="Run the sample"
+            ai dev shell
+            python main.py
+            ```
+
+        === "macOS"
+
+            ```bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ```bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
+
+        === "Linux"
+
+            ```bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ```bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
+
+        ??? example "See the code; learn what it does..."
+
+            [:material-file-code: main.py](./samples/speech-to-text-py/main.py)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-py.md)  
+
+    === "..."
+
+        **Go over what was generated in the console app**  
+        
+        - Getting connection info/secrets from environment variables  
+        - Using a helper class to encapsulate the Speech API calls  
+        - Getting input from the user  
+        - Sending the input to the helper class  
+        - Getting the response from the helper class  
+        - Deeper dive into the helper class  

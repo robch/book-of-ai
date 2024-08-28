@@ -1,0 +1,19 @@
+{
+  "name": "single-page-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "microsoft-cognitiveservices-speech-sdk": "^1.36.0",
+    "openai": "^4.47.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.11"
+  }
+}

@@ -4,7 +4,7 @@ hide:
 ---
 # ONNX Chat Completions with Function Calling
 
-=== "w/ CLI"
+=== "Overview"
 
     ### Extending the Phi-3's world knowledge with functions
 
@@ -38,101 +38,120 @@ hide:
     ai chat --model-path @mp --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions
     ```
 
-=== "C#"
+=== "Sample Code"
 
-    ### List samples
+    === "C#"
 
-    ``` bash title="List all samples"
-    ai dev new list
-    ```
+        ### List samples
 
-    ``` bash title="Filter the list"
-    ai dev new list --csharp
-    ai dev new list phi3-onnx-chat --csharp
-    ```
+        ``` bash title="List all samples"
+        ai dev new list
+        ```
 
-    ### Generate, build, and run
+        ``` bash title="Filter the list"
+        ai dev new list --csharp
+        ai dev new list phi3-onnx-chat --csharp
+        ```
 
-    ``` bash title="Generate sample code"
-    ai dev new phi3-onnx-chat-streaming-with-functions --csharp
-    cd phi3-onnx-chat-streaming-with-functions-cs
-    ```
+        ### Generate, build, and run
 
-    ``` bash title="Install dependencies"
-    dotnet restore
-    ```
+        ``` bash title="Generate sample code"
+        ai dev new phi3-onnx-chat-streaming-with-functions --csharp
+        cd phi3-onnx-chat-streaming-with-functions-cs
+        ```
 
-    ``` bash title="Run the sample"
-    ai dev shell
-    dotnet run
-    ```
+        ``` bash title="Install dependencies"
+        dotnet restore
+        ```
 
-=== "Go"
+        ``` bash title="Run the sample"
+        ai dev shell
+        dotnet run
+        ```
 
-    ### List samples
+        ??? example "See the code; learn what it does..."
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+            [:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-cs/Program.cs)  
+            [:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](./samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
 
-    ```bash title="Filter the list"
-    ai dev new list --go
-    ai dev new list onnx --go
-    ```
+            [:material-file-document-outline: Deep dive on how it works](./chapter-19-sample-overview-phi3-onnx-chat-streaming-cs.md)  
 
-    ### Generate, build, and run
+    === "Go"
 
-    ... 🚧 UNDER CONSTRUCTION ...  
+        ### List samples
 
-=== "Java"
+        ```bash title="List all samples"
+        ai dev new list
+        ```
 
-    ### List samples
+        ```bash title="Filter the list"
+        ai dev new list --go
+        ai dev new list onnx --go
+        ```
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+        ### Generate, build, and run
 
-    ```bash title="Filter the list"
-    ai dev new list --java
-    ai dev new list onnx --java
-    ```
+        ... \\uD83D\uDEA7 UNDER CONSTRUCTION ...  
 
-    ### Generate, build, and run
+    === "Java"
 
-    ... 🚧 UNDER CONSTRUCTION ...  
+        ### List samples
 
-=== "JavaScript"
+        ```bash title="List all samples"
+        ai dev new list
+        ```
 
-    ### List samples
+        ```bash title="Filter the list"
+        ai dev new list --java
+        ai dev new list onnx --java
+        ```
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+        ### Generate, build, and run
 
-    ```bash title="Filter the list"
-    ai dev new list --javascript
-    ai dev new list onnx --javascript
-    ```
+        ... \\uD83D\uDEA7 UNDER CONSTRUCTION ...  
 
-    ### Generate, build, and run
+    === "JavaScript"
 
-    ... 🚧 UNDER CONSTRUCTION ...  
+        ### List samples
 
-=== "Python"
+        ```bash title="List all samples"
+        ai dev new list
+        ```
 
-    ### List samples
+        ```bash title="Filter the list"
+        ai dev new list --javascript
+        ai dev new list onnx --javascript
+        ```
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+        ### Generate, build, and run
 
-    ```bash title="Filter the list"
-    ai dev new list --python
-    ai dev new list onnx --python
-    ```
+        ``` bash title="Generate sample code"
+        ai dev new onnx-chat-completions-with-functions --javascript
+        cd onnx-chat-completions-with-functions-js
+        ```
 
-    ### Generate, build, and run
+        ``` bash title="Install dependencies"
+        npm install
+        ```
 
-    ... 🚧 UNDER CONSTRUCTION ...  
+        ``` bash title="Run the sample"
+        ai dev shell
+        node index.js
+        ```
 
+    === "Python"
 
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
+        ```
+
+        ```bash title="Filter the list"
+        ai dev new list --python
+        ai dev new list onnx --python
+        ```
+
+        ### Generate, build, and run
+
+        ... \\uD83D\uDEA7 UNDER CONSTRUCTION ...  

@@ -4,7 +4,7 @@ hide:
 ---
 # OpenAI Assistants with File Search
 
-=== "w/ CLI"
+=== "Overview"
 
     ### Create or Update Assistant
 
@@ -63,136 +63,153 @@ hide:
     ai config --clear vector.store.id
     ```
 
-=== "C#"
+=== "Sample Code"
 
-    ### List samples
+    === "C#"
 
-    ```bash title="List all samples"
-    ai dev new list
-    ```
+        ### List samples
 
-    ```bash title="Filter the list"
-    ai dev new list --csharp
-    ai dev new list openai-asst-streaming-with-file-search --csharp
-    ```
-
-    ### Generate, build, and run
-
-    ```bash title="Generate sample code"
-    ai dev new openai-asst-streaming-with-file-search --csharp
-    cd openai-asst-streaming-with-file-search-cs
-    ```
-
-    ```bash title="Install dependencies"
-    dotnet restore
-    ```
-
-    ```bash title="Run the sample"
-    ai dev shell
-    dotnet run
-    ```
-
-=== "JavaScript"
-
-    ### List samples
-
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-
-    ```bash title="Filter the list"
-    ai dev new list --javascript
-    ai dev new list openai-asst-streaming-with-file-search --javascript
-    ```
-
-    ### Generate, build, and run
-
-    ```bash title="Generate sample code"
-    ai dev new openai-asst-streaming-with-file-search --javascript
-    cd openai-asst-streaming-with-file-search-js
-    ```
-
-    ```bash title="Install dependencies"
-    npm install
-    ```
-
-    ```bash title="Run the sample"
-    ai dev shell
-    node main.js
-    ```
-
-=== "Python"
-
-    ### List samples
-
-    ```bash title="List all samples"
-    ai dev new list
-    ```
-
-    ```bash title="Filter the list"
-    ai dev new list --python
-    ai dev new list openai-asst-streaming-with-file-search --python
-    ```
-
-    ### Generate, build, and run
-
-    ```bash title="Generate sample code"
-    ai dev new openai-asst-streaming-with-file-search --python
-    cd openai-asst-streaming-with-file-search-py
-    ```
-
-    === "Windows"
-
-        ```bash title="Create virtual environment"
-        python -m venv env
-        env/Scripts/activate
+        ```bash title="List all samples"
+        ai dev new list
         ```
 
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
+        ```bash title="Filter the list"
+        ai dev new list --csharp
+        ai dev new list openai-asst-streaming-with-file-search --csharp
+        ```
+
+        ### Generate, build, and run
+
+        ```bash title="Generate sample code"
+        ai dev new openai-asst-streaming-with-file-search --csharp
+        cd openai-asst-streaming-with-file-search-cs
+        ```
+
+        ```bash title="Install dependencies"
+        dotnet restore
         ```
 
         ```bash title="Run the sample"
         ai dev shell
-        python main.py
+        dotnet run
         ```
 
-    === "macOS"
+        ??? example "See the code; learn what it does..."
 
-        ```bash title="Create virtual environment"
-        python3 -m venv env
-        source env/bin/activate
+            [:material-file-code: Program.cs](./samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
+            [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.cs](./samples/openai-asst-streaming-with-file-search-cs/OpenAIAssistantsFileSearchStreamingClass.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-streaming-with-file-search-cs.md)  
+
+    === "JavaScript"
+
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
         ```
 
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
+        ```bash title="Filter the list"
+        ai dev new list --javascript
+        ai dev new list openai-asst-streaming-with-file-search --javascript
+        ```
+
+        ### Generate, build, and run
+
+        ```bash title="Generate sample code"
+        ai dev new openai-asst-streaming-with-file-search --javascript
+        cd openai-asst-streaming-with-file-search-js
+        ```
+
+        ```bash title="Install dependencies"
+        npm install
         ```
 
         ```bash title="Run the sample"
         ai dev shell
-        python3 main.py
+        node main.js
         ```
 
-    === "Linux"
+        ??? example "See the code; learn what it does..."
 
-        ```bash title="Create virtual environment"
-        python3 -m venv env
-        source env/bin/activate
+            [:material-file-code: Main.js](./samples/openai-asst-streaming-with-file-search-js/main.js)  
+            [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.js](./samples/openai-asst-streaming-with-file-search-js/OpenAIAssistantsFileSearchStreamingClass.js)  
+            [:material-file-code: ReadLineWrapper.js](./samples/openai-asst-streaming-with-file-search-js/ReadLineWrapper.js)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-streaming-with-file-search-js.md)  
+
+    === "Python"
+
+        ### List samples
+
+        ```bash title="List all samples"
+        ai dev new list
         ```
 
-        ```bash title="Install requirements"
-        pip install -r requirements.txt
+        ```bash title="Filter the list"
+        ai dev new list --python
+        ai dev new list openai-asst-streaming-with-file-search --python
         ```
 
-        ```bash title="Run the sample"
-        ai dev shell
-        python3 main.py
+        ### Generate, build, and run
+
+        ```bash title="Generate sample code"
+        ai dev new openai-asst-streaming-with-file-search --python
+        cd openai-asst-streaming-with-file-search-py
         ```
 
-=== "..."
+        === "Windows"
 
-    **Go over what was generated in the console app**  
-    ◦ builds on chapter 7's console app  
-    ◦ see how the LLM sends back citations to the helper class  
-    ◦ see how the helper class processes the citations  
+            ```bash title="Create virtual environment"
+            python -m venv env
+            env/Scripts/activate
+            ```
+
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ```bash title="Run the sample"
+            ai dev shell
+            python main.py
+            ```
+
+        === "macOS"
+
+            ```bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ```bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
+
+        === "Linux"
+
+            ```bash title="Create virtual environment"
+            python3 -m venv env
+            source env/bin/activate
+            ```
+
+            ```bash title="Install requirements"
+            pip install -r requirements.txt
+            ```
+
+            ```bash title="Run the sample"
+            ai dev shell
+            python3 main.py
+            ```
+
+    === "..."
+
+        **Go over what was generated in the console app**  
+        ◦ builds on chapter 7's console app  
+        ◦ see how the LLM sends back citations to the helper class  
+        ◦ see how the helper class processes the citations  
 
