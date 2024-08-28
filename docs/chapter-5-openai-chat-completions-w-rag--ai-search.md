@@ -176,6 +176,13 @@ hide:
             java -cp "out:target/lib/*" Main
             ```
 
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Main.java](./samples/openai-chat-streaming-with-data-java/src/Main.java)  
+            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.java](./samples/openai-chat-streaming-with-data-java/src/OpenAIChatCompletionsWithDataStreamingClass.java)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-java.md)  
+
     === "JavaScript"
 
         ### List samples
@@ -290,4 +297,3 @@ hide:
     === "..."
 
         **Go over what was generated in the console app**  
-        
