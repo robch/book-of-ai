@@ -39,6 +39,7 @@ Final notes:
 * Do **NOT** discuss the `ReadLineWrapper` capabilities in the sample overview page for js samples.  
 * Do **NOT** document or discuss imports or using statements in the sample overview page.   
 * Do **NOT** arbitrarily the indentation of existing code blocks (unless it's to fix a formatting issue that you're confident you'll be fixing by changing).  
+* When `C#` is used in a markdown header, be sure to use `C\#` to escape the `#` character.
 
 If applicable, write chapter {chapter} and save it into `{chapter_filename}` using the functions provided.  
 If applicable, Write the updated sample overview page and save it into `chapter-{chapter}-sample-overview-{sample_name}-{language}.md` using the functions provided.  

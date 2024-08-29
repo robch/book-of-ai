@@ -59,7 +59,7 @@ hide:
 
             [:material-file-code: Program.cs](./samples/speech-to-text-with-keyword-cs/Program.cs)  
 
-            [:material-file-document-outline: Deep dive on how it works](./chapter-24-sample-overview-speech-to-text-with-keyword-py.md)  
+            [:material-file-document-outline: Deep dive on how it works](./chapter-24-sample-overview-speech-to-text-with-keyword-cs.md)  
             
     === "Go"
 
