@@ -111,7 +111,7 @@ const AZURE_OPENAI_API_KEY = process.env.AZURE_OPENAI_API_KEY ?? "<insert your A
 const AZURE_OPENAI_API_VERSION = process.env.AZURE_OPENAI_API_VERSION ?? "<insert your Azure OpenAI API version here>";
 const AZURE_OPENAI_CHAT_DEPLOYMENT = process.env.AZURE_OPENAI_CHAT_DEPLOYMENT ?? "<insert your Azure OpenAI chat deployment name here>";
 const AZURE_OPENAI_ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT ?? "<insert your Azure OpenAI endpoint here>";
-const AZURE_OPENAI_BASE_URL = `${AZURE_OPENAI_ENDPOINT.replace(/\/+$/, '')}/openai/deployments/${AZURE_OPENAI_CHAT_DEPLOYMENT}`;
+const AZURE_OPENAI_BASE_URL = `${AZURE_OPENAI_ENDPOINT.replace(/\/+$//, '')}/openai/deployments/${AZURE_OPENAI_CHAT_DEPLOYMENT}`;
 ```
 
 **STEP 2**: Initialize the client and helper class with the configuration settings and the function factory:
@@ -172,8 +172,6 @@ clearConversation() {
 async getResponse(userInput, callback) {
   this.messages.push({ role: 'user', content: userInput });
 ```
-
-**STEP 3**: Send the chat message history and the function schemas to the streaming API and process each update:
 
 **STEP 3**: Send the chat message history to the streaming API, processing each update, including checking for function calls:
 

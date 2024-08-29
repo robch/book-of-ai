@@ -86,7 +86,11 @@ public OpenAIChatCompletionsClass (String openAIAPIKey, String openAIEndpoint, S
     options = new ChatCompletionsOptions(chatMessages);
     ClearConversation();
 }
+```
 
+**STEP 2**: Clear previous conversation and set the initial system message:
+
+``` java title="OpenAIChatCompletionsClass.java"
 public void ClearConversation(){
     List<ChatRequestMessage> chatMessages = options.getMessages();
     chatMessages.clear();
@@ -94,14 +98,14 @@ public void ClearConversation(){
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 3**: When the user provides input, add the user message to the chat message history:
 
 ``` java title="OpenAIChatCompletionsClass.java"
 public String getChatCompletion(String userPrompt) {
     options.getMessages().add(new ChatRequestUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the OpenAI Chat Completions API and process the response:
+**STEP 4**: Send the chat message history to the OpenAI Chat Completions API and process the response:
 
 ``` java title="OpenAIChatCompletionsClass.java"
     ChatCompletions chatCompletions = client.getChatCompletions(this.openAIChatDeployment, options);
