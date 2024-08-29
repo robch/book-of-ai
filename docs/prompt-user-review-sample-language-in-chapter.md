@@ -20,17 +20,20 @@ The `mkdocs.yml` files is in the parent directory (e.g. `../mkdocs.yml`).
 
 Your task is to review what we have for chapter {chapter} focusing specifically on the sample-overview for `{sample_name}` in the `{language}` language (where cs = C#, js = JavaScript, py = Python, etc.).  
 
-Tasks to perform:  
+**STEPS**:  
 1. Carefully read chapter {chapter}: `{chapter_filename}`  
 2. In that chapter {chapter}, find the section discussing `{sample_name}` for `{language}` under the "Sample Code" tab.  
 3. That section will also link to the sample overview markdown page (`chapter-{chapter}-sample-overview-{sample_name}-{language}.md`).  
 4. That sample over is based on the sample in the `samples/{sample_name}-{language}` directory.  
-5. Find the files in the sample directory, and understand each of the `{language}` files.  
+5. Find the files in the sample directory, read the '{language}' files in that directory, and understand each of them.  
 6. Read the `chapter-{chapter}-sample-overview-{sample_name}-{language}.md` to see how we've documented the sample thus far.  
 7. Carefully consider the "chunks" of code that are shown in the sample overview, and determine if they're demonstrating the key "chunks" of code in the sample.  
 8. If you find missing "chunks" or that the existing "chunks" aren't segmented well, update the sample overview page to better reflect the key "chunks" of code in the sample.  
 9. Save the updated sample overview page into the same location with the same filename.  
 10. If you need to update the chapter {chapter} (in the `{chapter_filename}` file), please do so.
+11. Write a new file called `chapter-{chapter}-updates-to-sample-overview-{sample_name}-{language}.md` with your rationale, inlcuding:
+    - list of the changes you made to the sample overview page
+    - why you made each one.  
 
 Final notes:
 * Do **NOT** create any new files, unless we're missing a sample overview page for the `{sample_name}-{language}` sample.  
@@ -41,7 +44,9 @@ Final notes:
 * Do **NOT** arbitrarily the indentation of existing code blocks (unless it's to fix a formatting issue that you're confident you'll be fixing by changing).  
 * When `C#` is used in a markdown header, be sure to use `C\#` to escape the `#` character.
 
+## Do it now!
 If applicable, write chapter {chapter} and save it into `{chapter_filename}` using the functions provided.  
 If applicable, Write the updated sample overview page and save it into `chapter-{chapter}-sample-overview-{sample_name}-{language}.md` using the functions provided.  
+If applicable, write the updates to the sample overview page and save it into `chapter-{chapter}-updates-to-sample-overview-{sample_name}-{language}.md` using the functions provided. 
 
 Now, do your work; don't tell me what you're going to do, just call the functions with your updated content for the chapter and sample overview page.  

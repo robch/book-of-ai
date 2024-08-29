@@ -7,6 +7,36 @@ hide:
 
 Welcome to the Book of AI, where you'll learn everything you need to know to get started w/ Azure AI.
 
+??? abstract "Why use the Book of AI + the Azure AI CLI (`ai`)..."
+
+    <div class="grid cards" markdown>
+
+    -   **`AI` CLI FEATURES**  
+
+        :octicons-terminal-16: Access to Azure AI services from the command line.  
+        :simple-futurelearn: Learn and experiment w/ AI concepts (LLMs, prompts, ...).  
+
+        :material-auto-fix: Solve real-world problems w/out writing code.  
+        :material-file-code: Generate code samples for your projects.  
+
+    -   **UP AND RUNNING IN MINUTES**  
+
+        :material-microsoft-azure: Azure OpenAI Chat and Assistants!  
+        :material-view-list: Azure AI Studio Model Catalog!  
+
+        :material-github: GitHub Model Marketplace!  
+        :simple-onnx: ONNX + Phi-3 models!  
+
+    -  **CONTENT FOR ALL JOURNEY STAGES**  
+
+        :fontawesome-solid-user-graduate: Tutorials for beginners and experts.  
+        :material-toolbox: How-to guides and reference material.  
+
+        :material-file-code: In depth sample code documentation.  
+        :fontawesome-solid-person-walking-dashed-line-arrow-right: Links to additional resources.  
+
+    </div>
+
 <div class="grid cards" markdown>
 
 -   :material-clock-fast:{ .lg .middle } __Get Started__
@@ -41,12 +71,3 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
 
 </div>
 
-??? info "The Book of AI uses the Azure AI CLI as your tour guide..."
-
-    ## Azure AI CLI (`ai`)
-
-    The Azure `ai` Command-Line Interface (CLI) is a cross-platform command-line tool to connect and immediately use Azure AI services with or without writing code. The CLI allows the execution of commands through a terminal using interactive command-line prompts or via script.
-
-    You can easily use the `ai` CLI to experiment with key Azure AI service features and see how they work with your use cases. Within minutes, you can setup the required Azure resources, and build a customized Copilot using OpenAI's chat completions APIs and your own data. You can try it out interactively, or script larger processes to automate your own workflows as part of your CI/CD system.
-
-    Additionally you can use the `ai` CLI to dynamically create code to integrate with your own applications in the programming language of your choice (C#, Go, Java, JavaScript, Python, TypeScript).

@@ -1,4 +1,6 @@
 site_name: BOOK of AI
+repo_url: https://github.com/robch/book-of-ai
+
 theme:
   logo: assets/ai.png
   name: material
