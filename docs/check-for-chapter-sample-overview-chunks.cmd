@@ -1,0 +1,1 @@
+dir chap*sample*md /b | ai chat --built-in-functions --user-prompt @prompt-user-check-for-chapter-sample-overview-steps-across-samples.md --foreach in @chapter-filename-and-samplenames %1 %2 %3 %4 %5 %6 %7 %8 %9
