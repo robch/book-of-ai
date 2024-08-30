@@ -4,6 +4,10 @@ hide:
 ---
 # OpenAI Assistants API
 
+The `ai` CLI allows you to create, manage, and interact with OpenAI's Assistants API.
+
+--8<-- "docs/tip-openai-prereqs.md"
+
 ### Listing, creating, updating, and deleting assistants
 
 ```bash title="List all assistants"

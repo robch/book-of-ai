@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    The `ai` CLI allows you to extend OpenAI models w/ custom functions (e.g. dates, times, math, filesystem).
+
+    --8<-- "docs/tip-openai-prereqs.md"
+    
     ### Extending the LLM's world knowledge with functions
 
     ``` bash title="Get the current time"

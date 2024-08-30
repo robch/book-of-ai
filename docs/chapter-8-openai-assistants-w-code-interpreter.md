@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    The `ai` CLI allows you to create, manage, and interact with OpenAI's Assistants, including use of Code Interpreter.
+    
+    --8<-- "docs/tip-openai-prereqs.md"
+
     ### Create or Update Assistant
 
     ```bash title="Create Assistant with Code Interpreter"

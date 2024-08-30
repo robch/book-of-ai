@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    The `ai` CLI allows you to extend OpenAI's models with custom data sources using File Search.
+
+    --8<-- "docs/tip-openai-prereqs.md"
+    
     ### Create or Update Assistant
 
     ```bash title="Create assistant with file search"

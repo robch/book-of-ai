@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    Use the `ai` CLI to interact with the OpenAI Chat Completion API. The `ai chat` command sends a prompt to the API and returns the completion. The `ai chat` command can be used in interactive mode, where the user can chat with the AI model in real-time. The `ai chat` command can also be used to send a single prompt to the API and return the completion.
+
+    --8<-- "docs/tip-openai-prereqs.md"
+    
     ### Prompts
 
     ``` bash title="One prompt"

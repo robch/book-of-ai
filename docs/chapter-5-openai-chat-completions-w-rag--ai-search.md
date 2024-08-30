@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    The `ai` CLI allows you to extend OpenAI's models with custom data sources using Azure AI Search.
+
+    --8<-- "docs/tip-openai-prereqs.md"
+
     ### Initialize Azure AI Search resource
 
     ```bash title="Initialize Azure AI Search"

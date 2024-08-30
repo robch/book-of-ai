@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    The `ai` CLI allows you to extend OpenAI's models with custom functions (e.g. dates, times, math, filesystem).
+
+    --8<-- "docs/tip-openai-prereqs.md"
+
     ### Create an Assistant
 
     ```bash title="Create an assistant"

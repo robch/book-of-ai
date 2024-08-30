@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    The `ai` CLI allows you to create, manage, and interact with OpenAI's Assistants and persisted threads.
+
+    --8<-- "docs/tip-openai-prereqs.md"
+
     ### Create an Assistant
 
     ```bash title="Create a simple assistant"
