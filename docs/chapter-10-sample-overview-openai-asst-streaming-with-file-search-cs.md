@@ -105,7 +105,7 @@ public async Task GetThreadMessagesAsync(Action<string, string> callback)
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history and process streaming responses:
 
 ``` csharp title="OpenAIAssistantsFileSearchStreamingClass.cs"
 public async Task GetResponseAsync(string userInput, Action<string> callback)
@@ -161,10 +161,5 @@ public async Task GetResponseAsync(string userInput, Action<string> callback)
             callback("\n\n");
         }
     }
-}
-
-private readonly string _assistantId;
-private readonly FileClient _fileClient;
-private readonly AssistantClient _assistantClient;
 }
 ```

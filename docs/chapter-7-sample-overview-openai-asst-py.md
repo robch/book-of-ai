@@ -34,7 +34,6 @@ This sample demonstrates how to use the OpenAI Assistants API in a Python consol
     Generating 'openai-asst' in 'openai-asst-py' (3 files)... DONE!
     ```
 
-
 ## main.py
 
 **STEP 1**: Read the configuration settings from environment variables:
@@ -61,7 +60,17 @@ openai = OpenAI(
 assistant = OpenAIAssistantsClass(ASSISTANT_ID, openai)
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Handle thread creation or retrieval:
+
+``` python title="main.py"
+if threadId is None:
+    assistant.create_thread()
+else:
+    assistant.retrieve_thread(threadId)
+    assistant.get_thread_messages(lambda role, content: print(f'{role.capitalize()}: {content}', end=''))
+```
+
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
 
 ``` python title="main.py"
 while True:

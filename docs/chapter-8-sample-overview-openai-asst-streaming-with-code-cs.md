@@ -34,7 +34,6 @@ This sample demonstrates how to use the OpenAI Assistants API with the Code Inte
     Generating 'openai-asst-streaming-with-code' in 'openai-asst-streaming-with-code-cs' (3 files)... DONE!
     ```
 
-
 ## Program.cs
 
 **STEP 1**: Read the configuration settings from environment variables:
@@ -45,6 +44,15 @@ var threadId = args.Length > 0 ? args[0] : null;
 
 var openAIAPIKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? "<insert your Azure OpenAI API key here>";
 var openAIEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? "<insert your Azure OpenAI endpoint here>";
+
+if (string.IsNullOrEmpty(openAIAPIKey) || openAIAPIKey.StartsWith("<insert") ||
+    string.IsNullOrEmpty(openAIEndpoint) || openAIEndpoint.StartsWith("<insert") ||
+    string.IsNullOrEmpty(assistantId) || assistantId.StartsWith("<insert"))
+{
+    Console.WriteLine("To use Azure OpenAI, set the following environment variables:");
+    Console.WriteLine("  ASSISTANT_ID\n  AZURE_OPENAI_API_KEY\n  AZURE_OPENAI_ENDPOINT");
+    Environment.Exit(1);
+}
 ```
 
 **STEP 2**: Initialize the OpenAI client and the helper class with the configuration settings:

@@ -34,7 +34,6 @@ This sample demonstrates how to use the OpenAI Assistants API with file search a
     Generating 'openai-asst-streaming-with-file-search' in 'openai-asst-streaming-with-file-search-py' (3 files)... DONE!
     ```
 
-
 ## main.py
 
 **STEP 1**: Read the configuration settings from environment variables:
@@ -69,6 +68,17 @@ while True:
     print('\nAssistant: ', end='')
     assistant.get_response(user_input, lambda content: print(content, end=''))
     print('\n')
+```
+
+**STEP 4**: Handle thread retrieval and display existing messages:
+
+``` python title="main.py"
+threadId = sys.argv[1] if len(sys.argv) > 1 else None
+if threadId is None:
+    assistant.create_thread()
+else:
+    assistant.retrieve_thread(threadId)
+    assistant.get_thread_messages(lambda role, content: print(f'{role.capitalize()}: {content}', end=''))
 ```
 
 ## openai_assistants_file_search_streaming.py
@@ -127,4 +137,24 @@ message = self.openai.beta.threads.messages.create(
     role="user",
     content=user_input,
 )
+```
+
+**STEP 6**: Create and retrieve threads, and get thread messages:
+
+``` python title="openai_assistants_file_search_streaming.py"
+def create_thread(self):
+    self.thread = self.openai.beta.threads.create()
+    return self.thread
+
+def retrieve_thread(self, thread_id):
+    self.thread = self.openai.beta.threads.retrieve(thread_id)
+    return self.thread
+
+def get_thread_messages(self, callback):
+    messages = self.openai.beta.threads.messages.list(self.thread.id)
+    messages.data.reverse()
+    
+    for message in messages.data:
+        content = ''.join([item.text.value for item in message.content]) + '\n\n'
+        callback(message.role, content)
 ```

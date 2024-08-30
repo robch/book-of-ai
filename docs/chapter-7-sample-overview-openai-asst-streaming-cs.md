@@ -5,8 +5,6 @@ hide:
 ---
 # OpenAI Assistants Streaming in C#
 
---8<-- "docs/warning-ai-generated.md"
-
 This sample demonstrates how to use the OpenAI Assistants API with streaming in a C# console application.
 
 [:material-file-code: Program.cs](./samples/openai-asst-streaming-cs/Program.cs)  
@@ -34,7 +32,6 @@ This sample demonstrates how to use the OpenAI Assistants API with streaming in 
     Generating 'openai-asst-streaming' in 'openai-asst-streaming-cs' (3 files)... DONE!
     ```
 
-
 ## Program.cs
 
 **STEP 1**: Read the configuration settings from environment variables:
@@ -55,15 +52,21 @@ if (string.IsNullOrEmpty(openAIAPIKey) || openAIAPIKey.StartsWith("<insert") ||
     Console.WriteLine("  ASSISTANT_ID\n  AZURE_OPENAI_API_KEY\n  AZURE_OPENAI_ENDPOINT");
     Environment.Exit(1);
 }
+```
 
-// Initialize OpenAI Client
+**STEP 2**: Initialize the OpenAI client and the assistant:
+
+``` csharp title="Program.cs"
 var client = string.IsNullOrEmpty(openAIAPIKey)
     ? new AzureOpenAIClient(new Uri(openAIEndpoint), new DefaultAzureCredential())
     : new AzureOpenAIClient(new Uri(openAIEndpoint), new AzureKeyCredential(openAIAPIKey));
 
 var assistant = new OpenAIAssistantsStreamingClass(client, assistantId);
+```
 
-// Create or retrieve thread
+**STEP 3**: Create or retrieve a thread and get thread messages if thread ID is provided:
+
+``` csharp title="Program.cs"
 if (string.IsNullOrEmpty(threadId))
 {
     await assistant.CreateThreadAsync();
@@ -76,8 +79,11 @@ else
         Console.WriteLine($"{char.ToUpper(role[0]) + role.Substring(1)}: {content}\n");
     });
 }
+```
 
-// User interaction loop
+**STEP 4**: Implement the user interaction loop to get responses from the assistant:
+
+``` csharp title="Program.cs"
 while (true)
 {
     Console.Write("User: ");
@@ -153,11 +159,4 @@ public async Task GetResponseAsync(string userInput, Action<string> callback)
         }
     }
 }
-```
-
-**STEP 4**: Finally, add the assistant's response to the chat message history:
-
-``` csharp title="OpenAIAssistantsStreamingClass.cs"
-private readonly string _assistantId;
-private readonly AssistantClient _assistantClient;
 ```
