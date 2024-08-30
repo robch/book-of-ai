@@ -74,8 +74,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Program.cs](./samples/openai-asst-streaming-cs/Program.cs)  
-                [:material-file-code: OpenAIAssistantsStreamingClass.cs](./samples/openai-asst-streaming-cs/OpenAIAssistantsStreamingClass.cs)  
+                [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-cs/Program.cs)  
+                [:material-file-code: OpenAIAssistantsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-cs/OpenAIAssistantsStreamingClass.cs)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-cs.md)  
 
@@ -99,8 +99,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Program.cs](./samples/openai-asst-cs/Program.cs)  
-                [:material-file-code: OpenAIAssistantsClass.cs](./samples/openai-asst-cs/OpenAIAssistantsClass.cs)  
+                [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-cs/Program.cs)  
+                [:material-file-code: OpenAIAssistantsClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-cs/OpenAIAssistantsClass.cs)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-cs.md)  
 
@@ -143,8 +143,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.js](./samples/openai-asst-streaming-js/main.js)  
-                [:material-file-code: OpenAIAssistantsStreamingClass.js](./samples/openai-asst-streaming-js/OpenAIAssistantsStreamingClass.js)  
+                [:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-js/main.js)  
+                [:material-file-code: OpenAIAssistantsStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-js/OpenAIAssistantsStreamingClass.js)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-js.md)  
 
@@ -168,8 +168,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.js](./samples/openai-asst-js/main.js)  
-                [:material-file-code: OpenAIAssistantsClass.js](./samples/openai-asst-js/OpenAIAssistantsClass.js)  
+                [:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-js/main.js)  
+                [:material-file-code: OpenAIAssistantsClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-js/OpenAIAssistantsClass.js)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-js.md)  
 
@@ -212,8 +212,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.py](./samples/openai-asst-streaming-py/main.py)  
-                [:material-file-code: openai_assistants_streaming.py](./samples/openai-asst-streaming-py/openai_assistants_streaming.py)  
+                [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-py/main.py)  
+                [:material-file-code: openai_assistants_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-py/openai_assistants_streaming.py)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-py.md)  
 
@@ -276,8 +276,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.py](./samples/openai-asst-py/main.py)  
-                [:material-file-code: openai_assistants.py](./samples/openai-asst-py/openai_assistants.py)  
+                [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-py/main.py)  
+                [:material-file-code: openai_assistants.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-py/openai_assistants.py)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-py.md)  
 

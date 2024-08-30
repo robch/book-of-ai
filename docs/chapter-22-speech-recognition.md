@@ -79,7 +79,7 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Program.cs](./samples/speech-to-text-cs/Program.cs)
+                [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-cs/Program.cs)
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-cs.md)
 
@@ -103,7 +103,7 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Program.cs](./samples/speech-to-text-continuous-reco-cs/Program.cs)
+                [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-continuous-reco-cs/Program.cs)
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-continuous-reco-cs.md)
 
@@ -127,7 +127,7 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Program.cs](./samples/speech-to-text-with-file-cs/Program.cs)
+                [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-file-cs/Program.cs)
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-with-file-cs.md)
 
@@ -247,7 +247,7 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.py](./samples/speech-to-text-py/main.py)
+                [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-py/main.py)
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-py.md)
 
@@ -310,7 +310,7 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.py](./samples/speech-to-text-continuous-reco-py/main.py)
+                [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-continuous-reco-py/main.py)
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-continuous-reco-py.md)
 
@@ -373,7 +373,7 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.py](./samples/speech-to-text-with-file-py/main.py)
+                [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-file-py/main.py)
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-with-file-py.md)
 

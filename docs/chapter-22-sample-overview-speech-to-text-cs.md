@@ -9,7 +9,7 @@ hide:
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK to perform speech recognition in a C# console application.
 
-[:material-file-code: Program.cs](./samples/speech-to-text-cs/Program.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-cs/Program.cs)  
 
 ??? tip "How to generate this sample"
 

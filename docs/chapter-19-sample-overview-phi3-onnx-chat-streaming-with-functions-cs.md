@@ -7,8 +7,8 @@ hide:
 
 This sample demonstrates how to use the ONNX Chat API with streaming in a C# console application, including function calling.
 
-[:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-with-functions-cs/Program.cs)  
-[:material-file-code: ONNXChatCompletionsStreamingWithFunctions.cs](./samples/phi3-onnx-chat-streaming-with-functions-cs/ONNXChatCompletionsStreamingWithFunctions.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-with-functions-cs/Program.cs)  
+[:material-file-code: ONNXChatCompletionsStreamingWithFunctions.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-with-functions-cs/ONNXChatCompletionsStreamingWithFunctions.cs)  
 
 ??? tip "How to generate this sample"
 

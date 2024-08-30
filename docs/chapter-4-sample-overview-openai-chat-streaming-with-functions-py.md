@@ -7,9 +7,9 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with function calling in a Python console application.
 
-[:material-file-code: main.py](./samples/openai-chat-streaming-with-functions-py/main.py)  
-[:material-file-code: openai_chat_completions_custom_functions.py](./samples/openai-chat-streaming-with-functions-py/openai_chat_completions_custom_functions.py)  
-[:material-file-code: openai_chat_completions_functions_streaming.py](./samples/openai-chat-streaming-with-functions-py/openai_chat_completions_functions_streaming.py)  
+[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-py/main.py)  
+[:material-file-code: openai_chat_completions_custom_functions.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-py/openai_chat_completions_custom_functions.py)  
+[:material-file-code: openai_chat_completions_functions_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-py/openai_chat_completions_functions_streaming.py)  
 
 ??? tip "How to generate this sample"
 

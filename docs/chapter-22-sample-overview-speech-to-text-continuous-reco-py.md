@@ -9,7 +9,7 @@ hide:
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK for continuous speech recognition in a Python console application.
 
-[:material-file-code: main.py](./samples/speech-to-text-continuous-reco-py/main.py)  
+[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-continuous-reco-py/main.py)  
 
 ??? tip "How to generate this sample"
 

@@ -7,8 +7,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with streaming in a C# console application.
 
-[:material-file-code: Program.cs](./samples/openai-chat-streaming-cs/Program.cs)  
-[:material-file-code: OpenAIChatCompletionsStreamingClass.cs](./samples/openai-chat-streaming-cs/OpenAIChatCompletionsStreamingClass.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-cs/Program.cs)  
+[:material-file-code: OpenAIChatCompletionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-cs/OpenAIChatCompletionsStreamingClass.cs)  
 
 ??? tip "How to generate this sample"
 

@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with RAG (Retrieval-Augmented Generation) and AI Search in a JavaScript console application.
 
-[:material-file-code: Main.js](./samples/openai-chat-streaming-with-data-js/Main.js)  
-[:material-file-code: OpenAIChatCompletionsStreamingWithDataClass.js](./samples/openai-chat-streaming-with-data-js/OpenAIChatCompletionsStreamingWithDataClass.js)  
+[:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-js/Main.js)  
+[:material-file-code: OpenAIChatCompletionsStreamingWithDataClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-js/OpenAIChatCompletionsStreamingWithDataClass.js)  
 
 ??? tip "How to generate this sample"
 

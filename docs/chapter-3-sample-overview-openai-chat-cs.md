@@ -7,8 +7,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API in a C# console application.
 
-[:material-file-code: Program.cs](./samples/openai-chat-cs/Program.cs)  
-[:material-file-code: OpenAIChatCompletionsClass.cs](./samples/openai-chat-cs/OpenAIChatCompletionsClass.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-cs/Program.cs)  
+[:material-file-code: OpenAIChatCompletionsClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-cs/OpenAIChatCompletionsClass.cs)  
 
 ??? tip "How to generate this sample"
 

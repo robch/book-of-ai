@@ -6,7 +6,7 @@ hide:
 
 This sample demonstrates how to use Azure Cognitive Services to perform speech recognition on an audio file in a Python application.
 
-[:material-file-code: main.py](./samples/speech-to-text-with-file-py/main.py)  
+[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-file-py/main.py)  
 
 ??? tip "How to generate this sample"
 

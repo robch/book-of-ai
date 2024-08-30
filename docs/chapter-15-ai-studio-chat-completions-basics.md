@@ -97,8 +97,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](./samples/az-inference-chat-streaming-cs/Program.cs)  
-            [:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](./samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
+            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-cs/Program.cs)  
+            [:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-15-sample-overview-az-inference-chat-streaming-cs.md)  
 
@@ -196,9 +196,9 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
-            [:material-file-code: azureml_chat_completions_streaming.py](./samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
-            [:material-file-code: requirements.txt](./samples/az-inference-chat-streaming-py/requirements.txt)  
+            [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-py/main.py)  
+            [:material-file-code: azureml_chat_completions_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
+            [:material-file-code: requirements.txt](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-py/requirements.txt)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-15-sample-overview-az-inference-chat-streaming-py.md)  
 

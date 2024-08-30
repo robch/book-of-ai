@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API in a Go console application.
 
-[:material-file-code: main.go](./samples/openai-chat-go/main.go)  
-[:material-file-code: openai_chat_completions_hello_world.go](./samples/openai-chat-go/openai_chat_completions_hello_world.go)  
+[:material-file-code: main.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-go/main.go)  
+[:material-file-code: openai_chat_completions_hello_world.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-go/openai_chat_completions_hello_world.go)  
 
 ??? tip "How to generate this sample"
 

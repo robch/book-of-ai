@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the Azure AI Inference Chat API with streaming in a Python application.
 
-[:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
-[:material-file-code: azureml_chat_completions_streaming.py](./samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
+[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-py/main.py)  
+[:material-file-code: azureml_chat_completions_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
 
 ??? tip "How to generate this sample"
 

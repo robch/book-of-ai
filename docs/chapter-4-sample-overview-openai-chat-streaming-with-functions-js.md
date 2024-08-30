@@ -7,9 +7,9 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with function calling in a JavaScript application.
 
-[:material-file-code: Main.js](./samples/openai-chat-streaming-with-functions-js/Main.js)  
-[:material-file-code: OpenAIChatCompletionsCustomFunctions.js](./samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsCustomFunctions.js)  
-[:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.js](./samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsFunctionsStreamingClass.js)  
+[:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-js/Main.js)  
+[:material-file-code: OpenAIChatCompletionsCustomFunctions.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsCustomFunctions.js)  
+[:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsFunctionsStreamingClass.js)  
 
 ??? tip "How to generate this sample"
 

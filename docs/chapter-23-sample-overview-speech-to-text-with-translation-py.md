@@ -7,8 +7,8 @@ hide:
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK to perform speech-to-text translation in a Python console application.
 
-[:material-file-code: main.py](./samples/speech-to-text-with-translation-py/main.py)  
-[:material-file-code: requirements.txt](./samples/speech-to-text-with-translation-py/requirements.txt)  
+[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-translation-py/main.py)  
+[:material-file-code: requirements.txt](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-translation-py/requirements.txt)  
 
 ??? tip "How to generate this sample"
 

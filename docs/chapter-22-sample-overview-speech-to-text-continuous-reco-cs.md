@@ -9,7 +9,7 @@ hide:
 
 This sample demonstrates how to perform continuous speech recognition using the Speech SDK in a C# console application. The application listens for speech from the default microphone and prints recognized text to the console in real-time.
 
-[:material-file-code: Program.cs](./samples/speech-to-text-continuous-reco-cs/Program.cs)
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-continuous-reco-cs/Program.cs)
 
 ??? tip "How to generate this sample"
 

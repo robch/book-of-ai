@@ -71,8 +71,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-with-functions-cs/Program.cs)  
-            [:material-file-code: ONNXChatCompletionsStreamingWithFunctions.cs](./samples/phi3-onnx-chat-streaming-with-functions-cs/ONNXChatCompletionsStreamingWithFunctions.cs)  
+            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-with-functions-cs/Program.cs)  
+            [:material-file-code: ONNXChatCompletionsStreamingWithFunctions.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-with-functions-cs/ONNXChatCompletionsStreamingWithFunctions.cs)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-19-sample-overview-phi3-onnx-chat-streaming-with-functions-cs.md)  
 

@@ -9,11 +9,11 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with streaming and function calling in a Go console application.
 
-[:material-file-code: main.go](./samples/openai-chat-streaming-with-functions-go/main.go)  
-[:material-file-code: function_call_context.go](./samples/openai-chat-streaming-with-functions-go/function_call_context.go)  
-[:material-file-code: function_factory.go](./samples/openai-chat-streaming-with-functions-go/function_factory.go)  
-[:material-file-code: openai_chat_completions_custom_functions.go](./samples/openai-chat-streaming-with-functions-go/openai_chat_completions_custom_functions.go)  
-[:material-file-code: openai_chat_completions_functions_streaming_hello_world.go](./samples/openai-chat-streaming-with-functions-go/openai_chat_completions_functions_streaming_hello_world.go)  
+[:material-file-code: main.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/main.go)  
+[:material-file-code: function_call_context.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/function_call_context.go)  
+[:material-file-code: function_factory.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/function_factory.go)  
+[:material-file-code: openai_chat_completions_custom_functions.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/openai_chat_completions_custom_functions.go)  
+[:material-file-code: openai_chat_completions_functions_streaming_hello_world.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/openai_chat_completions_functions_streaming_hello_world.go)  
 
 ??? tip "How to generate this sample"
 

@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use OpenAI Assistants with file search streaming in a C# console application.
 
-[:material-file-code: Program.cs](./samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
-[:material-file-code: OpenAIAssistantsFileSearchStreamingClass.cs](./samples/openai-asst-streaming-with-file-search-cs/OpenAIAssistantsFileSearchStreamingClass.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
+[:material-file-code: OpenAIAssistantsFileSearchStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-cs/OpenAIAssistantsFileSearchStreamingClass.cs)  
 
 ??? tip "How to generate this sample"
 

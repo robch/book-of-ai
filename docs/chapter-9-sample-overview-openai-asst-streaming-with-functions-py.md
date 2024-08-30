@@ -9,9 +9,9 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API with function calling in a Python console application.
 
-[:material-file-code: main.py](./samples/openai-asst-streaming-with-functions-py/main.py)  
-[:material-file-code: openai_assistants_custom_functions.py](./samples/openai-asst-streaming-with-functions-py/openai_assistants_custom_functions.py)  
-[:material-file-code: openai_assistants_functions_streaming.py](./samples/openai-asst-streaming-with-functions-py/openai_assistants_functions_streaming.py)  
+[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-py/main.py)  
+[:material-file-code: openai_assistants_custom_functions.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-py/openai_assistants_custom_functions.py)  
+[:material-file-code: openai_assistants_functions_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-py/openai_assistants_functions_streaming.py)  
 
 ??? tip "How to generate this sample"
 

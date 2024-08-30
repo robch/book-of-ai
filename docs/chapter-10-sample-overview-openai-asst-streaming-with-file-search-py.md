@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API with file search in a Python console application.
 
-[:material-file-code: main.py](./samples/openai-asst-streaming-with-file-search-py/main.py)  
-[:material-file-code: openai_assistants_file_search_streaming.py](./samples/openai-asst-streaming-with-file-search-py/openai_assistants_file_search_streaming.py)  
+[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-py/main.py)  
+[:material-file-code: openai_assistants_file_search_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-py/openai_assistants_file_search_streaming.py)  
 
 ??? tip "How to generate this sample"
 

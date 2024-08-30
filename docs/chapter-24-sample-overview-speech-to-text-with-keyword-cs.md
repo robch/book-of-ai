@@ -5,7 +5,7 @@
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK to recognize speech with keyword spotting in a C# console application.
 
-[:material-file-code: Program.cs](./samples/speech-to-text-with-keyword-cs/Program.cs)
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-keyword-cs/Program.cs)
 
 ??? tip "How to generate this sample"
 

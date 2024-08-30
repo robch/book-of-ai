@@ -5,10 +5,10 @@
 
 This sample demonstrates how to use the ONNX Chat API with streaming in a C# console application.
 
-[:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-cs/Program.cs)  
-[:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](./samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
-[:material-file-code: get-phi3-mini-onnx.cmd](./samples/phi3-onnx-chat-streaming-cs/get-phi3-mini-onnx.cmd)  
-[:material-file-code: Phi3ChatStreaming.csproj](./samples/phi3-onnx-chat-streaming-cs/Phi3ChatStreaming.csproj)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-cs/Program.cs)  
+[:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
+[:material-file-code: get-phi3-mini-onnx.cmd](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-cs/get-phi3-mini-onnx.cmd)  
+[:material-file-code: Phi3ChatStreaming.csproj](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-cs/Phi3ChatStreaming.csproj)  
 
 ??? tip "How to generate this sample"
 

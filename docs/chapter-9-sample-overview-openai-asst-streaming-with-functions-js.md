@@ -9,9 +9,9 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API with function calling in a JavaScript application.
 
-[:material-file-code: main.js](./samples/openai-asst-streaming-with-functions-js/main.js)  
-[:material-file-code: OpenAIAssistantsCustomFunctions.js](./samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsCustomFunctions.js)  
-[:material-file-code: OpenAIAssistantsFunctionsStreamingClass.js](./samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsFunctionsStreamingClass.js)  
+[:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-js/main.js)  
+[:material-file-code: OpenAIAssistantsCustomFunctions.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsCustomFunctions.js)  
+[:material-file-code: OpenAIAssistantsFunctionsStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsFunctionsStreamingClass.js)  
 
 ??? tip "How to generate this sample"
 

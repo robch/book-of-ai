@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API with the Code Interpreter feature in a C# console application.
 
-[:material-file-code: Program.cs](./samples/openai-asst-streaming-with-code-cs/Program.cs)  
-[:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.cs](./samples/openai-asst-streaming-with-code-cs/OpenAIAssistantsCodeInterpreterStreamingClass.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-cs/Program.cs)  
+[:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-cs/OpenAIAssistantsCodeInterpreterStreamingClass.cs)  
 
 ??? tip "How to generate this sample"
 

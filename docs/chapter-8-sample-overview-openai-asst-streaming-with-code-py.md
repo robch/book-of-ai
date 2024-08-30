@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API with a code interpreter in a Python console application.
 
-[:material-file-code: main.py](./samples/openai-asst-streaming-with-code-py/main.py)  
-[:material-file-code: openai_assistants_code_interpreter_streaming.py](./samples/openai-asst-streaming-with-code-py/openai_assistants_code_interpreter_streaming.py)  
+[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-py/main.py)  
+[:material-file-code: openai_assistants_code_interpreter_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-py/openai_assistants_code_interpreter_streaming.py)  
 
 ??? tip "How to generate this sample"
 

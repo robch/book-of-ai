@@ -7,8 +7,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API with streaming in a C# console application.
 
-[:material-file-code: Program.cs](./samples/openai-asst-streaming-cs/Program.cs)  
-[:material-file-code: OpenAIAssistantsStreamingClass.cs](./samples/openai-asst-streaming-cs/OpenAIAssistantsStreamingClass.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-cs/Program.cs)  
+[:material-file-code: OpenAIAssistantsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-cs/OpenAIAssistantsStreamingClass.cs)  
 
 ??? tip "How to generate this sample"
 

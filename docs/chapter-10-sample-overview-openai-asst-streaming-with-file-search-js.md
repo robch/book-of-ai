@@ -9,9 +9,9 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API with file search functionality in a JavaScript console application.
 
-[:material-file-code: main.js](./samples/openai-asst-streaming-with-file-search-js/main.js)  
-[:material-file-code: OpenAIAssistantsFileSearchStreamingClass.js](./samples/openai-asst-streaming-with-file-search-js/OpenAIAssistantsFileSearchStreamingClass.js)  
-[:material-file-code: ReadLineWrapper.js](./samples/openai-asst-streaming-with-file-search-js/ReadLineWrapper.js)  
+[:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-js/main.js)  
+[:material-file-code: OpenAIAssistantsFileSearchStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-js/OpenAIAssistantsFileSearchStreamingClass.js)  
+[:material-file-code: ReadLineWrapper.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-js/ReadLineWrapper.js)  
 
 ??? tip "How to generate this sample"
 

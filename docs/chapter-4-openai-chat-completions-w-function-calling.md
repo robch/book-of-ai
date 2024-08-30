@@ -69,9 +69,9 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](./samples/openai-chat-streaming-with-functions-cs/Program.cs)  
-            [:material-file-code: OpenAIChatCompletionsCustomFunctions.cs](./samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsCustomFunctions.cs)  
-            [:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.cs](./samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsFunctionsStreamingClass.cs)  
+            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-cs/Program.cs)  
+            [:material-file-code: OpenAIChatCompletionsCustomFunctions.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsCustomFunctions.cs)  
+            [:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsFunctionsStreamingClass.cs)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-4-sample-overview-openai-chat-streaming-with-functions-cs.md)  
 
@@ -109,11 +109,11 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.go](./samples/openai-chat-streaming-with-functions-go/main.go)  
-            [:material-file-code: function_call_context.go](./samples/openai-chat-streaming-with-functions-go/function_call_context.go)  
-            [:material-file-code: function_factory.go](./samples/openai-chat-streaming-with-functions-go/function_factory.go)  
-            [:material-file-code: openai_chat_completions_custom_functions.go](./samples/openai-chat-streaming-with-functions-go/openai_chat_completions_custom_functions.go)  
-            [:material-file-code: openai_chat_completions_functions_streaming_hello_world.go](./samples/openai-chat-streaming-with-functions-go/openai_chat_completions_functions_streaming_hello_world.go)  
+            [:material-file-code: main.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/main.go)  
+            [:material-file-code: function_call_context.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/function_call_context.go)  
+            [:material-file-code: function_factory.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/function_factory.go)  
+            [:material-file-code: openai_chat_completions_custom_functions.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/openai_chat_completions_custom_functions.go)  
+            [:material-file-code: openai_chat_completions_functions_streaming_hello_world.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-go/openai_chat_completions_functions_streaming_hello_world.go)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-4-sample-overview-openai-chat-streaming-with-functions-go.md)
 
@@ -171,9 +171,9 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Main.js](./samples/openai-chat-streaming-with-functions-js/Main.js)  
-            [:material-file-code: OpenAIChatCompletionsCustomFunctions.js](./samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsCustomFunctions.js)  
-            [:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.js](./samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsFunctionsStreamingClass.js)  
+            [:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-js/Main.js)  
+            [:material-file-code: OpenAIChatCompletionsCustomFunctions.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsCustomFunctions.js)  
+            [:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsFunctionsStreamingClass.js)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-4-sample-overview-openai-chat-streaming-with-functions-js.md)  
 
@@ -211,9 +211,9 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.py](./samples/openai-chat-streaming-with-functions-py/main.py)  
-            [:material-file-code: openai_chat_completions_custom_functions.py](./samples/openai-chat-streaming-with-functions-py/openai_chat_completions_custom_functions.py)  
-            [:material-file-code: openai_chat_completions_functions_streaming.py](./samples/openai-chat-streaming-with-functions-py/openai_chat_completions_functions_streaming.py)  
+            [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-py/main.py)  
+            [:material-file-code: openai_chat_completions_custom_functions.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-py/openai_chat_completions_custom_functions.py)  
+            [:material-file-code: openai_chat_completions_functions_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-py/openai_chat_completions_functions_streaming.py)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-4-sample-overview-openai-chat-streaming-with-functions-py.md)
 

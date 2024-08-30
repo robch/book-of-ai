@@ -18,9 +18,9 @@ This sample demonstrates how to use the OpenAI Chat API with streaming in a Go a
 
 ## Files in this sample
 
-- [`go.mod`](./samples/openai-chat-streaming-go/go.mod): The module definition and dependencies for this Go application.
-- [`main.go`](./samples/openai-chat-streaming-go/main.go): The main entry point of the application where user input is handled and the chat completions are streamed.
-- [`openai_chat_completions_streaming_hello_world.go`](./samples/openai-chat-streaming-go/openai_chat_completions_streaming_hello_world.go): The helper class that interacts with the OpenAI Chat API.
+- [`go.mod`](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-go/go.mod): The module definition and dependencies for this Go application.
+- [`main.go`](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-go/main.go): The main entry point of the application where user input is handled and the chat completions are streamed.
+- [`openai_chat_completions_streaming_hello_world.go`](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-go/openai_chat_completions_streaming_hello_world.go): The helper class that interacts with the OpenAI Chat API.
 
 ## `go.mod`
 

@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the Azure AI Inference Chat API with streaming in a C# console application.
 
-[:material-file-code: Program.cs](./samples/az-inference-chat-streaming-cs/Program.cs)  
-[:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](./samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-cs/Program.cs)  
+[:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
 
 ??? tip "How to generate this sample"
 

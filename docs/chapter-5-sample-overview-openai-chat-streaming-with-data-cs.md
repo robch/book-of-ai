@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API incorporating data streaming from Azure AI Search in a C# console application.
 
-[:material-file-code: Program.cs](./samples/openai-chat-streaming-with-data-cs/Program.cs)  
-[:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.cs](./samples/openai-chat-streaming-with-data-cs/OpenAIChatCompletionsWithDataStreamingClass.cs)  
+[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-cs/Program.cs)  
+[:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-cs/OpenAIChatCompletionsWithDataStreamingClass.cs)  
 
 ??? tip "How to generate this sample"
 

@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants with a Code Interpreter in a JavaScript console application.
 
-[:material-file-code: main.js](./samples/openai-asst-streaming-with-code-js/main.js)  
-[:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.js](./samples/openai-asst-streaming-with-code-js/OpenAIAssistantsCodeInterpreterStreamingClass.js)  
+[:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-js/main.js)  
+[:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-js/OpenAIAssistantsCodeInterpreterStreamingClass.js)  
 
 ??? tip "How to generate this sample"
 
