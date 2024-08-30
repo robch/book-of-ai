@@ -75,37 +75,41 @@ copyright: |
 nav:
   - HOME: index.md
   - AI CLI:
-    - "\u2460 CLI Installation": chapter-1-cli-installation.md
-    - "\u2461 Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
-  - OPENAI:
+    - "CLI Installation": chapter-1-cli-installation.md
+    - "Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
+    - "Azure AI Studio Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
+    - "GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
+    - "ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
+  - AZURE OPENAI:
+    - "Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
     - CHAT API:
       - "\u2460 Chat Basics": chapter-3-openai-chat-completions-basics.md
       - "\u2461 w/ Function Calling": chapter-4-openai-chat-completions-w-function-calling.md
       - "\u2462 w/ RAG + AI Search": chapter-5-openai-chat-completions-w-rag--ai-search.md
     - ASSISTANTS API:
-      - "\u2463 Assistants Overview": chapter-6-openai-assistants-api.md
-      - "\u2464 Assistants Basics": chapter-7-openai-assistants-basics.md
-      - "\u2465 w/ Code Interpreter": chapter-8-openai-assistants-w-code-interpreter.md
-      - "\u2466 w/ Function Calling": chapter-9-openai-assistants-w-function-calling.md
-      - "\u2467 w/ File Search": chapter-10-openai-assistants-w-file-search.md
-  - GITHUB:
-    - "\u2460 GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
-    - "\u2461 GitHub Model Basics": chapter-12-github-model-chat-completion-basics.md
-    # - "\u2462 w/ Function Calling": chapter-13-github-model-chat-completions-w-function-calling.md
+      - "\u2460 Assistants Overview": chapter-6-openai-assistants-api.md
+      - "\u2461 Assistants Basics": chapter-7-openai-assistants-basics.md
+      - "\u2462 w/ Code Interpreter": chapter-8-openai-assistants-w-code-interpreter.md
+      - "\u2463 w/ Function Calling": chapter-9-openai-assistants-w-function-calling.md
+      - "\u2464 w/ File Search": chapter-10-openai-assistants-w-file-search.md
   - AZURE AI:
-    - "\u2460 AI Studio Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
-    - "\u2461 AI Studio Basics": chapter-15-ai-studio-chat-completions-basics.md
+    - "AI Studio Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
+    - "\u2460 &nbsp; AI Studio Basics": chapter-15-ai-studio-chat-completions-basics.md
     # - "\u2462 w/ Function Calling": chapter-16-ai-studio-chat-completions-w-function-calling.md
+  - GITHUB:
+    - "GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
+    - "\u2460 &nbsp; GitHub Model Basics": chapter-12-github-model-chat-completion-basics.md
+    # - "\u2462 w/ Function Calling": chapter-13-github-model-chat-completions-w-function-calling.md
   - ONNX and PHI-3:
-    - "\u2460 ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
-    - "\u2461 ONNX Basics": chapter-18-onnx-chat-completions.md
-    - "\u2462 w/ Function Calling": chapter-19-onnx-chat-completions-w-function-calling.md
+    - "ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
+    - "\u2460 &nbsp; ONNX Basics": chapter-18-onnx-chat-completions.md
+    - "\u2461 &nbsp; w/ Function Calling": chapter-19-onnx-chat-completions-w-function-calling.md
   - SPEECH:
-    - "\u2460 Speech Setup": chapter-20-setup-w-speech.md
-    - "\u2461 Synthesis": chapter-21-speech-synthesis.md
-    - "\u2462 Recognition": chapter-22-speech-recognition.md
-    - "\u2463 Translation": chapter-23-speech-translation.md
-    - "\u2464 w/ Keyword": chapter-24-speech-recognition-w-keyword-spotting.md
+    - "Speech Setup": chapter-20-setup-w-speech.md
+    - "\u2460 &nbsp; Synthesis": chapter-21-speech-synthesis.md
+    - "\u2461 &nbsp; Recognition": chapter-22-speech-recognition.md
+    - "\u2462 &nbsp; Translation": chapter-23-speech-translation.md
+    - "\u2463 &nbsp; w/ Keyword": chapter-24-speech-recognition-w-keyword-spotting.md
   - MULTI_MODAL:
     - "\u2460 Multi-Modal AI": chapter-25-multi-modal-ai.md
     - "\u2461 w/ Speech Input": chapter-26-chat-completions-w-speech-input.md

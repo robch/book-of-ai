@@ -1,7 +1,9 @@
 ---
 hide:
 - toc
+icon: material/server-network-outline
 ---
+
 # Setup with ONNX and Phi-3 Models
 
 ```bash title="Clone/download the Phi-3 ONNX Model"

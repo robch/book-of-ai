@@ -7,7 +7,7 @@ hide:
 
 Welcome to the Book of AI, where you'll learn everything you need to know to get started w/ Azure AI.
 
-??? abstract "Why use the Book of AI + the Azure AI CLI (`ai`)..."
+??? abstract "Why use the Book of AI ..."
 
     <div class="grid cards" markdown>
 

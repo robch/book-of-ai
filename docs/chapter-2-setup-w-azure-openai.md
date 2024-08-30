@@ -1,16 +1,30 @@
+---
+hide:
+- toc
+icon: material/server-network-outline
+---
+
 # Azure OpenAI Setup
+
+The `ai init openai` command initializes the Azure OpenAI resource. This command is used to select or create an Azure OpenAI resource. The Azure OpenAI resource is required to use the Azure OpenAI service.
 
 ```bash title="Select or create Azure OpenAI resource"
 ai init openai
 ```
 
-⇛ Select your Azure subscription  
-⇛ Select or create your Azure OpenAI resource  
-⇛ Select or create an OpenAI chat model deployment (e.g. gpt-4o)  
-⇛ Select or create an OpenAI embeddings model deployment  
+> **STEP 1**: ⇛ Select your Azure subscription  
+> **STEP 2**: ⇛ Select or create your Azure OpenAI resource  
+> **STEP 3**: ⇛ Select or create an OpenAI chat model deployment (e.g. gpt-4o)  
+> **STEP 4**: ⇛ Select or create an OpenAI embeddings model deployment  
 
-```bash title="View persisted config"
+### View Configuration
+
+To view the persisted configuration, use the following commands:
+
+```bash title="Get chat endpoint"
 ai config @chat.endpoint
-ai config @chat.key
 ```
 
+```bash title="Get chat key"
+ai config @chat.key
+```

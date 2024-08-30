@@ -1,3 +1,9 @@
+---
+hide:
+- toc
+icon: material/download
+---
+
 # `ai` CLI Installation
 
 === "Windows (install)"

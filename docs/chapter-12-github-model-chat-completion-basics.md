@@ -6,22 +6,64 @@ hide:
 
 === "Overview"
 
-    ### Prompts
+    The `ai chat` command allows you to interact w/ GitHub Marketplace models from the command line.  
 
-    ``` bash title="One prompt"
+    --8<-- "docs/tip-github-prereqs.md"
+
+    ### User and System Prompts
+
+    The `ai chat` command sends a user prompt to GitHub's AI Inference service and displays the response.
+
+    ``` bash title="User prompts are questions or statements to the model"
     ai chat --user "What is the capital of France?"
     ```
+
+    ``` bash title="System prompts are special instructions for the model"
+    ai chat --user "What is the capital of France." --system "Always answer in French."
+    ```
+
+    ``` bash title="--question is an alias for --user"
+    ai chat --question "What is the capital of France?"
+    ```
+
+    ### User and System prompts from Files
+
+    ``` bash title="User prompt from a file"
+    ai chat --question "@question.txt"
+    ```
+
+    ``` bash title="System prompt from a file"
+    ai chat --question "What is the capital of France?" --system "@system.txt"
+    ```
+
+    ### Interactive Chat
+
+    The `--interactive` flag allows back-and-forth conversations with the model.
 
     ``` bash title="Interactive chat"
     ai chat --interactive
     ```
 
-    ``` bash title="System prompts"
-    ai chat --interactive --system @prompt.txt
+    ``` bash title="Interactive with an initial question"
+    ai chat --interactive --question "What is the capital of France?"
     ```
 
-    ``` bash title="User and system prompts"
-    ai chat --interactive --system @prompt.txt --user "Tell me a joke"
+    ``` bash title="Interactive with a system prompt"
+    ai chat --interactive --system "Always answer in French."
+    ```
+
+    ### Answers and chat history
+
+    ``` bash title="Output answer to a file"
+    ai chat --question "What is the capital of France?" --output-answer answer.txt
+    ```
+
+    ``` bash title="Output chat history to a file"
+    ai chat --interactive --output-chat-history history.jsonl
+    ```
+
+    ``` bash title="Input chat history from a file"
+    ai chat --interactive --input-chat-history history.jsonl
     ```
     
     ### Model Selection
@@ -31,7 +73,7 @@ hide:
     ```
 
     ``` bash title="Set default model"
-    ai config --set chat.model gpt-4o-mini
+    ai config --set chat.model Mistral-large-2407
     ```
 
     ``` bash title="Use default model"
@@ -39,6 +81,10 @@ hide:
     ```
 
 === "Sample Code"
+
+    The `ai dev new` command generates sample code for interacting with the GitHub Model Marketplace.
+
+    --8<-- "docs/tip-github-prereqs.md"
 
     === "C#"
 
@@ -60,6 +106,13 @@ hide:
         cd az-inference-chat-streaming-cs
         ```
 
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Program.cs](./samples/az-inference-chat-streaming-cs/Program.cs)  
+            [:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](./samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-12-sample-overview-az-inference-chat-streaming-cs.md)  
+
         ``` bash title="Install dependencies"
         dotnet restore
         ```
@@ -68,13 +121,6 @@ hide:
         ai dev shell
         dotnet run
         ```
-
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: Program.cs](./samples/az-inference-chat-streaming-cs/Program.cs)  
-            [:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](./samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-12-sample-overview-az-inference-chat-streaming-cs.md)  
 
     === "Go"
 
@@ -147,6 +193,13 @@ hide:
         cd az-inference-chat-streaming-py
         ```
 
+        ??? example "See the code; learn what it does..."
+
+            [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
+            [:material-file-code: requirements.txt](./samples/az-inference-chat-streaming-py/requirements.txt)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-12-sample-overview-az-inference-chat-streaming-py.md)  
+
         === "Windows"
 
             ``` bash title="Create virtual environment"
@@ -194,13 +247,6 @@ hide:
             ai dev shell
             python3 main.py
             ```
-
-        ??? example "See the code; learn what it does..."
-
-            [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
-            [:material-file-code: requirements.txt](./samples/az-inference-chat-streaming-py/requirements.txt)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-12-sample-overview-az-inference-chat-streaming-py.md)  
 
     === "..."
 
