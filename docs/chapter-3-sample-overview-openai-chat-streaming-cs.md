@@ -3,9 +3,9 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions Streaming in C\#
+# OpenAI Chat Streaming in C\#
 
-This sample demonstrates how to use the OpenAI Chat Completions API with streaming in a C# console application.
+This sample demonstrates how to use the OpenAI Chat API with streaming in a C# console application.
 
 [:material-file-code: Program.cs](./samples/openai-chat-streaming-cs/Program.cs)  
 [:material-file-code: OpenAIChatCompletionsStreamingClass.cs](./samples/openai-chat-streaming-cs/OpenAIChatCompletionsStreamingClass.cs)  
@@ -104,7 +104,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     _messages.Add(ChatMessage.CreateUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
 
 ``` csharp title="OpenAIChatCompletionsStreamingClass.cs"
     var responseContent = string.Empty;

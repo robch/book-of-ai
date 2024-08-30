@@ -1,7 +1,7 @@
 ---
-# OpenAI Chat Completions Streaming with Data in Java
+# OpenAI Chat Streaming with Data in Java
 
-This sample demonstrates how to use the OpenAI Chat Completions API with streaming and data integration in a Java console application.
+This sample demonstrates how to use the OpenAI Chat API with streaming and data integration in a Java console application.
 
 ## Main.java
 
@@ -97,7 +97,7 @@ public Flux<ChatCompletions> getChatCompletionsStreamingAsync(String userPrompt,
     options.getMessages().add(new ChatRequestUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
 
 ``` java title="OpenAIChatCompletionsWithDataStreamingClass.java"
     StringBuilder responseContent = new StringBuilder();

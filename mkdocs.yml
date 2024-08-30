@@ -52,6 +52,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower      
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - admonition
@@ -75,7 +78,7 @@ nav:
     - "\u2460 CLI Installation": chapter-1-cli-installation.md
     - "\u2461 Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
   - OPENAI:
-    - CHAT COMPLETIONS:
+    - CHAT API:
       - "\u2460 Chat Basics": chapter-3-openai-chat-completions-basics.md
       - "\u2461 w/ Function Calling": chapter-4-openai-chat-completions-w-function-calling.md
       - "\u2462 w/ RAG + AI Search": chapter-5-openai-chat-completions-w-rag--ai-search.md

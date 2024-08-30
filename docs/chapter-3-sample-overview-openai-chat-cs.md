@@ -3,9 +3,9 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions in C\#
+# OpenAI Chat API in C\#
 
-This sample demonstrates how to use the OpenAI Chat Completions API in a C# console application.
+This sample demonstrates how to use the OpenAI Chat API in a C# console application.
 
 [:material-file-code: Program.cs](./samples/openai-chat-cs/Program.cs)  
 [:material-file-code: OpenAIChatCompletionsClass.cs](./samples/openai-chat-cs/OpenAIChatCompletionsClass.cs)  
@@ -96,7 +96,7 @@ public string GetChatCompletion(string userPrompt)
     _messages.Add(ChatMessage.CreateUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the OpenAI Chat Completions API and process the response:
+**STEP 3**: Send the chat message history to the OpenAI Chat API and process the response:
 
 ``` csharp title="OpenAIChatCompletionsClass.cs"
     var response = _chatClient.CompleteChat(_messages);

@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# Azure AI Inference Chat Completions Streaming in Python
+# Azure AI Inference Chat Streaming in Python
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the Azure AI Inference Chat Completions API with streaming in a Python application.
+This sample demonstrates how to use the Azure AI Inference Chat API with streaming in a Python application.
 
 [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
 [:material-file-code: azureml_chat_completions_streaming.py](./samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
@@ -91,7 +91,7 @@ class AzureAIInferenceChatCompletionsStreaming:
         self.messages.append(UserMessage(content=user_input))
 ```
 
-**STEP 3**: Send the chat message history to the streaming Azure AI Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming Azure AI Chat API and process each update:
 
 ``` python title="azureml_chat_completions_streaming.py"
         complete_content = ''

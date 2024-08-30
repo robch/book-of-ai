@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions Streaming in Java
+# OpenAI Chat Streaming in Java
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API with streaming in a Java console application.
+This sample demonstrates how to use the OpenAI Chat API with streaming in a Java console application.
 
 [:material-file-code: Main.java](./samples/openai-chat-streaming-java/src/Main.java)  
 [:material-file-code: OpenAIChatCompletionsStreamingClass.java](./samples/openai-chat-streaming-java/src/OpenAIChatCompletionsStreamingClass.java)  
@@ -109,7 +109,7 @@ public Flux<ChatCompletions> getChatCompletionsStreamingAsync(String userPrompt,
     options.getMessages().add(new ChatRequestUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
 
 ``` java title="OpenAIChatCompletionsStreamingClass.java"
     StringBuilder responseContent = new StringBuilder();

@@ -3,9 +3,9 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions with Function Calling in Python
+# OpenAI Chat with Function Calling in Python
 
-This sample demonstrates how to use the OpenAI Chat Completions API with function calling in a Python console application.
+This sample demonstrates how to use the OpenAI Chat API with function calling in a Python console application.
 
 [:material-file-code: main.py](./samples/openai-chat-streaming-with-functions-py/main.py)  
 [:material-file-code: openai_chat_completions_custom_functions.py](./samples/openai-chat-streaming-with-functions-py/openai_chat_completions_custom_functions.py)  

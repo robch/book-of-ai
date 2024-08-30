@@ -1,0 +1,90 @@
+Here's a list of files/chapters for documentation for the `ai` CLI:
+
+```
+chapter-3-openai-chat-completions-basics.md
+chapter-4-openai-chat-completions-w-function-calling.md
+chapter-5-openai-chat-completions-w-rag--ai-search.md
+chapter-7-openai-assistants-basics.md
+chapter-8-openai-assistants-w-code-interpreter.md
+chapter-9-openai-assistants-w-function-calling.md
+chapter-10-openai-assistants-w-file-search.md
+chapter-12-github-model-chat-completion-basics.md
+chapter-13-github-model-chat-completions-w-function-calling.md
+chapter-15-ai-studio-chat-completions-basics.md
+chapter-16-ai-studio-chat-completions-w-function-calling.md
+chapter-18-onnx-chat-completions.md
+chapter-19-onnx-chat-completions-w-function-calling.md
+chapter-21-speech-synthesis.md
+chapter-22-speech-recognition.md
+chapter-23-speech-translation.md
+chapter-24-speech-recognition-w-keyword-spotting.md
+```
+
+I've updated the format for these chapters:
+
+```
+chapter-3-openai-chat-completions-basics.md
+chapter-4-openai-chat-completions-w-function-calling.md
+```
+
+Please read those chapters paying attention to the format, not the specific content.
+
+Now, please read the chapter {chapter} file, and compare the format/style. 
+
+You should see that there are differences in format/style between chapter {chapter} and chapter 3, 4.
+
+Here are a set of instructions that should capture the key aspects of what needs to be done to chapter {chapter}. 
+
+"""
+To ensure consistency across all documentation chapters, please follow these instructions:
+
+## Front Matter
+- Ensure the front matter includes the `hide: toc` directive.
+  ```markdown
+  ---
+  hide:
+  - toc
+  ---
+  ```
+
+## Introductory Comments
+- Add a brief introductory comment before the prerequisites include in both "Overview" and "Sample Code" sections.
+  ```markdown
+  === "Overview"
+  
+  <insert brief introductory comment>
+  
+  --8<-- "docs/tip-openai-prereqs.md"
+  ```
+
+## Content Organization
+- Use collapsible sections (e.g., `??? example`) for detailed explanations and code overviews.
+  ```markdown
+  ??? example "See the code; learn how it works..."
+  ```
+
+## Sample Code Intro
+- Add a brief sentence at the top of the "Sample Code" tab prior to the prerequisites include.
+  ```markdown
+  === "Sample Code"
+  
+  The `ai dev new` command allows you to generate sample code that demonstrates how to use <specific feature>.
+  
+  --8<-- "docs/tip-openai-prereqs.md"
+  ```
+
+## Filter Commands
+- Break the "Filter the list by name" bash code block into two sections: one for listing only language-specific samples and another for filtering the list by name.
+  ```bash title="List only C# samples"
+  ai dev new list --csharp
+  ```
+
+  ```bash title="Filter the list by name"
+  ai dev new list <specific sample> --csharp
+  ```
+
+## Admonition Placement
+- Ensure the `??? example "See the code; learn how it works..."` admonition is placed after the `cd DIR` code block and before the dependencies/run the sample code blocks.
+"""
+
+Now, go ahead and make those changes to the chapter {chapter} file and save it to disk with the functions provided.

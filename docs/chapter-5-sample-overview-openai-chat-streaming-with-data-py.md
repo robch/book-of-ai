@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions with Data Streaming in Python
+# OpenAI Chat with Data Streaming in Python
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API with data streaming in a Python console application.
+This sample demonstrates how to use the OpenAI Chat API with data streaming in a Python console application.
 
 [:material-file-code: main.py](./samples/openai-chat-streaming-with-data-py/main.py)  
 [:material-file-code: requirements.txt](./samples/openai-chat-streaming-with-data-py/requirements.txt)  

@@ -2,7 +2,7 @@
 hide:
 - toc
 ---
-# ONNX Chat Completions with Function Calling
+# ONNX Chat with Function Calling
 
 === "Overview"
 
@@ -48,12 +48,12 @@ hide:
         ai dev new list
         ```
 
-        ``` bash title="Filter the list"
+        ``` bash title="Filter the list by name"
         ai dev new list --csharp
         ai dev new list phi3-onnx-chat --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ``` bash title="Generate sample code"
         ai dev new phi3-onnx-chat-streaming-with-functions --csharp
@@ -84,12 +84,12 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="Filter the list by name"
         ai dev new list --go
         ai dev new list onnx --go
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -102,12 +102,12 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="Filter the list by name"
         ai dev new list --java
         ai dev new list onnx --java
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -120,12 +120,12 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="Filter the list by name"
         ai dev new list --javascript
         ai dev new list onnx --javascript
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -138,11 +138,11 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="Filter the list by name"
         ai dev new list --python
         ai dev new list onnx --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  

@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions Streaming with Data in Go
+# OpenAI Chat Streaming with Data in Go
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API with data streaming in a Go console application.
+This sample demonstrates how to use the OpenAI Chat API with data streaming in a Go console application.
 
 [:material-file-code: main.go](./samples/openai-chat-streaming-with-data-go/main.go)  
 [:material-file-code: openai_chat_completions_streaming_with_data_hello_world.go](./samples/openai-chat-streaming-with-data-go/openai_chat_completions_streaming_with_data_hello_world.go)  

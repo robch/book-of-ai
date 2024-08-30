@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# Azure AI Inferencing Chat Completions Streaming in C\#
+# Azure AI Inferencing Chat Streaming in C\#
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the Azure AI Inference Chat Completions API with streaming in a C# console application.
+This sample demonstrates how to use the Azure AI Inference Chat API with streaming in a C# console application.
 
 [:material-file-code: Program.cs](./samples/az-inference-chat-streaming-cs/Program.cs)  
 [:material-file-code: AzureAIInferencingChatCompletionsStreamingClass.cs](./samples/az-inference-chat-streaming-cs/AzureAIInferencingChatCompletionsStreamingClass.cs)  
@@ -103,7 +103,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     _messages.Add(new ChatRequestUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming Azure AI Inference Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming Azure AI Inference Chat API and process each update:
 
 ``` csharp title="AzureAIInferencingChatCompletionsStreamingClass.cs"
     var responseContent = string.Empty;

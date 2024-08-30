@@ -1,3 +1,3 @@
-➡️ [Chat Completions w/ Image Input](todo.md#chapter-28-chat-completions-w-image-input)
+➡️ [Chat w/ Image Input](todo.md#chapter-28-chat-completions-w-image-input)
 
 ...

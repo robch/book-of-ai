@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions in JavaScript
+# OpenAI Chat in JavaScript
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API in a JavaScript console application.
+This sample demonstrates how to use the OpenAI Chat API in a JavaScript console application.
 
 [:material-file-code: Main.js](./samples/openai-chat-js/Main.js)  
 [:material-file-code: OpenAIChatCompletionsClass.js](./samples/openai-chat-js/OpenAIChatCompletionsClass.js)  
@@ -99,7 +99,7 @@ async getResponse(userInput) {
   this.messages.push({ role: 'user', content: userInput });
 ```
 
-**STEP 3**: Send the chat message history to the OpenAI Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the OpenAI Chat API and process each update:
 
 ``` javascript title="OpenAIChatCompletionsClass.js"
 const completion = await this.openai.chat.completions.create({

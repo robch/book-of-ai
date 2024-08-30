@@ -3,9 +3,9 @@ hide:
 - navigation
 - toc
 ---
-# ONNX Chat Completions Streaming with Functions in C#
+# ONNX Chat Streaming with Functions in C#
 
-This sample demonstrates how to use the ONNX Chat Completions API with streaming in a C# console application, including function calling.
+This sample demonstrates how to use the ONNX Chat API with streaming in a C# console application, including function calling.
 
 [:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-with-functions-cs/Program.cs)  
 [:material-file-code: ONNXChatCompletionsStreamingWithFunctions.cs](./samples/phi3-onnx-chat-streaming-with-functions-cs/ONNXChatCompletionsStreamingWithFunctions.cs)  
@@ -104,7 +104,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     _messages.Add(ChatMessage.CreateUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming ONNX Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming ONNX Chat API and process each update:
 
 ``` csharp title="ONNXChatCompletionsStreamingWithFunctions.cs"
     var responseContent = string.Empty;

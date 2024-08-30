@@ -2,7 +2,7 @@
 hide:
 - toc
 ---
-# OpenAI Chat Completions with RAG + AI Search
+# OpenAI Chat with RAG + AI Search
 
 === "Overview"
 
@@ -51,6 +51,10 @@ hide:
 
 === "Sample Code"
 
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI's chat completions with AI Search.
+
+    --8<-- "docs/tip-openai-prereqs.md"
+
     === "C#"
 
         ### List samples
@@ -59,17 +63,27 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only C# samples"
         ai dev new list --csharp
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-chat-streaming-with-data --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-chat-streaming-with-data --csharp
         cd openai-chat-streaming-with-data-cs
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Program.cs](./samples/openai-chat-streaming-with-data-cs/Program.cs)  
+            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.cs](./samples/openai-chat-streaming-with-data-cs/OpenAIChatCompletionsWithDataStreamingClass.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-cs.md)  
 
         ```bash title="Install dependencies"
         dotnet restore
@@ -80,13 +94,6 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: Program.cs](./samples/openai-chat-streaming-with-data-cs/Program.cs)  
-            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.cs](./samples/openai-chat-streaming-with-data-cs/OpenAIChatCompletionsWithDataStreamingClass.cs)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-cs.md)  
-
     === "Go"
 
         ### List samples
@@ -95,17 +102,27 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Go samples"
         ai dev new list --go
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-chat-streaming-with-data --go
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-chat-streaming-with-data --go
         cd openai-chat-streaming-with-data-go
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.go](./samples/openai-chat-streaming-with-data-go/main.go)  
+            [:material-file-code: openai_chat_completions_streaming_with_data_hello_world.go](./samples/openai-chat-streaming-with-data-go/openai_chat_completions_streaming_with_data_hello_world.go)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-go.md)  
 
         ```bash title="Install dependencies"
         go mod tidy
@@ -116,13 +133,6 @@ hide:
         go run main.go
         ```
 
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: main.go](./samples/openai-chat-streaming-with-data-go/main.go)  
-            [:material-file-code: openai_chat_completions_streaming_with_data_hello_world.go](./samples/openai-chat-streaming-with-data-go/openai_chat_completions_streaming_with_data_hello_world.go)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-go.md)  
-
     === "Java"
 
         ### List samples
@@ -131,17 +141,27 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Java samples"
         ai dev new list --java
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-chat-streaming-with-data --java
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-chat-streaming-with-data --java
         cd openai-chat-streaming-with-data-java
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Main.java](./samples/openai-chat-streaming-with-data-java/src/Main.java)  
+            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.java](./samples/openai-chat-streaming-with-data-java/src/OpenAIChatCompletionsWithDataStreamingClass.java)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-java.md)  
 
         ```bash title="Restore packages"
         mvn clean package
@@ -180,13 +200,6 @@ hide:
             java -cp "out:target/lib/*" Main
             ```
 
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: Main.java](./samples/openai-chat-streaming-with-data-java/src/Main.java)  
-            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.java](./samples/openai-chat-streaming-with-data-java/src/OpenAIChatCompletionsWithDataStreamingClass.java)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-java.md)  
-
     === "JavaScript"
 
         ### List samples
@@ -195,17 +208,27 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only JavaScript samples"
         ai dev new list --javascript
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-chat-streaming-with-data --javascript
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-chat-streaming-with-data --javascript
         cd openai-chat-streaming-with-data-js
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Main.js](./samples/openai-chat-streaming-with-data-js/Main.js)  
+            [:material-file-code: OpenAIChatCompletionsStreamingWithDataClass.js](./samples/openai-chat-streaming-with-data-js/OpenAIChatCompletionsStreamingWithDataClass.js)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-js.md)  
 
         ```bash title="Install dependencies"
         npm install
@@ -216,13 +239,6 @@ hide:
         node Main.js
         ```
 
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: Main.js](./samples/openai-chat-streaming-with-data-js/Main.js)  
-            [:material-file-code: OpenAIChatCompletionsStreamingWithDataClass.js](./samples/openai-chat-streaming-with-data-js/OpenAIChatCompletionsStreamingWithDataClass.js)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-js.md)  
-
     === "Python"
 
         ### List samples
@@ -231,17 +247,27 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Python samples"
         ai dev new list --python
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-chat-streaming-with-data --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-chat-streaming-with-data --python
         cd openai-chat-streaming-with-data-py
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.py](./samples/openai-chat-streaming-with-data-py/main.py)  
+            [:material-file-code: requirements.txt](./samples/openai-chat-streaming-with-data-py/requirements.txt)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-py.md)  
 
         === "Windows"
 
@@ -291,13 +317,6 @@ hide:
             python3 main.py
             ```
 
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: main.py](./samples/openai-chat-streaming-with-data-py/main.py)  
-            [:material-file-code: requirements.txt](./samples/openai-chat-streaming-with-data-py/requirements.txt)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-py.md)  
-
     === "..."
 
-        **Go over what was generated in the console app**  
+        **Go over what was generated in the console app**

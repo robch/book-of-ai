@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions Streaming with Functions in Go
+# OpenAI Chat Streaming with Functions in Go
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API with streaming and function calling in a Go console application.
+This sample demonstrates how to use the OpenAI Chat API with streaming and function calling in a Go console application.
 
 [:material-file-code: main.go](./samples/openai-chat-streaming-with-functions-go/main.go)  
 [:material-file-code: function_call_context.go](./samples/openai-chat-streaming-with-functions-go/function_call_context.go)  

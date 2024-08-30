@@ -2,9 +2,11 @@
 hide:
 - toc
 ---
-# AI Studio Chat Completion Basics
+# AI Studio Chat Basics
 
 === "Overview"
+
+    --8<-- "docs/tip-ai-studio-prereqs.md"
 
     ### Prompts
 
@@ -23,36 +25,34 @@ hide:
     ``` bash title="User and system prompts"
     ai chat --interactive --system @prompt.txt --user "Tell me a joke"
     ```
-    
+
 === "Sample Code"
+
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use AI Studio's AI Inference deployed endpoints.
+
+    --8<-- "docs/tip-ai-studio-prereqs.md"
 
     === "C#"
 
         ### List samples
 
-        ```bash title="List all samples"
+        ``` bash title="List all samples"
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ``` bash title="List only C# samples"
         ai dev new list --csharp
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list inference --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
-        ```bash title="Generate sample code"
+        ``` bash title="Generate sample code"
         ai dev new az-inference-chat-streaming --csharp
         cd az-inference-chat-streaming-cs
-        ```
-
-        ```bash title="Install dependencies"
-        dotnet restore
-        ```
-
-        ```bash title="Run the sample"
-        ai dev shell
-        dotnet run
         ```
 
         ??? example "See the code; learn how it works..."
@@ -62,76 +62,105 @@ hide:
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-15-sample-overview-az-inference-chat-streaming-cs.md)  
 
+        ``` bash title="Install dependencies"
+        dotnet restore
+        ```
+
+        ``` bash title="Run the sample"
+        ai dev shell
+        dotnet run
+        ```
+
     === "Go"
 
         ### List samples
 
-        ```bash title="List all samples"
+        ``` bash title="List all samples"
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ``` bash title="List only Go samples"
         ai dev new list --go
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list inference --go
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        ... 
 
     === "Java"
 
         ### List samples
 
-        ```bash title="List all samples"
+        ``` bash title="List all samples"
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ``` bash title="List only Java samples"
         ai dev new list --java
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list inference --java
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        ... 
 
     === "JavaScript"
 
         ### List samples
 
-        ```bash title="List all samples"
+        ``` bash title="List all samples"
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ``` bash title="List only JavaScript samples"
         ai dev new list --javascript
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list inference --javascript
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        ... 
 
     === "Python"
 
         ### List samples
 
-        ```bash title="List all samples"
+        ``` bash title="List all samples"
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ``` bash title="List only Python samples"
         ai dev new list --python
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list inference --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
-        ```bash title="Generate sample code"
+        ``` bash title="Generate sample code"
         ai dev new az-inference-chat-streaming --python
         cd az-inference-chat-streaming-py
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
+            [:material-file-code: azureml_chat_completions_streaming.py](./samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
+            [:material-file-code: requirements.txt](./samples/az-inference-chat-streaming-py/requirements.txt)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-15-sample-overview-az-inference-chat-streaming-py.md)  
 
         === "Windows"
 
@@ -180,14 +209,6 @@ hide:
             ai dev shell
             python3 main.py
             ```
-
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
-            [:material-file-code: azureml_chat_completions_streaming.py](./samples/az-inference-chat-streaming-py/azureml_chat_completions_streaming.py)  
-            [:material-file-code: requirements.txt](./samples/az-inference-chat-streaming-py/requirements.txt)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-15-sample-overview-az-inference-chat-streaming-py.md)  
 
     === "..."
 

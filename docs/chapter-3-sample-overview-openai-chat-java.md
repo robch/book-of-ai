@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions in Java
+# OpenAI Chat in Java
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API in a Java console application.
+This sample demonstrates how to use the OpenAI Chat API in a Java console application.
 
 [:material-file-code: Main.java](./samples/openai-chat-java/src/Main.java)  
 [:material-file-code: OpenAIChatCompletionsClass.java](./samples/openai-chat-java/src/OpenAIChatCompletionsClass.java)  
@@ -105,7 +105,7 @@ public String getChatCompletion(String userPrompt) {
     options.getMessages().add(new ChatRequestUserMessage(userPrompt));
 ```
 
-**STEP 4**: Send the chat message history to the OpenAI Chat Completions API and process the response:
+**STEP 4**: Send the chat message history to the OpenAI Chat API and process the response:
 
 ``` java title="OpenAIChatCompletionsClass.java"
     ChatCompletions chatCompletions = client.getChatCompletions(this.openAIChatDeployment, options);

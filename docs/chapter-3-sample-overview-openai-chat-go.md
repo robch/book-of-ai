@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions in Go
+# OpenAI Chat in Go
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API in a Go console application.
+This sample demonstrates how to use the OpenAI Chat API in a Go console application.
 
 [:material-file-code: main.go](./samples/openai-chat-go/main.go)  
 [:material-file-code: openai_chat_completions_hello_world.go](./samples/openai-chat-go/openai_chat_completions_hello_world.go)  
@@ -109,7 +109,7 @@ func (chat *OpenAIChatCompletionsExample) GetChatCompletions(userPrompt string) 
     chat.options.Messages = append(chat.options.Messages, &azopenai.ChatRequestUserMessage{Content: azopenai.NewChatRequestUserMessageContent(userPrompt)})
 ```
 
-**STEP 3**: Send the chat message history to the OpenAI Chat Completions API and process the response:
+**STEP 3**: Send the chat message history to the OpenAI Chat API and process the response:
 
 ``` go title="openai_chat_completions_hello_world.go"
 resp, err := chat.client.GetChatCompletions(context.TODO(), *chat.options, nil)

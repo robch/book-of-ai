@@ -7,7 +7,7 @@ hide:
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the Azure AI Inference Chat Completions API with streaming in a Python console application.
+This sample demonstrates how to use the Azure AI Inference Chat API with streaming in a Python console application.
 
 [:material-file-code: main.py](./samples/az-inference-chat-streaming-py/main.py)  
 [:material-file-code: requirements.txt](./samples/az-inference-chat-streaming-py/requirements.txt)  

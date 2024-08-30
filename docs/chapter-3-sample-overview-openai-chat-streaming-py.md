@@ -3,9 +3,9 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions Streaming in Python
+# OpenAI Chat Streaming in Python
 
-This sample demonstrates how to use the OpenAI Chat Completions API with streaming in a Python console application.
+This sample demonstrates how to use the OpenAI Chat API with streaming in a Python console application.
 
 [:material-file-code: main.py](./samples/openai-chat-streaming-py/main.py)  
 [:material-file-code: openai_chat_completions_streaming.py](./samples/openai-chat-streaming-py/openai_chat_completions_streaming.py)  
@@ -95,7 +95,7 @@ class OpenAIChatCompletionsStreaming:
         self.messages.append({'role': 'user', 'content': user_input})
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
 
 ``` python title="openai_chat_completions_streaming.py"
         complete_content = ''

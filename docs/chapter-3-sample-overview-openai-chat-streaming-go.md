@@ -7,7 +7,7 @@ hide:
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API with streaming in a Go application. The sample covers the following aspects:
+This sample demonstrates how to use the OpenAI Chat API with streaming in a Go application. The sample covers the following aspects:
 
 - Getting connection information and secrets from environment variables
 - Using a helper class to encapsulate the OpenAI API calls
@@ -20,7 +20,7 @@ This sample demonstrates how to use the OpenAI Chat Completions API with streami
 
 - [`go.mod`](./samples/openai-chat-streaming-go/go.mod): The module definition and dependencies for this Go application.
 - [`main.go`](./samples/openai-chat-streaming-go/main.go): The main entry point of the application where user input is handled and the chat completions are streamed.
-- [`openai_chat_completions_streaming_hello_world.go`](./samples/openai-chat-streaming-go/openai_chat_completions_streaming_hello_world.go): The helper class that interacts with the OpenAI Chat Completions API.
+- [`openai_chat_completions_streaming_hello_world.go`](./samples/openai-chat-streaming-go/openai_chat_completions_streaming_hello_world.go): The helper class that interacts with the OpenAI Chat API.
 
 ## `go.mod`
 
@@ -57,11 +57,11 @@ The application expects the following environment variables to be set:
 ### Main Application Flow (`main.go`)
 
 1. **Read Environment Variables**: The application reads the required environment variables and sets default values if they are not provided.
-2. **Initialize Chat Completion Helper**: An instance of `OpenAIChatCompletionsStreamingExample` is created using the provided environment variables.
+2. **Initialize Chat Helper**: An instance of `OpenAIChatCompletionsStreamingExample` is created using the provided environment variables.
 3. **User Interaction Loop**: The application enters a loop where it reads user input, sends it to the chat completion helper, and prints the response.
 
 ### Helper Class (`openai_chat_completions_streaming_hello_world.go`)
 
 1. **Initialization**: The `NewOpenAIChatCompletionsStreamingExample` function initializes the helper class with the provided endpoint, API key, deployment name, and system prompt.
 2. **Clear Conversation**: The `ClearConversation` method clears the conversation history, retaining only the system prompt.
-3. **Get Chat Completions Stream**: The `GetChatCompletionsStream` method sends the user input to the OpenAI service and streams the response back, invoking a callback function for each received message.
+3. **Get Chat Stream**: The `GetChatCompletionsStream` method sends the user input to the OpenAI service and streams the response back, invoking a callback function for each received message.

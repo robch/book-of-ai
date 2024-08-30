@@ -7,7 +7,7 @@ hide:
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API with RAG (Retrieval-Augmented Generation) and AI Search in a JavaScript console application.
+This sample demonstrates how to use the OpenAI Chat API with RAG (Retrieval-Augmented Generation) and AI Search in a JavaScript console application.
 
 [:material-file-code: Main.js](./samples/openai-chat-streaming-with-data-js/Main.js)  
 [:material-file-code: OpenAIChatCompletionsStreamingWithDataClass.js](./samples/openai-chat-streaming-with-data-js/OpenAIChatCompletionsStreamingWithDataClass.js)  
@@ -116,7 +116,7 @@ clearConversation() {
 }
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
 
 ```javascript title="OpenAIChatCompletionsStreamingWithDataClass.js"
 async getChatCompletions(userInput, callback) {

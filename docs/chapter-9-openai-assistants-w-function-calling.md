@@ -1,6 +1,6 @@
 ---
 hide:
-  - toc
+- toc
 ---
 # OpenAI Assistants with Function Calling
 
@@ -43,6 +43,10 @@ hide:
 
 === "Sample Code"
 
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Assistants with Function Calling.
+
+    --8<-- "docs/tip-openai-prereqs.md"
+
     === "C#"
 
         ### List Samples
@@ -51,25 +55,19 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only C# samples"
         ai dev new list --csharp
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-asst --csharp
         ```
 
-        ### Generate, Build, and Run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-asst-streaming-with-functions --csharp
         cd openai-asst-streaming-with-functions-cs
-        ```
-
-        ```bash title="Install dependencies"
-        dotnet restore
-        ```
-
-        ```bash title="Run the sample"
-        ai dev shell
-        dotnet run
         ```
 
         ??? example "See the code; learn how it works..."
@@ -83,6 +81,15 @@ hide:
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-9-sample-overview-openai-asst-streaming-with-functions-cs.md)  
 
+        ```bash title="Install dependencies"
+        dotnet restore
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        dotnet run
+        ```
+
     === "JavaScript"
 
         ### List Samples
@@ -91,25 +98,19 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only JavaScript samples"
         ai dev new list --javascript
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-asst --javascript
         ```
 
-        ### Generate, Build, and Run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-asst-streaming-with-functions --javascript
         cd openai-asst-streaming-with-functions-js
-        ```
-
-        ```bash title="Install dependencies"
-        npm install
-        ```
-
-        ```bash title="Run the sample"
-        ai dev shell
-        node main.js
         ```
 
         ??? example "See the code; learn how it works..."
@@ -120,6 +121,15 @@ hide:
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-9-sample-overview-openai-asst-streaming-with-functions-js.md)  
 
+        ```bash title="Install dependencies"
+        npm install
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        node main.js
+        ```
+
     === "Python"
 
         ### List Samples
@@ -128,17 +138,28 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Python samples"
         ai dev new list --python
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-asst --python
         ```
 
-        ### Generate, Build, and Run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-asst-streaming-with-functions --python
         cd openai-asst-streaming-with-functions-py
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.py](./samples/openai-asst-streaming-with-functions-py/main.py)  
+            [:material-file-code: openai_assistants_custom_functions.py](./samples/openai-asst-streaming-with-functions-py/openai_assistants_custom_functions.py)  
+            [:material-file-code: openai_assistants_functions_streaming.py](./samples/openai-asst-streaming-with-functions-py/openai_assistants_functions_streaming.py)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-9-sample-overview-openai-asst-streaming-with-functions-py.md)  
 
         === "Windows"
 
@@ -187,14 +208,6 @@ hide:
             ai dev shell
             python3 main.py
             ```
-
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: main.py](./samples/openai-asst-streaming-with-functions-py/main.py)  
-            [:material-file-code: openai_assistants_custom_functions.py](./samples/openai-asst-streaming-with-functions-py/openai_assistants_custom_functions.py)  
-            [:material-file-code: openai_assistants_functions_streaming.py](./samples/openai-asst-streaming-with-functions-py/openai_assistants_functions_streaming.py)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-9-sample-overview-openai-asst-streaming-with-functions-py.md)  
 
     === "..."
 

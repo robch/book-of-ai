@@ -2,7 +2,7 @@
 hide:
 - toc
 ---
-# GitHub Model Chat Completion Basics
+# GitHub Model Chat Basics
 
 === "Overview"
 
@@ -48,12 +48,12 @@ hide:
         ai dev new list
         ```
 
-        ``` bash title="Filter the list"
+        ``` bash title="Filter the list by name"
         ai dev new list --csharp
         ai dev new list inference --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ``` bash title="Generate sample code"
         ai dev new az-inference-chat-streaming --csharp
@@ -84,12 +84,12 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="Filter the list by name"
         ai dev new list --go
         ai dev new list inference --go
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -101,12 +101,12 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="Filter the list by name"
         ai dev new list --java
         ai dev new list inference --java
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -118,12 +118,12 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="Filter the list by name"
         ai dev new list --javascript
         ai dev new list inference --javascript
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -135,12 +135,12 @@ hide:
         ai dev new list
         ```
 
-        ``` bash title="Filter the list"
+        ``` bash title="Filter the list by name"
         ai dev new list --python
         ai dev new list inference --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ``` bash title="Generate sample code"
         ai dev new az-inference-chat-streaming --python

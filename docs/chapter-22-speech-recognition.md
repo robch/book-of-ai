@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    The `ai speech recognize` command allows you to recognize speech from audio. You can recognize speech from a microphone or a file, and output subtitles in SRT or VTT format.
+
+    --8<-- "docs/tip-speech-prereqs.md"
+
     ### Recognize speech from audio
 
     ```bash title="From microphone"
@@ -42,6 +46,10 @@ hide:
 
 === "Sample Code"
 
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use speech recognition features.
+
+    --8<-- "docs/tip-speech-prereqs.md"
+
     === "C#"
 
         ### List samples
@@ -50,20 +58,31 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only C# samples"
         ai dev new list --csharp
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list speech --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         === "Once w/ Microphone"
 
-            ```bash title="Generate sample code"
+            Generate a C# sample that recognizes speech from the microphone.
+
+            ```bash
             ai dev new speech-to-text --csharp
             cd speech-to-text-cs
             ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Program.cs](./samples/speech-to-text-cs/Program.cs)
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-cs.md)
+
             ```bash title="Install dependencies"
             dotnet restore
             ```
@@ -73,19 +92,21 @@ hide:
             dotnet run
             ```
 
-            ??? example "See the code; learn how it works..."
-
-                [:material-file-code: Program.cs](./samples/speech-to-text-cs/Program.cs)  
-
-                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-cs.md)  
-
         === "Continuous w/ Microphone"
 
-            ```bash title="Generate sample code"
+            Generate a C# sample that continuously recognizes speech from the microphone.
+
+            ```bash
             ai dev new speech-to-text-continuous-reco --csharp
             cd speech-to-text-continuous-reco-cs
             ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Program.cs](./samples/speech-to-text-continuous-reco-cs/Program.cs)
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-continuous-reco-cs.md)
+
             ```bash title="Install dependencies"
             dotnet restore
             ```
@@ -95,19 +116,21 @@ hide:
             dotnet run
             ```
 
-            ??? example "See the code; learn how it works..."
-
-                [:material-file-code: Program.cs](./samples/speech-to-text-continuous-reco-cs/Program.cs)  
-
-                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-continuous-reco-cs.md)  
-
         === "Continuous w/ File"
 
-            ```bash title="Generate sample code"
+            Generate a C# sample that continuously recognizes speech from a file.
+
+            ```bash
             ai dev new speech-to-text-with-file --csharp
             cd speech-to-text-with-file-cs
             ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Program.cs](./samples/speech-to-text-with-file-cs/Program.cs)
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-with-file-cs.md)
+
             ```bash title="Install dependencies"
             dotnet restore
             ```
@@ -116,13 +139,6 @@ hide:
             ai dev shell
             dotnet run
             ```
-
-            ??? example "See the code; learn how it works..."
-
-                [:material-file-code: Program.cs](./samples/speech-to-text-with-file-cs/Program.cs)  
-
-                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-with-file-cs.md)  
-
 
     === "Go"
 
@@ -132,20 +148,23 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Go samples"
         ai dev new list --go
-        ai dev new list text-to-speech --go
         ```
 
-        ### Generate, build, and run
+        ```bash title="Filter the list by name"
+        ai dev new list speech --go
+        ```
+
+        ### Generate, build, and run a sample
 
         === "Once w/ Microphone"
 
         === "Continuous w/ Microphone"
 
-        === "Continuous w/ Flie"
+        === "Continuous w/ File"
 
-        ... 
+        ...
 
     === "Java"
 
@@ -155,12 +174,15 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Java samples"
         ai dev new list --java
-        ai dev new list text-to-speech --java
         ```
 
-        ### Generate, build, and run
+        ```bash title="Filter the list by name"
+        ai dev new list speech --java
+        ```
+
+        ### Generate, build, and run a sample
 
         === "Once w/ Microphone"
 
@@ -168,7 +190,7 @@ hide:
 
         === "Continuous w/ File"
 
-        ... 
+        ...
 
     === "JavaScript"
 
@@ -178,12 +200,15 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only JavaScript samples"
         ai dev new list --javascript
-        ai dev new list text-to-speech --javascript
         ```
 
-        ### Generate, build, and run
+        ```bash title="Filter the list by name"
+        ai dev new list speech --javascript
+        ```
+
+        ### Generate, build, and run a sample
 
         === "Once w/ Microphone"
 
@@ -191,7 +216,7 @@ hide:
 
         === "Continuous w/ File"
 
-        ... 
+        ...
 
     === "Python"
 
@@ -201,20 +226,31 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Python samples"
         ai dev new list --python
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list speech --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         === "Once w/ Microphone"
 
-            ```bash title="Generate sample code"
+            Generate a Python sample that recognizes speech from the microphone.
+
+            ```bash
             ai dev new speech-to-text --python
             cd speech-to-text-py
             ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](./samples/speech-to-text-py/main.py)
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-py.md)
+
             === "Windows"
 
                 ```bash title="Create virtual environment"
@@ -263,19 +299,21 @@ hide:
                 python3 main.py
                 ```
 
-            ??? example "See the code; learn how it works..."
-
-                [:material-file-code: main.py](./samples/speech-to-text-py/main.py)  
-
-                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-py.md)  
-
         === "Continuous w/ Microphone"
 
-            ```bash title="Generate sample code"
+            Generate a Python sample that continuously recognizes speech from the microphone.
+
+            ```bash
             ai dev new speech-to-text-continuous-reco --python
             cd speech-to-text-continuous-reco-py
             ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](./samples/speech-to-text-continuous-reco-py/main.py)
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-continuous-reco-py.md)
+
             === "Windows"
 
                 ```bash title="Create virtual environment"
@@ -324,19 +362,21 @@ hide:
                 python3 main.py
                 ```
 
-            ??? example "See the code; learn how it works..."
-
-                [:material-file-code: main.py](./samples/speech-to-text-continuous-reco-py/main.py)  
-
-                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-continuous-reco-py.md)
-
         === "Continuous w/ File"
 
-            ```bash title="Generate sample code"
+            Generate a Python sample that continuously recognizes speech from a file.
+
+            ```bash
             ai dev new speech-to-text-with-file --python
             cd speech-to-text-with-file-py
             ```
 
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](./samples/speech-to-text-with-file-py/main.py)
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-with-file-py.md)
+
             === "Windows"
 
                 ```bash title="Create virtual environment"
@@ -385,19 +425,13 @@ hide:
                 python3 main.py
                 ```
 
-            ??? example "See the code; learn how it works..."
-
-                [:material-file-code: main.py](./samples/speech-to-text-with-file-py/main.py)  
-
-                [:material-file-document-outline: Deep dive on how it works](./chapter-22-sample-overview-speech-to-text-with-file-py.md)
-                
     === "..."
 
-        **Go over what was generated in the console app**  
+        **Go over what was generated in the console app**
         
-        - Getting connection info/secrets from environment variables  
-        - Using a helper class to encapsulate the Speech API calls  
-        - Getting input from the user  
-        - Sending the input to the helper class  
-        - Getting the response from the helper class  
-        - Deeper dive into the helper class  
+        - Getting connection info/secrets from environment variables
+        - Using a helper class to encapsulate the Speech API calls
+        - Getting input from the user
+        - Sending the input to the helper class
+        - Getting the response from the helper class
+        - Deeper dive into the helper class

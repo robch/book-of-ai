@@ -3,9 +3,9 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions with Functions Streaming in C\#
+# OpenAI Chat with Functions Streaming in C\#
 
-This sample demonstrates how to use the OpenAI Chat Completions API with function calling in a C# console application.
+This sample demonstrates how to use the OpenAI Chat API with function calling in a C# console application.
 
 [:material-file-code: Program.cs](./samples/openai-chat-streaming-with-functions-cs/Program.cs)  
 [:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.cs](./samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsFunctionsStreamingClass.cs)  

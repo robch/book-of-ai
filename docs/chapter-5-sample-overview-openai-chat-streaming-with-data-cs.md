@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions with Data Streaming in C\#
+# OpenAI Chat with Data Streaming in C\#
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API incorporating data streaming from Azure AI Search in a C# console application.
+This sample demonstrates how to use the OpenAI Chat API incorporating data streaming from Azure AI Search in a C# console application.
 
 [:material-file-code: Program.cs](./samples/openai-chat-streaming-with-data-cs/Program.cs)  
 [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.cs](./samples/openai-chat-streaming-with-data-cs/OpenAIChatCompletionsWithDataStreamingClass.cs)  
@@ -125,7 +125,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     _messages.Add(ChatMessage.CreateUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
 
 ``` csharp title="OpenAIChatCompletionsWithDataStreamingClass.cs"
     var responseContent = string.Empty;

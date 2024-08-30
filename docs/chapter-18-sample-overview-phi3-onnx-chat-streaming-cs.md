@@ -1,9 +1,9 @@
 ---
-# ONNX Chat Completions Streaming in C\#
+# ONNX Chat Streaming in C\#
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the ONNX Chat Completions API with streaming in a C# console application.
+This sample demonstrates how to use the ONNX Chat API with streaming in a C# console application.
 
 [:material-file-code: Program.cs](./samples/phi3-onnx-chat-streaming-cs/Program.cs)  
 [:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](./samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
@@ -91,7 +91,7 @@ public string GetChatCompletionStreaming(string userPrompt, Action<string>? call
     _messages.Add(new ContentMessage { Role = "user", Content = userPrompt });
 ```
 
-**STEP 3**: Send the chat message history to the streaming ONNX Chat Completions API and process each update:
+**STEP 3**: Send the chat message history to the streaming ONNX Chat API and process each update:
 
 ``` csharp title="OnnxGenAIChatCompletionsStreamingClass.cs"
     var responseContent = string.Empty;

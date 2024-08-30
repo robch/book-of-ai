@@ -3,9 +3,9 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions with Function Calling in JavaScript
+# OpenAI Chat with Function Calling in JavaScript
 
-This sample demonstrates how to use the OpenAI Chat Completions API with function calling in a JavaScript application.
+This sample demonstrates how to use the OpenAI Chat API with function calling in a JavaScript application.
 
 [:material-file-code: Main.js](./samples/openai-chat-streaming-with-functions-js/Main.js)  
 [:material-file-code: OpenAIChatCompletionsCustomFunctions.js](./samples/openai-chat-streaming-with-functions-js/OpenAIChatCompletionsCustomFunctions.js)  

@@ -3,9 +3,9 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions Streaming in JavaScript
+# OpenAI Chat Streaming in JavaScript
 
-This sample demonstrates how to use the OpenAI Chat Completions API with streaming in a JavaScript application.
+This sample demonstrates how to use the OpenAI Chat API with streaming in a JavaScript application.
 
 [:material-file-code: Main.js](./samples/openai-chat-streaming-js/Main.js)  
 [:material-file-code: OpenAIChatCompletionsStreamingClass.js](./samples/openai-chat-streaming-js/OpenAIChatCompletionsStreamingClass.js)  
@@ -110,7 +110,7 @@ clearConversation() {
 this.messages.push({ role: 'user', content: userInput });
 ```
 
-**STEP 3**: Send the chat message history to the OpenAI Chat Completions streaming API and process each update:
+**STEP 3**: Send the chat message history to the OpenAI Chat streaming API and process each update:
 
 ``` javascript title="OpenAIChatCompletionsStreamingClass.js"
 const events = await this.openai.chat.completions.create({

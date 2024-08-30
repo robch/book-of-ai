@@ -40,36 +40,36 @@ hide:
 
 === "Sample Code"
 
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Assistants.
+
+    --8<-- "docs/tip-openai-prereqs.md"
+
     === "C#"
 
         ### List samples
 
-        ```bash title="List all samples"
+        ``` bash title="List all samples"
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ``` bash title="List only C# samples"
         ai dev new list --csharp
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list openai-asst --csharp
         ai dev new list openai-asst-streaming --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         === "Streaming"
 
-            ```bash title="Generate sample code"
+            Generate a C# sample that demonstrates how to use OpenAI Assistants with streaming.
+
+            ``` bash
             ai dev new openai-asst-streaming --csharp
             cd openai-asst-streaming-cs
-            ```
-
-            ```bash title="Install dependencies"
-            dotnet restore
-            ```
-
-            ```bash title="Run the sample"
-            ai dev shell
-            dotnet run
             ```
 
             ??? example "See the code; learn how it works..."
@@ -79,20 +79,22 @@ hide:
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-cs.md)  
 
-        === "Non-streaming"
-
-            ```bash title="Generate sample code"
-            ai dev new openai-asst --csharp
-            cd openai-asst-cs
-            ```
-
-            ```bash title="Install dependencies"
+            ``` bash title="Install dependencies"
             dotnet restore
             ```
 
-            ```bash title="Run the sample"
+            ``` bash title="Run the sample"
             ai dev shell
             dotnet run
+            ```
+
+        === "Non-streaming"
+
+            Generate a C# sample that demonstrates how to use OpenAI Assistants without streaming.
+
+            ``` bash
+            ai dev new openai-asst --csharp
+            cd openai-asst-cs
             ```
 
             ??? example "See the code; learn how it works..."
@@ -102,36 +104,41 @@ hide:
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-cs.md)  
 
+            ``` bash title="Install dependencies"
+            dotnet restore
+            ```
+
+            ``` bash title="Run the sample"
+            ai dev shell
+            dotnet run
+            ```
+
     === "JavaScript"
 
         ### List samples
 
-        ```bash title="List all samples"
+        ``` bash title="List all samples"
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ``` bash title="List only JavaScript samples"
         ai dev new list --javascript
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list openai-asst --javascript
         ai dev new list openai-asst-streaming --javascript
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         === "Streaming"
 
-            ```bash title="Generate sample code"
+            Generate a JavaScript sample that demonstrates how to use OpenAI Assistants with streaming.
+
+            ``` bash
             ai dev new openai-asst-streaming --javascript
             cd openai-asst-streaming-js
-            ```
-
-            ```bash title="Install dependencies"
-            npm install
-            ```
-
-            ```bash title="Run the sample"
-            ai dev shell
-            node main.js
             ```
 
             ??? example "See the code; learn how it works..."
@@ -141,20 +148,22 @@ hide:
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-js.md)  
 
-        === "Non-streaming"
-
-            ```bash title="Generate sample code"
-            ai dev new openai-asst --javascript
-            cd openai-asst-js
-            ```
-
-            ```bash title="Install dependencies"
+            ``` bash title="Install dependencies"
             npm install
             ```
 
-            ```bash title="Run the sample"
+            ``` bash title="Run the sample"
             ai dev shell
             node main.js
+            ```
+
+        === "Non-streaming"
+
+            Generate a JavaScript sample that demonstrates how to use OpenAI Assistants without streaming.
+
+            ``` bash
+            ai dev new openai-asst --javascript
+            cd openai-asst-js
             ```
 
             ??? example "See the code; learn how it works..."
@@ -164,75 +173,42 @@ hide:
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-js.md)  
 
+            ``` bash title="Install dependencies"
+            npm install
+            ```
+
+            ``` bash title="Run the sample"
+            ai dev shell
+            node main.js
+            ```
+
     === "Python"
 
         ### List samples
 
-        ```bash title="List all samples"
+        ``` bash title="List all samples"
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ``` bash title="List only Python samples"
         ai dev new list --python
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list openai-asst --python
         ai dev new list openai-asst-streaming --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         === "Streaming"
 
-            ```bash title="Generate sample code"
+            Generate a Python sample that demonstrates how to use OpenAI Assistants with streaming.
+
+            ``` bash
             ai dev new openai-asst-streaming --python
             cd openai-asst-streaming-py
             ```
-            === "Windows"
-
-                ```bash title="Create virtual environment"
-                python -m venv env
-                env/Scripts/activate
-                ```
-
-                ```bash title="Install requirements"
-                pip install -r requirements.txt
-                ```
-
-                ```bash title="Run the sample"
-                ai dev shell
-                python main.py
-                ```
-
-            === "macOS"
-
-                ```bash title="Create virtual environment"
-                python3 -m venv env
-                source env/bin/activate
-                ```
-
-                ```bash title="Install requirements"
-                pip install -r requirements.txt
-                ```
-
-                ```bash title="Run the sample"
-                ai dev shell
-                python3 main.py
-                ```
-
-            === "Linux"
-
-                ```bash title="Create virtual environment"
-                python3 -m venv env
-                source env/bin/activate
-                ```
-
-                ```bash title="Install requirements"
-                pip install -r requirements.txt
-                ```
-
-                ```bash title="Run the sample"
-                ai dev shell
-                python3 main.py
-                ```
 
             ??? example "See the code; learn how it works..."
 
@@ -241,59 +217,62 @@ hide:
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-streaming-py.md)  
 
-        === "Non-streaming"
-
-            ```bash title="Generate sample code"
-            ai dev new openai-asst --python
-            cd openai-asst-py
-            ```
             === "Windows"
 
-                ```bash title="Create virtual environment"
+                ``` bash title="Create virtual environment"
                 python -m venv env
                 env/Scripts/activate
                 ```
 
-                ```bash title="Install requirements"
+                ``` bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
 
-                ```bash title="Run the sample"
+                ``` bash title="Run the sample"
                 ai dev shell
                 python main.py
                 ```
 
             === "macOS"
 
-                ```bash title="Create virtual environment"
+                ``` bash title="Create virtual environment"
                 python3 -m venv env
                 source env/bin/activate
                 ```
 
-                ```bash title="Install requirements"
+                ``` bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
 
-                ```bash title="Run the sample"
+                ``` bash title="Run the sample"
                 ai dev shell
                 python3 main.py
                 ```
 
             === "Linux"
 
-                ```bash title="Create virtual environment"
+                ``` bash title="Create virtual environment"
                 python3 -m venv env
                 source env/bin/activate
                 ```
 
-                ```bash title="Install requirements"
+                ``` bash title="Install requirements"
                 pip install -r requirements.txt
                 ```
 
-                ```bash title="Run the sample"
+                ``` bash title="Run the sample"
                 ai dev shell
                 python3 main.py
                 ```
+
+        === "Non-streaming"
+
+            Generate a Python sample that demonstrates how to use OpenAI Assistants without streaming.
+
+            ``` bash
+            ai dev new openai-asst --python
+            cd openai-asst-py
+            ```
 
             ??? example "See the code; learn how it works..."
 
@@ -302,20 +281,68 @@ hide:
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-7-sample-overview-openai-asst-py.md)  
 
+            === "Windows"
+
+                ``` bash title="Create virtual environment"
+                python -m venv env
+                env/Scripts/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python main.py
+                ```
+
+            === "macOS"
+
+                ``` bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            === "Linux"
+
+                ``` bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
     === "..."
 
         **Go over what was generated in the console app**  
-
+        
         - similar to console apps generated in earlier chapters  
         - see how the LLM sends back citations to the helper class  
         - see how the helper class processes the citations  
 
         ### Delete the Assistant
 
-        ```bash title="Delete the assistant"
+        ``` bash title="Delete the assistant"
         ai chat assistant delete
         ```
 
-        ```bash title="Clear assistant configuration"
+        ``` bash title="Clear assistant configuration"
         ai config --clear assistant.id
         ```

@@ -3,11 +3,11 @@ hide:
 - navigation
 - toc
 ---
-# OpenAI Chat Completions in Python
+# OpenAI Chat in Python
 
 --8<-- "docs/warning-ai-generated.md"
 
-This sample demonstrates how to use the OpenAI Chat Completions API in a Python console application.
+This sample demonstrates how to use the OpenAI Chat API in a Python console application.
 
 [:material-file-code: main.py](./samples/openai-chat-py/main.py)  
 [:material-file-code: openai_chat_completions.py](./samples/openai-chat-py/openai_chat_completions.py)  

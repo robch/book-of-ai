@@ -2,9 +2,14 @@
 hide:
 - toc
 ---
+
 # Speech Synthesis
 
 === "Overview"
+
+    The `ai speech synthesize` command allows you to synthesize speech from text. You can synthesize speech with different voices, formats, and audio outputs.
+
+    --8<-- "docs/tip-speech-prereqs.md"
 
     ### Synthesize speech from text
 
@@ -38,6 +43,10 @@ hide:
 
 === "Sample Code"
 
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use Speech Synthesis.
+
+    --8<-- "docs/tip-speech-prereqs.md"
+
     === "C#"
 
         ### List samples
@@ -46,17 +55,27 @@ hide:
         ai dev new list
         ```
 
-        ``` bash title="Filter the list"
+        ``` bash title="List only C# samples"
         ai dev new list --csharp
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list text-to-speech --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ``` bash title="Generate sample code"
         ai dev new text-to-speech --csharp
         cd text-to-speech-cs
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Program.cs](./samples/text-to-speech-cs/Program.cs)  
+            [:material-file-code: TextToSpeechClass.cs](./samples/text-to-speech-cs/TextToSpeechClass.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-21-sample-overview-text-to-speech-cs.md)  
 
         ``` bash title="Install dependencies"
         dotnet restore
@@ -67,13 +86,6 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: Program.cs](./samples/text-to-speech-cs/Program.cs)  
-            [:material-file-code: TextToSpeechClass.cs](./samples/text-to-speech-cs/TextToSpeechClass.cs)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-21-sample-overview-text-to-speech-cs.md)  
-
     === "Go"
 
         ### List samples
@@ -82,14 +94,17 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Go samples"
         ai dev new list --go
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list text-to-speech --go
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        ... 
 
     === "Java"
 
@@ -99,14 +114,17 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Java samples"
         ai dev new list --java
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list text-to-speech --java
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        ... 
 
     === "JavaScript"
 
@@ -116,14 +134,17 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only JavaScript samples"
         ai dev new list --javascript
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list text-to-speech --javascript
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
-        ... 🚧 UNDER CONSTRUCTION ...  
+        ... 
 
     === "Python"
 
@@ -133,17 +154,27 @@ hide:
         ai dev new list
         ```
 
-        ``` bash title="Filter the list"
+        ``` bash title="List only Python samples"
         ai dev new list --python
+        ```
+
+        ``` bash title="Filter the list by name"
         ai dev new list text-to-speech --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ``` bash title="Generate sample code"
         ai dev new text-to-speech --python
         cd text-to-speech-py
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.py](./samples/text-to-speech-py/main.py)  
+            [:material-file-code: requirements.txt](./samples/text-to-speech-py/requirements.txt)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-21-sample-overview-text-to-speech-py.md)  
 
         === "Windows"
 
@@ -192,13 +223,6 @@ hide:
             ai dev shell
             python3 main.py
             ```
-
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: main.py](./samples/text-to-speech-py/main.py)  
-            [:material-file-code: requirements.txt](./samples/text-to-speech-py/requirements.txt)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-21-sample-overview-text-to-speech-py.md)  
 
     === "..."
 

@@ -47,6 +47,10 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     [:octicons-arrow-right-24: `ai` CLI Installation](./chapter-1-cli-installation.md)  
     [:octicons-arrow-right-24: Azure OpenAI Setup](./chapter-2-setup-w-azure-openai.md)  
 
+    **Create your first app**  
+    [:material-creation-outline: Create your first OpenAI Chat app](./chapter-3-openai-chat-completions-basics.md#sample-code)  
+    [:material-creation-outline: Create your first OpenAI Assistants app](./chapter-7-openai-assistants-basics.md#sample-code)  
+
 -   :material-microsoft-azure:{ .lg .middle } __Azure AI__
 
     ---

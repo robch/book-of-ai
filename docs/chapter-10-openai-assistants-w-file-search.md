@@ -69,6 +69,10 @@ hide:
 
 === "Sample Code"
 
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Assistants with File Search.
+
+    --8<-- "docs/tip-openai-prereqs.md"
+
     === "C#"
 
         ### List samples
@@ -77,17 +81,27 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only C# samples"
         ai dev new list --csharp
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-asst-streaming-with-file-search --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-asst-streaming-with-file-search --csharp
         cd openai-asst-streaming-with-file-search-cs
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Program.cs](./samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
+            [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.cs](./samples/openai-asst-streaming-with-file-search-cs/OpenAIAssistantsFileSearchStreamingClass.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-streaming-with-file-search-cs.md)  
 
         ```bash title="Install dependencies"
         dotnet restore
@@ -98,13 +112,6 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: Program.cs](./samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
-            [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.cs](./samples/openai-asst-streaming-with-file-search-cs/OpenAIAssistantsFileSearchStreamingClass.cs)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-streaming-with-file-search-cs.md)  
-
     === "JavaScript"
 
         ### List samples
@@ -113,25 +120,19 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only JavaScript samples"
         ai dev new list --javascript
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-asst-streaming-with-file-search --javascript
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-asst-streaming-with-file-search --javascript
         cd openai-asst-streaming-with-file-search-js
-        ```
-
-        ```bash title="Install dependencies"
-        npm install
-        ```
-
-        ```bash title="Run the sample"
-        ai dev shell
-        node main.js
         ```
 
         ??? example "See the code; learn how it works..."
@@ -142,6 +143,16 @@ hide:
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-streaming-with-file-search-js.md)  
 
+
+        ```bash title="Install dependencies"
+        npm install
+        ```
+
+        ```bash title="Run the sample"
+        ai dev shell
+        node main.js
+        ```
+
     === "Python"
 
         ### List samples
@@ -150,17 +161,27 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="Filter the list by name"
         ai dev new list --python
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list openai-asst-streaming-with-file-search --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new openai-asst-streaming-with-file-search --python
         cd openai-asst-streaming-with-file-search-py
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.py](./samples/openai-asst-streaming-with-file-search-py/main.py)  
+            [:material-file-code: openai_assistants_file_search_streaming.py](./samples/openai-asst-streaming-with-file-search-py/openai_assistants_file_search_streaming.py)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-w-file-search-py.md)  
 
         === "Windows"
 
@@ -210,18 +231,10 @@ hide:
             python3 main.py
             ```
 
-
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: main.py](./samples/openai-asst-streaming-with-file-search-py/main.py)  
-            [:material-file-code: openai_assistants_file_search_streaming.py](./samples/openai-asst-streaming-with-file-search-py/openai_assistants_file_search_streaming.py)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-w-file-search-py.md)  
-
     === "..."
 
         **Go over what was generated in the console app**  
-        ◦ builds on chapter 7's console app  
-        ◦ see how the LLM sends back citations to the helper class  
-        ◦ see how the helper class processes the citations  
-
+        
+        - builds on chapter 7's console app  
+        - see how the LLM sends back citations to the helper class  
+        - see how the helper class processes the citations

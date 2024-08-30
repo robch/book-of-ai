@@ -6,6 +6,10 @@ hide:
 
 === "Overview"
 
+    The `ai speech recognize` `--keyword` option allows you to recognize speech with keyword spotting. You can recognize speech from a microphone or a file, and output the recognized text.
+
+    --8<-- "docs/tip-speech-prereqs.md"
+
     ### Recognize Speech with Keyword Spotting
 
     ```bash title="Interactive recognition with keyword spotting"
@@ -26,6 +30,10 @@ hide:
 
 === "Sample Code"
 
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use Speech Recognition with Keyword Spotting.
+
+    --8<-- "docs/tip-speech-prereqs.md"
+
     === "C#"
 
         ### List samples
@@ -34,17 +42,26 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only C# samples"
         ai dev new list --csharp
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list speech-to-text-with-keyword --csharp
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new speech-to-text-with-keyword --csharp
         cd speech-to-text-with-keyword-cs
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: Program.cs](./samples/speech-to-text-with-keyword-cs/Program.cs)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-24-sample-overview-speech-to-text-with-keyword-cs.md)  
 
         ```bash title="Install dependencies"
         dotnet restore
@@ -55,12 +72,6 @@ hide:
         dotnet run
         ```
 
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: Program.cs](./samples/speech-to-text-with-keyword-cs/Program.cs)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-24-sample-overview-speech-to-text-with-keyword-cs.md)  
-            
     === "Go"
 
         ### List samples
@@ -69,12 +80,15 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Go samples"
         ai dev new list --go
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list speech-to-text-with-keyword --go
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -86,12 +100,15 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Java samples"
         ai dev new list --java
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list speech-to-text-with-keyword --java
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -103,12 +120,15 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only JavaScript samples"
         ai dev new list --javascript
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list speech-to-text-with-keyword --javascript
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ... 🚧 UNDER CONSTRUCTION ...  
 
@@ -120,17 +140,26 @@ hide:
         ai dev new list
         ```
 
-        ```bash title="Filter the list"
+        ```bash title="List only Python samples"
         ai dev new list --python
+        ```
+
+        ```bash title="Filter the list by name"
         ai dev new list speech-to-text-with-keyword --python
         ```
 
-        ### Generate, build, and run
+        ### Generate, build, and run a sample
 
         ```bash title="Generate sample code"
         ai dev new speech-to-text-with-keyword --python
         cd speech-to-text-with-keyword-py
         ```
+
+        ??? example "See the code; learn how it works..."
+
+            [:material-file-code: main.py](./samples/speech-to-text-with-keyword-py/main.py)  
+
+            [:material-file-document-outline: Deep dive on how it works](./chapter-24-sample-overview-speech-to-text-with-keyword-py.md)  
 
         === "Windows"
 
@@ -179,12 +208,6 @@ hide:
             ai dev shell
             python3 main.py
             ```
-
-        ??? example "See the code; learn how it works..."
-
-            [:material-file-code: main.py](./samples/speech-to-text-with-keyword-py/main.py)  
-
-            [:material-file-document-outline: Deep dive on how it works](./chapter-24-sample-overview-speech-to-text-with-keyword-py.md)  
 
     === "..."
 
