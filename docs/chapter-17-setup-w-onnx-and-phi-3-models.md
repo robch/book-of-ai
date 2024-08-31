@@ -6,6 +6,10 @@ icon: material/server-network-outline
 
 # Setup with ONNX and Phi-3 Models
 
+You need to download the ONNX model and configure the model path to use the Phi-3 model with the Azure AI CLI.
+
+--8<-- "docs/tip-setup-prereqs.md"
+
 ```bash title="Clone/download the Phi-3 ONNX Model"
 git lfs install
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx

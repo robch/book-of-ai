@@ -8,6 +8,8 @@ icon: material/server-network-outline
 
 The `ai init inference` command initializes the connection to the Azure AI Inference endpoint. This initialization is required to use the models available in the Azure AI Model Catalog with the Azure AI CLI or with the Azure AI Inference SDK packages.
 
+--8<-- "docs/tip-setup-prereqs.md"
+
 ``` bash title="Initialize connection to Azure AI Inference Endpoint"
 ai init inference
 ```

@@ -8,6 +8,8 @@ icon: material/server-network-outline
 
 The `ai init github` command initializes the connection to the GitHub Model Marketplace. This initialization is required to use the models available in the GitHub Model Marketplace with the Azure AI CLI or with the Azure AI Inference SDK packages.
 
+--8<-- "docs/tip-setup-prereqs.md"
+
 ``` bash title="Initialize connection to GitHub Model Marketplace"
 ai init github
 ```
