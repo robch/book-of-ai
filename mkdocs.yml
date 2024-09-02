@@ -76,7 +76,7 @@ nav:
   - HOME: index.md
   - PRE-REQS:
       INSTALL:
-        - "CLI Installation": chapter-1-cli-installation.md
+        - "CLI Installation": install-ai-cli.md
       SETUP:
       - "Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
       - "Azure AI Model Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
