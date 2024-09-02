@@ -98,8 +98,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
-            [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-cs/OpenAIAssistantsFileSearchStreamingClass.cs)  
+            [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
+            [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-file-search-cs/OpenAIAssistantsFileSearchStreamingClass.cs)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-streaming-with-file-search-cs.md)  
 
@@ -137,9 +137,9 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-js/main.js)  
-            [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-js/OpenAIAssistantsFileSearchStreamingClass.js)  
-            [:material-file-code: ReadLineWrapper.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-js/ReadLineWrapper.js)  
+            [:material-file-code: Main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-file-search-js/main.js)  
+            [:material-file-code: OpenAIAssistantsFileSearchStreamingClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-file-search-js/OpenAIAssistantsFileSearchStreamingClass.js)  
+            [:material-file-code: ReadLineWrapper.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-file-search-js/ReadLineWrapper.js)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-streaming-with-file-search-js.md)  
 
@@ -178,8 +178,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-py/main.py)  
-            [:material-file-code: openai_assistants_file_search_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-file-search-py/openai_assistants_file_search_streaming.py)  
+            [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-file-search-py/main.py)  
+            [:material-file-code: openai_assistants_file_search_streaming.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-file-search-py/openai_assistants_file_search_streaming.py)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-10-sample-overview-openai-asst-w-file-search-py.md)  
 

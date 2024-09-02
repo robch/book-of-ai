@@ -7,8 +7,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API in a JavaScript console application.
 
-[:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-js/main.js)  
-[:material-file-code: OpenAIAssistantsClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-js/OpenAIAssistantsClass.js)  
+[:material-file-code: main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-js/main.js)  
+[:material-file-code: OpenAIAssistantsClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-js/OpenAIAssistantsClass.js)  
 
 ??? tip "How to generate this sample"
 

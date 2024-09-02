@@ -9,12 +9,12 @@ hide:
 
 This sample demonstrates how to use OpenAI Assistants with function calling in a C# console application.
 
-[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/Program.cs)  
-[:material-file-code: FunctionFactory.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/FunctionFactory.cs)  
-[:material-file-code: HelperFunctionDescriptionAttribute.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/HelperFunctionDescriptionAttribute.cs)  
-[:material-file-code: HelperFunctionParameterDescriptionAttribute.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/HelperFunctionParameterDescriptionAttribute.cs)  
-[:material-file-code: OpenAIAssistantsCustomFunctions.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/OpenAIAssistantsCustomFunctions.cs)  
-[:material-file-code: OpenAIAssistantsFunctionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/OpenAIAssistantsFunctionsStreamingClass.cs)  
+[:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/Program.cs)  
+[:material-file-code: FunctionFactory.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/FunctionFactory.cs)  
+[:material-file-code: HelperFunctionDescriptionAttribute.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/HelperFunctionDescriptionAttribute.cs)  
+[:material-file-code: HelperFunctionParameterDescriptionAttribute.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/HelperFunctionParameterDescriptionAttribute.cs)  
+[:material-file-code: OpenAIAssistantsCustomFunctions.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/OpenAIAssistantsCustomFunctions.cs)  
+[:material-file-code: OpenAIAssistantsFunctionsStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/OpenAIAssistantsFunctionsStreamingClass.cs)  
 
 ??? tip "How to generate this sample"
 

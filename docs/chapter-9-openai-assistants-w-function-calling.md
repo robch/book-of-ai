@@ -72,12 +72,12 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/Program.cs)  
-            [:material-file-code: FunctionFactory.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/FunctionFactory.cs)  
-            [:material-file-code: HelperFunctionDescriptionAttribute.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/HelperFunctionDescriptionAttribute.cs)  
-            [:material-file-code: HelperFunctionParameterDescriptionAttribute.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/HelperFunctionParameterDescriptionAttribute.cs)  
-            [:material-file-code: OpenAIAssistantsCustomFunctions.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/OpenAIAssistantsCustomFunctions.cs)  
-            [:material-file-code: OpenAIAssistantsFunctionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-cs/OpenAIAssistantsFunctionsStreamingClass.cs)  
+            [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/Program.cs)  
+            [:material-file-code: FunctionFactory.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/FunctionFactory.cs)  
+            [:material-file-code: HelperFunctionDescriptionAttribute.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/HelperFunctionDescriptionAttribute.cs)  
+            [:material-file-code: HelperFunctionParameterDescriptionAttribute.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/HelperFunctionParameterDescriptionAttribute.cs)  
+            [:material-file-code: OpenAIAssistantsCustomFunctions.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/OpenAIAssistantsCustomFunctions.cs)  
+            [:material-file-code: OpenAIAssistantsFunctionsStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/OpenAIAssistantsFunctionsStreamingClass.cs)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-9-sample-overview-openai-asst-streaming-with-functions-cs.md)  
 
@@ -115,9 +115,9 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-js/main.js)  
-            [:material-file-code: OpenAIAssistantsCustomFunctions.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsCustomFunctions.js)  
-            [:material-file-code: OpenAIAssistantsFunctionsStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsFunctionsStreamingClass.js)  
+            [:material-file-code: main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-js/main.js)  
+            [:material-file-code: OpenAIAssistantsCustomFunctions.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsCustomFunctions.js)  
+            [:material-file-code: OpenAIAssistantsFunctionsStreamingClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-js/OpenAIAssistantsFunctionsStreamingClass.js)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-9-sample-overview-openai-asst-streaming-with-functions-js.md)  
 
@@ -155,9 +155,9 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-py/main.py)  
-            [:material-file-code: openai_assistants_custom_functions.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-py/openai_assistants_custom_functions.py)  
-            [:material-file-code: openai_assistants_functions_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-functions-py/openai_assistants_functions_streaming.py)  
+            [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-py/main.py)  
+            [:material-file-code: openai_assistants_custom_functions.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-py/openai_assistants_custom_functions.py)  
+            [:material-file-code: openai_assistants_functions_streaming.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-py/openai_assistants_functions_streaming.py)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-9-sample-overview-openai-asst-streaming-with-functions-py.md)  
 

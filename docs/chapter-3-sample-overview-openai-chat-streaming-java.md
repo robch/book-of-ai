@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with streaming in a Java console application.
 
-[:material-file-code: Main.java](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-java/src/Main.java)  
-[:material-file-code: OpenAIChatCompletionsStreamingClass.java](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-java/src/OpenAIChatCompletionsStreamingClass.java)  
+[:material-file-code: Main.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-java/src/Main.java)  
+[:material-file-code: OpenAIChatCompletionsStreamingClass.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-java/src/OpenAIChatCompletionsStreamingClass.java)  
 
 ??? tip "How to generate this sample"
 

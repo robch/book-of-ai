@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the Azure Text-to-Speech API in a C# console application.
 
-[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/text-to-speech-cs/Program.cs)  
-[:material-file-code: TextToSpeechClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/text-to-speech-cs/TextToSpeechClass.cs)  
+[:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/text-to-speech-cs/Program.cs)  
+[:material-file-code: TextToSpeechClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/text-to-speech-cs/TextToSpeechClass.cs)  
 
 ??? tip "How to generate this sample"
 

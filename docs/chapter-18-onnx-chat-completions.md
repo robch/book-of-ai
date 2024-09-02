@@ -74,10 +74,10 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-cs/Program.cs)  
-            [:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
-            [:material-file-code: get-phi3-mini-onnx.cmd](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-cs/get-phi3-mini-onnx.cmd)  
-            [:material-file-code: Phi3ChatStreaming.csproj](https://github.dev/robch/book-of-ai/blob/main/docs/samples/phi3-onnx-chat-streaming-cs/Phi3ChatStreaming.csproj)  
+            [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/phi3-onnx-chat-streaming-cs/Program.cs)  
+            [:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/phi3-onnx-chat-streaming-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
+            [:material-file-code: get-phi3-mini-onnx.cmd](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/phi3-onnx-chat-streaming-cs/get-phi3-mini-onnx.cmd)  
+            [:material-file-code: Phi3ChatStreaming.csproj](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/phi3-onnx-chat-streaming-cs/Phi3ChatStreaming.csproj)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-18-sample-overview-phi3-onnx-chat-streaming-cs.md)  
 

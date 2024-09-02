@@ -102,8 +102,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-cs/Program.cs)  
-                [:material-file-code: OpenAIChatCompletionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-cs/OpenAIChatCompletionsStreamingClass.cs)  
+                [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-cs/Program.cs)  
+                [:material-file-code: OpenAIChatCompletionsStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-cs/OpenAIChatCompletionsStreamingClass.cs)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-cs.md)  
 
@@ -127,8 +127,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-cs/Program.cs)  
-                [:material-file-code: OpenAIChatCompletionsClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-cs/OpenAIChatCompletionsClass.cs)
+                [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-cs/Program.cs)  
+                [:material-file-code: OpenAIChatCompletionsClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-cs/OpenAIChatCompletionsClass.cs)
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-cs.md)  
 
@@ -171,8 +171,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-go/main.go)  
-                [:material-file-code: openai_chat_completions_streaming_hello_world.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-go/openai_chat_completions_streaming_hello_world.go)  
+                [:material-file-code: main.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-go/main.go)  
+                [:material-file-code: openai_chat_completions_streaming_hello_world.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-go/openai_chat_completions_streaming_hello_world.go)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-go.md)  
 
@@ -195,8 +195,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-go/main.go)  
-                [:material-file-code: openai_chat_completions_hello_world.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-go/openai_chat_completions_hello_world.go)  
+                [:material-file-code: main.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-go/main.go)  
+                [:material-file-code: openai_chat_completions_hello_world.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-go/openai_chat_completions_hello_world.go)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-go.md)  
 
@@ -238,8 +238,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Main.java](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-java/src/Main.java)  
-                [:material-file-code: OpenAIChatCompletionsStreamingClass.java](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-java/src/OpenAIChatCompletionsStreamingClass.java)  
+                [:material-file-code: Main.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-java/src/Main.java)  
+                [:material-file-code: OpenAIChatCompletionsStreamingClass.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-java/src/OpenAIChatCompletionsStreamingClass.java)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-java.md)  
 
@@ -291,8 +291,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Main.java](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-java/src/Main.java)  
-                [:material-file-code: OpenAIChatCompletionsClass.java](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-java/src/OpenAIChatCompletionsClass.java)  
+                [:material-file-code: Main.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-java/src/Main.java)  
+                [:material-file-code: OpenAIChatCompletionsClass.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-java/src/OpenAIChatCompletionsClass.java)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-java.md)  
 
@@ -363,8 +363,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-js/Main.js)  
-                [:material-file-code: OpenAIChatCompletionsStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-js/OpenAIChatCompletionsStreamingClass.js)  
+                [:material-file-code: Main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-js/Main.js)  
+                [:material-file-code: OpenAIChatCompletionsStreamingClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-js/OpenAIChatCompletionsStreamingClass.js)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-js.md)  
 
@@ -387,8 +387,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-js/Main.js)  
-                [:material-file-code: OpenAIChatCompletionsClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-js/OpenAIChatCompletionsClass.js)  
+                [:material-file-code: Main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-js/Main.js)  
+                [:material-file-code: OpenAIChatCompletionsClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-js/OpenAIChatCompletionsClass.js)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-js.md)  
 
@@ -430,8 +430,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-py/main.py)  
-                [:material-file-code: openai_chat_completions_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-py/openai_chat_completions_streaming.py)  
+                [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-py/main.py)  
+                [:material-file-code: openai_chat_completions_streaming.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-py/openai_chat_completions_streaming.py)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-py.md)  
 
@@ -494,8 +494,8 @@ hide:
 
             ??? example "See the code; learn how it works..."
 
-                [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-py/main.py)  
-                [:material-file-code: openai_chat_completions.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-py/openai_chat_completions.py)  
+                [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-py/main.py)  
+                [:material-file-code: openai_chat_completions.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-py/openai_chat_completions.py)  
 
                 [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-py.md)  
 

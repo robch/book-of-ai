@@ -67,8 +67,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-cs/Program.cs)  
-            [:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-cs/OpenAIAssistantsCodeInterpreterStreamingClass.cs)  
+            [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-code-cs/Program.cs)  
+            [:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-code-cs/OpenAIAssistantsCodeInterpreterStreamingClass.cs)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-8-sample-overview-openai-asst-streaming-with-code-cs.md)  
 
@@ -106,8 +106,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-js/main.js)  
-            [:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-js/OpenAIAssistantsCodeInterpreterStreamingClass.js)  
+            [:material-file-code: main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-code-js/main.js)  
+            [:material-file-code: OpenAIAssistantsCodeInterpreterStreamingClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-code-js/OpenAIAssistantsCodeInterpreterStreamingClass.js)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-8-sample-overview-openai-asst-streaming-with-code-js.md)  
 
@@ -145,8 +145,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-py/main.py)  
-            [:material-file-code: openai_assistants_code_interpreter_streaming.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-with-code-py/openai_assistants_code_interpreter_streaming.py)  
+            [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-code-py/main.py)  
+            [:material-file-code: openai_assistants_code_interpreter_streaming.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-code-py/openai_assistants_code_interpreter_streaming.py)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-8-sample-overview-openai-asst-streaming-with-code-py.md)  
 

@@ -7,8 +7,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with streaming in a JavaScript application.
 
-[:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-js/Main.js)  
-[:material-file-code: OpenAIChatCompletionsStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-js/OpenAIChatCompletionsStreamingClass.js)  
+[:material-file-code: Main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-js/Main.js)  
+[:material-file-code: OpenAIChatCompletionsStreamingClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-js/OpenAIChatCompletionsStreamingClass.js)  
 
 ??? tip "How to generate this sample"
 

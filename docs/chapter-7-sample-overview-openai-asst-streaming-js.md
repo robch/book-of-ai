@@ -7,8 +7,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API with streaming in a JavaScript application.
 
-[:material-file-code: main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-js/main.js)  
-[:material-file-code: OpenAIAssistantsStreamingClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-streaming-js/OpenAIAssistantsStreamingClass.js)  
+[:material-file-code: main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-js/main.js)  
+[:material-file-code: OpenAIAssistantsStreamingClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-js/OpenAIAssistantsStreamingClass.js)  
 
 ??? tip "How to generate this sample"
 

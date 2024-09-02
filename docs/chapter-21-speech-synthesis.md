@@ -72,8 +72,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/text-to-speech-cs/Program.cs)  
-            [:material-file-code: TextToSpeechClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/text-to-speech-cs/TextToSpeechClass.cs)  
+            [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/text-to-speech-cs/Program.cs)  
+            [:material-file-code: TextToSpeechClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/text-to-speech-cs/TextToSpeechClass.cs)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-21-sample-overview-text-to-speech-cs.md)  
 
@@ -171,8 +171,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/text-to-speech-py/main.py)  
-            [:material-file-code: requirements.txt](https://github.dev/robch/book-of-ai/blob/main/docs/samples/text-to-speech-py/requirements.txt)  
+            [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/text-to-speech-py/main.py)  
+            [:material-file-code: requirements.txt](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/text-to-speech-py/requirements.txt)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-21-sample-overview-text-to-speech-py.md)  
 

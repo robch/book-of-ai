@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK to perform speech-to-text translation in a C# console application.
 
-[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-translation-cs/Program.cs)  
-[:material-file-code: SpeechToTextWithTranslation.csproj](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-translation-cs/SpeechToTextWithTranslation.csproj)  
+[:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/speech-to-text-with-translation-cs/Program.cs)  
+[:material-file-code: SpeechToTextWithTranslation.csproj](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/speech-to-text-with-translation-cs/SpeechToTextWithTranslation.csproj)  
 
 ??? tip "How to generate this sample"
 

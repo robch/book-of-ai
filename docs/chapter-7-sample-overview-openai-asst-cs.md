@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API in a C# console application.
 
-[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-cs/Program.cs)  
-[:material-file-code: OpenAIAssistantsClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-cs/OpenAIAssistantsClass.cs)  
+[:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-cs/Program.cs)  
+[:material-file-code: OpenAIAssistantsClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-cs/OpenAIAssistantsClass.cs)  
 
 ??? tip "How to generate this sample"
 

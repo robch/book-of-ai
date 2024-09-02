@@ -9,7 +9,7 @@ hide:
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK for speech recognition with keyword spotting in a Python console application.
 
-[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-with-keyword-py/main.py)  
+[:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/speech-to-text-with-keyword-py/main.py)  
 
 ??? tip "How to generate this sample"
 

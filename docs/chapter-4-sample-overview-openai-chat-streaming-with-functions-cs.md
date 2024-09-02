@@ -7,9 +7,9 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with function calling in a C# console application.
 
-[:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-cs/Program.cs)  
-[:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsFunctionsStreamingClass.cs)  
-[:material-file-code: OpenAIChatCompletionsCustomFunctions.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsCustomFunctions.cs)  
+[:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-functions-cs/Program.cs)  
+[:material-file-code: OpenAIChatCompletionsFunctionsStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsFunctionsStreamingClass.cs)  
+[:material-file-code: OpenAIChatCompletionsCustomFunctions.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-functions-cs/OpenAIChatCompletionsCustomFunctions.cs)  
 
 ??? tip "How to generate this sample"
 

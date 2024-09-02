@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API in a Python console application.
 
-[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-py/main.py)  
-[:material-file-code: openai_chat_completions.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-py/openai_chat_completions.py)  
+[:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-py/main.py)  
+[:material-file-code: openai_chat_completions.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-py/openai_chat_completions.py)  
 
 ??? tip "How to generate this sample"
 

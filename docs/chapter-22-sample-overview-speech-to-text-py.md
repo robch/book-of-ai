@@ -9,7 +9,7 @@ hide:
 
 This sample demonstrates how to use the Azure Speech Service for speech-to-text recognition in Python.
 
-[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/speech-to-text-py/main.py)  
+[:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/speech-to-text-py/main.py)  
 
 ??? tip "How to generate this sample"
 

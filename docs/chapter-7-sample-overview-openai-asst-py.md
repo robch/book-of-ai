@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Assistants API in a Python console application.
 
-[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-py/main.py)  
-[:material-file-code: openai_assistants.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-asst-py/openai_assistants.py)  
+[:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-py/main.py)  
+[:material-file-code: openai_assistants.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-py/openai_assistants.py)  
 
 ??? tip "How to generate this sample"
 

@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use Azure Speech Synthesis in a Python application.
 
-[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/text-to-speech-py/main.py)  
-[:material-file-code: requirements.txt](https://github.dev/robch/book-of-ai/blob/main/docs/samples/text-to-speech-py/requirements.txt)  
+[:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/text-to-speech-py/main.py)  
+[:material-file-code: requirements.txt](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/text-to-speech-py/requirements.txt)  
 
 ??? tip "How to generate this sample"
 

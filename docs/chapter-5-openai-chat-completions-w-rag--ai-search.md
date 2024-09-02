@@ -80,8 +80,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Program.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-cs/Program.cs)  
-            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.cs](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-cs/OpenAIChatCompletionsWithDataStreamingClass.cs)  
+            [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-cs/Program.cs)  
+            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-cs/OpenAIChatCompletionsWithDataStreamingClass.cs)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-cs.md)  
 
@@ -119,8 +119,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-go/main.go)  
-            [:material-file-code: openai_chat_completions_streaming_with_data_hello_world.go](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-go/openai_chat_completions_streaming_with_data_hello_world.go)  
+            [:material-file-code: main.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-go/main.go)  
+            [:material-file-code: openai_chat_completions_streaming_with_data_hello_world.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-go/openai_chat_completions_streaming_with_data_hello_world.go)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-go.md)  
 
@@ -158,8 +158,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Main.java](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-java/src/Main.java)  
-            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.java](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-java/src/OpenAIChatCompletionsWithDataStreamingClass.java)  
+            [:material-file-code: Main.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-java/src/Main.java)  
+            [:material-file-code: OpenAIChatCompletionsWithDataStreamingClass.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-java/src/OpenAIChatCompletionsWithDataStreamingClass.java)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-java.md)  
 
@@ -225,8 +225,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-js/Main.js)  
-            [:material-file-code: OpenAIChatCompletionsStreamingWithDataClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-js/OpenAIChatCompletionsStreamingWithDataClass.js)  
+            [:material-file-code: Main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-js/Main.js)  
+            [:material-file-code: OpenAIChatCompletionsStreamingWithDataClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-js/OpenAIChatCompletionsStreamingWithDataClass.js)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-js.md)  
 
@@ -264,8 +264,8 @@ hide:
 
         ??? example "See the code; learn how it works..."
 
-            [:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-py/main.py)  
-            [:material-file-code: requirements.txt](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-py/requirements.txt)  
+            [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-py/main.py)  
+            [:material-file-code: requirements.txt](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-py/requirements.txt)  
 
             [:material-file-document-outline: Deep dive on how it works](./chapter-5-sample-overview-openai-chat-streaming-with-data-py.md)  
 

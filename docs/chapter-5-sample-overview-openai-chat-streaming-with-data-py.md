@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API with data streaming in a Python console application.
 
-[:material-file-code: main.py](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-py/main.py)  
-[:material-file-code: requirements.txt](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-streaming-with-data-py/requirements.txt)  
+[:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-py/main.py)  
+[:material-file-code: requirements.txt](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-py/requirements.txt)  
 
 ??? tip "How to generate this sample"
 

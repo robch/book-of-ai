@@ -9,8 +9,8 @@ hide:
 
 This sample demonstrates how to use the OpenAI Chat API in a JavaScript console application.
 
-[:material-file-code: Main.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-js/Main.js)  
-[:material-file-code: OpenAIChatCompletionsClass.js](https://github.dev/robch/book-of-ai/blob/main/docs/samples/openai-chat-js/OpenAIChatCompletionsClass.js)  
+[:material-file-code: Main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-js/Main.js)  
+[:material-file-code: OpenAIChatCompletionsClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-js/OpenAIChatCompletionsClass.js)  
 
 ??? tip "How to generate this sample"
 
