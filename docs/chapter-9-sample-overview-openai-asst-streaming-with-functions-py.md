@@ -5,7 +5,7 @@ hide:
 ---
 # OpenAI Assistants with Function Calling in Python
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the OpenAI Assistants API with function calling in a Python console application.
 

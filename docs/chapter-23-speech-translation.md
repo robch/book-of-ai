@@ -8,7 +8,7 @@ hide:
 
     The `ai speech translate` command allows you to translate speech from one language to another. You can translate speech from a microphone or a file, and output subtitles in SRT format.
 
-    --8<-- "docs/tip-speech-prereqs.md"
+    --8<-- "tips/tip-speech-prereqs.md"
 
     ### Translate Speech
 
@@ -34,7 +34,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use speech translation.
 
-    --8<-- "docs/tip-speech-prereqs.md"
+    --8<-- "tips/tip-speech-prereqs.md"
 
     === "C#"
 

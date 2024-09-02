@@ -9,7 +9,7 @@ hide:
 
     The `ai speech synthesize` command allows you to synthesize speech from text. You can synthesize speech with different voices, formats, and audio outputs.
 
-    --8<-- "docs/tip-speech-prereqs.md"
+    --8<-- "tips/tip-speech-prereqs.md"
 
     ### Synthesize speech from text
 
@@ -45,7 +45,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use Speech Synthesis.
 
-    --8<-- "docs/tip-speech-prereqs.md"
+    --8<-- "tips/tip-speech-prereqs.md"
 
     === "C#"
 

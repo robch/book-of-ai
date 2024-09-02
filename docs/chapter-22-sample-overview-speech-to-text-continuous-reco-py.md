@@ -5,7 +5,7 @@ hide:
 ---
 # Speech-to-Text Continuous Recognition in Python
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK for continuous speech recognition in a Python console application.
 

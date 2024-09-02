@@ -5,7 +5,7 @@ hide:
 ---
 # OpenAI Assistants with Function Calling in C\#
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use OpenAI Assistants with function calling in a C# console application.
 

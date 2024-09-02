@@ -5,7 +5,7 @@ hide:
 ---
 # OpenAI Chat Streaming with RAG + AI Search in JavaScript
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the OpenAI Chat API with RAG (Retrieval-Augmented Generation) and AI Search in a JavaScript console application.
 

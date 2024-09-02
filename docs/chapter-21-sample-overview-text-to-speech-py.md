@@ -5,7 +5,7 @@ hide:
 ---
 # Azure Speech Synthesis in Python
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use Azure Speech Synthesis in a Python application.
 

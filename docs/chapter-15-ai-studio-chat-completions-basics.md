@@ -8,7 +8,7 @@ hide:
 
     The `ai chat` command allows you to interact w/ Azure AI models from the command line.
 
-    --8<-- "docs/tip-ai-studio-prereqs.md"
+    --8<-- "tips/tip-ai-studio-prereqs.md"
 
     ### User and System Prompts
 
@@ -70,7 +70,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use Azure AI models on serverless endpoints.
 
-    --8<-- "docs/tip-ai-studio-prereqs.md"
+    --8<-- "tips/tip-ai-studio-prereqs.md"
 
     === "C#"
 

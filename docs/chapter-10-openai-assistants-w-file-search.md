@@ -8,7 +8,7 @@ hide:
 
     The `ai` CLI allows you to extend OpenAI's models with custom data sources using File Search.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
     
     ### Create or Update Assistant
 
@@ -71,7 +71,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Assistants with File Search.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     === "C#"
 

@@ -14,7 +14,7 @@ hide:
 
     The `ai chat` `--built-in-functions` option enables CLI-provided "custom functions".
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
     
     ### Access information
 
@@ -42,7 +42,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Chat with Function Calling.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     === "C#"
 

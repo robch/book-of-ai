@@ -8,7 +8,7 @@ icon: material/server-network-outline
 
 The `ai init openai` command initializes the Azure OpenAI resource. This command is used to select or create an Azure OpenAI resource. The Azure OpenAI resource is required to use the Azure OpenAI service.
 
---8<-- "docs/tip-setup-prereqs.md"
+--8<-- "tips/tip-setup-prereqs.md"
 
 ```bash title="Select or create Azure OpenAI resource"
 ai init openai

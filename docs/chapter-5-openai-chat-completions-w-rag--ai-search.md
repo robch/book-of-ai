@@ -8,7 +8,7 @@ hide:
 
     The `ai` CLI allows you to extend OpenAI's models with custom data sources using Azure AI Search.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     ### Initialize Azure AI Search resource
 
@@ -53,7 +53,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI's chat completions with AI Search.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     === "C#"
 

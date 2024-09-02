@@ -8,7 +8,7 @@ hide:
 === "Tutorial"
 
     The `ai` CLI allows you to create, manage, and interact with OpenAI's Assistants, including use of Code Interpreter.
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     ### Create or Update Assistant
 
@@ -40,7 +40,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use the Code Interpreter feature.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     === "C#"
 

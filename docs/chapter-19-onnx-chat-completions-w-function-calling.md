@@ -40,6 +40,10 @@ hide:
 
 === "Generate Code"
 
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use ONNX with Phi-3 models and Function Calling.
+
+    --8<-- "tips/tip-onnx-prereqs.md"
+
     === "C#"
 
         ### List samples

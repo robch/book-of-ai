@@ -5,7 +5,7 @@ hide:
 ---
 # OpenAI Chat Streaming with Functions in Go
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the OpenAI Chat API with streaming and function calling in a Go console application.
 

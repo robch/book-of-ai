@@ -8,7 +8,7 @@ hide:
 
     The `ai chat` command allows you to interact w/ OpenAI models from the command line.  
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     ### User and System Prompts
 
@@ -70,7 +70,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code for your projects.  
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     === "C#"
 

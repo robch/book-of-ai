@@ -5,7 +5,7 @@ hide:
 ---
 # OpenAI Assistants with Code Interpreter in Python
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the OpenAI Assistants API with a code interpreter in a Python console application.
 

@@ -5,7 +5,7 @@ hide:
 ---
 # Speech-to-Text Continuous Recognition in C#
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to perform continuous speech recognition using the Speech SDK in a C# console application. The application listens for speech from the default microphone and prints recognized text to the console in real-time.
 

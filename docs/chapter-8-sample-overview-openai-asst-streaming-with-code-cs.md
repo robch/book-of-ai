@@ -5,7 +5,7 @@ hide:
 ---
 # OpenAI Assistants with Code Interpreter Streaming in C\#
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the OpenAI Assistants API with the Code Interpreter feature in a C# console application.
 

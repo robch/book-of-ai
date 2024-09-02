@@ -46,6 +46,12 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/chambersrob/
 
+validation:
+  links:
+    absolute_links: relative_to_docs
+    anchors: warn
+    unrecognized_links: warn
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -56,7 +62,8 @@ markdown_extensions:
         kwds:
           case: lower      
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: ["docs", "snippets"]
   - admonition
   - pymdownx.arithmatex:
       generic: true
@@ -75,15 +82,15 @@ copyright: |
 nav:
   - HOME: index.md
   - PRE-REQS:
-      INSTALL:
+      - INSTALL:
         - "CLI Installation": install-ai-cli.md
-      SETUP:
-      - "Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
-      - "Azure AI Model Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
-      - "GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
-      - "ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
+      - SETUP:
+        - "Azure OpenAI Setup": setup/openai.md
+        - "Azure AI Model Setup": setup/azure-ai.md
+        - "GitHub Model Setup": setup/github.md
+        - "ONNX Phi-3 Setup": setup/onnx.md
   - OPENAI:
-    - "Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
+    - "Azure OpenAI Setup": setup/openai.md
     - CHAT API:
       - "\u2460 Chat Basics": chapter-3-openai-chat-completions-basics.md
       - "\u2461 w/ Function Calling": chapter-4-openai-chat-completions-w-function-calling.md
@@ -95,19 +102,19 @@ nav:
       - "\u2463 w/ Function Calling": chapter-9-openai-assistants-w-function-calling.md
       - "\u2464 w/ File Search": chapter-10-openai-assistants-w-file-search.md
   - AZURE AI:
-    - "Azure AI Model Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
+    - "Azure AI Model Setup": setup/azure-ai.md
     - "\u2460 &nbsp; AI Model Basics": chapter-15-ai-studio-chat-completions-basics.md
     # - "\u2462 w/ Function Calling": chapter-16-ai-studio-chat-completions-w-function-calling.md
   - GITHUB:
-    - "GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
+    - "GitHub Model Setup": setup/github.md
     - "\u2460 &nbsp; GitHub Model Basics": chapter-12-github-model-chat-completion-basics.md
     # - "\u2462 w/ Function Calling": chapter-13-github-model-chat-completions-w-function-calling.md
   - ONNX and PHI-3:
-    - "ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
+    - "ONNX Phi-3 Setup": setup/onnx.md
     - "\u2460 &nbsp; ONNX Basics": chapter-18-onnx-chat-completions.md
     - "\u2461 &nbsp; w/ Function Calling": chapter-19-onnx-chat-completions-w-function-calling.md
   - SPEECH:
-    - "Speech Setup": chapter-20-setup-w-speech.md
+    - "Speech Setup": setup/speech.md
     - "\u2460 &nbsp; Synthesis": chapter-21-speech-synthesis.md
     - "\u2461 &nbsp; Recognition": chapter-22-speech-recognition.md
     - "\u2462 &nbsp; Translation": chapter-23-speech-translation.md

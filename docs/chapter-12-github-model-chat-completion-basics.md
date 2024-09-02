@@ -8,7 +8,7 @@ hide:
 
     The `ai chat` command allows you to interact w/ GitHub Marketplace models from the command line.  
 
-    --8<-- "docs/tip-github-prereqs.md"
+    --8<-- "tips/tip-github-prereqs.md"
 
     ### User and System Prompts
 
@@ -84,7 +84,7 @@ hide:
 
     The `ai dev new` command generates sample code for interacting with the GitHub Model Marketplace.
 
-    --8<-- "docs/tip-github-prereqs.md"
+    --8<-- "tips/tip-github-prereqs.md"
 
     === "C#"
 

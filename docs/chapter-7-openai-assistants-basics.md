@@ -8,7 +8,7 @@ hide:
 
     The `ai` CLI allows you to create, manage, and interact with OpenAI's Assistants and persisted threads.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     ### Create an Assistant
 
@@ -42,7 +42,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Assistants.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     === "C#"
 

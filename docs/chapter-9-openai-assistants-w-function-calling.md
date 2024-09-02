@@ -8,7 +8,7 @@ hide:
 
     The `ai` CLI allows you to extend OpenAI's models with custom functions (e.g. dates, times, math, filesystem).
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     ### Create an Assistant
 
@@ -45,7 +45,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Assistants with Function Calling.
 
-    --8<-- "docs/tip-openai-prereqs.md"
+    --8<-- "tips/tip-openai-prereqs.md"
 
     === "C#"
 

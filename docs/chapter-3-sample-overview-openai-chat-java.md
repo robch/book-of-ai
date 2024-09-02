@@ -5,7 +5,7 @@ hide:
 ---
 # OpenAI Chat in Java
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the OpenAI Chat API in a Java console application.
 

@@ -8,7 +8,7 @@ icon: material/server-network-outline
 
 The `ai init speech` command initializes the Azure Speech resource. This command is used to select or create an Azure Speech resource. The Azure Speech resource is required to use the Azure Speech service.
 
---8<-- "docs/tip-setup-prereqs.md"
+--8<-- "tips/tip-setup-prereqs.md"
 
 ```bash title="Select or create Azure Speech resource"
 ai init speech

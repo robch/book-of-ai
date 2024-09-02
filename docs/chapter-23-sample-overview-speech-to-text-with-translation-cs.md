@@ -5,7 +5,7 @@ hide:
 ---
 # Speech-to-Text with Translation in C\#
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK to perform speech-to-text translation in a C# console application.
 

@@ -5,7 +5,7 @@ hide:
 ---
 # Speech Recognition with Keyword Spotting in Python
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK for speech recognition with keyword spotting in a Python console application.
 

@@ -44,8 +44,8 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     ---
 
     **Install and Setup**  
-    [:octicons-arrow-right-24: `ai` CLI Installation](./install-ai-cli.md)  
-    [:octicons-arrow-right-24: Azure OpenAI Setup](./chapter-2-setup-w-azure-openai.md)  
+    [:octicons-arrow-right-24: `ai` CLI Installation](/install-ai-cli.md)  
+    [:octicons-arrow-right-24: Azure OpenAI Setup](/setup/openai.md)  
 
     **Create your first app**  
     [:octicons-arrow-right-24: OpenAI Chat app](./chapter-3-openai-chat-completions-basics.md#generate-code)  
@@ -60,8 +60,8 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     [:octicons-arrow-right-24: Azure OpenAI Assistants](./chapter-6-openai-assistants-api.md)  
 
     **Azure.AI.Inference**  
-    [:octicons-arrow-right-24: Azure AI Model Catalog](./chapter-14-setup-w-ai-studio-and-the-model-catalog.md)  
-    [:octicons-arrow-right-24: GitHub Model Marketplace](./chapter-11-setup-w-github-model-marketplace.md)  
+    [:octicons-arrow-right-24: Azure AI Model Catalog](/setup/azure-ai.md)  
+    [:octicons-arrow-right-24: GitHub Model Marketplace](/setup/github.md)  
 
 
 -   :simple-onnx:{ .lg .middle } __ONNX GenAI__
@@ -69,7 +69,7 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     ---
 
     **Phi-3 Models**  
-    [:octicons-arrow-right-24: ONNX w/ Phi-3 Models](./chapter-17-setup-w-onnx-and-phi-3-models.md)  
+    [:octicons-arrow-right-24: ONNX w/ Phi-3 Models](/setup/onnx.md)  
     [:octicons-arrow-right-24: ONNX Chat Basics](./chapter-18-onnx-chat-completions.md)  
 
 

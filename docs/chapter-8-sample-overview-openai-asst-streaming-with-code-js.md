@@ -5,7 +5,7 @@ hide:
 ---
 # OpenAI Assistants with Code Interpreter Streaming in JavaScript
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the OpenAI Assistants with a Code Interpreter in a JavaScript console application.
 

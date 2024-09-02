@@ -5,7 +5,7 @@ hide:
 ---
 # Azure AI Inference Chat Streaming in C\#
 
---8<-- "docs/warning-ai-generated.md"
+--8<-- "warnings/warning-ai-generated.md"
 
 This sample demonstrates how to use the Azure AI Inference Chat API with streaming in a C# console application.
 

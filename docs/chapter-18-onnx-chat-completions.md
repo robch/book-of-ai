@@ -6,6 +6,10 @@ hide:
 
 === "Tutorial"
 
+    The `ai chat` command allows you to interact w/ ONNX models from the command line.
+
+    --8<-- "tips/tip-onnx-prereqs.md"
+
     ### Prompts
 
     ```bash title="One prompt"
@@ -39,6 +43,10 @@ hide:
     ```
 
 === "Generate Code"
+
+    The `ai dev new` allows you to generate sample code that demonstrates how to use ONNX models.
+
+    --8<-- "tips/tip-onnx-prereqs.md"
 
     === "C#"
 

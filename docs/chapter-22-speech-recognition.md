@@ -8,7 +8,7 @@ hide:
 
     The `ai speech recognize` command allows you to recognize speech from audio. You can recognize speech from a microphone or a file, and output subtitles in SRT or VTT format.
 
-    --8<-- "docs/tip-speech-prereqs.md"
+    --8<-- "tips/tip-speech-prereqs.md"
 
     ### Recognize speech from audio
 
@@ -48,7 +48,7 @@ hide:
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use speech recognition features.
 
-    --8<-- "docs/tip-speech-prereqs.md"
+    --8<-- "tips/tip-speech-prereqs.md"
 
     === "C#"
 
