@@ -4,7 +4,7 @@ hide:
 ---
 # Speech Recognition with Keyword Spotting
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai speech recognize` `--keyword` option allows you to recognize speech with keyword spotting. You can recognize speech from a microphone or a file, and output the recognized text.
 
@@ -28,7 +28,7 @@ hide:
         [Custom Keyword Docs](https://learn.microsoft.com/azure/ai-services/speech-service/custom-keyword-basics)  
         Learn more about creating custom keywords.  
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use Speech Recognition with Keyword Spotting.
 

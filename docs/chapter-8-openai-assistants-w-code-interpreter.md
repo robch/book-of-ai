@@ -5,7 +5,7 @@ hide:
 
 # OpenAI Assistants with Code Interpreter
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai` CLI allows you to create, manage, and interact with OpenAI's Assistants, including use of Code Interpreter.
     --8<-- "docs/tip-openai-prereqs.md"
@@ -36,7 +36,7 @@ hide:
     ai config --clear assistant.id
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use the Code Interpreter feature.
 

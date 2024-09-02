@@ -4,7 +4,7 @@ hide:
 ---
 # OpenAI Assistants with File Search
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai` CLI allows you to extend OpenAI's models with custom data sources using File Search.
 
@@ -67,7 +67,7 @@ hide:
     ai config --clear vector.store.id
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Assistants with File Search.
 

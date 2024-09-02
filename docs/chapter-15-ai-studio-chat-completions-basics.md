@@ -2,11 +2,11 @@
 hide:
 - toc
 ---
-# AI Studio Chat Basics
+# Azure AI Model Chat Basics
 
-=== "Overview"
+=== "Tutorial"
 
-    The `ai chat` command allows you to interact w/ Azure AI Studio Model Catalog models from the command line.
+    The `ai chat` command allows you to interact w/ Azure AI models from the command line.
 
     --8<-- "docs/tip-ai-studio-prereqs.md"
 
@@ -66,9 +66,9 @@ hide:
     ai chat --interactive --input-chat-history history.jsonl
     ```
     
-=== "Sample Code"
+=== "Generate Code"
 
-    The `ai dev new` command allows you to generate sample code that demonstrates how to use AI Studio's AI Inference deployed endpoints.
+    The `ai dev new` command allows you to generate sample code that demonstrates how to use Azure AI models on serverless endpoints.
 
     --8<-- "docs/tip-ai-studio-prereqs.md"
 

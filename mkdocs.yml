@@ -74,13 +74,15 @@ copyright: |
 
 nav:
   - HOME: index.md
-  - AI CLI:
-    - "CLI Installation": chapter-1-cli-installation.md
-    - "Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
-    - "Azure AI Studio Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
-    - "GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
-    - "ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
-  - AZURE OPENAI:
+  - PRE-REQS:
+      INSTALL:
+        - "CLI Installation": chapter-1-cli-installation.md
+      SETUP:
+      - "Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
+      - "Azure AI Model Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
+      - "GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md
+      - "ONNX Phi-3 Setup": chapter-17-setup-w-onnx-and-phi-3-models.md
+  - OPENAI:
     - "Azure OpenAI Setup": chapter-2-setup-w-azure-openai.md
     - CHAT API:
       - "\u2460 Chat Basics": chapter-3-openai-chat-completions-basics.md
@@ -93,8 +95,8 @@ nav:
       - "\u2463 w/ Function Calling": chapter-9-openai-assistants-w-function-calling.md
       - "\u2464 w/ File Search": chapter-10-openai-assistants-w-file-search.md
   - AZURE AI:
-    - "AI Studio Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
-    - "\u2460 &nbsp; AI Studio Basics": chapter-15-ai-studio-chat-completions-basics.md
+    - "Azure AI Model Setup": chapter-14-setup-w-ai-studio-and-the-model-catalog.md
+    - "\u2460 &nbsp; AI Model Basics": chapter-15-ai-studio-chat-completions-basics.md
     # - "\u2462 w/ Function Calling": chapter-16-ai-studio-chat-completions-w-function-calling.md
   - GITHUB:
     - "GitHub Model Setup": chapter-11-setup-w-github-model-marketplace.md

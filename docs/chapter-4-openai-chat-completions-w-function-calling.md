@@ -10,7 +10,7 @@ hide:
 
     By using custom functions, you can enhance the LLM's world knowledge and allow it to 'do stuff' that it wouldn't otherwise be able to do. This can be particularly useful when you need to interact with external systems or perform complex operations that are not natively supported by the LLM.
     
-=== "Overview"
+=== "Tutorial"
 
     The `ai chat` `--built-in-functions` option enables CLI-provided "custom functions".
 
@@ -38,7 +38,7 @@ hide:
     ai chat --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Chat with Function Calling.
 

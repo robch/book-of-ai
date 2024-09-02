@@ -4,7 +4,7 @@ hide:
 ---
 # OpenAI Chat Basics
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai chat` command allows you to interact w/ OpenAI models from the command line.  
 
@@ -66,7 +66,7 @@ hide:
     ai chat --interactive --input-chat-history history.jsonl
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code for your projects.  
 

@@ -5,7 +5,7 @@ hide:
 
 # Speech Synthesis
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai speech synthesize` command allows you to synthesize speech from text. You can synthesize speech with different voices, formats, and audio outputs.
 
@@ -41,7 +41,7 @@ hide:
     ai speech synthesize --text "Hello, world!" --voice en-US-AriaNeural
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use Speech Synthesis.
 

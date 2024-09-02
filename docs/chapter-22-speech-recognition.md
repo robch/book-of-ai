@@ -4,7 +4,7 @@ hide:
 ---
 # Speech Recognition
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai speech recognize` command allows you to recognize speech from audio. You can recognize speech from a microphone or a file, and output subtitles in SRT or VTT format.
 
@@ -44,7 +44,7 @@ hide:
     ai speech recognize --file hello-world.wav --output-vtt-file captions.vtt
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use speech recognition features.
 

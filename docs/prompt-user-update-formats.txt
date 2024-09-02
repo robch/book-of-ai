@@ -50,7 +50,7 @@ To ensure consistency across all documentation chapters, please follow these ins
 ## Introductory Comments
 - Add a brief introductory comment before the prerequisites include in both "Overview" and "Sample Code" sections.
   ```markdown
-  === "Overview"
+  === "Tutorial"
   
   <insert brief introductory comment>
   
@@ -66,7 +66,7 @@ To ensure consistency across all documentation chapters, please follow these ins
 ## Sample Code Intro
 - Add a brief sentence at the top of the "Sample Code" tab prior to the prerequisites include.
   ```markdown
-  === "Sample Code"
+  === "Generate Code"
   
   The `ai dev new` command allows you to generate sample code that demonstrates how to use <specific feature>.
   

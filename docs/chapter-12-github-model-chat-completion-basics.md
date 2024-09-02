@@ -4,7 +4,7 @@ hide:
 ---
 # GitHub Model Chat Basics
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai chat` command allows you to interact w/ GitHub Marketplace models from the command line.  
 
@@ -80,7 +80,7 @@ hide:
     ai chat --interactive
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command generates sample code for interacting with the GitHub Model Marketplace.
 

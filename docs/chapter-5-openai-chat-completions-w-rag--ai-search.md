@@ -4,7 +4,7 @@ hide:
 ---
 # OpenAI Chat with RAG + AI Search
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai` CLI allows you to extend OpenAI's models with custom data sources using Azure AI Search.
 
@@ -49,7 +49,7 @@ hide:
     ai chat --user "What is the capital of France?" --index MyFiles
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI's chat completions with AI Search.
 

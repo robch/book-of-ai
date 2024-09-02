@@ -4,7 +4,7 @@ hide:
 ---
 # ONNX Chat
 
-=== "Overview"
+=== "Tutorial"
 
     ### Prompts
 
@@ -38,7 +38,7 @@ hide:
     ai chat --model-path @mp --interactive --input-chat-history history.jsonl
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     === "C#"
 

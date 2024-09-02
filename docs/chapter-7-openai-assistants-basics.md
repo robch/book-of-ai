@@ -4,7 +4,7 @@ hide:
 ---
 # OpenAI Assistants Basics
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai` CLI allows you to create, manage, and interact with OpenAI's Assistants and persisted threads.
 
@@ -38,7 +38,7 @@ hide:
     ai chat --interactive --thread-id @myNewThread.txt --output-chat-history history.jsonl
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use OpenAI Assistants.
 

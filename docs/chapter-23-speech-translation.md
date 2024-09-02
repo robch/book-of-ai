@@ -4,7 +4,7 @@ hide:
 ---
 # Speech Translation
 
-=== "Overview"
+=== "Tutorial"
 
     The `ai speech translate` command allows you to translate speech from one language to another. You can translate speech from a microphone or a file, and output subtitles in SRT format.
 
@@ -30,7 +30,7 @@ hide:
     ai speech translate --file hello-world.wav --source en-US --target es-ES --output-srt-file captions.srt
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     The `ai dev new` command allows you to generate sample code that demonstrates how to use speech translation.
 

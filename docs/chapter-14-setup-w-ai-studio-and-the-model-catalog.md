@@ -4,7 +4,7 @@ hide:
 icon: material/server-network-outline
 ---
 
-# AI Studio Setup
+# Azure AI Model Setup
 
 The `ai init inference` command initializes the connection to the Azure AI Inference endpoint. This initialization is required to use the models available in the Azure AI Model Catalog with the Azure AI CLI or with the Azure AI Inference SDK packages.
 

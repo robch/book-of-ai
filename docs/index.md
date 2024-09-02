@@ -13,8 +13,8 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
 
     -   **`AI` CLI FEATURES**  
 
-        :octicons-terminal-16: Access to Azure AI services from the command line.  
-        :simple-futurelearn: Learn and experiment w/ AI concepts (LLMs, prompts, ...).  
+        :octicons-terminal-16: Access AI services from the command line.  
+        :simple-futurelearn: Learn and experiment w/ concepts (LLMs, speech, etc.).  
 
         :material-auto-fix: Solve real-world problems w/out writing code.  
         :material-file-code: Generate code samples for your projects.  
@@ -22,7 +22,7 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     -   **UP AND RUNNING IN MINUTES**  
 
         :material-microsoft-azure: Azure OpenAI Chat and Assistants!  
-        :material-view-list: Azure AI Studio Model Catalog!  
+        :material-view-list: Azure AI Model Catalog!  
 
         :material-github: GitHub Model Marketplace!  
         :simple-onnx: ONNX + Phi-3 models!  
@@ -48,8 +48,8 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     [:octicons-arrow-right-24: Azure OpenAI Setup](./chapter-2-setup-w-azure-openai.md)  
 
     **Create your first app**  
-    [:material-creation-outline: Create your first OpenAI Chat app](./chapter-3-openai-chat-completions-basics.md#sample-code)  
-    [:material-creation-outline: Create your first OpenAI Assistants app](./chapter-7-openai-assistants-basics.md#sample-code)  
+    [:octicons-arrow-right-24: OpenAI Chat app](./chapter-3-openai-chat-completions-basics.md#generate-code)  
+    [:octicons-arrow-right-24: OpenAI Assistants app](./chapter-7-openai-assistants-basics.md#generate-code)  
 
 -   :material-microsoft-azure:{ .lg .middle } __Azure AI__
 
@@ -60,7 +60,7 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     [:octicons-arrow-right-24: Azure OpenAI Assistants](./chapter-6-openai-assistants-api.md)  
 
     **Azure.AI.Inference**  
-    [:octicons-arrow-right-24: Azure AI Studio / Model Catalog](./chapter-14-setup-w-ai-studio-and-the-model-catalog.md)  
+    [:octicons-arrow-right-24: Azure AI Model Catalog](./chapter-14-setup-w-ai-studio-and-the-model-catalog.md)  
     [:octicons-arrow-right-24: GitHub Model Marketplace](./chapter-11-setup-w-github-model-marketplace.md)  
 
 

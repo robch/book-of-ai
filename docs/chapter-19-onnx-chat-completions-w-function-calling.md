@@ -4,7 +4,7 @@ hide:
 ---
 # ONNX Chat with Function Calling
 
-=== "Overview"
+=== "Tutorial"
 
     ### Extending the Phi-3's world knowledge with functions
 
@@ -38,7 +38,7 @@ hide:
     ai chat --model-path @mp --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions
     ```
 
-=== "Sample Code"
+=== "Generate Code"
 
     === "C#"
 
