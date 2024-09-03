@@ -1,0 +1,4 @@
+replace.var.chapter_number	replace.var.chapter_filename	replace.var.chapter_needs_or_does_not_need_both_streaming_and_non_tabs	replace.var.section_directory	replace.var.file_in_section	replace.var.snippets_directory	replace.var.scenario_name
+15	chapter-15-ai-studio-chat-completions-basics.md	does NOT need both streaming and not streaming	azure-ai	basics.md	snippets/azure-ai-chat-basics	streaming
+18	chapter-18-onnx-chat-completions.md	does NOT need both streaming and not streaming	onnx	basics.md	snippets/onnx-phi3-chat-basics	streaming
+19	chapter-19-onnx-chat-completions-w-function-calling.md	does NOT need both streaming and not streaming	onnx	functions.md	snippets/onnx-phi3-chat-functions	functions

@@ -70,7 +70,7 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
 
     **Phi-3 Models**  
     [:octicons-arrow-right-24: ONNX w/ Phi-3 Models](/setup/onnx.md)  
-    [:octicons-arrow-right-24: ONNX Chat Basics](./chapter-18-onnx-chat-completions.md)  
+    [:octicons-arrow-right-24: ONNX Chat Basics](/onnx-chat/basics.md)  
 
 
 </div>

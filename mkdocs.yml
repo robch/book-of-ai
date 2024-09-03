@@ -103,16 +103,14 @@ nav:
       - "\u2464 w/ File Search": openai-asst/file-search.md
   - AZURE AI:
     - "Azure AI Model Setup": setup/azure-ai.md
-    - "\u2460 &nbsp; AI Model Basics": chapter-15-ai-studio-chat-completions-basics.md
-    # - "\u2462 w/ Function Calling": chapter-16-ai-studio-chat-completions-w-function-calling.md
+    - "\u2460 &nbsp; AI Model Basics": azure-ai-chat/basics.md
   - GITHUB:
     - "GitHub Model Setup": setup/github.md
     - "\u2460 &nbsp; GitHub Model Basics": github-chat/basics.md
-    # - "\u2462 w/ Function Calling": github-chat/functions.md
   - ONNX and PHI-3:
     - "ONNX Phi-3 Setup": setup/onnx.md
-    - "\u2460 &nbsp; ONNX Basics": chapter-18-onnx-chat-completions.md
-    - "\u2461 &nbsp; w/ Function Calling": chapter-19-onnx-chat-completions-w-function-calling.md
+    - "\u2460 &nbsp; ONNX Basics": onnx-chat/basics.md
+    - "\u2461 &nbsp; w/ Function Calling": onnx-chat/functions.md
   - SPEECH:
     - "Speech Setup": setup/speech.md
     - "\u2460 &nbsp; Synthesis": chapter-21-speech-synthesis.md
@@ -132,16 +130,11 @@ nav:
       - "\u2462 w/ Basic Agents": chapter-32-semantic-kernel-w-basic-agents.md
       - "\u2463 w/ Advanced Agents": chapter-33-semantic-kernel-w-advanced-agents.md
   - REFERENCE:
-    - "":
-      - "ai help": todo-ai-help.md
-    - "":
-      - "ai init": todo-ai-init.md
-      - "ai config": todo-ai-config.md
-    - "":
-      - "ai chat": todo-ai-chat.md
-    - "":
-      - "ai dev": todo-ai-dev.md
-      - "ai test": todo-ai-test.md
-    - "":
-      - "ai search": todo-ai-search.md
-      - "ai speech": todo-ai-speech.md
+    - "ai help": todo-ai-help.md
+    - "ai init": todo-ai-init.md
+    - "ai config": todo-ai-config.md
+    - "ai chat": todo-ai-chat.md
+    - "ai dev": todo-ai-dev.md
+    - "ai test": todo-ai-test.md
+    - "ai search": todo-ai-search.md
+    - "ai speech": todo-ai-speech.md
