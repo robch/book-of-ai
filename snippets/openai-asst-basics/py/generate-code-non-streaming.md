@@ -24,4 +24,4 @@ pip install -r requirements.txt
 ``` bash title="Run the sample"
 ai dev shell
 python main.py
-"
+```
