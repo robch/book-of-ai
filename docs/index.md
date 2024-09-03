@@ -5,7 +5,7 @@ hide:
 ---
 # WELCOME
 
-Welcome to the Book of AI, where you'll learn everything you need to know to get started w/ Azure AI.
+Welcome to the Book of AI, where you'll learn everything you need to know to get started w/ Azure AI services.
 
 ??? abstract "Why use the Book of AI ..."
 

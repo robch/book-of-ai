@@ -98,9 +98,9 @@ nav:
     - ASSISTANTS API:
       - "\u2460 Assistants Overview": openai-asst/overview.md
       - "\u2461 Assistants Basics": openai-asst/basics.md
-      - "\u2462 w/ Code Interpreter": chapter-8-openai-assistants-w-code-interpreter.md
-      - "\u2463 w/ Function Calling": chapter-9-openai-assistants-w-function-calling.md
-      - "\u2464 w/ File Search": chapter-10-openai-assistants-w-file-search.md
+      - "\u2462 w/ Code Interpreter": openai-asst/code-interpreter.md
+      - "\u2463 w/ Function Calling": openai-asst/functions.md
+      - "\u2464 w/ File Search": openai-asst/file-search.md
   - AZURE AI:
     - "Azure AI Model Setup": setup/azure-ai.md
     - "\u2460 &nbsp; AI Model Basics": chapter-15-ai-studio-chat-completions-basics.md

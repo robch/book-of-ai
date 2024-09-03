@@ -1,0 +1,687 @@
+# BACKGROUND
+
+We're using mkdocs material to build a web site for documentation for our `ai` CLI. 
+
+We've recently converted a monolithic markdown file into snippets, with a main file called `basics.md` in the `docs/openai-chat-basics` directory.
+
+That monolithic file had this content:
+
+"""
+---
+hide:
+- toc
+---
+# OpenAI Chat Basics
+
+=== "Tutorial"
+
+    The `ai chat` command allows you to interact w/ OpenAI models from the command line.  
+
+    --8<-- "tips/tip-openai-prereqs.md"
+
+    ### User and System Prompts
+
+    The `ai chat` command sends a user prompt to OpenAI and displays the response.
+
+    ``` bash title="User prompts are questions or statements to the model"
+    ai chat --user "What is the capital of France?"
+    ```
+
+    ``` bash title="System prompts are special instructions for the model"
+    ai chat --user "What is the capital of France." --system "Always answer in French."
+    ```
+
+    ``` bash title="--question is an alias for --user"
+    ai chat --question "What is the capital of France?"
+    ```
+
+    ### User and System prompts from Files
+
+    ``` bash title="User prompt from a file"
+    ai chat --question "@question.txt"
+    ```
+
+    ``` bash title="System prompt from a file"
+    ai chat --question "What is the capital of France?" --system "@system.txt"
+    ```
+
+    ### Interactive Chat
+
+    The `--interactive` flag allows back-and-forth conversations with the model.
+
+    ``` bash title="Interactive chat"
+    ai chat --interactive
+    ```
+
+    ``` bash title="Interactive with an initial question"
+    ai chat --interactive --question "What is the capital of France?"
+    ```
+
+    ``` bash title="Interactive with a system prompt"
+    ai chat --interactive --system "Always answer in French."
+    ```
+
+    ### Answers and chat history
+
+    ``` bash title="Output answer to a file"
+    ai chat --question "What is the capital of France?" --output-answer answer.txt
+    ```
+
+    ``` bash title="Output chat history to a file"
+    ai chat --interactive --output-chat-history history.jsonl
+    ```
+
+    ``` bash title="Input chat history from a file"
+    ai chat --interactive --input-chat-history history.jsonl
+    ```
+
+=== "Generate Code"
+
+    The `ai dev new` command allows you to generate sample code for your projects.  
+
+    --8<-- "tips/tip-openai-prereqs.md"
+
+    === "C#"
+
+        ### List samples
+
+        ``` bash title="List all samples"
+        ai dev new list
+        ```
+
+        ``` bash title="List only C# samples"
+        ai dev new list --csharp
+        ```
+
+        ``` bash title="Filter the list by name"
+        ai dev new list openai-chat --csharp
+        ai dev new list openai-chat-streaming --csharp
+        ```
+
+        ### Generate, build, and run a sample
+
+        === "Streaming"
+
+            Generate a C# sample that uses streaming completions.
+
+            ``` bash
+            ai dev new openai-chat-streaming --csharp
+            cd openai-chat-streaming-cs
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-cs/Program.cs)  
+                [:material-file-code: OpenAIChatCompletionsStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-cs/OpenAIChatCompletionsStreamingClass.cs)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-cs.md)  
+
+            ``` bash title="Install dependencies"
+            dotnet restore
+            ```
+
+            ``` bash title="Run the sample"
+            ai dev shell
+            dotnet run
+            ```
+
+        === "Non-streaming"
+
+            Generate a C# sample that uses non-streaming completions.
+
+            ``` bash
+            ai dev new openai-chat --csharp
+            cd openai-chat-cs
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-cs/Program.cs)  
+                [:material-file-code: OpenAIChatCompletionsClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-cs/OpenAIChatCompletionsClass.cs)
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-cs.md)  
+
+            ``` bash title="Install dependencies"
+            dotnet restore
+            ```
+
+            ``` bash title="Run the sample"
+            ai dev shell
+            dotnet run
+            ```
+
+    === "Go"
+
+        ### List samples
+
+        ``` bash title="List all samples"
+        ai dev new list
+        ```
+
+        ``` bash title="List only Go samples"
+        ai dev new list --go
+        ```
+
+        ``` bash title="Filter the list by name"
+        ai dev new list openai-chat --go
+        ai dev new list openai-chat-streaming --go
+        ```
+
+        ### Generate, build, and run a sample
+
+        === "Streaming"
+
+            Generate a Go sample that uses streaming completions.
+
+            ``` bash
+            ai dev new openai-chat-streaming --go
+            cd openai-chat-streaming-go
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-go/main.go)  
+                [:material-file-code: openai_chat_completions_streaming_hello_world.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-go/openai_chat_completions_streaming_hello_world.go)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-go.md)  
+
+            ``` bash title="Install dependencies"
+            go mod tidy
+            ```
+
+            ``` bash title="Run the sample"
+            go run main.go
+            ```
+
+        === "Non-streaming"
+
+            Generate a Go sample that uses non-streaming completions.
+
+            ``` bash
+            ai dev new openai-chat --go
+            cd openai-chat-go
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-go/main.go)  
+                [:material-file-code: openai_chat_completions_hello_world.go](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-go/openai_chat_completions_hello_world.go)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-go.md)  
+
+            ``` bash title="Install dependencies"
+            go mod tidy
+            ```
+
+            ``` bash title="Run the sample"
+            go run main.go
+            ```
+
+    === "Java"
+
+        ### List samples
+
+        ``` bash title="List all samples"
+        ai dev new list
+        ```
+
+        ``` bash title="List only Java samples"
+        ai dev new list --java
+        ```
+
+        ``` bash title="Filter the list by name"
+        ai dev new list openai-chat --java
+        ai dev new list openai-chat-streaming --java
+        ```
+
+        ### Generate, build, and run a sample
+
+        === "Streaming"
+
+            Generate a Java sample that uses streaming completions.
+
+            ``` bash
+            ai dev new openai-chat-streaming --java
+            cd openai-chat-streaming-java
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Main.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-java/src/Main.java)  
+                [:material-file-code: OpenAIChatCompletionsStreamingClass.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-java/src/OpenAIChatCompletionsStreamingClass.java)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-java.md)  
+
+            ``` bash title="Restore packages"
+            mvn clean package
+            ```
+
+            === "Windows"
+
+                ``` bash title="Build the sample"
+                ai dev shell
+                javac -cp "target/lib/*" src/OpenAIChatCompletionsStreamingClass.java src/Main.java -d out
+                ```
+
+                ``` bash title="Run the sample"
+                java -cp "out;target/lib/*" Main
+                ```
+
+            === "macOS"
+
+                ``` bash title="Build the sample"
+                ai dev shell
+                javac -cp "target/lib/*" src/OpenAIChatCompletionsStreamingClass.java src/Main.java -d out
+                ```
+
+                ``` bash title="Run the sample"
+                java -cp "out:target/lib/*" Main
+                ```
+
+            === "Linux"
+
+                ``` bash title="Build the sample"
+                ai dev shell
+                javac -cp "target/lib/*" src/OpenAIChatCompletionsStreamingClass.java src/Main.java -d out
+                ```
+
+                ``` bash title="Run the sample"
+                java -cp "out:target/lib/*" Main
+                ```
+
+        === "Non-streaming"
+
+            Generate a Java sample that uses non-streaming completions.
+
+            ``` bash
+            ai dev new openai-chat --java
+            cd openai-chat-java
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Main.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-java/src/Main.java)  
+                [:material-file-code: OpenAIChatCompletionsClass.java](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-java/src/OpenAIChatCompletionsClass.java)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-java.md)  
+
+            ``` bash title="Restore packages"
+            mvn clean package
+            ```
+
+            === "Windows"
+
+                ``` bash title="Build the sample"
+                ai dev shell
+                javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+                ```
+
+                ``` bash title="Run the sample"
+                java -cp "out;target/lib/*" Main
+                ```
+
+            === "macOS"
+
+                ``` bash title="Build the sample"
+                ai dev shell
+                javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+                ```
+
+                ``` bash title="Run the sample"
+                java -cp "out:target/lib/*" Main
+                ```
+
+            === "Linux"
+
+                ``` bash title="Build the sample"
+                ai dev shell
+                javac -cp "target/lib/*" src/OpenAIChatCompletionsClass.java src/Main.java -d out
+                ```
+
+                ``` bash title="Run the sample"
+                java -cp "out:target/lib/*" Main
+                ```
+
+    === "JavaScript"
+
+        ### List samples
+
+        ``` bash title="List all samples"
+        ai dev new list
+        ```
+
+        ``` bash title="List only JavaScript samples"
+        ai dev new list --javascript
+        ```
+
+        ``` bash title="Filter the list by name"
+        ai dev new list openai-chat --javascript
+        ai dev new list openai-chat-streaming --javascript
+        ```
+
+        ### Generate, build, and run a sample
+
+        === "Streaming"
+
+            Generate a JavaScript sample that uses streaming completions.
+
+            ``` bash
+            ai dev new openai-chat-streaming --javascript
+            cd openai-chat-streaming-js
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-js/Main.js)  
+                [:material-file-code: OpenAIChatCompletionsStreamingClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-js/OpenAIChatCompletionsStreamingClass.js)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-js.md)  
+
+            ``` bash title="Install dependencies"
+            npm install
+            ```
+
+            ``` bash title="Run the sample"
+            node Main.js
+            ```
+
+        === "Non-streaming"
+
+            Generate a JavaScript sample that uses non-streaming completions.
+
+            ``` bash
+            ai dev new openai-chat --javascript
+            cd openai-chat-js
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: Main.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-js/Main.js)  
+                [:material-file-code: OpenAIChatCompletionsClass.js](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-js/OpenAIChatCompletionsClass.js)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-js.md)  
+
+            ``` bash title="Install dependencies"
+            npm install
+            ```
+
+            ``` bash title="Run the sample"
+            node Main.js
+            ```
+
+    === "Python"
+
+        ### List samples
+
+        ``` bash title="List all samples"
+        ai dev new list
+        ```
+
+        ``` bash title="List only Python samples"
+        ai dev new list --python
+        ```
+
+        ``` bash title="Filter the list by name"
+        ai dev new list openai-chat --python
+        ai dev new list openai-chat-streaming --python
+        ```
+
+        ### Generate, build, and run a sample
+
+        === "Streaming"
+
+            Generate a Python sample that uses streaming completions.
+
+            ``` bash
+            ai dev new openai-chat-streaming --python
+            cd openai-chat-streaming-py
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-py/main.py)  
+                [:material-file-code: openai_chat_completions_streaming.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-py/openai_chat_completions_streaming.py)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-streaming-py.md)  
+
+            === "Windows"
+
+                ``` bash title="Create virtual environment"
+                python -m venv env
+                env/Scripts/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python main.py
+                ```
+
+            === "macOS"
+
+                ``` bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+            === "Linux"
+
+                ``` bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python3 main.py
+                ```
+
+        === "Non-streaming"
+
+            Generate a Python sample that uses non-streaming completions.
+
+            ``` bash
+            ai dev new openai-chat --python
+            cd openai-chat-py
+            ```
+
+            ??? example "See the code; learn how it works..."
+
+                [:material-file-code: main.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-py/main.py)  
+                [:material-file-code: openai_chat_completions.py](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-py/openai_chat_completions.py)  
+
+                [:material-file-document-outline: Deep dive on how it works](./chapter-3-sample-overview-openai-chat-py.md)  
+
+            === "Windows"
+
+                ``` bash title="Create virtual environment"
+                python -m venv env
+                env/Scripts/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python openai_chat_completions.py
+                ```
+
+            === "macOS"
+
+                ``` bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python3 openai_chat_completions.py
+                ```
+
+            === "Linux"
+
+                ``` bash title="Create virtual environment"
+                python3 -m venv env
+                source env/bin/activate
+                ```
+
+                ``` bash title="Install requirements"
+                pip install -r requirements.txt
+                ```
+
+                ``` bash title="Run the sample"
+                ai dev shell
+                python3 openai_chat_completions.py
+                ```
+
+    === "..."
+
+        **Go over what was generated in the console app**  
+        
+        - getting connection info/secrets from environment variables  
+        - using a helper class to encapsulate the OpenAI API calls  
+        - getting input from the user  
+        - sending the input to the helper class  
+        - getting the response from the helper class  
+        - deeper dive into the helper class
+"""
+
+## RELEVANT files
+
+Here are the relevant files for the previous "chapter" we've converted.
+
+```
+D:\src\book-of-ai\docs\openai-chat\basics.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\tutorial.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\generate-code.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\tab.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\go\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\go\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\go\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\go\tab.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\java\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\java\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\java\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\java\tab.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\js\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\js\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\js\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\js\tab.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\py\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\py\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\py\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\py\tab.md
+```
+
+## FILE INCLUSION
+
+The main `basics.md` file includes "tabs" using the mkdocs `=== "..."` syntax
+
+It also uses the include syntax to include snippets for tutorial and code generation.
+
+inside the generate-code.md file, we use the include syntax to include the code snippets for each language.
+
+Each of those language specific tab markdown files contain info on listing samples for that language, and for generating, building, and running the sample.
+
+All of that is included via the `--8<--` syntax in each respective file.
+
+## SPECIFICS on files for the example
+
+The main file does two includes (`D:\src\book-of-ai\docs\openai-chat\basics.md`):
+
+"""
+{@D:\src\book-of-ai\docs\openai-chat\basics.md}
+"""
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\tutorial.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\tutorial.md}
+"""
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\generate-code.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\generate-code.md}
+"""
+
+Which includes one file per tab, which would look something like this:
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\tab.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\tab.md}
+"""
+
+Which lists samples, like this:
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\list-samples.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\list-samples.md}
+"""
+
+and then may or may not have more tabs, one per scenario, like this:
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-non-streaming.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-non-streaming.md}
+"""
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-streaming.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-streaming.md}
+"""
+
+If there's only one scenario, there would simply be no tabs, but there would still be a `generate-code-SCENARIO.md` file for the one scenario without the tabs.
+
+... etc. for each of the other languages ...
+
+## BACKGROUND for your GOAL
+
+Now, here's another monolithic markdown file that we want to convert to snippets:
+
+D:\src\book-of-ai\docs\chapter-10-openai-assistants-w-file-search.md
+"""
+{@D:\src\book-of-ai\docs\chapter-10-openai-assistants-w-file-search.md}
+"""
+
+## THE LONG TERM GOAL
+
+We want to convert this monolithic markdown file into snippets, with a main file called `file-search.md` in the `openai-asst` directory.
+
+Chapter 10 doesn't need separate streaming and non-streaming tabs, so each language tab won't also have "scenario tabs", just use an include for listing the samples, and one for the "file-search" scenario.
+
+Put the corresponding snippets in the `snippets/openai-asst-streaming-with-file-search` directory.
+
+## GOALS FOR RIGHT NOW
+
+1. Create the `openai-asst/file-search.md` file with the appropriate content in it.
+2. Create the `tutorial.md` file for `openai-asst-streaming-with-file-search`
+3. Create the `generate-code.md` file for `openai-asst-streaming-with-file-search`
+4. Create each file under `openai-asst-streaming-with-file-search` with the necessary for each language: cs, js, py
+   - `tab.md`
+   - `list-samples.md`
+   - `generate-code-file-search.md`
+   
