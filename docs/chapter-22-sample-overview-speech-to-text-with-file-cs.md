@@ -3,7 +3,7 @@ hide:
 - navigation
 - toc
 ---
-# Speech-to-Text with File in C#
+# Speech-to-Text with File in C\#
 
 This sample demonstrates how to use the Azure Cognitive Services Speech SDK to recognize speech from an audio file in a C# console application.
 

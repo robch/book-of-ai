@@ -3,7 +3,7 @@ hide:
 - navigation
 - toc
 ---
-# ONNX Chat Streaming with Functions in C#
+# ONNX Chat Streaming with Functions in C\#
 
 This sample demonstrates how to use the ONNX Chat API with streaming in a C# console application, including function calling.
 

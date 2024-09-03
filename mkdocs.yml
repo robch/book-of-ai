@@ -96,8 +96,8 @@ nav:
       - "\u2461 w/ Function Calling": openai-chat/functions.md
       - "\u2462 w/ RAG + AI Search": openai-chat/ai-search.md
     - ASSISTANTS API:
-      - "\u2460 Assistants Overview": chapter-6-openai-assistants-api.md
-      - "\u2461 Assistants Basics": chapter-7-openai-assistants-basics.md
+      - "\u2460 Assistants Overview": openai-asst/overview.md
+      - "\u2461 Assistants Basics": openai-asst/basics.md
       - "\u2462 w/ Code Interpreter": chapter-8-openai-assistants-w-code-interpreter.md
       - "\u2463 w/ Function Calling": chapter-9-openai-assistants-w-function-calling.md
       - "\u2464 w/ File Search": chapter-10-openai-assistants-w-file-search.md

@@ -3,7 +3,7 @@ hide:
 - navigation
 - toc
 ---
-# Speech-to-Text Continuous Recognition in C#
+# Speech-to-Text Continuous Recognition in C\#
 
 --8<-- "warnings/warning-ai-generated.md"
 

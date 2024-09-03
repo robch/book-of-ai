@@ -49,15 +49,15 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
 
     **Create your first app**  
     [:octicons-arrow-right-24: OpenAI Chat app](/openai-chat/basics.md#generate-code)  
-    [:octicons-arrow-right-24: OpenAI Assistants app](./chapter-7-openai-assistants-basics.md#generate-code)  
+    [:octicons-arrow-right-24: OpenAI Assistants app](/openai-asst/basics.md#generate-code)  
 
 -   :material-microsoft-azure:{ .lg .middle } __Azure AI__
 
     ---
 
     **Azure OpenAI**  
-    [:octicons-arrow-right-24: Azure OpenAI Chat](./openai-chat/basics.md#tutorial)  
-    [:octicons-arrow-right-24: Azure OpenAI Assistants](./chapter-6-openai-assistants-api.md)  
+    [:octicons-arrow-right-24: Azure OpenAI Chat](/openai-chat/basics.md#tutorial)  
+    [:octicons-arrow-right-24: Azure OpenAI Assistants](/openai-asst/overview.md)  
 
     **Azure.AI.Inference**  
     [:octicons-arrow-right-24: Azure AI Model Catalog](/setup/azure-ai.md)  
