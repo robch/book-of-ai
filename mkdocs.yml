@@ -107,8 +107,8 @@ nav:
     # - "\u2462 w/ Function Calling": chapter-16-ai-studio-chat-completions-w-function-calling.md
   - GITHUB:
     - "GitHub Model Setup": setup/github.md
-    - "\u2460 &nbsp; GitHub Model Basics": chapter-12-github-model-chat-completion-basics.md
-    # - "\u2462 w/ Function Calling": chapter-13-github-model-chat-completions-w-function-calling.md
+    - "\u2460 &nbsp; GitHub Model Basics": github-chat/basics.md
+    # - "\u2462 w/ Function Calling": github-chat/functions.md
   - ONNX and PHI-3:
     - "ONNX Phi-3 Setup": setup/onnx.md
     - "\u2460 &nbsp; ONNX Basics": chapter-18-onnx-chat-completions.md
