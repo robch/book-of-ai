@@ -1,3 +1,12 @@
+# BACKGROUND
+
+We're using mkdocs material to build a web site for documentation for our `ai` CLI. 
+
+We've recently converted a monolithic markdown file into snippets, with a main file called `basics.md` in the `docs/openai-chat-basics` directory.
+
+That monolithic file had this content:
+
+"""
 ---
 hide:
 - toc
@@ -557,3 +566,122 @@ hide:
         - sending the input to the helper class  
         - getting the response from the helper class  
         - deeper dive into the helper class
+"""
+
+## RELEVANT files
+
+Here are the relevant files for the previous "chapter" we've converted.
+
+```
+D:\src\book-of-ai\docs\openai-chat\basics.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\tutorial.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\generate-code.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\tab.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\go\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\go\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\go\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\go\tab.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\java\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\java\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\java\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\java\tab.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\js\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\js\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\js\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\js\tab.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\py\generate-code-non-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\py\generate-code-streaming.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\py\list-samples.md
+D:\src\book-of-ai\docs\snippets\openai-chat-basics\py\tab.md
+```
+
+## FILE INCLUSION
+
+The main `basics.md` file includes "tabs" using the mkdocs `=== "..."` syntax
+
+It also uses the include syntax to include snippets for tutorial and code generation.
+
+inside the generate-code.md file, we use the include syntax to include the code snippets for each language.
+
+Each of those language specific tab markdown files contain info on listing samples for that language, and for generating, building, and running the sample.
+
+All of that is included via the `--8<--` syntax in each respective file.
+
+## SPECIFICS on files for the example
+
+The main file does two includes (`D:\src\book-of-ai\docs\openai-chat\basics.md`):
+
+"""
+{@D:\src\book-of-ai\docs\openai-chat\basics.md}
+"""
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\tutorial.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\tutorial.md}
+"""
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\generate-code.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\generate-code.md}
+"""
+
+Which includes one file per tab, which would look something like this:
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\tab.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\tab.md}
+"""
+
+Which lists samples, like this:
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\list-samples.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\list-samples.md}
+"""
+
+and then may or may not have more tabs, one per scenario, like this:
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-non-streaming.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-non-streaming.md}
+"""
+
+`D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-streaming.md`:
+"""
+{@D:\src\book-of-ai\docs\snippets\openai-chat-basics\cs\generate-code-streaming.md}
+"""
+
+If there's only one scenario, there would simply be no tabs, but there would still be a `generate-code-SCENARIO.md` file for the one scenario without the tabs.
+
+... etc. for each of the other languages ...
+
+## BACKGROUND for your GOAL
+
+Now, here's another monolithic markdown file that we want to convert to snippets:
+
+D:\src\book-of-ai\docs\chapter-5-openai-chat-completions-w-rag--ai-search.md
+"""
+{@D:\src\book-of-ai\docs\chapter-5-openai-chat-completions-w-rag--ai-search}
+"""
+
+## THE LONG TERM GOAL
+
+We want to convert this monolithic markdown file into snippets, with a main file called `ai-search.md` in the `openai-chat` directory.
+
+Chapter 5 doesn't need separate streaming and non-streaming tabs, so each language tab won't also have "scenario tabs", just use an include for listing the samples, and one for the "ai-search" scenario.
+
+Put the corresponding snippets in the `snippets/openai-chat-ai-search` directory.
+
+## GOALS FOR RIGHT NOW
+
+1. Create the `openai-chat/ai-search.md` file with the appropriate content in it.
+2. Create the `tutorial.md` file for `ai-search`
+3. Create the `generate-code.md`
+4. Create each file necessary for each language: cs, go, java, js, py
+   - `tab.md`
+   - `list-samples.md`
+   - `generate-code-ai-search.md`
+   

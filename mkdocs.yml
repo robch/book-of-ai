@@ -63,7 +63,7 @@ markdown_extensions:
           case: lower      
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: ["docs", "snippets"]
+      base_path: ["docs", "docs/snippets", "snippets"]
   - admonition
   - pymdownx.arithmatex:
       generic: true
@@ -92,9 +92,9 @@ nav:
   - OPENAI:
     - "Azure OpenAI Setup": setup/openai.md
     - CHAT API:
-      - "\u2460 Chat Basics": chapter-3-openai-chat-completions-basics.md
-      - "\u2461 w/ Function Calling": chapter-4-openai-chat-completions-w-function-calling.md
-      - "\u2462 w/ RAG + AI Search": chapter-5-openai-chat-completions-w-rag--ai-search.md
+      - "\u2460 Chat Basics": openai-chat/basics.md
+      - "\u2461 w/ Function Calling": openai-chat/functions.md
+      - "\u2462 w/ RAG + AI Search": openai-chat/ai-search.md
     - ASSISTANTS API:
       - "\u2460 Assistants Overview": chapter-6-openai-assistants-api.md
       - "\u2461 Assistants Basics": chapter-7-openai-assistants-basics.md
