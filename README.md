@@ -1,6 +1,6 @@
 # Book of AI
 
-Welcome to the Book of AI's docs repository, the documentation content home for [The Book of AI (https://thebookof.ai)](https://thebookof.ai).  
+Welcome to the Book of AI's docs repository, the documentation content home for [The Book of AI](https://thebookof.ai).  
 
 The Book of AI, itself, is a comprehensive guide to getting started with AI services.  
 
