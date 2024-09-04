@@ -1,4 +1,5 @@
 replace.var.chapter_number	replace.var.chapter_filename	replace.var.chapter_needs_or_does_not_need_both_streaming_and_non_tabs	replace.var.section_directory	replace.var.file_in_section	replace.var.snippets_directory	replace.var.scenario_name
-15	chapter-15-ai-studio-chat-completions-basics.md	does NOT need both streaming and not streaming	azure-ai	basics.md	snippets/azure-ai-chat-basics	streaming
-18	chapter-18-onnx-chat-completions.md	does NOT need both streaming and not streaming	onnx	basics.md	snippets/onnx-phi3-chat-basics	streaming
-19	chapter-19-onnx-chat-completions-w-function-calling.md	does NOT need both streaming and not streaming	onnx	functions.md	snippets/onnx-phi3-chat-functions	functions
+21	chapter-21-speech-synthesis.md	does NOT need both streaming and not streaming	docs/speech	speech-synthesis.md	docs/snippets/speech-synthesis	synthesis
+22	chapter-22-speech-recognition.md	doesn't need streaming/non-streaming, but does need microphone, continuous, and file	docs/speech	speech-recognition.md	docs/snippets/speech-recognition	(once; continuous; file)
+23	chapter-23-speech-translation.md	does NOT need both streaming and not streaming	docs/speech	speech-translation.md	docs/snippets/speech-translation	translation
+24	chapter-24-speech-recognition-w-keyword-spotting.md	does NOT need both streaming and not streaming	docs/speech	speech-recognition-w-keyword-spotting.md	docs/snippets/speech-recognition-w-keyword-spotting	keyword-spotting

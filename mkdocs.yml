@@ -113,10 +113,10 @@ nav:
     - "\u2461 &nbsp; w/ Function Calling": onnx-chat/functions.md
   - SPEECH:
     - "Speech Setup": setup/speech.md
-    - "\u2460 &nbsp; Synthesis": chapter-21-speech-synthesis.md
-    - "\u2461 &nbsp; Recognition": chapter-22-speech-recognition.md
-    - "\u2462 &nbsp; Translation": chapter-23-speech-translation.md
-    - "\u2463 &nbsp; w/ Keyword": chapter-24-speech-recognition-w-keyword-spotting.md
+    - "\u2460 &nbsp; Synthesis": speech/synthesis.md
+    - "\u2461 &nbsp; Recognition": speech/recognition.md
+    - "\u2462 &nbsp; Translation": speech/translation.md
+    - "\u2463 &nbsp; w/ Keyword": speech/keyword-recognition.md
   - MULTI_MODAL:
     - "\u2460 Multi-Modal AI": chapter-25-multi-modal-ai.md
     - "\u2461 w/ Speech Input": chapter-26-chat-completions-w-speech-input.md

@@ -667,6 +667,26 @@ D:\src\book-of-ai\docs\{chapter_filename}
 {@D:\src\book-of-ai\docs\{chapter_filename}}
 """
 
+## SPECIFIC RULES YOU MUST FOLLOW
+
+These rules will be apparent when you consider the files above. 
+
+Programming language tabs should only ever show up in `snippets/**/(cs|go|java|js|py)/tab.md` files, and only if the original markdown content has them.  
+(e.g. `=== "C#"`, `=== "Go"`, `=== "Java"`, `=== "JavaScript"`, `=== "Python"`)
+
+Programming language tabs generally have the `###` headers for "List samples" and "Generate, build, and run a sample" content.  
+- Do **NOT** include the `###` headers in the `list-samples.md` or `generate-code-{scenario_name}.md` files
+- Do include the `###` headers in the `snippets/**/(cs|go|java|js|py)/tab.md` files
+
+Operating system tabs should only ever show up in `snippets/**/(cs|go|java|js|py)/generate-code-{scenario_name}.md` files, and only if the original markdown content has them.  
+(e.g. `=== "Windows"`, `=== "macOS"`, `=== "Linux"`)
+
+Content under either tab, MUST be indented at least 4 more characters than the leading `=== "..."` line.
+
+The content under `### List samples` and `### Generate, build, and run a sample` should typically include content via `--8<--` include file syntax.
+(e.g. `--8<-- "tips/tip-openai-prereqs.md"`, `--8<- "github-chat-basics/cs/list-samples.md"`, `--8<- "github-chat-basics/cs/generate-code-non-streaming.md"`)
+
+
 ## THE LONG TERM GOAL
 
 We want to convert this monolithic markdown file into snippets, with a main file called `{file_in_section}` in the `{section_directory}` directory.
@@ -688,3 +708,4 @@ Put the corresponding snippets in the `{snippets_directory}` directory.
    - `generate-code-{scenario_name}.md`
    
 For any languages where the original markdown content shows something akin to "under construction", maintain that aspect. Do not predict new content for those things.
+
