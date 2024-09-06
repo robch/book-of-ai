@@ -47,5 +47,3 @@ ai speech recognize --files "*.wav" --key myapikey --region westus
 ``` bash title="Recognize speech with custom phrases to improve accuracy"
 ai speech recognize --file myaudio.wav --key myapikey --region westus --phrases @phrases.txt
 ```
-
-This documentation provides an overview of how to use the `ai speech recognize` command along with various options to configure speech recognition.
