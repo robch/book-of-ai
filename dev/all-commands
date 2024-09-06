@@ -1,0 +1,100 @@
+ai chat
+ai chat assistant
+ai chat assistant create
+ai chat assistant delete
+ai chat assistant file
+ai chat assistant file delete
+ai chat assistant file list
+ai chat assistant file upload
+ai chat assistant get
+ai chat assistant list
+ai chat assistant update
+ai chat assistant vector-store
+ai chat assistant vector-store create
+ai chat assistant vector-store delete
+ai chat assistant vector-store get
+ai chat assistant vector-store list
+ai chat assistant vector-store update
+ai config
+ai dev
+ai dev new
+ai dev shell
+ai help
+ai init
+ai search
+ai search index
+ai search index update
+ai search query
+ai speech batch
+ai speech batch download
+ai speech batch download file
+ai speech batch download url
+ai speech batch transcription
+ai speech batch transcription create
+ai speech batch transcription delete
+ai speech batch transcription download
+ai speech batch transcription list
+ai speech batch transcription list
+ai speech batch transcription onprem
+ai speech batch transcription onprem create
+ai speech batch transcription onprem delete
+ai speech batch transcription onprem endpoints
+ai speech batch transcription onprem list
+ai speech batch transcription onprem status
+ai speech batch transcription status
+ai speech batch transcription update
+ai speech csr
+ai speech csr dataset
+ai speech csr dataset create
+ai speech csr dataset delete
+ai speech csr dataset download
+ai speech csr dataset list
+ai speech csr dataset status
+ai speech csr dataset update
+ai speech csr dataset upload
+ai speech csr download
+ai speech csr endpoint
+ai speech csr endpoint create
+ai speech csr endpoint delete
+ai speech csr endpoint download
+ai speech csr endpoint list
+ai speech csr endpoint status
+ai speech csr endpoint update
+ai speech csr evaluation
+ai speech csr evaluation create
+ai speech csr evaluation delete
+ai speech csr evaluation list
+ai speech csr evaluation status
+ai speech csr evaluation update
+ai speech csr list
+ai speech csr model
+ai speech csr model copy
+ai speech csr model create
+ai speech csr model delete
+ai speech csr model list
+ai speech csr model status
+ai speech csr model update
+ai speech csr project
+ai speech csr project create
+ai speech csr project delete
+ai speech csr project list
+ai speech csr project status
+ai speech csr project update
+ai speech intent
+ai speech profile
+ai speech profile create
+ai speech profile delete
+ai speech profile enroll
+ai speech profile list
+ai speech profile status
+ai speech recognize
+ai speech speaker
+ai speech speaker connection
+ai speech speaker identify
+ai speech speaker verify
+ai speech synthesize
+ai speech transcribe
+ai speech translate
+ai test
+ai test list
+ai test run

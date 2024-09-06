@@ -1,0 +1,20 @@
+I'm getting these errors from help content that's stored in the `docs` directory.
+
+```
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-create.md' contains a link 'ai-speech-batch-transcription-examples.md', but the target 'reference/cli/ai-speech-batch-transcription-examples.md' is not found among documentation
+           files.
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-onprem-list.md' contains a link '../../includes/preview-ai-studio.md', but the target 'includes/preview-ai-studio.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-onprem-list.md' contains a link 'ai-flow.md', but the target 'reference/cli/ai-flow.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-onprem-list.md' contains a link 'ai-help.md', but the target 'reference/cli/ai-help.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-onprem-list.md' contains a link 'ai-service.md', but the target 'reference/cli/ai-service.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-onprem-list.md' contains a link 'cli-get-started.md', but the target 'reference/cli/cli-get-started.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-onprem-list.md' contains a link '../../how-to/develop-in-vscode.md', but the target 'how-to/develop-in-vscode.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-onprem-list.md' contains a link 'cli-get-started.md', but the target 'reference/cli/cli-get-started.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-batch-transcription-onprem-list.md' contains a link '../../how-to/sdk-generative-overview.md', but the target 'how-to/sdk-generative-overview.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-csr-evaluation.md' contains a link 'commands-summary.md', but the target 'reference/cli/commands-summary.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-csr-evaluation.md' contains a link 'cli-get-started.md', but the target 'reference/cli/cli-get-started.md' is not found among documentation files.
+WARNING -  Doc file 'reference/cli/ai-speech-csr-evaluation.md' contains a link '../../how-to/develop-in-vscode.md', but the target 'how-to/develop-in-vscode.md' is not found among documentation files.
+```
+
+Please read the `{file_name}` file, and fix the broken links by removing that part from the source document. Don't just remove the linkage, but also remove the linguistic reference to that target.
+

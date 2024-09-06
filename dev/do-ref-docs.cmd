@@ -1,0 +1,1 @@
+echo "Did you save the reference markdown doc? If not, do that now" | ai chat --built-in-functions --question @dev\prompt-user-do-reference.md --foreach replace.var.doc_command in @dev\all-commands --threads 5 --interactive --output-chat-history history-{replace.var.doc_command}.jsonl %1 %2 %3 %4 %5 %6 %7 %8 %9

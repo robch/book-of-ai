@@ -130,11 +130,90 @@ nav:
       - "\u2462 w/ Basic Agents": chapter-32-semantic-kernel-w-basic-agents.md
       - "\u2463 w/ Advanced Agents": chapter-33-semantic-kernel-w-advanced-agents.md
   - REFERENCE:
-    - "ai help": todo-ai-help.md
-    - "ai init": todo-ai-init.md
-    - "ai config": todo-ai-config.md
-    - "ai chat": todo-ai-chat.md
-    - "ai dev": todo-ai-dev.md
-    - "ai test": todo-ai-test.md
-    - "ai search": todo-ai-search.md
-    - "ai speech": todo-ai-speech.md
+    - ai:
+      - "ai init": reference/cli/ai-init.md
+      - "ai config": reference/cli/ai-config.md
+      - "ai chat": reference/cli/ai-chat.md
+      - "ai chat assistant":
+        - "create": reference/cli/ai-chat-assistant-create.md
+        - "delete": reference/cli/ai-chat-assistant-delete.md
+        - "get": reference/cli/ai-chat-assistant-get.md
+        - "list": reference/cli/ai-chat-assistant-list.md
+        - "update": reference/cli/ai-chat-assistant-update.md
+        - "file":
+          - "delete": reference/cli/ai-chat-assistant-file-delete.md
+          - "list": reference/cli/ai-chat-assistant-file-list.md
+          - "upload": reference/cli/ai-chat-assistant-file-upload.md
+        - "vector-store":
+          - "create": reference/cli/ai-chat-assistant-vector-store-create.md
+          - "delete": reference/cli/ai-chat-assistant-vector-store-delete.md
+          - "get": reference/cli/ai-chat-assistant-vector-store-get.md
+          - "list": reference/cli/ai-chat-assistant-vector-store-list.md
+          - "update": reference/cli/ai-chat-assistant-vector-store-update.md
+      - "ai dev":
+        - "new": reference/cli/ai-dev-new.md
+        - "new list": reference/cli/ai-dev-new-list.md
+        - "shell": reference/cli/ai-dev-shell.md
+      - "ai search":
+        - "index create": reference/cli/ai-search-index-create.md
+        - "index update": reference/cli/ai-search-index-update.md
+      - "ai speech":
+        - "recognize": reference/cli/ai-speech-recognize.md
+        - "synthesize": reference/cli/ai-speech-synthesize.md
+        - "translate": reference/cli/ai-speech-translate.md
+        - "csr":
+          - "dataset":
+            - "create": reference/cli/ai-speech-csr-dataset-create.md
+            - "delete": reference/cli/ai-speech-csr-dataset-delete.md
+            - "download": reference/cli/ai-speech-csr-dataset-download.md
+            - "list": reference/cli/ai-speech-csr-dataset-list.md
+            - "status": reference/cli/ai-speech-csr-dataset-status.md
+            - "update": reference/cli/ai-speech-csr-dataset-update.md
+            - "upload": reference/cli/ai-speech-csr-dataset-upload.md
+          - "endpoint":
+            - "create": reference/cli/ai-speech-csr-endpoint-create.md
+            - "delete": reference/cli/ai-speech-csr-endpoint-delete.md
+            - "download": reference/cli/ai-speech-csr-endpoint-download.md
+            - "list": reference/cli/ai-speech-csr-endpoint-list.md
+            - "status": reference/cli/ai-speech-csr-endpoint-status.md
+            - "update": reference/cli/ai-speech-csr-endpoint-update.md
+          - "evaluation":
+            - "create": reference/cli/ai-speech-csr-evaluation-create.md
+            - "delete": reference/cli/ai-speech-csr-evaluation-delete.md
+            - "list": reference/cli/ai-speech-csr-evaluation-list.md
+            - "status": reference/cli/ai-speech-csr-evaluation-status.md
+            - "update": reference/cli/ai-speech-csr-evaluation-update.md
+          - "model":
+            - "copy": reference/cli/ai-speech-csr-model-copy.md
+            - "create": reference/cli/ai-speech-csr-model-create.md
+            - "delete": reference/cli/ai-speech-csr-model-delete.md
+            - "list": reference/cli/ai-speech-csr-model-list.md
+            - "status": reference/cli/ai-speech-csr-model-status.md
+            - "update": reference/cli/ai-speech-csr-model-update.md
+          - "project":
+            - "create": reference/cli/ai-speech-csr-project-create.md
+            - "delete": reference/cli/ai-speech-csr-project-delete.md
+            - "list": reference/cli/ai-speech-csr-project-list.md
+            - "status": reference/cli/ai-speech-csr-project-status.md
+            - "update": reference/cli/ai-speech-csr-project-update.md
+        - "batch transcription":
+          - "create": reference/cli/ai-speech-batch-transcription-create.md
+          - "delete": reference/cli/ai-speech-batch-transcription-delete.md
+          - "download": reference/cli/ai-speech-batch-transcription-download.md
+          - "list": reference/cli/ai-speech-batch-transcription-list.md
+          - "status": reference/cli/ai-speech-batch-transcription-status.md
+          - "update": reference/cli/ai-speech-batch-transcription-update.md
+        - "transcribe": reference/cli/ai-speech-transcribe.md
+        - "intent": reference/cli/ai-speech-intent.md
+        - "profile":
+          - "create": reference/cli/ai-speech-profile-create.md
+          - "delete": reference/cli/ai-speech-profile-delete.md
+          - "enroll": reference/cli/ai-speech-profile-enroll.md
+          - "list": reference/cli/ai-speech-profile-list.md
+          - "status": reference/cli/ai-speech-profile-status.md
+        - "speaker":
+          - "identify": reference/cli/ai-speech-speaker-identify.md
+          - "verify": reference/cli/ai-speech-speaker-verify.md
+      - "ai test":
+        - "list": reference/cli/ai-test-list.md
+        - "run": reference/cli/ai-test-run.md
