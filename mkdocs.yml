@@ -239,3 +239,6 @@ nav:
         - reference/cli/test/index.md
         - "list": reference/cli/test/list.md
         - "run": reference/cli/test/run.md
+    - ai test framework:
+      - reference/test-framework/index.md
+      - "YAML format": reference/test-framework/yaml.md
