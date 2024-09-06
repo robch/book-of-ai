@@ -27,12 +27,10 @@ ai chat assistant create [...]
 
 ### Examples
 
-### Create an assistant with a name and instructions
 ``` bash title="Create an assistant with a name and instructions"
 ai chat assistant create --name "My Assistant" --instructions "You are a helpful Assistant."
 ```
 
-### Create an assistant with files
 ``` bash title="Create an assistant with files"
 ai chat assistant create --name "My Assistant 2" --instructions "You are a helpful Assistant." --files "**/*.md"
 ```
