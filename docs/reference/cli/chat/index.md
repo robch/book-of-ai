@@ -49,3 +49,6 @@ ai chat --interactive
 ai chat --user "What can you do?"
 ```
 
+``` bash title="_Send a user message with a specific temperature_"
+ai chat --user "Tell me a joke." --temperature 0.7
+```
