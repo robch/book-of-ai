@@ -1,18 +1,23 @@
 :root {
-  --md-admonition-icon--console-output: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z" /></svg>')
+  --md-admonition-icon--console-output: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" rx="2" ry="2" width="20" height="14" /><rect x="5" y="5" width="14" height="8" /></svg>');
   --md-annotation-width: 600px;
 }
   .md-typeset .admonition.console-output,
   .md-typeset details.console-output {
-    border-color: rgba(128, 128, 128, 0.1);
+    border-color: rgba(245, 245, 245, 1);
   }
   .md-typeset .console-output > .admonition-title,
   .md-typeset .console-output > summary {
-    background-color: rgba(128, 128, 128, 0.1);
+    background-color: rgba(245, 245, 245, 1);
   }
   .md-typeset .console-output > .admonition-title::before,
   .md-typeset .console-output > summary::before {
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(196, 196, 196);
     -webkit-mask-image: var(--md-admonition-icon--console-output);
             mask-image: var(--md-admonition-icon--console-output);
+  }
+
+  /* reduce top margin for console-output */
+  details.console-output {
+    margin-top: -20px;
   }

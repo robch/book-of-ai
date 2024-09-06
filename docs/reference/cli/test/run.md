@@ -17,8 +17,8 @@ ai test run [...]
 | `--tests TEXT1 [TEXT2 [...]]` | Specify tests to run |
 | `--contains TEXT1 [TEXT2 [...]]` | Filter tests that contain specified text |
 | `--remove TEXT1 [TEXT2 [...]]` | Exclude tests that contain specified text |
-| --output-file FILE | Specify file to output test results |
-| --output-format trx|junit | Specify output format (trx or junit) |
+| `--output-file FILE` | Specify file to output test results |
+| `--output-format trx|junit` | Specify output format (trx or junit) |
 
 ### Examples
 
