@@ -38,7 +38,7 @@ ai [...]
 | [ai chat](/reference/cli/chat/index.md) | Initiates interactive or non-interactive conversations with an AI language model. |
 | [ai chat assistant](/reference/cli/chat/assistant/index.md) | Manages OpenAI Assistants and related resources. |
 | [ai dev](/reference/cli/dev/index.md) | Enables quick development of GenAI applications. |
-| [ai search](/reference/cli/search/index.md) | Creates or updates Azure AI Search indexes. |
+| [ai search](/reference/cli/search/index/index.md) | Creates or updates Azure AI Search indexes. |
 | [ai speech](/reference/cli/speech/index.md) | Allows speech recognition and synthesis and related tasks. |
 | [ai test](/reference/cli/test/index.md) | Enables GenAI based testing of console applications. |
 
