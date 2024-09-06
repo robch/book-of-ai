@@ -14,7 +14,7 @@ ai dev new list
 ai dev new list
 ```
 
-??? console-output "Output"
+??? tip "Output"
 
     ``` plaintext
     Name                                                      Short Name                                       Language                        
