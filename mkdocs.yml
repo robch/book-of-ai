@@ -9,7 +9,7 @@ theme:
   features:
   - navigation.tabs     # once there are multiple books, uncomment this
   - navigation.sections
-  # - navigation.footer
+  - navigation.footer
   - navigation.indexes
   # - toc.integrate
   - navigation.top
