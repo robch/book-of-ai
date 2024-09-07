@@ -5,8 +5,19 @@ The `ai dev new list` command lists available templates that can be used with th
 ### Usage
 
 ``` bash
-ai dev new list
+ai dev new list [PARTIAL_TEMPLATE_NAME] [...]
 ```
+
+### Options
+
+| Option                            | Description                                   |
+|---------------------------------- |----------------------------------------------|
+| `--language LANGUAGE`             | Specifies the language for the new template. |
+| `--csharp`                        | Alias for `--language csharp`.               |
+| `--go`                            | Alias for `--language go`.                   |
+| `--java`                          | Alias for `--language java`.                 |
+| `--javascript`                    | Alias for `--language javascript`.           |
+| `--python`                        | Alias for `--language python`.               |
 
 ### Examples
 

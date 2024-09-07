@@ -15,17 +15,17 @@ ai speech csr list [OPTIONS]
 | `--key KEY` | Specify the key to use for the connection. |
 | `--region REGION` | Specify the region of the resource. |
 | `--projects` | List projects. |
-| `--project languages` | List supported locales for projects. |
+| `--project-languages` | List supported locales for projects. |
 | `--datasets` | List datasets. |
-| `--dataset languages` | List supported locales for datasets. |
+| `--dataset-languages` | List supported locales for datasets. |
 | `--dataset URL` | Specify the dataset URL. |
 | `--models` | List models. |
-| `--model languages` | List supported locales for models. |
+| `--model-languages` | List supported locales for models. |
 | `--evaluations` | List evaluations. |
-| `--evaluation languages` | List supported locales for evaluations.|
+| `--evaluation-languages` | List supported locales for evaluations.|
 | `--evaluation URL` | Specify the evaluation URL. |
 | `--endpoints` | List endpoints. |
-| `--endpoint languages` | List supported locales for endpoints. |
+| `--endpoint-languages` | List supported locales for endpoints. |
 | `--endpoint URL` | Specify the endpoint URL. |
 | `--project URL` | Specify the project URL. |
 | `--input path PATH` | Specify the input path. |

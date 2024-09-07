@@ -31,6 +31,10 @@ ai chat <sub-command> [...]
 | `--max-tokens MAX_TOKENS`    | Specifies the maximum tokens to use. |
 | `--top-p TOP_P`              | Specifies the top-p to use. |
 | `--n N`                      | Specifies the n to use. |
+| `--output-answer`            | Specifies the output answer file to use. |
+| `--output-chat-history`      | Specifies the output chat history file to use. |
+| `--input-chat-history`       | Specifies the input chat history file to use. |
+| `--model`                    | Specifies the GitHub model to use. |
 
 ### Sub-Commands
 
