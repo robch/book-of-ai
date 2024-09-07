@@ -14,10 +14,10 @@ The `ai init openai` command initializes the Azure OpenAI resource. This command
 ai init openai
 ```
 
-> **STEP 1**: ⇛ Select your Azure subscription  
+> **STEP 1**: ⇛ Select your Azure subscription (if prompted)  
 > **STEP 2**: ⇛ Select or create your Azure OpenAI resource  
 > **STEP 3**: ⇛ Select or create an OpenAI chat model deployment (e.g. gpt-4o)  
-> **STEP 4**: ⇛ Select or create an OpenAI embeddings model deployment  
+> **STEP 4**: ⇛ Select or create an OpenAI embeddings model deployment (optional)  
 
 ### View Configuration
 
