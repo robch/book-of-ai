@@ -23,10 +23,6 @@ ai init openai
 
 To view the persisted configuration, use the following commands:
 
-```bash title="Get chat endpoint"
-ai config @chat.endpoint
-```
+--8<-- "code-blocks/ai-config-chat-endpoint.md"
 
-```bash title="Get chat key"
-ai config @chat.key
-```
+--8<-- "code-blocks/ai-config-chat-key.md"

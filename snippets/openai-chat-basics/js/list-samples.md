@@ -1,6 +1,4 @@
-``` bash title="List all samples"
-ai dev new list
-```
+--8<-- "code-blocks/ai-dev-new-list.md"
 
 ``` bash title="List only JavaScript samples"
 ai dev new list --javascript

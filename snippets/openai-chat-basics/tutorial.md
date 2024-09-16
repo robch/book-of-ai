@@ -6,45 +6,11 @@ The `ai chat` command allows you to interact w/ OpenAI models from the command l
 
 The `ai chat` command sends a user prompt to OpenAI and displays the response.
 
-``` { .bash .cli-command title="User prompts are questions or statements to the model"}
-ai chat --user "What is the capital of France?"
-```
+--8<-- "code-blocks/ai-chat-user-what-is-the-capital-of-france.md"
 
-``` { .plaintext .cli-output hl_lines="6" }
-AI - Azure AI CLI, Version 1.0.0
-Copyright (c) 2024 Microsoft Corporation. All Rights Reserved.
+--8<-- "code-blocks/ai-chat-user-what-is-the-capital-of-france-system-always-answer-in-french.md"
 
-user@CHAT: What is the capital of France?
-
-assistant: The capital of France is Paris.
-```
-
-``` { .bash .cli-command title="System prompts are special instructions for the model" }
-ai chat --user "What is the capital of France." --system "Always answer in French."
-```
-
-``` { .plaintext .cli-output hl_lines="6" }
-AI - Azure AI CLI, Version 1.0.0
-Copyright (c) 2024 Microsoft Corporation. All Rights Reserved.
-
-user@CHAT: What is the capital of France.
-
-assistant: La capitale de la France est Paris.
-```
-
-
-``` { .bash .cli-command title="--question is an alias for --user" }
-ai chat --question "What is the capital of France?"
-```
-
-``` { .plaintext .cli-output hl_lines="4" }
-AI - Azure AI CLI, Version 1.0.0
-Copyright (c) 2024 Microsoft Corporation. All Rights Reserved.
-
-user@CHAT: What is the capital of France?
-
-assistant: The capital of France is Paris.
-```
+--8<-- "code-blocks/ai-chat-question-what-is-the-capital-of-france.md"
 
 ### User and System prompts from Files
 

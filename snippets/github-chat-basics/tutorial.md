@@ -6,17 +6,11 @@ The `ai chat` command allows you to interact w/ GitHub Marketplace models from t
 
 The `ai chat` command sends a user prompt to GitHub's AI Inference service and displays the response.
 
-``` bash title="User prompts are questions or statements to the model"
-ai chat --user "What is the capital of France?"
-```
+--8<-- "code-blocks/ai-chat-user-what-is-the-capital-of-france.md"
 
-``` bash title="System prompts are special instructions for the model"
-ai chat --user "What is the capital of France." --system "Always answer in French."
-```
+--8<-- "code-blocks/ai-chat-user-what-is-the-capital-of-france-system-always-answer-in-french.md"
 
-``` bash title="--question is an alias for --user"
-ai chat --question "What is the capital of France?"
-```
+--8<-- "code-blocks/ai-chat-question-what-is-the-capital-of-france.md"
 
 ### User and System prompts from Files
 
