@@ -35,6 +35,10 @@ theme:
 
 extra_css:
   - assets/extra.css
+  - assets/cli-toggle.css
+
+extra_javascript:
+  - js/cli-toggle.js
 
 extra:
   generator: false
