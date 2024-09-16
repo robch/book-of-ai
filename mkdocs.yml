@@ -9,7 +9,7 @@ theme:
   features:
   - navigation.tabs     # once there are multiple books, uncomment this
   - navigation.sections
-  # - navigation.footer
+  - navigation.footer
   - navigation.indexes
   # - toc.integrate
   - navigation.top
@@ -35,6 +35,10 @@ theme:
 
 extra_css:
   - assets/extra.css
+  - assets/cli-toggle.css
+
+extra_javascript:
+  - js/cli-toggle.js
 
 extra:
   generator: false
@@ -239,6 +243,4 @@ nav:
         - reference/cli/test/index.md
         - "list": reference/cli/test/list.md
         - "run": reference/cli/test/run.md
-    - ai test framework:
-      - reference/test-framework/index.md
-      - "YAML format": reference/test-framework/yaml.md
+        - "yaml": reference/test-framework/yaml.md

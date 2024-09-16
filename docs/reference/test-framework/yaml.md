@@ -1,21 +1,33 @@
-# `ai test` YAML Format
+# `ai test` YAML Framework
+
+`ai test` is a YAML-based test framework/runner that can be used to run tests on any command-line tool or script. It is designed to be simple to use and understand, and to be able to run tests in parallel.
+
+```yaml title="Example test case"
+- name: Build search index
+  command: ai search index update --files "data/*.md" --index-name myindex
+  expect-regex: |
+    Updating search index 'myindex' ...
+    Updating search index 'myindex' ... Done!
+```
 
 The test case YAML file contains a list of test cases. Each test case is a dictionary with the following keys:
 
-- `tests`, `steps` (required): A list of test cases to run.
-* `command`, `script`, `bash` (required): The command or script to run.
-* `name` (required): The name of the test case.
-- `env` (optional): A dictionary of environment variables to set before running the command or script.
-- `input` (optional): The input to pass to the command or script.
-- `expect` (optional): A string that instructs the LLM (e.g. GPT-4) to decide pass/fail based on stdout/stderr.
-- `expect-regex` (optional): A list of regular expressions that must be matched in the stdout/stderr output.
-- `not-expect-regex` (optional): A list of regular expressions that must not be matched in the stdout/stderr output.
-- `parallelize` (optional): Whether the test case should run in parallel with other test cases.
-- `skipOnFailure` (optional): Whether the test case should be skipped when it fails.
-- `tag`/`tags` (optional): A list of tags to associate with the test case.
-- `timeout` (optional): The maximum time allowed to execute the test case, in milliseconds.
-- `workingDirectory` (optional): The working directory where the test will be run.
-- `matrix`, `matrix-file` (optional): A matrix used to parameterize and/or create multiple variations of a test case.
+| Key | Required | Description |
+| --- | --- | --- |
+| [`tests`, `steps`](#tests-steps) | Required | A list of test cases to run. |
+| [`command`, `script`, `bash`](#command-script-bash) | Required | The command or script to run. |
+| `name` | Required | The name of the test case. |
+| [`env`](#env) | Optional | A dictionary of environment variables to set before running the command or script. |
+| [`input`](#input) | Optional | The input to pass to the command or script. |
+| [`expect`](#expect) | Optional | A string that instructs the LLM (e.g. GPT-4) to decide pass/fail based on stdout/stderr. |
+| [`expect-regex`](#expect-regex) | Optional | A list of regular expressions that must be matched in the stdout/stderr output. |
+| [`not-expect-regex`](#not-expect-regex) | Optional | A list of regular expressions that must not be matched in the stdout/stderr output. |
+| [`parallelize`](#parallelize) | Optional | Whether the test case should run in parallel with other test cases. |
+| [`skipOnFailure`](#skiponfailure) | Optional | Whether the test case should be skipped when it fails. |
+| [`tag`/`tags`](#tagtags) | Optional | A list of tags to associate with the test case. |
+| [`timeout`](#timeout) | Optional | The maximum time allowed to execute the test case, in milliseconds. |
+| [`workingDirectory`](#workingdirectory) | Optional | The working directory where the test will be run. |
+| [`matrix`, `matrix-file`](#matrix-matrix-file) | Optional | A matrix used to parameterize and/or create multiple variations of a test case. |
 
 Test cases can be organized into areas, sub-areas, and so on.
 
@@ -45,7 +57,9 @@ Test cases can also be grouped into classes.
 
 If no class is specified, the default class is "TestCases".
 
-## `tests`, `steps`
+### YAML Reference
+
+#### `tests`, `steps`
 
 Required.
 
@@ -71,7 +85,7 @@ steps:
   bash: echo "Goodbye, world!"
 ```
 
-## `command`, `script`, `bash`
+#### `command`, `script`, `bash`
 
 Required.
 
@@ -96,8 +110,7 @@ bash: |
   fi
 ```
 
-
-## `env`
+#### `env`
 
 Optional. Inherits from parent.
 
@@ -110,7 +123,7 @@ env:
   JAVA_HOME: /path/to/java
 ```
 
-## `input`
+#### `input`
 
 Optional.
 
@@ -125,7 +138,7 @@ input: |
   exit
 ```
 
-## `expect`
+#### `expect`
 
 Optional.
 
@@ -137,7 +150,7 @@ Example:
 expect: the output must have exactly two jokes
 ```
 
-## `expect-regex`
+#### `expect-regex`
 
 Optional.
 
@@ -153,7 +166,7 @@ expect-regex: |
   Regex 2
 ```
 
-## `not-expect-regex`
+#### `not-expect-regex`
 
 Optional.
 
@@ -170,7 +183,7 @@ not-expect-regex: |
   curseword2
 ```
 
-## `parallelize`
+#### `parallelize`
 
 Optional.
 
@@ -184,7 +197,7 @@ Example:
 parallelize: true
 ```
 
-## `skipOnFailure`
+#### `skipOnFailure`
 
 Optional.
 
@@ -198,7 +211,7 @@ Example:
 skipOnFailure: true
 ```
 
-## `tag`/`tags`
+#### `tag`/`tags`
 
 Optional. Inherits from parent.
 
@@ -233,7 +246,7 @@ tests:
   tags: [bye]
 ```
 
-## `timeout`
+#### `timeout`
 
 Optional.
 
@@ -245,7 +258,7 @@ Example:
 timeout: 3000  # 3 seconds
 ```
 
-## `workingDirectory`
+#### `workingDirectory`
 
 Optional. Inherits from parent.
 
@@ -253,7 +266,7 @@ When present, specifies an absolute path or relative path where the test will be
 
 When specified as a relative path, it will be relative to the working directory of the parent, or if no parent exists, where the test case file is located.
 
-## `matrix`, `matrix-file`
+#### `matrix`, `matrix-file`
 
 Optional. Inerits from parent.
 

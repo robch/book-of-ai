@@ -29,6 +29,8 @@ ai speech recognize [...]
 | `--phrases @PHRASELIST.txt` | Use a list of custom phrases to improve recognition accuracy. |
 | `--foreach in @ITEMS.txt`   | Recognize speech for each audio input listed in the provided file. |
 | `--threads NUMBER`          | Specify the number of threads to use for processing. |
+| `--output-srt FILE`         | Save recognition captions to a file in SRT format. |
+| `--output-vtt FILE`         | Save recognition captions to a file in VTT format. |
 
 ### Examples
 

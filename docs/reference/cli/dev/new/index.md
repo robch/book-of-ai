@@ -5,15 +5,20 @@ The `ai dev new` command creates or lists available templates.
 ### Usage
 
 ```bash
-ai dev new TEMPLATE_NAME
-ai dev new list [...]
+ai dev new TEMPLATE_NAME [...]
 ```
 
 ### Options
 
-| Option                      | Description                                   |
-|---------------------------- |----------------------------------------------|
-| `--instructions INSTRUCTIONS` | `ai dev new` instructions for the template. |
+| Option                            | Description                                   |
+|---------------------------------- |----------------------------------------------|
+| `--language LANGUAGE`             | Specifies the language for the new template. |
+| `--csharp`                        | Alias for `--language csharp`.               |
+| `--go`                            | Alias for `--language go`.                   |
+| `--java`                          | Alias for `--language java`.                 |
+| `--javascript`                    | Alias for `--language javascript`.           |
+| `--python`                        | Alias for `--language python`.               |
+| `--instructions "INSTRUCTIONS"`   | Specifies the instructions for the template. Not all templates support this option. |
 
 ### Sub-commands
 

@@ -13,7 +13,7 @@ ai speech csr model list --key YOUR_KEY --region YOUR_REGION --models
 | `--region REGION`        | Specifies the region to access the Azure AI service.  |
 | `--models`               | Lists all custom speech recognition models.           |
 | `--languages`            | Lists all languages supported by models.             |
-| `--base models`          | Lists all base models available.                     |
+| `--base-models`          | Lists all base models available.                     |
 | `--project URL`          | URL of the project associated with the models.         |
 | `--input path PATH`      | Provides the input path for the command.              |
 | `--output path PATH`     | Provides the output path for the command.             |
