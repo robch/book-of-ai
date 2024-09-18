@@ -60,13 +60,13 @@
   height: 0;
   opacity: 0;
   transform: translateY(-16px);
-  margin-top: -17px;
+  margin-top: -1em;
   position: relative;
   z-index: 0;
 }
 
 .cli-output code {
-  border-top: solid 2px var(--md-code-bg-color);
+  border-top: solid .05rem var(--md-code-bg-color);
 }
 
 .cli-output-open {
@@ -77,6 +77,6 @@
 }
 
 .cli-output-open code {
-  border-top: solid 2px var(--md-default-fg-color--lightest);
+  border-top: solid .05rem var(--md-default-fg-color--lightest);
   transition: border 250ms ease-out;
 }
