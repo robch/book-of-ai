@@ -10,10 +10,6 @@
   margin-left: 10px;
 }
 
-.cli-output {
-  margin-top: -16px;
-}
-
 .toggle-output-button:not(.focus-visible) {
   -webkit-tap-highlight-color: transparent;
   outline: none;
@@ -55,8 +51,32 @@
   width: 1.125em;
 }
 
+.cli-command {
+  position: relative;
+  z-index: 1;
+}
+
+.cli-output {
+  height: 0;
+  opacity: 0;
+  transform: translateY(-16px);
+  margin-top: -17px;
+  position: relative;
+  z-index: 0;
+}
+
 .cli-output code {
-  border: solid 3px var(--md-accent-fg-color);
-  background-color: var(--md-code-bg-color);
-  color: var(--md-code-fg-color);
+  border-top: solid 2px var(--md-code-bg-color);
+}
+
+.cli-output-open {
+  height: auto;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 250ms ease-out, transform 250ms ease-out;
+}
+
+.cli-output-open code {
+  border-top: solid 2px var(--md-default-fg-color--lightest);
+  transition: border 250ms ease-out;
 }

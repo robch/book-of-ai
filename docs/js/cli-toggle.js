@@ -58,17 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Insert the toggle button inside the command block's filename span
     const filenameSpan = cliCommandBlock.querySelector('.filename');
     filenameSpan.appendChild(toggleButton);
-    
-    // Hide the output block initially
-    cliOutputBlock.style.display = 'none';
 
     // Add click event to toggle visibility
     toggleButton.addEventListener('click', function () {
-      if (cliOutputBlock.style.display === 'none') {
-        cliOutputBlock.style.display = 'block';
-      } else {
-        cliOutputBlock.style.display = 'none';
-      }
+      cliOutputBlock.classList.toggle('cli-output-open');
     });
   });
 });
