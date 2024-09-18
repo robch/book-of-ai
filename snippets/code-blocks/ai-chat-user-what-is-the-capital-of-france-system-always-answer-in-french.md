@@ -3,7 +3,7 @@
 ai chat --user "What is the capital of France." --system "Always answer in French."
 ```
 
-``` { .plaintext .cli-output hl_lines="6" }
+``` { .plaintext .cli-output }
 AI - Azure AI CLI, Version 1.0.0
 Copyright (c) 2024 Microsoft Corporation. All Rights Reserved.
 

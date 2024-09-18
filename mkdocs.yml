@@ -87,7 +87,7 @@ nav:
   - HOME: index.md
   - PRE-REQS:
       - INSTALL:
-        - "CLI Installation": install-ai-cli.md
+        - "Azure AI CLI Installation": install-ai-cli.md
       - SETUP:
         - "Azure OpenAI Setup": setup/openai.md
         - "Azure AI Model Setup": setup/azure-ai.md

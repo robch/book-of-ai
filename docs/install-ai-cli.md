@@ -4,7 +4,7 @@ hide:
 icon: material/download
 ---
 
-# `ai` CLI Installation
+# Azure `ai` CLI Installation
 
 === "Windows (install)"
 

@@ -11,10 +11,10 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
 
     <div class="grid cards" markdown>
 
-    -   **`AI` CLI FEATURES**  
+    -   **AZURE `AI` CLI FEATURES**  
 
         :octicons-terminal-16: Access AI services from the command line.  
-        :simple-futurelearn: Learn and experiment w/ concepts (LLMs, speech, etc.).  
+        :simple-futurelearn: Learn + experiment w/ AI concepts (e.g. LLMs).
 
         :material-auto-fix: Solve real-world problems w/out writing code.  
         :material-file-code: Generate code samples for your projects.  
@@ -44,34 +44,53 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     ---
 
     **Install and Setup**  
-    [:octicons-arrow-right-24: `ai` CLI Installation](/install-ai-cli.md)  
-    [:octicons-arrow-right-24: Azure OpenAI Setup](/setup/openai.md)  
+    [:material-download: Azure `ai` CLI Installation](/install-ai-cli.md)  
+    [:material-microsoft-azure:{ .med }  Azure OpenAI Setup](/setup/openai.md)  
 
-    **Create your first app**  
-    [:octicons-arrow-right-24: OpenAI Chat app](/openai-chat/basics.md#generate-code)  
-    [:octicons-arrow-right-24: OpenAI Assistants app](/openai-asst/basics.md#generate-code)  
-
--   :material-microsoft-azure:{ .lg .middle } __Azure AI__
+-   :material-microsoft-azure:{ .lg .middle } __Azure AI Tutorials__
 
     ---
 
     **Azure OpenAI**  
-    [:octicons-arrow-right-24: Azure OpenAI Chat](/openai-chat/basics.md#tutorial)  
-    [:octicons-arrow-right-24: Azure OpenAI Assistants](/openai-asst/overview.md)  
+    [:material-console: Azure OpenAI Chat](/openai-chat/basics.md#tutorial)  
+    [:material-console: Azure OpenAI Assistants](/openai-asst/overview.md)  
 
     **Azure.AI.Inference**  
-    [:octicons-arrow-right-24: Azure AI Model Catalog](/setup/azure-ai.md)  
-    [:octicons-arrow-right-24: GitHub Model Marketplace](/setup/github.md)  
+    [:material-console: Azure AI Model Catalog](/setup/azure-ai.md)  
+    [:material-console: GitHub Model Marketplace](/setup/github.md)  
 
 
--   :simple-onnx:{ .lg .middle } __ONNX GenAI__
+-   :simple-onnx:{ .lg .middle } __ONNX GenAI Tutorials__
 
     ---
 
     **Phi-3 Models**  
-    [:octicons-arrow-right-24: ONNX w/ Phi-3 Models](/setup/onnx.md)  
-    [:octicons-arrow-right-24: ONNX Chat Basics](/onnx-chat/basics.md)  
+    [:material-console: ONNX w/ Phi-3 Models](/setup/onnx.md)  
+    [:material-console: ONNX Chat Basics](/onnx-chat/basics.md)  
 
 
 </div>
 
+<div class="grid cards" markdown>
+
+-   :material-microsoft-azure:{ .lg .middle } __Azure OpenAI Apps__
+
+    ---
+
+    [:material-console: Create a Chat app](/openai-chat/basics.md#generate-code)  
+    [:material-console: Create an Assistants app](/openai-asst/basics.md#generate-code)  
+
+-   :material-microsoft-azure:{ .lg .middle } __Azure.AI.Inference Apps__
+
+    ---
+
+    [:material-console: Create an Azure AI Inference app](/azure-ai-chat/basics.md#generate-code)  
+    [:material-console: Create a GitHub Model app](/github-chat/basics.md#generate-code)
+
+-   :simple-onnx:{ .lg .middle } __ONNX/Phi-3 Apps__
+
+    ---
+
+    [:material-console: Create an ONNX Phi-3 Model app](/onnx-chat/basics.md#generate-code)  
+
+</div>

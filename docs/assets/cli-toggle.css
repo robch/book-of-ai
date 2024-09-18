@@ -54,3 +54,9 @@
   mask-size: contain;
   width: 1.125em;
 }
+
+.cli-output code {
+  border: solid 3px var(--md-accent-fg-color);
+  background-color: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
+}

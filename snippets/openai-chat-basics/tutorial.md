@@ -34,7 +34,7 @@ ai chat --interactive
 ai chat --interactive --question "What is the capital of France?"
 ```
 
-``` { .plaintext .cli-output  hl_lines="6 10 14" }
+``` { .plaintext .cli-output }
 AI - Azure AI CLI, Version 1.0.0
 Copyright (c) 2024 Microsoft Corporation. All Rights Reserved.
 
