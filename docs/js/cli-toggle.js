@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add click event to toggle visibility
     toggleButton.addEventListener('click', function () {
       cliOutputBlock.classList.toggle('cli-output-open');
+      toggleButton.classList.toggle('toggle-output-button-rotated');
     });
   });
 });
