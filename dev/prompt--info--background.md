@@ -24,3 +24,15 @@ We're using `Material` for `mkdocs`, writing all our documentation using markdow
 We've written about 14k lines of markdown in the `docs` and `snippets` directories.
 
 To learn more, you can take a look at the `mkdocs.yml` file in the repository root.
+
+## KEY THINGS TO KNOW ABOUT MKDOCS
+
+1. When you see `--8<-- "filename"`, that's an "include" directive.
+   - The include files are either in the `docs` or `snippets` directories.
+   - If you don't find it in those directories, it might be relative to the current file.
+   - You should typically go ahead and read that file to understand the context of the current file you're reading.
+2. When you see `=== "..."`, that's a "tab" directive.
+   - Tabs are used to create tabbed content in the rendered markdown.
+   - We're using those for "scenarios" (e.g. "Streaming", "Non-streaming", ...)
+   - We're using those for "programming languages" (e.g. "Python", "JavaScript", ...)
+   - We're also using those for "platforms" (e.g. "Windows", "macOS", "Linux", ...)

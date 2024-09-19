@@ -129,7 +129,7 @@ nav:
     - "\u2464 w/ Image Output": chapter-29-chat-completions-w-image-output.md
   - AGENTS:
     - SEMANTIC KERNEL:
-      - "\u2460 Semantic Kernel Basics": chapter-30-semantic-kernel-basics.md
+      - "\u2460 Semantic Kernel Basics": sk-chat/basics.md
       - "\u2461 w/ Function Calling": chapter-31-semantic-kernel-w-function-calling.md
       - "\u2462 w/ Basic Agents": chapter-32-semantic-kernel-w-basic-agents.md
       - "\u2463 w/ Advanced Agents": chapter-33-semantic-kernel-w-advanced-agents.md

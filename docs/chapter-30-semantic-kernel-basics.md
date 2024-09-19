@@ -1,3 +1,0 @@
-➡️ [Semantic Kernel Basics](todo.md#chapter-30-semantic-kernel-basics)
-
-...

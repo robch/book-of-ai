@@ -68,6 +68,7 @@
   margin-top: -1em;
   position: relative;
   z-index: 0;
+  visibility: hidden;
 }
 
 .cli-output code {
@@ -77,6 +78,7 @@
 .cli-output-open {
   height: auto;
   opacity: 1;
+  visibility: visible;
   transform: translateY(0px);
   transition: opacity 250ms ease-out, transform 250ms ease-out;
 }
