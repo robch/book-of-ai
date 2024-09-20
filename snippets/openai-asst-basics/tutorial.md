@@ -29,3 +29,5 @@ ai chat --question "..." --thread-id @myNewThread.txt
 ```bash title="Interactive chat with thread ID and save history"
 ai chat --interactive --thread-id @myNewThread.txt --output-chat-history history.jsonl
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

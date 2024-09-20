@@ -51,3 +51,5 @@ ai chat --interactive --output-chat-history history.jsonl
 ``` bash title="Input chat history from a file"
 ai chat --interactive --input-chat-history history.jsonl
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

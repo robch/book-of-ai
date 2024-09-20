@@ -23,3 +23,5 @@ ai chat --question "What is in the README.md file?" --built-in-functions
 ``` bash title="File output"
 ai chat --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

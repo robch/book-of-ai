@@ -35,3 +35,5 @@ ai speech recognize --file hello-world.wav --output-srt-file captions.srt
 ```bash title="Output VTT subtitles"
 ai speech recognize --file hello-world.wav --output-vtt-file captions.vtt
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

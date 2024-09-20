@@ -29,3 +29,5 @@ ai chat --model-path @mp --user "Save the pledge of allegiance to 'pledge.txt'"
 ``` bash title="With built-in functions"
 ai chat --model-path @mp --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functions
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

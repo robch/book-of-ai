@@ -40,3 +40,5 @@ ai config @search.index.name
 ```bash title="Use search index in chat"
 ai chat --user "What is the capital of France?" --index MyFiles
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

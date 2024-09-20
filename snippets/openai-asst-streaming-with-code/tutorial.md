@@ -27,3 +27,5 @@ ai chat assistant delete
 ```bash title="Clear Assistant ID"
 ai config --clear assistant.id
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

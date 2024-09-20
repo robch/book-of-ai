@@ -65,3 +65,5 @@ ai config --set chat.model Mistral-large-2407
 ``` bash title="Use default model"
 ai chat --interactive
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

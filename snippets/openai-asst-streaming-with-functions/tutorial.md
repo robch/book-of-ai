@@ -32,3 +32,5 @@ ai chat --user "Save the pledge of allegiance to 'pledge.txt'" --built-in-functi
 ai chat assistant delete
 ai config --clear assistant.id
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

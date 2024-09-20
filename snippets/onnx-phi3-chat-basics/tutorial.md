@@ -33,3 +33,5 @@ ai chat --model-path @mp --interactive --output-chat-history history.jsonl
 ```bash title="Input chat history"
 ai chat --model-path @mp --interactive --input-chat-history history.jsonl
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

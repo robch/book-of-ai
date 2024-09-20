@@ -1,7 +1,7 @@
 Generate a C# sample that demonstrates how to use OpenAI Assistants without streaming.
 
 ``` bash
-aid ev new openai-asst --csharp
+ai dev new openai-asst --csharp
 cd openai-asst-csharp
 ```
 

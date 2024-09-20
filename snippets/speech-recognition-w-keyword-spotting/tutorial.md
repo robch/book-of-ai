@@ -19,3 +19,5 @@ ai speech recognize --file hello-world.wav --keyword keyword.table
 
     [Custom Keyword Docs](https://learn.microsoft.com/azure/ai-services/speech-service/custom-keyword-basics)  
     Learn more about creating custom keywords.  
+
+--8<-- "generate-code-for-scenarios-button-section.md"

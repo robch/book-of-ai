@@ -58,3 +58,5 @@ ai config --clear assistant.id
 ai chat assistant vector-store delete
 ai config --clear vector.store.id
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

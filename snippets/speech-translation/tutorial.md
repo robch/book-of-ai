@@ -21,3 +21,5 @@ ai speech translate --file hello-world.wav --source en-US --targets es-ES;fr-FR;
 ```bash title="Output SRT subtitles"
 ai speech translate --file hello-world.wav --source en-US --target es-ES --output-srt-file captions.srt
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

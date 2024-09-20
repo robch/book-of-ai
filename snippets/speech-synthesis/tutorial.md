@@ -31,3 +31,5 @@ ai speech synthesize --voices
 ``` bash title="Synthesize with specific voice"
 ai speech synthesize --text "Hello, world!" --voice en-US-AriaNeural
 ```
+
+--8<-- "generate-code-for-scenarios-button-section.md"

@@ -4,4 +4,10 @@ hide:
 ---
 # Semantic Kernel Chat Basics
 
---8<- "sk-chat-basics/generate-code.md"
+=== "Tutorial"
+
+    --8<- "sk-chat-basics/tutorial.md"
+
+=== "Generate Code"
+
+    --8<- "sk-chat-basics/generate-code.md"
