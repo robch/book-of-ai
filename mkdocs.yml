@@ -130,8 +130,8 @@ nav:
   - AGENTS:
     - SEMANTIC KERNEL:
       - "\u2460 Semantic Kernel Basics": sk-chat/basics.md
-      - "\u2461 w/ Function Calling": chapter-31-semantic-kernel-w-function-calling.md
-      - "\u2462 w/ Basic Agents": chapter-32-semantic-kernel-w-basic-agents.md
+      - "\u2461 w/ Function Calling": sk-chat/functions.md
+      - "\u2462 w/ Basic Agents": sk-chat/agents.md
       - "\u2463 w/ Advanced Agents": chapter-33-semantic-kernel-w-advanced-agents.md
   - REFERENCE:
     - ai cli:
