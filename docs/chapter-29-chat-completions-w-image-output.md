@@ -1,3 +1,0 @@
-➡️ [Chat w/ Image Output](todo.md#chapter-29-chat-completions-w-image-output)
-
-...

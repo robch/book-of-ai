@@ -6,6 +6,8 @@ icon: material/download
 
 # Azure `ai` CLI Installation
 
+The Azure AI Command-Line Interface (the `ai` CLI) is a cross-platform command-line tool to connect and immediately use Azure AI services with or without writing code.
+
 === "Windows (install)"
 
     --8<-- "install-ai-cli/windows/install-ai-cli.md"

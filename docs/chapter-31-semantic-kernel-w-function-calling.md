@@ -1,3 +1,0 @@
-➡️ [Semantic Kernel w/ Function Calling](todo.md#chapter-31-semantic-kernel-w-function-calling)
-
-...

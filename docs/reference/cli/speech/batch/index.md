@@ -12,11 +12,11 @@ ai speech batch <command> [...]
 
 | Sub-command | Description |
 | ----------- | ----------- |
-| [ai speech batch transcription create](./create.md) | Creates new requests to transcribe remote audio streams |
-| [ai speech batch transcription delete](./delete.md) | Deletes an existing batch transcription that has already completed |
-| [ai speech batch transcription download](./download.md) | Downloads files from batch transcriptions that have already completed |
-| [ai speech batch transcription list](./list.md) | Lists details about existing batch transcriptions |
-| [ai speech batch transcription status](./status.md) | Checks the status of existing batch transcriptions, providing additional details |
+| [ai speech batch transcription create](./transcription/create.md) | Creates new requests to transcribe remote audio streams |
+| [ai speech batch transcription delete](./transcription/delete.md) | Deletes an existing batch transcription that has already completed |
+| [ai speech batch transcription download](./transcription/download.md) | Downloads files from batch transcriptions that have already completed |
+| [ai speech batch transcription list](./transcription/list.md) | Lists details about existing batch transcriptions |
+| [ai speech batch transcription status](./transcription/status.md) | Checks the status of existing batch transcriptions, providing additional details |
 
 ### Examples
 

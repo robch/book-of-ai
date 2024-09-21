@@ -115,24 +115,23 @@ nav:
     - "ONNX Phi-3 Setup": setup/onnx.md
     - "\u2460 &nbsp; ONNX Basics": onnx-chat/basics.md
     - "\u2461 &nbsp; w/ Function Calling": onnx-chat/functions.md
+  - SEMANTIC KERNEL:
+    - "\u2460 Semantic Kernel Basics": sk-chat/basics.md
+    - "\u2461 w/ Function Calling": sk-chat/functions.md
+    - "\u2462 w/ Basic Agents": sk-chat/agents.md
   - SPEECH:
     - "Speech Setup": setup/speech.md
     - "\u2460 &nbsp; Synthesis": speech/synthesis.md
     - "\u2461 &nbsp; Recognition": speech/recognition.md
     - "\u2462 &nbsp; Translation": speech/translation.md
     - "\u2463 &nbsp; w/ Keyword": speech/keyword-recognition.md
-  - MULTI_MODAL:
-    - "\u2460 Multi-Modal AI": chapter-25-multi-modal-ai.md
-    - "\u2461 w/ Speech Input": chapter-26-chat-completions-w-speech-input.md
-    - "\u2462 w/ Speech Input and Output": chapter-27-chat-completions-w-speech-input-and-output.md
-    - "\u2463 w/ Image Input": chapter-28-chat-completions-w-image-input.md
-    - "\u2464 w/ Image Output": chapter-29-chat-completions-w-image-output.md
-  - AGENTS:
-    - SEMANTIC KERNEL:
-      - "\u2460 Semantic Kernel Basics": sk-chat/basics.md
-      - "\u2461 w/ Function Calling": sk-chat/functions.md
-      - "\u2462 w/ Basic Agents": sk-chat/agents.md
-      - "\u2463 w/ Advanced Agents": chapter-33-semantic-kernel-w-advanced-agents.md
+  # - MULTI_MODAL:
+  #   - "\u2460 Multi-Modal AI": chapter-25-multi-modal-ai.md
+  #   - "\u2461 w/ Speech Input": chapter-26-chat-completions-w-speech-input.md
+  #   - "\u2462 w/ Speech Input and Output": chapter-27-chat-completions-w-speech-input-and-output.md
+  #   - "\u2463 w/ Image Input": chapter-28-chat-completions-w-image-input.md
+  #   - "\u2464 w/ Image Output": chapter-29-chat-completions-w-image-output.md
+  # - AGENTS:
   - REFERENCE:
     - ai cli:
       - reference/cli/index.md

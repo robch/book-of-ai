@@ -1,3 +1,0 @@
-➡️ [Multi-Modal AI](todo.md#chapter-25-multi-modal-ai)
-
-...

@@ -47,13 +47,3 @@ ai config --set assistant.id ID
 ```bash title="Clear assistant ID"
 ai config --clear assistant.id
 ```
-
-
-??? info "TODO: Finish this section on differences between chat completions and assistants."
-
-    **Differences between chat completions and assistants**  
-    ◦ stateless vs stateful  
-    ◦ customer controlled chat history vs threads  
-    ◦ automatic context window management  
-    ◦ advanced features: code interpreter, function calling, file search  
-
