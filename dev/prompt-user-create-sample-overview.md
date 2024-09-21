@@ -8,12 +8,12 @@ old_sample_overview_fqn: `{old_sample_overview_fqn}` (or `docs/sk-chat/sk-chat-s
 old_sample_snippets_dir: `{old_sample_snippets_dir}` (or `snippets/sk-chat-basics` if not defined)
 
 new_sample_lang:         `{new_sample_lang}`         (or `cs` if not defined)  
-new_sample_name:         `{new_sample_name}`         (or `sk-chat-streaming-with-functions-cs` if not defined)  
-new_sample_short_name:   `{new_sample_short_name}`   (or `sk-chat-streaming-with-functions` if not defined)
+new_sample_name:         `{new_sample_name}`         (or `sk-chat-with-agents-cs` if not defined)  
+new_sample_short_name:   `{new_sample_short_name}`   (or `sk-chat-with-agents` if not defined)
 new_sample_overview_fqn: `{new_sample_overview_fqn}` (or `docs/sk-chat/{new_sample_name}/sample-overview.md` if not defined)  
-new_sample_doc_fqn:      `{new_sample_doc_fqn}`      (or `docs/sk-chat/functions.md` if not defined)  
-new_sample_old_doc_fqn:  `{new_sample_old_doc_fqn}`  (or `docs/chapter-31-semantic-kernel-w-function-calling.md` if not defined)
-new_sample_snippets_dir: `{new_sample_snippets_dir}` (or `snippets/sk-chat-functions` if not defined)  
+new_sample_doc_fqn:      `{new_sample_doc_fqn}`      (or `docs/sk-chat/agents.md` if not defined)  
+new_sample_old_doc_fqn:  `{new_sample_old_doc_fqn}`  (or `docs/chapter-32-semantic-kernel-w-basic-agents.md` if not defined)
+new_sample_snippets_dir: `{new_sample_snippets_dir}` (or `snippets/sk-chat-agents` if not defined)  
 
 ## your task
 
@@ -22,9 +22,9 @@ Your task is to update documentation for {new_sample_name} by creating/updating 
 Tasks to perform:
 1. Carefully read the chapter `{old_sample_overview_fqn}`.
 2. Analyze how we've documented the steps in the sample from the source files.
-3. Now, carefully read `{old_sample_doc_fqn}` and its associated include files.
+3. Now, carefully read `{new_sample_doc_fqn}` and its associated include files.
 4. Find the section discussing the C# sample that has not yet been documented.
-5. Read all the files in that sample directory to understand the code.
+5. Read all the files in that sample directory (`{samples_src_dir}/{new_sample_name}`) to understand the code.
 6. Create an new markdown page called `{new_sample_overview_fqn}`.
 7. In the new markdown page, follow the same format as `{old_sample_overview_fqn}`.
 8. Save the new markdown page into as `{new_sample_overview_fqn}`.
@@ -46,6 +46,7 @@ Tasks to perform:
 Final notes:
 * Do **NOT** create any new files, other than the one new sample overview file.
 * Double check that you've covered the key points in the sample(s) in the new page like were covered in `{old_sample_overview_fqn}`.
+* There may be some differences in the samples, so be sure to document the new sample accurately.
 * Don't forget to use `title=...` for bash code blocks
 
 Now, do your work; don't tell me what you're going to do, just do it.
