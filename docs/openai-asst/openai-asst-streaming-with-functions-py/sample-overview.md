@@ -38,65 +38,89 @@ This sample demonstrates how to use the OpenAI Assistants API with function call
 
 ## main.py
 
-**STEP 1**: Set up environment variables and check their availability:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` python title="main.py"
-# Get the required environment variables, and form the base URL for Azure OpenAI Assistants API
+ASSISTANT_ID = os.getenv('ASSISTANT_ID') or "<insert your OpenAI assistant ID here>"
 AZURE_OPENAI_API_KEY = os.getenv('AZURE_OPENAI_API_KEY', '<insert your Azure OpenAI API key here>')
 AZURE_OPENAI_API_VERSION = os.getenv('AZURE_OPENAI_API_VERSION', '<insert your Azure OpenAI API version here>')
 AZURE_OPENAI_ENDPOINT = os.getenv('AZURE_OPENAI_ENDPOINT', '<insert your Azure OpenAI endpoint here>')
 AZURE_OPENAI_BASE_URL = f'{AZURE_OPENAI_ENDPOINT.rstrip("/")}/openai'
+```
 
-# Check if the required environment variables are set
+**STEP 2**: Validate the environment variables.
+
+``` python title="main.py"
 ok = \
     ASSISTANT_ID != None and not ASSISTANT_ID.startswith('<insert') and \
     AZURE_OPENAI_API_KEY != None and not AZURE_OPENAI_API_KEY.startswith('<insert') and \
     AZURE_OPENAI_API_VERSION != None and not AZURE_OPENAI_API_VERSION.startswith('<insert') and \
     AZURE_OPENAI_ENDPOINT != None and not AZURE_OPENAI_ENDPOINT.startswith('<insert')
+
+if not ok:
+    print('To use Azure OpenAI, set the following environment variables:\n' +
+        '\n  ASSISTANT_ID' +
+        '\n  AZURE_OPENAI_API_KEY' +
+        '\n  AZURE_OPENAI_API_VERSION' +
+        '\n  AZURE_OPENAI_ENDPOINT')
+    print('\nYou can easily do that using the Azure AI CLI by doing one of the following:\n' +
+      '\n  ai init' +
+      '\n  ai dev shell' +
+      '\n  python main.py' +
+      '\n' +
+      '\n  or' +
+      '\n' +
+      '\n  ai init' +
+      '\n  ai dev shell --run "python main.py"')
+    os._exit(1)
 ```
 
-**STEP 2**: Initialize the OpenAI client and the assistant's streaming helper class:
+**STEP 3**: Initialize the OpenAI client with the configuration settings.
 
 ``` python title="main.py"
-# Create the OpenAI client
 openai = OpenAI(
     api_key = AZURE_OPENAI_API_KEY,
     base_url = AZURE_OPENAI_BASE_URL,
     default_query= { 'api-version': AZURE_OPENAI_API_VERSION },
     default_headers = { 'api-key': AZURE_OPENAI_API_KEY }
 )
+```
 
-# Create the assistants streaming helper class instance
+**STEP 4**: Initialize the helper class with the OpenAI client.
+
+``` python title="main.py"
 assistant = OpenAIAssistantsFunctionsStreamingClass(ASSISTANT_ID, factory, openai)
 ```
 
-**STEP 3**: Manage the assistant's thread, retrieve messages, and handle user input in a loop:
+**STEP 5**: Create or retrieve a thread and display its messages.
 
 ``` python title="main.py"
-# Get or create the thread, and display the messages if any
 if threadId is None:
     assistant.create_thread()
 else:
     assistant.retrieve_thread(threadId)
     assistant.get_thread_messages(lambda role, content: print(f'{role.capitalize()}: {content}', end=''))
+```
 
-# Loop until the user types 'exit'
+**STEP 6**: Loop to get user input and get the assistant's response.
+
+``` python title="main.py"
 while True:
-    # Get user input
     user_input = input('User: ')
     if user_input == 'exit' or user_input == '':
         break
 
-    # Get the Assistant's response
     print('\nAssistant: ', end='')
     assistant.get_response(user_input, lambda content: print(content, end=''))
 
     print('\n')
+
+print(f"Bye! (threadId: {assistant.thread.id})")
 ```
 
 ## openai_assistants_custom_functions.py
 
-**STEP 1**: Define custom functions and their schemas, then add them to the function factory:
+**STEP 1**: Define the function and its schema, then add it to the function factory.
 
 ``` python title="openai_assistants_custom_functions.py"
 @ignore_args_decorator
@@ -117,7 +141,7 @@ get_current_date_schema = {
 factory.add_function(get_current_date_schema, get_current_date)
 ```
 
-**STEP 2**: Define more custom functions as needed:
+**STEP 2**: Add more functions following the same pattern.
 
 ``` python title="openai_assistants_custom_functions.py"
 @ignore_args_decorator
@@ -136,11 +160,7 @@ get_current_time_schema = {
 }
 
 factory.add_function(get_current_time_schema, get_current_time)
-```
 
-**STEP 3**: Add a function with parameters:
-
-``` python title="openai_assistants_custom_functions.py"
 def get_current_weather(function_arguments):
     location = function_arguments.get('location')
     return f'The weather in {location} is 72 degrees and sunny.'
@@ -169,21 +189,30 @@ factory.add_function(get_current_weather_schema, get_current_weather)
 
 ## openai_assistants_functions_streaming.py
 
-**STEP 1**: Define the event handler to process streaming events and function calls:
+**STEP 1**: Create the client and initialize chat message history.
+
+``` python title="openai_assistants_functions_streaming.py"
+class OpenAIAssistantsFunctionsStreamingClass:
+
+    def __init__(self, assistant_id, function_factory, openai):
+        self.assistant_id = assistant_id
+        self.function_factory = function_factory
+        self.thread = None
+        self.openai = openai
+```
+
+**STEP 2**: Create an event handler that processes each text delta.
 
 ``` python title="openai_assistants_functions_streaming.py"
 class EventHandler(AssistantEventHandler):
-
-    def __init__(self, function_factory, openai, callback):
+    def __init__(self, openai, callback):
         super().__init__()
-        self.function_factory = function_factory
         self.openai = openai
         self.callback = callback
 
     @override
     def on_text_delta(self, delta, snapshot):
         self.callback(delta.value)
-
 
     @override
     def on_event(self, event):
@@ -196,7 +225,7 @@ class EventHandler(AssistantEventHandler):
         super().on_event(event)
 ```
 
-**STEP 2**: Implement the required actions and tool outputs handling:
+**STEP 3**: Implement the required actions and tool outputs handling.
 
 ``` python title="openai_assistants_functions_streaming.py"
 def handle_requires_action(self, data, run_id):

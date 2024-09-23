@@ -37,7 +37,7 @@ This sample demonstrates how to use the OpenAI Chat API incorporating data strea
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
 var openAIAPIKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? "<insert your OpenAI API key here>";
@@ -54,13 +54,13 @@ var searchEndpoint = Environment.GetEnvironmentVariable("AZURE_AI_SEARCH_ENDPOIN
 var searchIndexName = Environment.GetEnvironmentVariable("AZURE_AI_SEARCH_INDEX_NAME") ?? "<insert your search index name here>";
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Initialize the helper class with the configuration settings.
 
 ``` csharp title="Program.cs"
 var chat = new OpenAIChatCompletionsWithDataStreamingClass(openAIEndpoint, openAIAPIKey, openAIChatDeploymentName, openAISystemPrompt, searchEndpoint, searchApiKey, searchIndexName, openAIEmbeddingsEndpoint);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -83,7 +83,7 @@ while (true)
 
 ## OpenAIChatCompletionsWithDataStreamingClass.cs
 
-**STEP 1**: Create the client and initialize chat message history with a system message and set up data sources:
+**STEP 1**: Create the client and initialize chat message history with a system message and set up data sources.
 
 ``` csharp title="OpenAIChatCompletionsWithDataStreamingClass.cs"
 public OpenAIChatCompletionsWithDataStreamingClass(string openAIEndpoint, string openAIAPIKey, string openAIChatDeploymentName, string openAISystemPrompt, string searchEndpoint, string searchApiKey, string searchIndexName, string embeddingsEndpoint)
@@ -117,7 +117,7 @@ public void ClearConversation()
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` csharp title="OpenAIChatCompletionsWithDataStreamingClass.cs"
 public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Action<StreamingChatCompletionUpdate>? callback = null)
@@ -125,7 +125,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     _messages.Add(ChatMessage.CreateUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update.
 
 ``` csharp title="OpenAIChatCompletionsWithDataStreamingClass.cs"
     var responseContent = string.Empty;
@@ -143,7 +143,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
         }
 ```
 
-**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update:
+**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update.
 
 ``` csharp title="OpenAIChatCompletionsWithDataStreamingClass.cs"
         if (string.IsNullOrEmpty(content)) continue;
@@ -153,7 +153,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     }
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return response:
+**STEP 5**: Finally, add the assistant's response to the chat message history, and return response.
 
 ``` csharp title="OpenAIChatCompletionsWithDataStreamingClass.cs"
     _messages.Add(ChatMessage.CreateAssistantMessage(responseContent));

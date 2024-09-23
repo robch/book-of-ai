@@ -35,7 +35,7 @@ This sample demonstrates how to use the Azure Cognitive Services Speech SDK to p
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables and initialize the input file name:
+**STEP 1**: Read the configuration settings from environment variables and initialize the input file name.
 
 ```csharp title="Program.cs"
 var speechKey = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_KEY") ?? "<insert your Speech Service API key here>";
@@ -45,7 +45,7 @@ var targetLanguages = new string[] { "de", "fr" };
 var inputFileName = args.Length == 1 ? args[0] : null;
 ```
 
-**STEP 2**: Check if the input file exists:
+**STEP 2**: Check if the input file exists.
 
 ```csharp title="Program.cs"
 if (inputFileName != null && !File.Exists(inputFileName))
@@ -55,7 +55,7 @@ if (inputFileName != null && !File.Exists(inputFileName))
 }
 ```
 
-**STEP 3**: Initialize the speech translation config and audio config with the configuration settings:
+**STEP 3**: Initialize the speech translation config and audio config with the configuration settings.
 
 ```csharp title="Program.cs"
 var config = SpeechTranslationConfig.FromSubscription(speechKey, speechRegion);
@@ -64,7 +64,7 @@ var audioConfig = inputFileName != null
     : AudioConfig.FromDefaultMicrophoneInput();
 ```
 
-**STEP 4**: Set the source and target languages for translation:
+**STEP 4**: Set the source and target languages for translation.
 
 ```csharp title="Program.cs"
 config.SpeechRecognitionLanguage = speechLanguage;
@@ -74,7 +74,7 @@ foreach (var targetLanguage in targetLanguages)
 }
 ```
 
-**STEP 5**: Create the speech recognizer from the configuration information and handle events:
+**STEP 5**: Create the speech recognizer from the configuration information and handle events.
 
 ```csharp title="Program.cs"
 using (var recognizer = new TranslationRecognizer(config, audioConfig))
@@ -86,7 +86,7 @@ using (var recognizer = new TranslationRecognizer(config, audioConfig))
     recognizer.Canceled += (s, e) => HandleCanceledEvent(e, sessionStoppedNoError);
 ```
 
-**STEP 6**: Start continuous recognition and wait for the user to stop it:
+**STEP 6**: Start continuous recognition and wait for the user to stop it.
 
 ```csharp title="Program.cs"
     await recognizer.StartContinuousRecognitionAsync();
@@ -104,7 +104,7 @@ using (var recognizer = new TranslationRecognizer(config, audioConfig))
 }
 ```
 
-**STEP 7**: Implement event handlers to process recognition results and session events:
+**STEP 7**: Implement event handlers to process recognition results and session events.
 
 ```csharp title="Program.cs"
 private static void HandleRecognizingEvent(TranslationRecognitionEventArgs e)

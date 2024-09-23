@@ -34,7 +34,7 @@ This sample demonstrates how to use the OpenAI Assistants API with streaming in 
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables and validate them.
 
 ``` csharp title="Program.cs"
 var assistantId = Environment.GetEnvironmentVariable("ASSISTANT_ID") ?? "<insert your OpenAI assistant ID here>";
@@ -54,7 +54,7 @@ if (string.IsNullOrEmpty(openAIAPIKey) || openAIAPIKey.StartsWith("<insert") ||
 }
 ```
 
-**STEP 2**: Initialize the OpenAI client and the assistant:
+**STEP 2**: Initialize the OpenAI client and the assistant.
 
 ``` csharp title="Program.cs"
 var client = string.IsNullOrEmpty(openAIAPIKey)
@@ -64,7 +64,7 @@ var client = string.IsNullOrEmpty(openAIAPIKey)
 var assistant = new OpenAIAssistantsStreamingClass(client, assistantId);
 ```
 
-**STEP 3**: Create or retrieve a thread and get thread messages if thread ID is provided:
+**STEP 3**: Create or retrieve a thread and get previous messages if thread ID is provided.
 
 ``` csharp title="Program.cs"
 if (string.IsNullOrEmpty(threadId))
@@ -81,7 +81,7 @@ else
 }
 ```
 
-**STEP 4**: Implement the user interaction loop to get responses from the assistant:
+**STEP 4**: Implement the user interaction loop to get responses from the assistant.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -101,7 +101,7 @@ Console.WriteLine($"Bye! (ThreadId: {assistant.Thread?.Id})");
 
 ## OpenAIAssistantsStreamingClass.cs
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize the assistant with necessary configurations.
 
 ``` csharp title="OpenAIAssistantsStreamingClass.cs"
 public OpenAIAssistantsStreamingClass(OpenAIClient client, string assistantId)
@@ -109,7 +109,11 @@ public OpenAIAssistantsStreamingClass(OpenAIClient client, string assistantId)
     _assistantClient = client.GetAssistantClient();
     _assistantId = assistantId;
 }
+```
 
+**STEP 2**: Create or retrieve a thread.
+
+``` csharp title="OpenAIAssistantsStreamingClass.cs"
 public async Task CreateThreadAsync()
 {
     var result = await _assistantClient.CreateThreadAsync();
@@ -121,7 +125,11 @@ public async Task RetrieveThreadAsync(string threadId)
     var result = await _assistantClient.GetThreadAsync(threadId);
     Thread = result.Value;
 }
+```
 
+**STEP 3**: Retrieve and display previous messages in the thread.
+
+``` csharp title="OpenAIAssistantsStreamingClass.cs"
 public async Task GetThreadMessagesAsync(Action<string, string> callback)
 {
     await foreach (var message in _assistantClient.GetMessagesAsync(Thread, ListOrder.OldestFirst))
@@ -133,7 +141,7 @@ public async Task GetThreadMessagesAsync(Action<string, string> callback)
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 4**: When the user provides input, add the user message to the chat message history.
 
 ``` csharp title="OpenAIAssistantsStreamingClass.cs"
 public async Task GetResponseAsync(string userInput, Action<string> callback)
@@ -143,7 +151,7 @@ public async Task GetResponseAsync(string userInput, Action<string> callback)
     var stream = _assistantClient.CreateRunStreamingAsync(Thread, assistant.Value);
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Assistants API and process each update:
+**STEP 5**: Send the chat message history to the streaming OpenAI Assistants API and process each update.
 
 ``` csharp title="OpenAIAssistantsStreamingClass.cs"
     await foreach (var update in stream) 

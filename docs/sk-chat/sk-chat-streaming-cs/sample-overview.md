@@ -35,7 +35,7 @@ This sample demonstrates how to use the Semantic Kernel Chat API with streaming 
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
 var AZURE_OPENAI_API_KEY = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? "<insert your Azure OpenAI API key here>";
@@ -44,7 +44,43 @@ var AZURE_OPENAI_CHAT_DEPLOYMENT = Environment.GetEnvironmentVariable("AZURE_OPE
 var AZURE_OPENAI_SYSTEM_PROMPT = Environment.GetEnvironmentVariable("AZURE_OPENAI_SYSTEM_PROMPT") ?? "You are a helpful AI assistant.";
 ```
 
-**STEP 2**: Initialize the kernel with the configuration settings and create the streaming chat completions helper:
+**STEP 2**: Check if the required environment variables are set.
+
+``` csharp title="Program.cs"
+var azureOk = 
+    AZURE_OPENAI_API_KEY != null && !AZURE_OPENAI_API_KEY.StartsWith("<insert") &&
+    AZURE_OPENAI_CHAT_DEPLOYMENT != null && !AZURE_OPENAI_CHAT_DEPLOYMENT.StartsWith("<insert") &&
+    AZURE_OPENAI_ENDPOINT != null && !AZURE_OPENAI_ENDPOINT.StartsWith("<insert");
+
+var ok = azureOk &&
+    AZURE_OPENAI_SYSTEM_PROMPT != null && !AZURE_OPENAI_SYSTEM_PROMPT.StartsWith("<insert");
+
+if (!ok)
+{
+    Console.WriteLine(
+        "To use Azure OpenAI, set the following environment variables:\n" +
+        "\n  AZURE_OPENAI_SYSTEM_PROMPT" +
+        "\n  AZURE_OPENAI_API_KEY" +
+        "\n  AZURE_OPENAI_CHAT_DEPLOYMENT" +
+        "\n  AZURE_OPENAI_ENDPOINT"
+    );
+    Console.WriteLine(
+        "\nYou can easily do that using the Azure AI CLI by doing one of the following:\n" +
+        "\n  ai init" +
+        "\n  ai dev shell" +
+        "\n  dotnet run" +
+        "\n" +
+        "\n  or" +
+        "\n" +
+        "\n  ai init" +
+        "\n  ai dev shell --run \"dotnet run\""
+    );
+
+    return 1;
+}
+```
+
+**STEP 3**: Initialize the kernel with the configuration settings and create the streaming chat completions helper.
 
 ``` csharp title="Program.cs"
 var builder = Kernel.CreateBuilder();
@@ -53,7 +89,7 @@ var kernel = builder.Build();
 var chat = new SemanticKernelChatCompletionsStreamingClass(AZURE_OPENAI_SYSTEM_PROMPT!, kernel);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -72,7 +108,7 @@ while (true)
 
 ## SemanticKernelChatCompletionsStreamingClass.cs
 
-**STEP 1**: Initialize the kernel and chat message history with a system message:
+**STEP 1**: Initialize the kernel and chat message history with a system message.
 
 ``` csharp title="SemanticKernelChatCompletionsStreamingClass.cs"
 public SemanticKernelChatCompletionsStreamingClass(string systemPrompt, Kernel kernel)
@@ -90,7 +126,7 @@ public void ClearConversation()
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` csharp title="SemanticKernelChatCompletionsStreamingClass.cs"
 public async Task<string> GetStreamingChatMessageContentsAsync(string userPrompt, Action<StreamingChatMessageContent>? callback = null)
@@ -98,14 +134,14 @@ public async Task<string> GetStreamingChatMessageContentsAsync(string userPrompt
     _history.AddUserMessage(userPrompt);
 ```
 
-**STEP 3**: Send the chat message history to the streaming chat API:
+**STEP 3**: Send the chat message history to the streaming chat API.
 
 ``` csharp title="SemanticKernelChatCompletionsStreamingClass.cs"
     var responseContent = string.Empty;
     var response = _chatCompletionService.GetStreamingChatMessageContentsAsync(_history);
 ```
 
-**STEP 4**: For each non-empty update, accumulate the assistant's response and invoke the callback for the update:
+**STEP 4**: For each non-empty update, accumulate the assistant's response and invoke the callback for the update.
 
 ``` csharp title="SemanticKernelChatCompletionsStreamingClass.cs"
     await foreach (var content in response)
@@ -118,10 +154,10 @@ public async Task<string> GetStreamingChatMessageContentsAsync(string userPrompt
     }
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return the response:
+**STEP 5**: Finally, add the assistant's response to the chat message history, and return the response.
 
 ``` csharp title="SemanticKernelChatCompletionsStreamingClass.cs"
-    _history.addAssistantMessage(responseContent);
+    _history.AddAssistantMessage(responseContent);
     return responseContent;
 }
 ```

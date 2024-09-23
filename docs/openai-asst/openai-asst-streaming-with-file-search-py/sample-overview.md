@@ -36,7 +36,7 @@ This sample demonstrates how to use the OpenAI Assistants API with file search a
 
 ## main.py
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` python title="main.py"
 ASSISTANT_ID = os.getenv('ASSISTANT_ID') or "<insert your OpenAI assistant ID here>"
@@ -46,7 +46,34 @@ AZURE_OPENAI_ENDPOINT = os.getenv('AZURE_OPENAI_ENDPOINT', '<insert your Azure O
 AZURE_OPENAI_BASE_URL = f'{AZURE_OPENAI_ENDPOINT.rstrip("/")}/openai'
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Validate the environment variables.
+
+``` python title="main.py"
+ok = \
+    ASSISTANT_ID != None and not ASSISTANT_ID.startswith('<insert') and \
+    AZURE_OPENAI_API_KEY != None and not AZURE_OPENAI_API_KEY.startswith('<insert') and \
+    AZURE_OPENAI_API_VERSION != None and not AZURE_OPENAI_API_VERSION.startswith('<insert') and \
+    AZURE_OPENAI_ENDPOINT != None and not AZURE_OPENAI_ENDPOINT.startswith('<insert')
+
+if not ok:
+    print('To use Azure OpenAI, set the following environment variables:\n' +
+          '\n  ASSISTANT_ID' +
+          '\n  AZURE_OPENAI_API_KEY' +
+          '\n  AZURE_OPENAI_API_VERSION' +
+          '\n  AZURE_OPENAI_ENDPOINT')
+    print('\nYou can easily do that using the Azure AI CLI by doing one of the following:\n' +
+          '\n  ai init' +
+          '\n  ai dev shell' +
+          '\n  python main.py' +
+          '\n' +
+          '\n  or' +
+          '\n' +
+          '\n  ai init' +
+          '\n  ai dev shell --run "python main.py"')
+    os._exit(1)
+```
+
+**STEP 3**: Initialize the OpenAI client and the assistant.
 
 ``` python title="main.py"
 openai = OpenAI(
@@ -58,7 +85,18 @@ openai = OpenAI(
 assistant = OpenAIAssistantsFileSearchStreamingClass(ASSISTANT_ID, openai)
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Create or retrieve a thread and display existing messages if thread ID is provided.
+
+``` python title="main.py"
+threadId = sys.argv[1] if len(sys.argv) > 1 else None
+if threadId is None:
+    assistant.create_thread()
+else:
+    assistant.retrieve_thread(threadId)
+    assistant.get_thread_messages(lambda role, content: print(f'{role.capitalize()}: {content}', end=''))
+```
+
+**STEP 5**: Implement the user interaction loop to get responses from the assistant.
 
 ``` python title="main.py"
 while True:
@@ -70,20 +108,9 @@ while True:
     print('\n')
 ```
 
-**STEP 4**: Handle thread retrieval and display existing messages:
-
-``` python title="main.py"
-threadId = sys.argv[1] if len(sys.argv) > 1 else None
-if threadId is None:
-    assistant.create_thread()
-else:
-    assistant.retrieve_thread(threadId)
-    assistant.get_thread_messages(lambda role, content: print(f'{role.capitalize()}: {content}', end=''))
-```
-
 ## openai_assistants_file_search_streaming.py
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` python title="openai_assistants_file_search_streaming.py"
 class OpenAIAssistantsFileSearchStreamingClass:
@@ -94,7 +121,7 @@ class OpenAIAssistantsFileSearchStreamingClass:
         self.openai = openai
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history and process streaming responses.
 
 ``` python title="openai_assistants_file_search_streaming.py"
 def get_response(self, user_input, callback) -> None:
@@ -105,20 +132,15 @@ def get_response(self, user_input, callback) -> None:
         role="user",
         content=user_input,
     )
+    with self.openai.beta.threads.runs.stream(
+        thread_id=self.thread.id,
+        assistant_id=self.assistant_id,
+        event_handler=EventHandler(self.openai, callback)
+    ) as stream:
+        stream.until_done()
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Assistants API and process each update:
-
-``` python title="openai_assistants_file_search_streaming.py"
-with self.openai.beta.threads.runs.stream(
-    thread_id=self.thread.id,
-    assistant_id=self.assistant_id,
-    event_handler=EventHandler(self.openai, callback)
-) as stream:
-    stream.until_done()
-```
-
-**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update:
+**STEP 3**: For each non-empty update, accumulate the response, and invoke the callback for the update.
 
 ``` python title="openai_assistants_file_search_streaming.py"
 def on_text_delta(self, delta, snapshot):
@@ -129,17 +151,22 @@ def on_text_delta(self, delta, snapshot):
     self.callback(content)
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return the response:
+**STEP 4**: Once the message is done, output citations.
 
 ``` python title="openai_assistants_file_search_streaming.py"
-message = self.openai.beta.threads.messages.create(
-    thread_id=self.thread.id,
-    role="user",
-    content=user_input,
-)
+def on_message_done(self, message) -> None:
+    message_content = message.content[0].text
+    annotations = message_content.annotations
+    citations = []
+    for index, annotation in enumerate(annotations):
+        if file_citation := getattr(annotation, "file_citation", None):
+            cited_file = self.openai.files.retrieve(file_citation.file_id)
+            citations.append(f"[{index}] {cited_file.filename}")
+    if citations:
+        print("\n\n" + "\n".join(citations), end="", flush=True)
 ```
 
-**STEP 6**: Create and retrieve threads, and get thread messages:
+**STEP 5**: Create and retrieve threads, and get thread messages.
 
 ``` python title="openai_assistants_file_search_streaming.py"
 def create_thread(self):

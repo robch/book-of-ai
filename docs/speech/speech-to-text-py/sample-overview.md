@@ -31,12 +31,11 @@ This sample demonstrates how to use the Azure Speech Service for speech-to-text 
     Generating 'speech-to-text' in 'speech-to-text-py' (1 file)... DONE!
     ```
 
-
 ## main.py
 
-**STEP 1**: Import necessary modules and get configuration details:
+**STEP 1**: Get configuration details from environment variables.
 
-``` python title="main.py"
+```python title="main.py"
 from concurrent.futures import Future
 from azure.cognitiveservices.speech import SpeechConfig, SpeechRecognizer, AudioConfig, CancellationReason
 import threading
@@ -48,28 +47,32 @@ service_region = os.environ.get('AZURE_AI_SPEECH_REGION') or "<insert your Speec
 speech_language = "en-US"
 ```
 
-**STEP 2**: Create instances of a speech config and audio config:
+**STEP 2**: Create instances of a speech config and audio config.
 
-``` python title="main.py"
+```python title="main.py"
 speech_config = SpeechConfig(subscription=speech_key, region=service_region, speech_recognition_language=speech_language)
 audio_config = AudioConfig(use_default_microphone=True)
 ```
 
-**STEP 3**: Create the speech recognizer from the above configuration information:
+**STEP 3**: Create the speech recognizer from the above configuration information.
 
-``` python title="main.py"
+```python title="main.py"
 speech_recognizer = SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 ```
 
-**STEP 4**: Start speech recognition and handle the result:
+**STEP 4**: Start speech recognition, and return after a single utterance is recognized.
 
-``` python title="main.py"
+```python title="main.py"
 # Start speech recognition, and return after a single utterance is recognized. The end of a
 # single utterance is determined by listening for silence at the end or until a maximum of 15
 # seconds of audio is processed.
 print("Listening ...\n")
 result = speech_recognizer.recognize_once()
+```
 
+**STEP 5**: Check the result.
+
+```python title="main.py"
 # Check the result
 if result.reason.name == "RecognizedSpeech" and result.text != "":
     print("RECOGNIZED: {}".format(result.text))

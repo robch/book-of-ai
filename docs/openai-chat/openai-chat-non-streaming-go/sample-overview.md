@@ -36,7 +36,7 @@ This sample demonstrates how to use the OpenAI Chat API in a Go console applicat
 
 ## main.go
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` go title="main.go"
 openAIAPIKey := os.Getenv("AZURE_OPENAI_API_KEY")
@@ -57,7 +57,16 @@ if openAISystemPrompt == "" {
 }
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Validate the environment variables.
+
+``` go title="main.go"
+if openAIEndpoint == "" || openAIAPIKey == "" || openAIChatDeploymentName == "" || openAISystemPrompt == "" {
+    fmt.Println("Please set the environment variables.")
+    os.Exit(1)
+}
+```
+
+**STEP 3**: Initialize the helper class with the configuration settings.
 
 ``` go title="main.go"
 chat, err := NewOpenAIChatCompletionsExample(openAIEndpoint, openAIAPIKey, openAIChatDeploymentName, openAISystemPrompt)
@@ -66,7 +75,7 @@ if err != nil {
 }
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` go title="main.go"
 for {
@@ -87,7 +96,7 @@ for {
 
 ## openai_chat_completions_hello_world.go
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` go title="openai_chat_completions_hello_world.go"
 client, err := azopenai.NewClientWithKeyCredential(openAIEndpoint, keyCredential, nil)
@@ -102,21 +111,25 @@ messages := []azopenai.ChatRequestMessageClassification{
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` go title="openai_chat_completions_hello_world.go"
 func (chat *OpenAIChatCompletionsExample) GetChatCompletions(userPrompt string) (string, error) {
     chat.options.Messages = append(chat.options.Messages, &azopenai.ChatRequestUserMessage{Content: azopenai.NewChatRequestUserMessageContent(userPrompt)})
 ```
 
-**STEP 3**: Send the chat message history to the OpenAI Chat API and process the response:
+**STEP 3**: Send the chat message history to the OpenAI Chat API and process the response.
 
 ``` go title="openai_chat_completions_hello_world.go"
 resp, err := chat.client.GetChatCompletions(context.TODO(), *chat.options, nil)
 if err != nil {
     return "", err
 }
+```
 
+**STEP 4**: Add the assistant's response to the chat message history and return the response.
+
+``` go title="openai_chat_completions_hello_world.go"
 responseContent := *resp.Choices[0].Message.Content
 chat.options.Messages = append(chat.options.Messages, &azopenai.ChatRequestAssistantMessage{Content: to.Ptr(responseContent)})
 

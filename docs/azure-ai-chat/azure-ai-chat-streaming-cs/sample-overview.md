@@ -37,22 +37,31 @@ This sample demonstrates how to use the Azure AI Inference Chat API with streami
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Validate and read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
 var aiChatAPIKey = Environment.GetEnvironmentVariable("AZURE_AI_CHAT_API_KEY") ?? "<insert your OpenAI API key here>";
 var aiChatEndpoint = Environment.GetEnvironmentVariable("AZURE_AI_CHAT_ENDPOINT") ?? "<insert your OpenAI endpoint here>";
 var aiChatModel = Environment.GetEnvironmentVariable("AZURE_AI_CHAT_MODEL");
 var systemPrompt = Environment.GetEnvironmentVariable("SYSTEM_PROMPT") ?? "You are a helpful AI assistant.";
+
+if (string.IsNullOrEmpty(aiChatAPIKey) || aiChatAPIKey.StartsWith("<insert") ||
+    string.IsNullOrEmpty(aiChatEndpoint) || aiChatEndpoint.StartsWith("<insert") ||
+    string.IsNullOrEmpty(systemPrompt) || systemPrompt.StartsWith("<insert"))
+{
+    Console.WriteLine("To use Azure AI Inference, set the following environment variables:");
+    Console.WriteLine("- AZURE_AI_CHAT_API_KEY\n- AZURE_AI_CHAT_ENDPOINT\n- AZURE_AI_CHAT_MODEL (optional)\n- SYSTEM_PROMPT (optional)");
+    Environment.Exit(1);
+}
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Initialize the helper class with the configuration settings.
 
 ``` csharp title="Program.cs"
 var chat = new AzureAIInferenceChatCompletionsStreaming(aiChatEndpoint, aiChatAPIKey, aiChatModel, systemPrompt);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -72,7 +81,7 @@ while (true)
 
 ## AzureAIInferencingChatCompletionsStreamingClass.cs
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` csharp title="AzureAIInferencingChatCompletionsStreamingClass.cs"
 public AzureAIInferenceChatCompletionsStreaming(string aiChatEndpoint, string aiChatAPIKey, string? aiChatModel, string systemPrompt)
@@ -95,7 +104,7 @@ public void ClearConversation()
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` csharp title="AzureAIInferencingChatCompletionsStreamingClass.cs"
 public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Action<StreamingChatCompletionsUpdate>? callback = null)
@@ -103,7 +112,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     _messages.Add(new ChatRequestUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming Azure AI Inference Chat API and process each update:
+**STEP 3**: Send the chat message history to the streaming Azure AI Inference Chat API and process each update.
 
 ``` csharp title="AzureAIInferencingChatCompletionsStreamingClass.cs"
     var options = new ChatCompletionsOptions(_messages);
@@ -124,7 +133,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
         }
 ```
 
-**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update:
+**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update.
 
 ``` csharp title="AzureAIInferencingChatCompletionsStreamingClass.cs"
         if (string.IsNullOrEmpty(content)) continue;
@@ -134,7 +143,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     }
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return response:
+**STEP 5**: Finally, add the assistant's response to the chat message history, and return response.
 
 ``` csharp title="AzureAIInferencingChatCompletionsStreamingClass.cs"
     _messages.Add(new ChatRequestAssistantMessage() { Content = responseContent });

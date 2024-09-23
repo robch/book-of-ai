@@ -8,7 +8,7 @@ hide:
 This sample demonstrates how to use the ONNX Chat API with streaming in a C# console application, including function calling.
 
 [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/phi3-onnx-chat-streaming-with-functions-cs/Program.cs)  
-[:material-file-code: ONNXChatCompletionsStreamingWithFunctions.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/phi3-onnx-chat-streaming-with-functions-cs/ONNXChatCompletionsStreamingWithFunctions.cs)  
+[:material-file-code: OnnxGenAIChatCompletionsStreamingClass.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/phi3-onnx-chat-streaming-with-functions-cs/OnnxGenAIChatCompletionsStreamingClass.cs)  
 
 ??? tip "How to generate this sample"
 
@@ -25,8 +25,8 @@ This sample demonstrates how to use the ONNX Chat API with streaming in a C# con
 
     Generating 'phi3-onnx-chat-streaming-with-functions' in 'phi3-onnx-chat-streaming-with-functions-cs' (3 files)...
 
-    ONNXChatCompletionsStreamingWithFunctions.csproj
-    ONNXChatCompletionsStreamingWithFunctions.cs
+    FunctionFactory.cs
+    OnnxGenAIChatCompletionsStreamingClass.cs
     Program.cs
 
     Generating 'phi3-onnx-chat-streaming-with-functions' in 'phi3-onnx-chat-streaming-with-functions-cs' (3 files)... DONE!
@@ -35,107 +35,182 @@ This sample demonstrates how to use the ONNX Chat API with streaming in a C# con
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
-var onnxAPIKey = Environment.GetEnvironmentVariable("AZURE_ONNX_API_KEY") ?? "<insert your ONNX API key here>";
-var onnxEndpoint = Environment.GetEnvironmentVariable("AZURE_ONNX_ENDPOINT") ?? "<insert your ONNX endpoint here>";
-var onnxChatDeploymentName = Environment.GetEnvironmentVariable("AZURE_ONNX_CHAT_DEPLOYMENT") ?? "<insert your ONNX chat deployment name here>";
-var onnxSystemPrompt = Environment.GetEnvironmentVariable("AZURE_ONNX_SYSTEM_PROMPT") ?? "You are a helpful AI assistant.";
+var modelDirectory = Environment.GetEnvironmentVariable("ONNX_GENAI_MODEL_PATH") ?? "<insert your ONNX GenAI model path here>";
+var systemPrompt = Environment.GetEnvironmentVariable("ONNX_GENAI_SYSTEM_PROMPT") ?? "@system.txt";
+
+if (string.IsNullOrEmpty(modelDirectory) || modelDirectory.StartsWith("<insert") ||
+    string.IsNullOrEmpty(systemPrompt) || systemPrompt.StartsWith("<insert"))
+{
+    Console.WriteLine("To use this ONNX GenAI sample, set the following environment variables:");
+    Console.WriteLine("  ONNX_GENAI_MODEL_PATH\n  ONNX_GENAI_SYSTEM_PROMPT");
+    Environment.Exit(1);
+}
+
+if (systemPrompt.StartsWith("@") && File.Exists(systemPrompt.Substring(1)))
+{
+    systemPrompt = File.ReadAllText(systemPrompt.Substring(1));
+}
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Validate the configuration settings.
 
 ``` csharp title="Program.cs"
-var chat = new ONNXChatCompletionsStreamingWithFunctions(onnxEndpoint, onnxAPIKey, onnxChatDeploymentName, onnxSystemPrompt);
+if (string.IsNullOrEmpty(modelDirectory) || modelDirectory.StartsWith("<insert") ||
+    string.IsNullOrEmpty(systemPrompt) || systemPrompt.StartsWith("<insert"))
+{
+    Console.WriteLine("To use this ONNX GenAI sample, set the following environment variables:");
+    Console.WriteLine("  ONNX_GENAI_MODEL_PATH\n  ONNX_GENAI_SYSTEM_PROMPT");
+    Environment.Exit(1);
+}
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Initialize `FunctionFactory` with custom functions.
+
+``` csharp title="Program.cs"
+var factory = new FunctionFactory();
+factory.AddFunctions(typeof(OnnxGenAIChatCompletionsCustomFunctions));
+```
+
+**STEP 4**: Initialize the `OnnxGenAIChatStreamingClass` with model directory, system prompt, and factory.
+
+``` csharp title="Program.cs"
+var chat = new OnnxGenAIChatStreamingClass(modelDirectory, systemPrompt, factory);
+```
+
+**STEP 5**: Obtain user input, read from file if necessary, and use the helper class to get the assistant's response, displaying responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
 {
     Console.Write("User: ");
-    var userPrompt = Console.ReadLine();
-    if (string.IsNullOrEmpty(userPrompt) || userPrompt == "exit") break;
+    var input = Console.ReadLine();
+    if (string.IsNullOrEmpty(input) || input == "exit") break;
+
+    if (input.StartsWith('@') && File.Exists(input.Substring(1)))
+    {
+        input = File.ReadAllText(input.Substring(1));
+    }
 
     Console.Write("\nAssistant: ");
-    var response = await chat.GetChatCompletionsStreamingAsync(userPrompt, update => {
-        var text = string.Join("", update.ContentUpdate
-            .Where(x => x.Kind == ChatMessageContentPartKind.Text)
-            .Select(x => x.Text)
-            .ToList());
-        Console.Write(text);
+    chat.GetChatCompletionStreaming(input, update => {
+        Console.Write(update);
     });
     Console.WriteLine("\n");
 }
 ```
 
-## ONNXChatCompletionsStreamingWithFunctions.cs
+## OnnxGenAIChatStreamingClass.cs
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Initialize the chat model and tokenizer, setting up the function call context.
 
-``` csharp title="ONNXChatCompletionsStreamingWithFunctions.cs"
-public ONNXChatCompletionsStreamingWithFunctions(string onnxEndpoint, string onnxAPIKey, string onnxChatDeploymentName, string onnxSystemPrompt)
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
+public OnnxGenAIChatStreamingClass(string modelDirectory, string systemPrompt, FunctionFactory factory)
 {
-    _onnxSystemPrompt = onnxSystemPrompt;
+    systemPrompt = UpdateSystemPrompt(systemPrompt, factory);
 
-    _client = string.IsNullOrEmpty(onnxAPIKey)
-        ? new AzureONNXClient(new Uri(onnxEndpoint), new DefaultAzureCredential())
-        : new AzureONNXClient(new Uri(onnxEndpoint), new AzureKeyCredential(onnxAPIKey));
-    _chatClient = _client.GetChatClient(onnxChatDeploymentName);
-    _messages = new List<ChatMessage>();
+    _modelDirectory = modelDirectory;
+    _systemPrompt = systemPrompt;
+    _factory = factory;
 
-    ClearConversation();
+    _messages = new List<OnnxGenAIChatContentMessage>();
+    _messages.Add(new OnnxGenAIChatContentMessage { Role = "system", Content = _systemPrompt });
+
+    _model = new Model(_modelDirectory);
+    _tokenizer = new Tokenizer(_model);
+
+    _functionCallContext = new OnnxGenAIChatFunctionCallContext(_factory, _messages);
 }
+```
 
-public void ClearConversation()
+**STEP 2**: Clear previous messages and initialize chat message history with a system message.
+
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
+public void ClearMessages()
 {
     _messages.Clear();
-    _messages.Add(ChatMessage.CreateSystemMessage(_onnxSystemPrompt));
+    _messages.Add(new OnnxGenAIChatContentMessage { Role = "system", Content = _systemPrompt });
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 3**: When the user provides input, add the user message to the chat message history.
 
-``` csharp title="ONNXChatCompletionsStreamingWithFunctions.cs"
-public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Action<StreamingChatCompletionUpdate>? callback = null)
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
+public string GetChatCompletionStreaming(string userPrompt, Action<string>? callback = null)
 {
-    _messages.Add(ChatMessage.CreateUserMessage(userPrompt));
+    var debug = Environment.GetEnvironmentVariable("DEBUG") != null;
+
+    _messages.Add(new OnnxGenAIChatContentMessage { Role = "user", Content = userPrompt });
 ```
 
-**STEP 3**: Send the chat message history to the streaming ONNX Chat API and process each update:
+**STEP 4**: Encode the chat message history.
 
-``` csharp title="ONNXChatCompletionsStreamingWithFunctions.cs"
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
     var responseContent = string.Empty;
-    var response = _chatClient.CompleteChatStreamingAsync(_messages);
-    await foreach (var update in response)
-    {
-        var content = string.Join("", update.ContentUpdate
-            .Where(x => x.Kind == ChatMessageContentPartKind.Text)
-            .Select(x => x.Text)
-            .ToList());
-
-        if (update.FinishReason == ChatFinishReason.ContentFilter)
-        {
-            content = $"{content}\nWARNING: Content filtered!";
-        }
+    using var tokens = _tokenizer.Encode(string.Join("\n", _messages
+        .Select(m => $"<|{m.Role}|>\n{m.Content}\n<|end|>"))
+        + "<|assistant|>\n");
 ```
 
-**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update:
+**STEP 5**: Set the generator parameters and input sequences.
 
-``` csharp title="ONNXChatCompletionsStreamingWithFunctions.cs"
-        if (string.IsNullOrEmpty(content)) continue;
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
+    using var generatorParams = new GeneratorParams(_model);
+    generatorParams.SetSearchOption("max_length", 2048);
+    generatorParams.SetInputSequences(tokens);
+```
 
-        responseContent += content;
-        if (callback != null) callback(update);
+**STEP 6**: Generate the response by computing logits and generating tokens until completion.
+
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
+    using var generator = new Generator(_model, generatorParams);
+```
+
+**STEP 7**: Decode the generated tokens and accumulate the response.
+
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
+    var sb = new StringBuilder();
+    while (!generator.IsDone())
+    {
+        generator.ComputeLogits();
+        generator.GenerateNextToken();
+
+        var outputTokens = generator.GetSequence(0);
+        var newToken = outputTokens.Slice(outputTokens.Length - 1, 1);
+
+        var output = _tokenizer.Decode(newToken);
+        sb.Append(output);
+
+        callback?.Invoke(output);
     }
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return response:
+**STEP 8**: Check for functions within the response and call them if necessary.
 
-``` csharp title="ONNXChatCompletionsStreamingWithFunctions.cs"
-    _messages.Add(ChatMessage.CreateAssistantMessage(responseContent));
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
+    if (_functionCallContext.TryCallFunctions(sb))
+    {
+        _functionCallContext.Clear();
+        continue;
+    }
+
+    responseContent = sb.ToString();
+    var ok = !string.IsNullOrWhiteSpace(responseContent);
+    if (ok)
+    {
+        _messages.Add(new OnnxGenAIChatContentMessage { Role = "assistant", Content = responseContent });
+    }
+
+    return responseContent;
+}
+```
+
+**STEP 9**: Add the assistant's response to the chat message history and return the response.
+
+``` csharp title="OnnxGenAIChatStreamingClass.cs"
+    _messages.Add(new OnnxGenAIChatContentMessage { Role = "assistant", Content = responseContent });
     return responseContent;
 }
 ```

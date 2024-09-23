@@ -36,3 +36,9 @@ To learn more, you can take a look at the `mkdocs.yml` file in the repository ro
    - We're using those for "scenarios" (e.g. "Streaming", "Non-streaming", ...)
    - We're using those for "programming languages" (e.g. "Python", "JavaScript", ...)
    - We're also using those for "platforms" (e.g. "Windows", "macOS", "Linux", ...)
+3. When you see `??? "..."` or `!!! "..."`, that's an MkDocs "admonition" directive.
+   - We're using those for "tips", "warnings", "important", "notes", ...
+   - They're used to highlight important information.
+   - Content inside these directives should be indented.
+   - Admonitions can be nested.
+4. Inside headers, `C#` should be written as `C\#` to avoid rendering issues.

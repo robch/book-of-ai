@@ -38,7 +38,7 @@ This sample demonstrates how to use the OpenAI Assistants with a Code Interprete
 
 ## main.js
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables and validate them.
 
 ``` javascript title="main.js"
 const ASSISTANT_ID = process.env.ASSISTANT_ID ?? "<insert your OpenAI assistant ID here>";
@@ -48,9 +48,35 @@ const AZURE_OPENAI_API_KEY = process.env.AZURE_OPENAI_API_KEY ?? "<insert your A
 const AZURE_OPENAI_API_VERSION = process.env.AZURE_OPENAI_API_VERSION ?? "<insert your Azure OpenAI API version here>";
 const AZURE_OPENAI_ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT ?? "<insert your Azure OpenAI endpoint here>";
 const AZURE_OPENAI_BASE_URL = `${AZURE_OPENAI_ENDPOINT.replace(/\/+$/, '')}/openai`;
+
+const azureOk = AZURE_OPENAI_API_KEY != null && !AZURE_OPENAI_API_KEY.startsWith('<insert') && AZURE_OPENAI_API_VERSION != null && !AZURE_OPENAI_API_VERSION.startsWith('<insert') && AZURE_OPENAI_ENDPOINT != null && !AZURE_OPENAI_ENDPOINT.startsWith('<insert');
+
+const ok = azureOk && ASSISTANT_ID != null && !ASSISTANT_ID.startsWith('<insert');
+
+if (!ok) {
+ console.error(
+ 'To use Azure OpenAI, set the following environment variables:\n' +
+ '\n  ASSISTANT_ID' +
+ '\n  AZURE_OPENAI_API_KEY' +
+ '\n  AZURE_OPENAI_API_VERSION' +
+ '\n  AZURE_OPENAI_ENDPOINT'
+ );
+ console.error(
+ '\nYou can easily do that using the Azure AI CLI by doing one of the following:\n' +
+ '\n  ai init' +
+ '\n  ai dev shell' +
+ '\n  node main.js' +
+ '\n' +
+ '\n  or' +
+ '\n' +
+ '\n  ai init' +
+ '\n  ai dev shell --run "node main.js"'
+ );
+ process.exit(1);
+}
 ```
 
-**STEP 2**: Create the OpenAI client:
+**STEP 2**: Create the OpenAI client.
 
 ``` javascript title="main.js"
 const openai = new OpenAI({
@@ -61,13 +87,13 @@ const openai = new OpenAI({
 });
 ```
 
-**STEP 3**: Create the assistants streaming helper class instance:
+**STEP 3**: Create the assistants streaming helper class instance.
 
 ``` javascript title="main.js"
 const assistant = new OpenAIAssistantsCodeInterpreterStreamingClass(ASSISTANT_ID, openai);
 ```
 
-**STEP 4**: Get or create the thread, and display the messages if any:
+**STEP 4**: Get or create the thread, and display the messages if any.
 
 ``` javascript title="main.js"
 if (threadId === null) {
@@ -81,7 +107,7 @@ if (threadId === null) {
 }
 ```
 
-**STEP 5**: Loop until the user types 'exit', get user input and get the Assistant's response:
+**STEP 5**: Loop until the user types 'exit', get user input and get the Assistant's response.
 
 ``` javascript title="main.js"
 while (true) {
@@ -98,9 +124,16 @@ while (true) {
 }
 ```
 
+**STEP 6**: Display exit message and thread ID.
+
+``` javascript title="main.js"
+console.log(`Bye! (threadId: ${assistant.thread.id})`);
+process.exit();
+```
+
 ## OpenAIAssistantsCodeInterpreterStreamingClass.js
 
-**STEP 1**: Create the client, initialize class variables and create or retrieve a thread:
+**STEP 1**: Create the client, initialize class variables and create or retrieve a thread.
 
 ``` javascript title="OpenAIAssistantsCodeInterpreterStreamingClass.js"
 constructor(openAIAssistantId, openai, simulateTypingDelay = 0) {
@@ -121,7 +154,7 @@ async retrieveThread(threadId) {
 }
 ```
 
-**STEP 2**: Get the messages in the thread:
+**STEP 2**: Get the messages in the thread.
 
 ``` javascript title="OpenAIAssistantsCodeInterpreterStreamingClass.js"
 async getThreadMessages(callback) {
@@ -136,7 +169,7 @@ async getThreadMessages(callback) {
 }
 ```
 
-**STEP 3**: Get the response from the Assistant:
+**STEP 3**: Get the response from the Assistant.
 
 ``` javascript title="OpenAIAssistantsCodeInterpreterStreamingClass.js"
 async getResponse(userInput, callback) {
@@ -161,7 +194,7 @@ async getResponse(userInput, callback) {
 }
 ```
 
-**STEP 4**: Handle the stream events:
+**STEP 4**: Handle the stream events.
 
 ``` javascript title="OpenAIAssistantsCodeInterpreterStreamingClass.js"
 async handleStreamEvents(stream, callback) {
@@ -198,7 +231,7 @@ async handleStreamEvents(stream, callback) {
 }
 ```
 
-**STEP 5**: Process text deltas from the stream:
+**STEP 5**: Process text deltas from the stream.
 
 ``` javascript title="OpenAIAssistantsCodeInterpreterStreamingClass.js"
 async onTextDelta(textDelta, callback) {

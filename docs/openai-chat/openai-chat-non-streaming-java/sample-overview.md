@@ -37,7 +37,7 @@ This sample demonstrates how to use the OpenAI Chat API in a Java console applic
 
 ## Main.java
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` java title="Main.java"
 String openAIAPIKey = (System.getenv("AZURE_OPENAI_API_KEY") != null) ? System.getenv("AZURE_OPENAI_API_KEY") : "<insert your OpenAI API key here>";
@@ -46,13 +46,31 @@ String openAIChatDeployment = (System.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT") != 
 String openAISystemPrompt = (System.getenv("AZURE_OPENAI_SYSTEM_PROMPT") != null) ? System.getenv("AZURE_OPENAI_SYSTEM_PROMPT") : "You are a helpful AI assistant.";
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Validate the environment variables.
+
+``` java title="Main.java"
+if (openAIAPIKey.contains("<insert") || openAIEndpoint.contains("<insert") || openAIChatDeployment.contains("<insert")) {
+    System.err.println("Please set the environment variables properly.");
+    System.exit(1);
+}
+```
+
+**STEP 3**: Initialize the helper class with the configuration settings.
 
 ``` java title="Main.java"
 OpenAIChatCompletionsClass chat = new OpenAIChatCompletionsClass(openAIAPIKey, openAIEndpoint, openAIChatDeployment, openAISystemPrompt);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Create the OpenAI client.
+
+``` java title="Main.java"
+OpenAIClient client = new OpenAIClientBuilder()
+    .endpoint(openAIEndpoint)
+    .credential(new AzureKeyCredential(openAIAPIKey))
+    .buildClient();
+```
+
+**STEP 5**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` java title="Main.java"
 Scanner scanner = new Scanner(System.in);
@@ -71,7 +89,7 @@ scanner.close();
 
 ## OpenAIChatCompletionsClass.java
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` java title="OpenAIChatCompletionsClass.java"
 public OpenAIChatCompletionsClass (String openAIAPIKey, String openAIEndpoint, String openAIChatDeployment, String openAISystemPrompt) {
@@ -88,7 +106,7 @@ public OpenAIChatCompletionsClass (String openAIAPIKey, String openAIEndpoint, S
 }
 ```
 
-**STEP 2**: Clear previous conversation and set the initial system message:
+**STEP 2**: Clear previous conversation and set the initial system message.
 
 ``` java title="OpenAIChatCompletionsClass.java"
 public void ClearConversation(){
@@ -98,18 +116,24 @@ public void ClearConversation(){
 }
 ```
 
-**STEP 3**: When the user provides input, add the user message to the chat message history:
+**STEP 3**: When the user provides input, add the user message to the chat message history.
 
 ``` java title="OpenAIChatCompletionsClass.java"
 public String getChatCompletion(String userPrompt) {
     options.getMessages().add(new ChatRequestUserMessage(userPrompt));
 ```
 
-**STEP 4**: Send the chat message history to the OpenAI Chat API and process the response:
+**STEP 4**: Send the chat message history to the OpenAI Chat API and process the response.
 
 ``` java title="OpenAIChatCompletionsClass.java"
     ChatCompletions chatCompletions = client.getChatCompletions(this.openAIChatDeployment, options);
     String responseContent = chatCompletions.getChoices().get(0).getMessage().getContent();
+}
+```
+
+**STEP 5**: Add the assistant's response to the chat message history and return the response.
+
+``` java title="OpenAIChatCompletionsClass.java"
     options.getMessages().add(new ChatRequestAssistantMessage(responseContent.toString()));
 
     return responseContent;

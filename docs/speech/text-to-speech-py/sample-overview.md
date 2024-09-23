@@ -33,10 +33,9 @@ This sample demonstrates how to use Azure Speech Synthesis in a Python applicati
     Generating 'text-to-speech' in 'text-to-speech-py' (2 files)... DONE!
     ```
 
-
 ## main.py
 
-**STEP 1**: Import necessary modules and retrieve configuration from environment variables:
+**STEP 1**: Import necessary modules and retrieve configuration from environment variables.
 
 ``` python title="main.py"
 from azure.cognitiveservices.speech import SpeechConfig, SpeechSynthesizer, SpeechSynthesisResult, SpeechSynthesisCancellationDetails, CancellationReason, ResultReason
@@ -48,28 +47,33 @@ service_region = os.environ.get('AZURE_AI_SPEECH_REGION') or "<insert your Speec
 voice_name = 'en-US-AndrewNeural'
 ```
 
-**STEP 2**: Create instances of a speech config and audio config, and set the voice name to use:
+**STEP 2**: Create instances of a speech config and audio config, and set the voice name to use.
 
 ``` python title="main.py"
 speech_config = SpeechConfig(subscription=speech_key, region=service_region)
 speech_config.speech_synthesis_voice_name = voice_name
+audio_config = AudioOutputConfig(use_default_speaker=True)
 ```
 
-**STEP 3**: Create the speech synthesizer from the above configuration information:
+**STEP 3**: Create the speech synthesizer from the above configuration information.
 
 ``` python title="main.py"
-audio_config = AudioOutputConfig(use_default_speaker=True)
 speech_synthesizer = SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
 ```
 
-**STEP 4**: Get text from the user to synthesize and start speech synthesis:
+**STEP 4**: Get text from the user to synthesize.
 
 ``` python title="main.py"
 text = input('Enter text: ')
+```
+
+**STEP 5**: Start speech synthesis, and return after it has completed.
+
+``` python title="main.py"
 result = speech_synthesizer.speak_text_async(text).get()
 ```
 
-**STEP 5**: Check the result and handle any errors:
+**STEP 6**: Check the result.
 
 ``` python title="main.py"
 if result.reason == ResultReason.SynthesizingAudioCompleted:
@@ -80,12 +84,4 @@ elif result.reason == ResultReason.Canceled:
     if cancellation_details.reason == CancellationReason.Error:
         print('CANCELED: ErrorDetails={}'.format(cancellation_details.error_details))
         print('CANCELED: Did you update the subscription info?')
-```
-
-## requirements.txt
-
-This file contains the necessary dependencies to run the sample.
-
-``` text title="requirements.txt"
-azure-cognitiveservices-speech>=1.35.0
 ```

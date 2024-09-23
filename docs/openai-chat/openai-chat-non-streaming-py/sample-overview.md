@@ -70,15 +70,6 @@ def main():
 
         response_content = get_chat_completions(user_input)
         print(f"\nAssistant: {response_content}\n")
-
-if __name__ == '__main__':
-    try:
-        main()
-    except EOFError:
-        pass
-    except Exception as e:
-        print(f"The sample encountered an error: {e}")
-        sys.exit(1)
 ```
 
 ## openai_chat_completions.py
@@ -112,26 +103,4 @@ def get_chat_completions(user_input) -> str:
     messages.append({'role': 'assistant', 'content': response_content})
 
     return response_content
-```
-
-**STEP 3**: Define the main function to handle user input and display the assistant's responses:
-
-```python title="openai_chat_completions.py"
-def main():
-    while True:
-        user_input = input('User: ')
-        if user_input == 'exit' or user_input == '':
-            break
-
-        response_content = get_chat_completions(user_input)
-        print(f"\nAssistant: {response_content}\n")
-
-if __name__ == '__main__':
-    try:
-        main()
-    except EOFError:
-        pass
-    except Exception as e:
-        print(f"The sample encountered an error: {e}")
-        sys.exit(1)
 ```

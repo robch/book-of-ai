@@ -38,7 +38,7 @@ This sample demonstrates how to use the OpenAI Assistants API with function call
 
 ## main.js
 
-**STEP 1**: Set up environment variables and create the OpenAI client:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` javascript title="main.js"
 const ASSISTANT_ID = process.env.ASSISTANT_ID ?? "<insert your OpenAI assistant ID here>";
@@ -46,7 +46,45 @@ const AZURE_OPENAI_API_KEY = process.env.AZURE_OPENAI_API_KEY ?? "<insert your A
 const AZURE_OPENAI_API_VERSION = process.env.AZURE_OPENAI_API_VERSION ?? "<insert your Azure OpenAI API version here>";
 const AZURE_OPENAI_ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT ?? "<insert your Azure OpenAI endpoint here>";
 const AZURE_OPENAI_BASE_URL = `${AZURE_OPENAI_ENDPOINT.replace(/\/+$, '')}/openai`;
+```
 
+**STEP 2**: Validate the environment variables.
+
+``` javascript title="main.js"
+const azureOk = 
+  AZURE_OPENAI_API_KEY != null && !AZURE_OPENAI_API_KEY.startsWith('<insert') &&
+  AZURE_OPENAI_API_VERSION != null && !AZURE_OPENAI_API_VERSION.startsWith('<insert') &&
+  AZURE_OPENAI_ENDPOINT != null && !AZURE_OPENAI_ENDPOINT.startsWith('<insert');
+
+const ok = azureOk &&
+  ASSISTANT_ID != null && !ASSISTANT_ID.startsWith('<insert');
+
+if (!ok) {
+  console.error(
+    'To use Azure OpenAI, set the following environment variables:\n' +
+    '\n  ASSISTANT_ID' +
+    '\n  AZURE_OPENAI_API_KEY' +
+    '\n  AZURE_OPENAI_API_VERSION' +
+    '\n  AZURE_OPENAI_ENDPOINT'
+  );
+  console.error(
+    '\nYou can easily do that using the Azure AI CLI by doing one of the following:\n' +
+    '\n  ai init' +
+    '\n  ai dev shell' +
+    '\n  node main.js' +
+    '\n' +
+    '\n  or' +
+    '\n' +
+    '\n  ai init' +
+    '\n  ai dev shell --run "node main.js"'
+  );
+  process.exit(1);
+}
+```
+
+**STEP 3**: Create the OpenAI client.
+
+``` javascript title="main.js"
 const openai = new OpenAI({
   apiKey: AZURE_OPENAI_API_KEY,
   baseURL: AZURE_OPENAI_BASE_URL,
@@ -55,13 +93,13 @@ const openai = new OpenAI({
 });
 ```
 
-**STEP 2**: Initialize the assistant's streaming helper class:
+**STEP 4**: Initialize the assistant's streaming helper class.
 
 ``` javascript title="main.js"
 const assistant = new OpenAIAssistantsFunctionsStreamingClass(ASSISTANT_ID, factory, openai);
 ```
 
-**STEP 3**: Create or retrieve a thread and display its messages:
+**STEP 5**: Create or retrieve a thread and display its messages.
 
 ``` javascript title="main.js"
 if (threadId === null) {
@@ -75,7 +113,7 @@ if (threadId === null) {
 }
 ```
 
-**STEP 4**: Loop to get user input and get the assistant's response:
+**STEP 6**: Loop to get user input and get the assistant's response.
 
 ``` javascript title="main.js"
 while (true) {
@@ -92,7 +130,7 @@ while (true) {
 
 ## OpenAIAssistantsCustomFunctions.js
 
-**STEP 1**: Define the function and its schema, then add it to the function factory:
+**STEP 1**: Define the function and its schema, then add it to the function factory.
 
 ``` javascript title="OpenAIAssistantsCustomFunctions.js"
 function getCurrentWeather(function_arguments) {
@@ -122,7 +160,7 @@ const getCurrentWeatherSchema = {
 factory.addFunction(getCurrentWeatherSchema, getCurrentWeather);
 ```
 
-**STEP 2**: Add more functions following the same pattern:
+**STEP 2**: Add more functions following the same pattern.
 
 ``` javascript title="OpenAIAssistantsCustomFunctions.js"
 function getCurrentDate() {
@@ -160,7 +198,7 @@ factory.addFunction(getCurrentTimeSchema, getCurrentTime);
 
 ## OpenAIAssistantsFunctionsStreamingClass.js
 
-**STEP 1**: Create the constructor to initialize the class:
+**STEP 1**: Create the constructor to initialize the class.
 
 ``` javascript title="OpenAIAssistantsFunctionsStreamingClass.js"
 constructor(openAIAssistantId, functionFactory, openai, simulateTypingDelay = 0) {
@@ -172,7 +210,7 @@ constructor(openAIAssistantId, functionFactory, openai, simulateTypingDelay = 0)
 }
 ```
 
-**STEP 2**: Implement methods to create/retrieve threads and get messages:
+**STEP 2**: Implement methods to create/retrieve threads and get messages.
 
 ``` javascript title="OpenAIAssistantsFunctionsStreamingClass.js"
 async createThread() {
@@ -195,7 +233,7 @@ async getThreadMessages(callback) {
 }
 ```
 
-**STEP 3**: Implement the method to get the assistant's response:
+**STEP 3**: Implement the method to get the assistant's response.
 
 ``` javascript title="OpenAIAssistantsFunctionsStreamingClass.js"
 async getResponse(userInput, callback) {
@@ -216,7 +254,7 @@ async getResponse(userInput, callback) {
 }
 ```
 
-**STEP 4**: Handle stream events and tool calls:
+**STEP 4**: Handle stream events and tool calls.
 
 ``` javascript title="OpenAIAssistantsFunctionsStreamingClass.js"
 async handleStreamEvents(stream, callback) {

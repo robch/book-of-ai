@@ -36,40 +36,58 @@ This sample demonstrates how to use the Azure AI Inference Chat API with streami
 
 ## main.py
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Import required libraries and modules.
 
 ``` python title="main.py"
-chat_api_key = os.getenv("AZURE_AI_CHAT_API_KEY", '<insert your Azure AI Inference API key here>')
-chat_endpoint = os.getenv("AZURE_AI_CHAT_ENDPOINT", '<insert your Azure AI Inference endpoint here>')
-chat_model = os.getenv('AZURE_AI_CHAT_MODEL', '')
-chat_system_prompt = os.getenv('SYSTEM_PROMPT', 'You are a helpful AI assistant.')
+from azureml_chat_completions_streaming import AzureAIInferenceChatCompletionsStreaming
+import os
+import sys
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Define the main function that reads the configuration settings from environment variables.
 
 ``` python title="main.py"
-chat = AzureAIInferenceChatCompletionsStreaming(chat_endpoint, chat_api_key, chat_model, chat_system_prompt)
+def main():
+    chat_api_key = os.getenv("AZURE_AI_CHAT_API_KEY", '<insert your Azure AI Inference API key here>')
+    chat_endpoint = os.getenv("AZURE_AI_CHAT_ENDPOINT", '<insert your Azure AI Inference endpoint here>')
+    chat_model = os.getenv('AZURE_AI_CHAT_MODEL', '')
+    chat_system_prompt = os.getenv('SYSTEM_PROMPT', 'You are a helpful AI assistant.')
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Validate the configuration settings.
 
 ``` python title="main.py"
-while True:
-{
-    user_input = input('User: ')
-    if user_input == 'exit' or user_input == '':
-        break
-
-    print('\nAssistant: ', end='')
-    response = chat.get_chat_completions(user_input, lambda content: print(content, end=''))
-    print('\n')
-}
+    ok = all([chat_api_key, chat_endpoint, chat_system_prompt]) and \
+         all([not s.startswith('<insert') for s in [chat_api_key, chat_endpoint, chat_system_prompt]])
+    if not ok:
+        print(
+            'To use Azure AI Chat Streaming, set the following environment variables:' +
+            '\n- AZURE_AI_CHAT_API_KEY' +
+            '\n- AZURE_AI_CHAT_ENDPOINT' +
+            '\n- AZURE_AI_CHAT_MODEL (optional)' +
+            '\n- SYSTEM_PROMPT (optional)')
+        sys.exit(1)
 ```
 
-## requirements.txt
+**STEP 4**: Initialize the AzureAIInferenceChatCompletionsStreaming class with the configuration settings.
 
-The requirements file specifies the dependencies required for the sample:
+``` python title="main.py"
+    chat = AzureAIInferenceChatCompletionsStreaming(chat_endpoint, chat_api_key, chat_model, chat_system_prompt)
+```
 
-``` text title="requirements.txt"
-azure-ai-inference
+**STEP 5**: Implement an input loop to obtain user input.
+
+``` python title="main.py"
+    while True:
+        user_input = input('User: ')
+        if user_input == 'exit' or user_input == '':
+            break
+```
+
+**STEP 6**: Use the helper class to get the assistant's response and display responses as they are received.
+
+``` python title="main.py"
+        print('\nAssistant: ', end='')
+        response = chat.get_chat_completions(user_input, lambda content: print(content, end=''))
+        print('\n')
 ```

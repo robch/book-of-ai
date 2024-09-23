@@ -29,10 +29,9 @@ This sample demonstrates how to use Azure Cognitive Services to perform speech r
     Generating 'speech-to-text-with-file' in 'speech-to-text-with-file-py' (2 files)... DONE!
     ```
 
-
 ## main.py
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` python title="main.py"
 speech_key = os.environ.get('AZURE_AI_SPEECH_KEY') or "<insert your Speech Service API key here>"
@@ -40,7 +39,7 @@ service_region = os.environ.get('AZURE_AI_SPEECH_REGION') or "<insert your Speec
 input_file = sys.argv[1] if len(sys.argv) == 2 else "audio.wav"
 ```
 
-**STEP 2**: Check if the input file exists:
+**STEP 2**: Check if the input file exists.
 
 ``` python title="main.py"
 if not os.path.exists(input_file):
@@ -48,20 +47,20 @@ if not os.path.exists(input_file):
     sys.exit(1)
 ```
 
-**STEP 3**: Create instances of a speech config and audio config:
+**STEP 3**: Create instances of a speech config and audio config.
 
 ``` python title="main.py"
 speech_config = SpeechConfig(subscription=speech_key, region=service_region, speech_recognition_language="en-US")
 audio_config = AudioConfig(filename=input_file)
 ```
 
-**STEP 4**: Create the speech recognizer from the above configuration information:
+**STEP 4**: Create the speech recognizer from the above configuration information.
 
 ``` python title="main.py"
 speech_recognizer = SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 ```
 
-**STEP 5**: Subscribe to the recognizing and recognized events:
+**STEP 5**: Subscribe to the recognizing and recognized events.
 
 ``` python title="main.py"
 def recognizing(args):
@@ -77,13 +76,13 @@ speech_recognizer.recognizing.connect(recognizing)
 speech_recognizer.recognized.connect(recognized)
 ```
 
-**STEP 6**: Create a future to wait for the session to stop:
+**STEP 6**: Create a future to wait for the session to stop.
 
 ``` python title="main.py"
 session_stopped_no_error = Future()
 ```
 
-**STEP 7**: Subscribe to session_started and session_stopped events:
+**STEP 7**: Subscribe to session_started and session_stopped events.
 
 ``` python title="main.py"
 def session_started(args):
@@ -97,7 +96,7 @@ speech_recognizer.session_started.connect(session_started)
 speech_recognizer.session_stopped.connect(session_stopped)
 ```
 
-**STEP 8**: Subscribe to the canceled event:
+**STEP 8**: Subscribe to the canceled event.
 
 ``` python title="main.py"
 def canceled(args):
@@ -112,7 +111,7 @@ def canceled(args):
 speech_recognizer.canceled.connect(canceled)
 ```
 
-**STEP 9**: Allow the user to press ENTER to stop recognition:
+**STEP 9**: Allow the user to press ENTER to stop recognition.
 
 ``` python title="main.py"
 threading.Thread(target=lambda: (
@@ -121,14 +120,14 @@ threading.Thread(target=lambda: (
 ).start()
 ```
 
-**STEP 10**: Start speech recognition:
+**STEP 10**: Start speech recognition.
 
 ``` python title="main.py"
 speech_recognizer.start_continuous_recognition()
 print("Listening, press ENTER to stop...")
 ```
 
-**STEP 11**: Wait for the session to stop:
+**STEP 11**: Wait for the session to stop.
 
 ``` python title="main.py"
 exit_code = 0 if session_stopped_no_error.result() == True else 1

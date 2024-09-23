@@ -36,7 +36,7 @@ This sample demonstrates how to use the OpenAI Assistants API in a Python consol
 
 ## main.py
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` python title="main.py"
 ASSISTANT_ID = os.getenv('ASSISTANT_ID') or "<insert your OpenAI assistant ID here>"
@@ -48,7 +48,34 @@ AZURE_OPENAI_ENDPOINT = os.getenv('AZURE_OPENAI_ENDPOINT', '<insert your Azure O
 AZURE_OPENAI_BASE_URL = f'{AZURE_OPENAI_ENDPOINT.rstrip("/")}/openai'
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Validate the environment variables.
+
+``` python title="main.py"
+ok = \
+    ASSISTANT_ID != None and not ASSISTANT_ID.startswith('<insert') and \
+    AZURE_OPENAI_API_KEY != None and not AZURE_OPENAI_API_KEY.startswith('<insert') and \
+    AZURE_OPENAI_API_VERSION != None and not AZURE_OPENAI_API_VERSION.startswith('<insert') and \
+    AZURE_OPENAI_ENDPOINT != None and not AZURE_OPENAI_ENDPOINT.startswith('<insert')
+
+if not ok:
+    print('To use Azure OpenAI, set the following environment variables:\n' +
+        '\n  ASSISTANT_ID' +
+        '\n  AZURE_OPENAI_API_KEY' +
+        '\n  AZURE_OPENAI_API_VERSION' +
+        '\n  AZURE_OPENAI_ENDPOINT')
+    print('\nYou can easily do that using the Azure AI CLI by doing one of the following:\n' +
+      '\n  ai init' +
+      '\n  ai dev shell' +
+      '\n  python main.py' +
+      '\n' +
+      '\n  or' +
+      '\n' +
+      '\n  ai init' +
+      '\n  ai dev shell --run "python main.py"')
+    os._exit(1)
+```
+
+**STEP 3**: Initialize the helper class with the configuration settings.
 
 ``` python title="main.py"
 openai = OpenAI(
@@ -60,7 +87,7 @@ openai = OpenAI(
 assistant = OpenAIAssistantsClass(ASSISTANT_ID, openai)
 ```
 
-**STEP 3**: Handle thread creation or retrieval:
+**STEP 4**: Handle thread creation or retrieval.
 
 ``` python title="main.py"
 if threadId is None:
@@ -70,7 +97,7 @@ else:
     assistant.get_thread_messages(lambda role, content: print(f'{role.capitalize()}: {content}', end=''))
 ```
 
-**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 5**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` python title="main.py"
 while True:
@@ -82,10 +109,9 @@ while True:
     print(f'\nAssistant: {response}\n')
 ```
 
-
 ## openai_assistants.py
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` python title="openai_assistants.py"
 class OpenAIAssistantsClass:
@@ -96,7 +122,7 @@ class OpenAIAssistantsClass:
         self.openai = openai
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` python title="openai_assistants.py"
 def get_response(self, user_input) -> str:
@@ -110,7 +136,7 @@ def get_response(self, user_input) -> str:
     )
 ```
 
-**STEP 3**: Send the chat message history to the OpenAI Assistants API and process the response:
+**STEP 3**: Send the chat message history to the OpenAI Assistants API and process the response.
 
 ``` python title="openai_assistants.py"
 run = self.openai.beta.threads.runs.create_and_poll(
@@ -123,4 +149,28 @@ if run.status == 'completed':
     return ''.join([item.text.value for item in messages.data[0].content])
 
 return str(run.status)
+```
+
+**STEP 4**: Create and retrieve thread methods for handling threads.
+
+``` python title="openai_assistants.py"
+def create_thread(self):
+    self.thread = self.openai.beta.threads.create()
+    return self.thread
+
+    def retrieve_thread(self, thread_id):
+        self.thread = self.openai.beta.threads.retrieve(thread_id)
+        return self.thread
+```
+
+**STEP 5**: Retrieve and display previous messages in the thread.
+
+``` python title="openai_assistants.py"
+def get_thread_messages(self, callback):
+    messages = self.openai.beta.threads.messages.list(self.thread.id)
+    messages.data.reverse()
+
+    for message in messages.data:
+        content = ''.join([item.text.value for item in message.content]) + '\n\n'
+        callback(message.role, content)
 ```

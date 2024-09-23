@@ -34,7 +34,7 @@ This sample demonstrates how to use the OpenAI Assistants API with streaming in 
 
 ## main.py
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables and validate them.
 
 ``` python title="main.py"
 ASSISTANT_ID = os.getenv('ASSISTANT_ID') or "<insert your OpenAI assistant ID here>"
@@ -42,11 +42,7 @@ AZURE_OPENAI_API_KEY = os.getenv('AZURE_OPENAI_API_KEY', '<insert your Azure Ope
 AZURE_OPENAI_API_VERSION = os.getenv('AZURE_OPENAI_API_VERSION', '<insert your Azure OpenAI API version here>')
 AZURE_OPENAI_ENDPOINT = os.getenv('AZURE_OPENAI_ENDPOINT', '<insert your Azure OpenAI endpoint here>')
 AZURE_OPENAI_BASE_URL = f'{AZURE_OPENAI_ENDPOINT.rstrip("/")}/openai'
-```
 
-**STEP 2**: Validate the environment variables:
-
-``` python title="main.py"
 ok = \
     ASSISTANT_ID != None and not ASSISTANT_ID.startswith('<insert') and \
     AZURE_OPENAI_API_KEY != None and not AZURE_OPENAI_API_KEY.startswith('<insert') and \
@@ -71,7 +67,7 @@ if not ok:
     os._exit(1)
 ```
 
-**STEP 3**: Initialize the helper class with the configuration settings:
+**STEP 2**: Create the OpenAI client and initialize the assistant.
 
 ``` python title="main.py"
 openai = OpenAI(
@@ -83,7 +79,17 @@ openai = OpenAI(
 assistant = OpenAIAssistantsStreamingClass(ASSISTANT_ID, openai)
 ```
 
-**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Create or retrieve a thread, and display the messages if any.
+
+``` python title="main.py"
+if threadId is None:
+    assistant.create_thread()
+else:
+    assistant.retrieve_thread(threadId)
+    assistant.get_thread_messages(lambda role, content: print(f'{role.capitalize()}: {content}', end=''))
+```
+
+**STEP 4**: Implement the user interaction loop to get responses from the assistant and display them.
 
 ``` python title="main.py"
 while True:
@@ -98,7 +104,7 @@ print(f"Bye! (threadId: {assistant.thread.id})")
 
 ## openai_assistants_streaming.py
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Initialize the assistant with necessary configurations.
 
 ``` python title="openai_assistants_streaming.py"
 def __init__(self, assistant_id, openai):
@@ -107,7 +113,7 @@ def __init__(self, assistant_id, openai):
     self.openai = openai
 ```
 
-**STEP 2**: Create an event handler that processes each text delta:
+**STEP 2**: Create an event handler that processes each text delta.
 
 ``` python title="openai_assistants_streaming.py"
 class EventHandler(AssistantEventHandler):
@@ -128,7 +134,7 @@ class EventHandler(AssistantEventHandler):
         super().on_event(event)
 ```
 
-**STEP 3**: When the user provides input, add the user message to the chat message history:
+**STEP 3**: When the user provides input, add the user message to the chat message history.
 
 ``` python title="openai_assistants_streaming.py"
 message = self.openai.beta.threads.messages.create(
@@ -138,7 +144,7 @@ message = self.openai.beta.threads.messages.create(
 )
 ```
 
-**STEP 4**: Send the chat message history to the streaming OpenAI Assistants API and process each update:
+**STEP 4**: Send the chat message history to the streaming OpenAI Assistants API and process each update.
 
 ``` python title="openai_assistants_streaming.py"
 with self.openai.beta.threads.runs.stream(
@@ -149,7 +155,7 @@ with self.openai.beta.threads.runs.stream(
     stream.until_done()
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return response:
+**STEP 5**: Add the assistant's response to the chat message history, and return response.
 
 ``` python title="openai_assistants_streaming.py"
 def get_response(self, user_input, callback) -> None:
@@ -168,7 +174,7 @@ def get_response(self, user_input, callback) -> None:
         stream.until_done()
 ```
 
-**STEP 6**: Create and retrieve thread methods for handling threads:
+**STEP 6**: Create and retrieve thread methods for handling threads.
 
 ``` python title="openai_assistants_streaming.py"
 def create_thread(self):
@@ -180,7 +186,7 @@ def create_thread(self):
         return self.thread
 ```
 
-**STEP 7**: Retrieve and display previous messages in the thread:
+**STEP 7**: Retrieve and display previous messages in the thread.
 
 ``` python title="openai_assistants_streaming.py"
 def get_thread_messages(self, callback):

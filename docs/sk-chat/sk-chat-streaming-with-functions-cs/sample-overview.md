@@ -36,7 +36,7 @@ This sample demonstrates how to use the Semantic Kernel Chat API with streaming 
 
 ## SemanticKernelCustomFunctions.cs
 
-**STEP 1**: Define custom functions that can be auto-invoked by the kernel:
+**STEP 1**: Define custom functions that can be auto-invoked by the kernel.
 
 ``` csharp title="SemanticKernelCustomFunctions.cs"
 [KernelFunction, Description("Gets the current weather for a location.")]
@@ -62,16 +62,48 @@ public string GetCurrentTime()
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables and validate them.
 
 ``` csharp title="Program.cs"
 var AZURE_OPENAI_API_KEY = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? "<insert your Azure OpenAI API key here>";
 var AZURE_OPENAI_ENDPOINT = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? "<insert your Azure OpenAI endpoint here>";
 var AZURE_OPENAI_CHAT_DEPLOYMENT = Environment.GetEnvironmentVariable("AZURE_OPENAI_CHAT_DEPLOYMENT") ?? "<insert your Azure OpenAI chat deployment name here>";
 var AZURE_OPENAI_SYSTEM_PROMPT = Environment.GetEnvironmentVariable("AZURE_OPENAI_SYSTEM_PROMPT") ?? "You are a helpful AI assistant.";
+
+var azureOk = 
+    AZURE_OPENAI_API_KEY != null && !AZURE_OPENAI_API_KEY.StartsWith("<insert") &&
+    AZURE_OPENAI_CHAT_DEPLOYMENT != null && !AZURE_OPENAI_CHAT_DEPLOYMENT.StartsWith("<insert") &&
+    AZURE_OPENAI_ENDPOINT != null && !AZURE_OPENAI_ENDPOINT.StartsWith("<insert");
+
+var ok = azureOk &&
+    AZURE_OPENAI_SYSTEM_PROMPT != null && !AZURE_OPENAI_SYSTEM_PROMPT.StartsWith("<insert");
+
+if (!ok)
+{
+    Console.WriteLine(
+        "To use Azure OpenAI, set the following environment variables:\n" +
+        "\n  AZURE_OPENAI_SYSTEM_PROMPT" +
+        "\n  AZURE_OPENAI_API_KEY" +
+        "\n  AZURE_OPENAI_CHAT_DEPLOYMENT" +
+        "\n  AZURE_OPENAI_ENDPOINT"
+    );
+    Console.WriteLine(
+        "\nYou can easily do that using the Azure AI CLI by doing one of the following:\n" +
+        "\n  ai init" +
+        "\n  ai dev shell" +
+        "\n  dotnet run" +
+        "\n" +
+        "\n  or" +
+        "\n" +
+        "\n  ai init" +
+        "\n  ai dev shell --run \"dotnet run\""
+    );
+
+    return 1;
+}
 ```
 
-**STEP 2**: Initialize the kernel with the configuration settings, add custom functions, and create the streaming chat completions helper:
+**STEP 2**: Initialize the kernel with the configuration settings, add custom functions, and create the streaming chat completions helper.
 
 ``` csharp title="Program.cs"
 var builder = Kernel.CreateBuilder();
@@ -81,7 +113,7 @@ var kernel = builder.Build();
 var chat = new SemanticKernelChatCompletionsFunctionsStreamingClass(AZURE_OPENAI_SYSTEM_PROMPT!, kernel);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -100,7 +132,7 @@ while (true)
 
 ## SemanticKernelChatCompletionsFunctionsStreamingClass.cs
 
-**STEP 1**: Initialize the kernel and chat message history with a system message:
+**STEP 1**: Initialize the kernel and chat message history with a system message.
 
 ``` csharp title="SemanticKernelChatCompletionsFunctionsStreamingClass.cs"
 public SemanticKernelChatCompletionsFunctionsStreamingClass(string systemPrompt, Kernel kernel)
@@ -118,7 +150,7 @@ public void ClearConversation()
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` csharp title="SemanticKernelChatCompletionsFunctionsStreamingClass.cs"
 public async Task<string> GetStreamingChatMessageContentsAsync(string userPrompt, Action<StreamingChatMessageContent>? callback = null)
@@ -126,7 +158,7 @@ public async Task<string> GetStreamingChatMessageContentsAsync(string userPrompt
     _history.AddUserMessage(userPrompt);
 ```
 
-**STEP 3**: Send the chat message history to the streaming chat API and set the tool call behavior to auto-invoke kernel functions:
+**STEP 3**: Send the chat message history to the streaming chat API and set the tool call behavior to auto-invoke kernel functions.
 
 ``` csharp title="SemanticKernelChatCompletionsFunctionsStreamingClass.cs"
     var settings = new OpenAIPromptExecutionSettings { ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions };
@@ -134,7 +166,7 @@ public async Task<string> GetStreamingChatMessageContentsAsync(string userPrompt
     var response = _chatCompletionService.GetStreamingChatMessageContentsAsync(_history, settings, _kernel);
 ```
 
-**STEP 4**: For each non-empty update, accumulate the assistant's response and invoke the callback for the update:
+**STEP 4**: For each non-empty update, accumulate the assistant's response and invoke the callback for the update.
 
 ``` csharp title="SemanticKernelChatCompletionsFunctionsStreamingClass.cs"
     await foreach (var content in response)
@@ -147,7 +179,7 @@ public async Task<string> GetStreamingChatMessageContentsAsync(string userPrompt
     }
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return the response:
+**STEP 5**: Add the assistant's response to the chat message history, and return the response.
 
 ``` csharp title="SemanticKernelChatCompletionsFunctionsStreamingClass.cs"
     _history.AddAssistantMessage(responseContent);

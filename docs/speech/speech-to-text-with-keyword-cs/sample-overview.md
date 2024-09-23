@@ -1,4 +1,8 @@
 ---
+hide:
+- navigation
+- toc
+---
 # Speech Recognition with Keyword Spotting in C\#
 
 --8<-- "warnings/warning-ai-generated.md"
@@ -29,7 +33,7 @@ This sample demonstrates how to use the Azure Cognitive Services Speech SDK to r
 
 ## Program.cs
 
-**STEP 1**: Read the connection and configuration details from environment variables:
+**STEP 1**: Read the connection and configuration details from environment variables.
 
 ```csharp title="Program.cs"
 var speechKey = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_KEY") ?? "<insert your Speech Service API key here>";
@@ -39,7 +43,7 @@ var inputFileName = args.Length == 1 ? args[0] : null;
 var keywordFileName = "keyword.table";
 ```
 
-**STEP 2**: Check if the input file and keyword file exist:
+**STEP 2**: Check if the input file and keyword file exist.
 
 ```csharp title="Program.cs"
 if (inputFileName != null && !File.Exists(inputFileName))
@@ -55,7 +59,7 @@ if (!File.Exists(keywordFileName))
 }
 ```
 
-**STEP 3**: Create instances of a speech config, source language config, and audio config:
+**STEP 3**: Create instances of a speech config, source language config, and audio config.
 
 ```csharp title="Program.cs"
 var config = SpeechConfig.FromSubscription(speechKey, speechRegion);
@@ -65,7 +69,7 @@ var audioConfig = inputFileName != null
     : AudioConfig.FromDefaultMicrophoneInput();
 ```
 
-**STEP 4**: Create the speech recognizer and subscribe to events:
+**STEP 4**: Create the speech recognizer and subscribe to events.
 
 ```csharp title="Program.cs"
 using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audioConfig))
@@ -93,7 +97,7 @@ using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audio
 }
 ```
 
-**STEP 5**: Define the event handlers:
+**STEP 5**: Define the event handlers.
 
 ```csharp title="Program.cs"
 private static void HandleRecognizingEvent(SpeechRecognitionEventArgs e)

@@ -34,10 +34,9 @@ This sample demonstrates how to use the OpenAI Assistants API with a code interp
     Generating 'openai-asst-streaming-with-code' in 'openai-asst-streaming-with-code-py' (3 files)... DONE!
     ```
 
-
 ## main.py
 
-**STEP 1**: Import required libraries and initialize variables:
+**STEP 1**: Import required libraries and initialize variables.
 
 ```python title="main.py"
 import os
@@ -46,7 +45,7 @@ from openai import OpenAI
 from openai_assistants_code_interpreter_streaming import OpenAIAssistantsCodeInterpreterStreamingClass
 ```
 
-**STEP 2**: Define the main function and read environment variables:
+**STEP 2**: Define the main function and read environment variables.
 
 ```python title="main.py"
 def main():
@@ -57,7 +56,11 @@ def main():
     AZURE_OPENAI_API_VERSION = os.getenv('AZURE_OPENAI_API_VERSION', '<insert your Azure OpenAI API version here>')
     AZURE_OPENAI_ENDPOINT = os.getenv('AZURE_OPENAI_ENDPOINT', '<insert your Azure OpenAI endpoint here>')
     AZURE_OPENAI_BASE_URL = f'{AZURE_OPENAI_ENDPOINT.rstrip("/")}/openai'
+```
 
+**STEP 3**: Validate required environment variables.
+
+```python title="main.py"
     ok = \
         ASSISTANT_ID != None and not ASSISTANT_ID.startswith('<insert') and \
         AZURE_OPENAI_API_KEY != None and not AZURE_OPENAI_API_KEY.startswith('<insert') and \
@@ -82,7 +85,7 @@ def main():
         os._exit(1)
 ```
 
-**STEP 3**: Create the OpenAI client and assistant instance:
+**STEP 4**: Create the OpenAI client and assistant instance.
 
 ```python title="main.py"
     openai = OpenAI(
@@ -95,7 +98,7 @@ def main():
     assistant = OpenAIAssistantsCodeInterpreterStreamingClass(ASSISTANT_ID, openai)
 ```
 
-**STEP 4**: Retrieve or create a thread and display messages:
+**STEP 5**: Retrieve or create a thread and display messages.
 
 ```python title="main.py"
     if threadId is None:
@@ -105,7 +108,7 @@ def main():
         assistant.get_thread_messages(lambda role, content: print(f'{role.capitalize()}: {content}', end=''))
 ```
 
-**STEP 5**: Loop to get user input and display assistant's response:
+**STEP 6**: Loop to get user input and display assistant's response.
 
 ```python title="main.py"
     while True:
@@ -132,7 +135,7 @@ if __name__ == '__main__':
 
 ## openai_assistants_code_interpreter_streaming.py
 
-**STEP 1**: Import required libraries and define the event handler class:
+**STEP 1**: Import required libraries and define the event handler class.
 
 ```python title="openai_assistants_code_interpreter_streaming.py"
 from typing_extensions import override
@@ -146,19 +149,23 @@ class EventHandler(AssistantEventHandler):
         self.callback = callback
 ```
 
-**STEP 2**: Override methods to handle text delta and tool call events:
+**STEP 2**: Override on_text_delta method to handle text delta events.
 
 ```python title="openai_assistants_code_interpreter_streaming.py"
     @override
     def on_text_delta(self, delta, snapshot):
         self.callback(delta.value)
+```
 
+**STEP 3**: Override on_tool_call_created method to handle tool call creation events.
+
+```python title="openai_assistants_code_interpreter_streaming.py"
     def on_tool_call_created(self, tool_call):
         if tool_call.type == 'code_interpreter':
             print('\n\nassistant-code:\n', end='', flush=True)
 ```
 
-**STEP 3**: Override methods to handle tool call deltas and events:
+**STEP 4**: Override on_tool_call_delta method to handle tool call delta events.
 
 ```python title="openai_assistants_code_interpreter_streaming.py"
     def on_tool_call_delta(self, delta, snapshot):
@@ -170,7 +177,11 @@ class EventHandler(AssistantEventHandler):
                 for output in delta.code_interpreter.outputs:
                     if output.type == 'logs':
                         print(f'\n{output.logs}', flush=True)
+```
 
+**STEP 5**: Override on_event method to handle other events.
+
+```python title="openai_assistants_code_interpreter_streaming.py"
     @override
     def on_event(self, event):
         if event.event == 'thread.run.failed':
@@ -179,7 +190,7 @@ class EventHandler(AssistantEventHandler):
         super().on_event(event)
 ```
 
-**STEP 4**: Define the assistant class and initialize it:
+**STEP 6**: Define the assistant class and initialize it.
 
 ```python title="openai_assistants_code_interpreter_streaming.py"
 class OpenAIAssistantsCodeInterpreterStreamingClass:
@@ -188,19 +199,23 @@ class OpenAIAssistantsCodeInterpreterStreamingClass:
         self.assistant_id = assistant_id
         self.thread = None
         self.openai = openai
+```
 
+**STEP 7**: Define methods to create and retrieve threads.
+
+```python title="openai_assistants_code_interpreter_streaming.py"
     def create_thread(self):
         self.thread = self.openai.beta.threads.create()
         return self.thread
-```
 
-**STEP 5**: Define methods to retrieve thread, get messages, and get response:
-
-```python title="openai_assistants_code_interpreter_streaming.py"
     def retrieve_thread(self, thread_id):
         self.thread = self.openai.beta.threads.retrieve(thread_id)
         return self.thread
+```
 
+**STEP 8**: Define method to get thread messages and execute callback.
+
+```python title="openai_assistants_code_interpreter_streaming.py"
     def get_thread_messages(self, callback):
         messages = self.openai.beta.threads.messages.list(self.thread.id)
         messages.data.reverse()
@@ -208,7 +223,11 @@ class OpenAIAssistantsCodeInterpreterStreamingClass:
         for message in messages.data:
             content = ''.join([item.text.value for item in message.content]) + '\n\n'
             callback(message.role, content)
+```
 
+**STEP 9**: Define method to get assistant response and handle stream events.
+
+```python title="openai_assistants_code_interpreter_streaming.py"
     def get_response(self, user_input, callback) -> None:
         if self.thread == None:
             self.create_thread()

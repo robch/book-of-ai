@@ -1,3 +1,4 @@
+
 ---
 hide:
 - navigation
@@ -37,7 +38,7 @@ This sample demonstrates how to use the OpenAI Chat API with data streaming in a
 
 ## main.go
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables and initialize variables.
 
 ``` go title="main.go"
 openAIAPIKey := os.Getenv("AZURE_OPENAI_API_KEY")
@@ -111,7 +112,16 @@ for {
 }
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Validate the environment variables and exit if any required variable is missing.
+
+``` go title="main.go"
+if openAIEndpoint == "" || openAIAPIKey == "" || openAIChatDeploymentName == "" || openAISystemPrompt == "" {
+    fmt.Println("Please set the environment variables.")
+    os.Exit(1)
+}
+```
+
+**STEP 3**: Initialize the helper class with the configuration settings.
 
 ``` go title="main.go"
 chat, err := NewOpenAIChatCompletionsWithDataStreamingExample(openAIEndpoint, openAIAPIKey, openAIChatDeploymentName, openAISystemPrompt, azureSearchEndpoint, azureSearchApiKey, azureSearchIndexName, openAIEmbeddingsDeploymentName)
@@ -120,7 +130,7 @@ if err != nil {
 }
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` go title="main.go"
 for {
@@ -143,7 +153,7 @@ for {
 
 ## openai_chat_completions_streaming_with_data_hello_world.go
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message and data sources.
 
 ``` go title="openai_chat_completions_streaming_with_data_hello_world.go"
 type OpenAIChatCompletionsWithDataStreamingExample struct {
@@ -202,7 +212,7 @@ func NewOpenAIChatCompletionsWithDataStreamingExample(
     }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` go title="openai_chat_completions_streaming_with_data_hello_world.go"
 func (chat *OpenAIChatCompletionsWithDataStreamingExample) ClearConversation() {

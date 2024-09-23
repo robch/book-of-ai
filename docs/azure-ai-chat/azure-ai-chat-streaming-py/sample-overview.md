@@ -36,7 +36,7 @@ This sample demonstrates how to use the Azure AI Inference Chat API with streami
 
 ## main.py
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` python title="main.py"
 chat_api_key = os.getenv("AZURE_AI_CHAT_API_KEY", '<insert your Azure AI Inference API key here>')
@@ -45,17 +45,31 @@ chat_model = os.getenv('AZURE_AI_CHAT_MODEL', '')
 chat_system_prompt = os.getenv('SYSTEM_PROMPT', 'You are a helpful AI assistant.')
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Validate the environment variables.
+
+``` python title="main.py"
+ok = all([chat_api_key, chat_endpoint, chat_system_prompt]) and \
+     all([not s.startswith('<insert') for s in [chat_api_key, chat_endpoint, chat_system_prompt]])
+if not ok:
+    print(
+        'To use Azure AI Chat Streaming, set the following environment variables:' +
+        '\n- AZURE_AI_CHAT_API_KEY' +
+        '\n- AZURE_AI_CHAT_ENDPOINT' +
+        '\n- AZURE_AI_CHAT_MODEL (optional)' +
+        '\n- SYSTEM_PROMPT (optional)')
+    sys.exit(1)
+```
+
+**STEP 3**: Initialize the helper class with the configuration settings.
 
 ``` python title="main.py"
 chat = AzureAIInferenceChatCompletionsStreaming(chat_endpoint, chat_api_key, chat_model, chat_system_prompt)
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received. Handle exceptions and exit gracefully.
 
 ``` python title="main.py"
 while True:
-{
     user_input = input('User: ')
     if user_input == 'exit' or user_input == '':
         break
@@ -63,12 +77,11 @@ while True:
     print('\nAssistant: ', end='')
     response = chat.get_chat_completions(user_input, lambda content: print(content, end=''))
     print('\n')
-}
 ```
 
 ## azureml_chat_completions_streaming.py
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` python title="azureml_chat_completions_streaming.py"
 class AzureAIInferenceChatCompletionsStreaming:
@@ -84,14 +97,14 @@ class AzureAIInferenceChatCompletionsStreaming:
         ];
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` python title="azureml_chat_completions_streaming.py"
     def get_chat_completions(self, user_input, callback):
         self.messages.append(UserMessage(content=user_input))
 ```
 
-**STEP 3**: Send the chat message history to the streaming Azure AI Chat API and process each update:
+**STEP 3**: Send the chat message history to the streaming Azure AI Chat API and process each update.
 
 ``` python title="azureml_chat_completions_streaming.py"
         complete_content = ''
@@ -105,7 +118,11 @@ class AzureAIInferenceChatCompletionsStreaming:
 
             if update.choices is None or len(update.choices) == 0: 
                 continue
+```
 
+**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update.
+
+``` python title="azureml_chat_completions_streaming.py"
             content = update.choices[0].delta.content or ""
             if content is None: continue
 
@@ -113,7 +130,7 @@ class AzureAIInferenceChatCompletionsStreaming:
             callback(content)
 ```
 
-**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update:
+**STEP 5**: Finally, add the assistant's response to the chat message history, and return the response.
 
 ``` python title="azureml_chat_completions_streaming.py"
         self.messages.append(AssistantMessage(content=complete_content))

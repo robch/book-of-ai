@@ -36,7 +36,7 @@ This sample demonstrates how to use the OpenAI Assistants API with streaming in 
 
 ## main.js
 
-**STEP 1**: Read the configuration settings from environment variables and check if they are set:
+**STEP 1**: Read the configuration settings from environment variables and validate them.
 
 ```javascript title="main.js"
 const ASSISTANT_ID = process.env.ASSISTANT_ID ?? "<insert your OpenAI assistant ID here>";
@@ -76,7 +76,7 @@ if (!ok) {
 }
 ```
 
-**STEP 2**: Initialize the OpenAI client and the helper class with the configuration settings:
+**STEP 2**: Initialize the OpenAI client and the helper class with the configuration settings.
 
 ```javascript title="main.js"
 const openai = new OpenAI({
@@ -89,10 +89,25 @@ const openai = new OpenAI({
 const assistant = new OpenAIAssistantsStreamingClass(ASSISTANT_ID, openai);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Create or retrieve a thread and get thread messages if thread ID is provided.
+
+```javascript title="main.js"
+if (threadId === null) {
+  await assistant.createThread()
+} else {
+  await assistant.retrieveThread(threadId);
+  await assistant.getThreadMessages((role, content) => {
+    role = role.charAt(0).toUpperCase() + role.slice(1);
+    process.stdout.write(`${role}: ${content}`);
+    });
+}
+```
+
+**STEP 4**: Implement the user interaction loop to get responses from the assistant.
 
 ```javascript title="main.js"
 while (true) {
+
   const input = await readline.question('User: ');
   if (input === 'exit' || input === '') break;
 
@@ -110,7 +125,7 @@ process.exit();
 
 ## OpenAIAssistantsStreamingClass.js
 
-**STEP 1**: Create the client and initialize the assistant with necessary configurations:
+**STEP 1**: Create the client and initialize the assistant with necessary configurations.
 
 ```javascript title="OpenAIAssistantsStreamingClass.js"
 constructor(openAIAssistantId, openai, simulateTypingDelay = 0) {
@@ -121,7 +136,7 @@ constructor(openAIAssistantId, openai, simulateTypingDelay = 0) {
 }
 ```
 
-**STEP 2**: Create or retrieve the thread, and display the messages if any:
+**STEP 2**: Create or retrieve a thread and get thread messages if thread ID is provided.
 
 ```javascript title="OpenAIAssistantsStreamingClass.js"
 async createThread() {

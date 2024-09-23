@@ -30,10 +30,9 @@ This sample demonstrates how to use the Azure Cognitive Services Speech SDK to r
     Generating 'speech-to-text-with-file' in 'speech-to-text-with-file-cs' (3 files)... DONE!
     ```
 
-
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
 var speechKey = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_KEY") ?? "<insert your Speech Service API key here>";
@@ -42,7 +41,7 @@ var speechLanguage = "en-US"; // BCP-47 language code
 var inputFileName = args.Length == 1 ? args[0] : "audio.wav";
 ```
 
-**STEP 2**: Check if the input file exists:
+**STEP 2**: Check if the input file exists.
 
 ``` csharp title="Program.cs"
 if (!File.Exists(inputFileName))
@@ -52,7 +51,7 @@ if (!File.Exists(inputFileName))
 }
 ```
 
-**STEP 3**: Create instances of speech config, source language config, and audio config:
+**STEP 3**: Create instances of a speech config, source language config, and audio config.
 
 ``` csharp title="Program.cs"
 var config = SpeechConfig.FromSubscription(speechKey, speechRegion);
@@ -60,15 +59,19 @@ var sourceLanguageConfig = SourceLanguageConfig.FromLanguage(speechLanguage);
 var audioConfig = AudioConfig.FromWavFileInput(inputFileName);
 ```
 
-**STEP 4**: Create the speech recognizer from the above configuration information:
+**STEP 4**: Create the speech recognizer from the above configuration information.
 
 ``` csharp title="Program.cs"
 using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audioConfig))
 {
     recognizer.Recognizing += (s, e) => HandleRecognizingEvent(e);
     recognizer.Recognized += (s, e) => HandleRecognizedEvent(e);
+
+    var sessionStoppedNoError = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+
     recognizer.SessionStarted += (s, e) => HandleSessionStartedEvent(e);
     recognizer.SessionStopped += (s, e) => HandleSessionStoppedEvent(e, sessionStoppedNoError);
+
     recognizer.Canceled += (s, e) => HandleCanceledEvent(e, sessionStoppedNoError);
 
     Task.Run(() =>
@@ -84,7 +87,56 @@ using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audio
 }
 ```
 
-**STEP 5**: Handle recognition events:
+**STEP 5**: Subscribe to the Recognizing and Recognized events.
+
+``` csharp title="Program.cs"
+recognizer.Recognizing += (s, e) => HandleRecognizingEvent(e);
+recognizer.Recognized += (s, e) => HandleRecognizedEvent(e);
+```
+
+**STEP 6**: Create a task completion source to wait for the session to stop.
+
+``` csharp title="Program.cs"
+var sessionStoppedNoError = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+```
+
+**STEP 7**: Subscribe to SessionStarted and SessionStopped events.
+
+``` csharp title="Program.cs"
+recognizer.SessionStarted += (s, e) => HandleSessionStartedEvent(e);
+recognizer.SessionStopped += (s, e) => HandleSessionStoppedEvent(e, sessionStoppedNoError);
+```
+
+**STEP 8**: Subscribe to the Canceled event.
+
+``` csharp title="Program.cs"
+recognizer.Canceled += (s, e) => HandleCanceledEvent(e, sessionStoppedNoError);
+```
+
+**STEP 9**: Allow the user to press ENTER to stop recognition.
+
+``` csharp title="Program.cs"
+Task.Run(() =>
+{
+    while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+    recognizer.StopContinuousRecognitionAsync();
+});
+```
+
+**STEP 10**: Start speech recognition.
+
+``` csharp title="Program.cs"
+await recognizer.StartContinuousRecognitionAsync();
+Console.WriteLine("Listening; press ENTER to stop ...\n");
+```
+
+**STEP 11**: Wait for the session to stop.
+
+``` csharp title="Program.cs"
+return await sessionStoppedNoError.Task ? 0 : 1;
+```
+
+**STEP 12**: Handle recognition events.
 
 ``` csharp title="Program.cs"
 private static void HandleRecognizingEvent(SpeechRecognitionEventArgs e)
@@ -131,26 +183,4 @@ private static void HandleCanceledEvent(SpeechRecognitionCanceledEventArgs e, Ta
     }
     sessionStoppedNoError.TrySetResult(e.Reason != CancellationReason.Error);
 }
-```
-
-## SpeechToTextWithFile.csproj
-
-**STEP 1**: Define the project and target framework:
-
-``` xml title="SpeechToTextWithFile.csproj"
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
-    <OutputType>Exe</OutputType>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.35.0" />
-  </ItemGroup>
-
-</Project>
 ```

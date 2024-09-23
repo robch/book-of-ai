@@ -34,7 +34,7 @@ This sample demonstrates how to use the Azure Cognitive Services Speech SDK to p
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
 var speechKey = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_KEY") ?? "<insert your Speech Service API key here>";
@@ -42,7 +42,7 @@ var speechRegion = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_REGION") 
 var speechLanguage = "en-US"; // BCP-47 language code
 ```
 
-**STEP 2**: Create instances of a speech config, source language config, and audio config:
+**STEP 2**: Create instances of a speech config, source language config, and audio config.
 
 ``` csharp title="Program.cs"
 var config = SpeechConfig.FromSubscription(speechKey, speechRegion);
@@ -50,7 +50,7 @@ var sourceLanguageConfig = SourceLanguageConfig.FromLanguage(speechLanguage);
 var audioConfig = AudioConfig.FromDefaultMicrophoneInput();
 ```
 
-**STEP 3**: Create the speech recognizer from the above configuration information:
+**STEP 3**: Create the speech recognizer from the above configuration information.
 
 ``` csharp title="Program.cs"
 using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audioConfig))
@@ -58,13 +58,13 @@ using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audio
     Console.WriteLine("Listening ...\n");
 ```
 
-**STEP 4**: Start speech recognition, and return after a single utterance is recognized:
+**STEP 4**: Start speech recognition, and return after a single utterance is recognized.
 
 ``` csharp title="Program.cs"
     var result = await recognizer.RecognizeOnceAsync();
 ```
 
-**STEP 5**: Check the result:
+**STEP 5**: Check the result.
 
 ``` csharp title="Program.cs"
     if (result.Reason == ResultReason.RecognizedSpeech)

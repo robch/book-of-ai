@@ -32,10 +32,9 @@ This sample demonstrates how to use the OpenAI Chat API with streaming in a Pyth
     Generating 'openai-chat-streaming' in 'openai-chat-streaming-py' (3 files)... DONE!
     ```
 
-
 ## main.py
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` python title="main.py"
 openai_api_key = os.getenv('AZURE_OPENAI_API_KEY', '<insert your OpenAI API key here>')
@@ -45,13 +44,13 @@ openai_chat_deployment_name = os.getenv('AZURE_OPENAI_CHAT_DEPLOYMENT', '<insert
 openai_system_prompt = os.getenv('AZURE_OPENAI_SYSTEM_PROMPT', 'You are a helpful AI assistant.')
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Initialize the helper class with the configuration settings.
 
 ``` python title="main.py"
 chat = OpenAIChatCompletionsStreaming(openai_api_version, openai_endpoint, openai_api_key, openai_chat_deployment_name, openai_system_prompt)
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` python title="main.py"
 while True:
@@ -68,7 +67,7 @@ while True:
 
 ## openai_chat_completions_streaming.py
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` python title="openai_chat_completions_streaming.py"
 class OpenAIChatCompletionsStreaming:
@@ -88,14 +87,14 @@ class OpenAIChatCompletionsStreaming:
         ]
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` python title="openai_chat_completions_streaming.py"
     def get_chat_completions(self, user_input, callback):
         self.messages.append({'role': 'user', 'content': user_input})
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update.
 
 ``` python title="openai_chat_completions_streaming.py"
         complete_content = ''
@@ -115,7 +114,7 @@ class OpenAIChatCompletionsStreaming:
                 content += f"{content}\nERROR: Exceeded max token length!"
 ```
 
-**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update:
+**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update.
 
 ``` python title="openai_chat_completions_streaming.py"
             if content is None: continue
@@ -124,7 +123,7 @@ class OpenAIChatCompletionsStreaming:
             callback(content)
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return response:
+**STEP 5**: Finally, add the assistant's response to the chat message history, and return response.
 
 ``` python title="openai_chat_completions_streaming.py"
         self.messages.append({'role': 'assistant', 'content': complete_content})

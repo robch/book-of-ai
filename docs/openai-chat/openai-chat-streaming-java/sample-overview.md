@@ -37,7 +37,7 @@ This sample demonstrates how to use the OpenAI Chat API with streaming in a Java
 
 ## Main.java
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` java title="Main.java"
 String openAIAPIKey = (System.getenv("AZURE_OPENAI_API_KEY") != null) ? System.getenv("AZURE_OPENAI_API_KEY") : "<insert your OpenAI API key here>";
@@ -46,13 +46,21 @@ String openAIChatDeployment = (System.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT") != 
 String openAISystemPrompt = (System.getenv("AZURE_OPENAI_SYSTEM_PROMPT") != null) ? System.getenv("AZURE_OPENAI_SYSTEM_PROMPT") : "You are a helpful AI assistant.";
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Validate the environment variables.
+
+``` java title="Main.java"
+if (openAIAPIKey.isEmpty() || openAIEndpoint.isEmpty() || openAIChatDeployment.isEmpty()) {
+    throw new IllegalArgumentException("One or more environment variables are not set correctly.");
+}
+```
+
+**STEP 3**: Initialize the helper class with the configuration settings.
 
 ``` java title="Main.java"
 OpenAIChatCompletionsStreamingClass chat = new OpenAIChatCompletionsStreamingClass(openAIAPIKey, openAIEndpoint, openAIChatDeployment, openAISystemPrompt);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` java title="Main.java"
 Scanner scanner = new Scanner(System.in);
@@ -76,7 +84,7 @@ scanner.close();
 
 ## OpenAIChatCompletionsStreamingClass.java
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` java title="OpenAIChatCompletionsStreamingClass.java"
 public OpenAIChatCompletionsStreamingClass (String openAIAPIKey, String openAIEndpoint, String openAIChatDeployment, String openAISystemPrompt) {
@@ -101,7 +109,7 @@ public void ClearConversation(){
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` java title="OpenAIChatCompletionsStreamingClass.java"
 public Flux<ChatCompletions> getChatCompletionsStreamingAsync(String userPrompt,
@@ -109,7 +117,7 @@ public Flux<ChatCompletions> getChatCompletionsStreamingAsync(String userPrompt,
     options.getMessages().add(new ChatRequestUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update.
 
 ``` java title="OpenAIChatCompletionsStreamingClass.java"
     StringBuilder responseContent = new StringBuilder();
@@ -130,12 +138,21 @@ public Flux<ChatCompletions> getChatCompletionsStreamingAsync(String userPrompt,
 
                 if (content.isEmpty())
                     continue;
+```
 
+**STEP 4**: For each non-empty update, invoke the callback for the update, and accumulate the response.
+
+``` java title="OpenAIChatCompletionsStreamingClass.java"
                 if(callback != null) {
-                	callback.accept(update.getDelta());
+                    callback.accept(update.getDelta());
                 }
                 responseContent.append(content);
             }
+```
+
+**STEP 5**: Finally, add the assistant's response to the chat message history, and return the response.
+
+``` java title="OpenAIChatCompletionsStreamingClass.java"
 
             options.getMessages().add(new ChatRequestAssistantMessage(responseContent.toString()));
         }

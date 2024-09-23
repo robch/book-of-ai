@@ -36,7 +36,7 @@ This sample demonstrates how to use the OpenAI Chat API with RAG (Retrieval-Augm
 
 ## Main.js
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ```javascript title="Main.js"
 const openAIAPIKey = process.env["AZURE_OPENAI_API_KEY"] || "<insert your OpenAI API key here>";
@@ -51,13 +51,13 @@ const searchAPIKey = process.env["AZURE_AI_SEARCH_KEY"] || "<insert your search 
 const searchIndexName = process.env["AZURE_AI_SEARCH_INDEX_NAME"] || "<insert your search index name here>" ;
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings:
+**STEP 2**: Initialize the helper class with the configuration settings.
 
 ```javascript title="Main.js"
 const chat = new OpenAIChatCompletionsStreamingWithDataClass(openAIEndpoint, openAIAPIKey, openAIChatDeploymentName, openAISystemPrompt, searchEndpoint, searchAPIKey, searchIndexName, openAIEmbeddingsEndpoint);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ```javascript title="Main.js"
 while (true) {
@@ -78,7 +78,7 @@ process.exit();
 
 ## OpenAIChatCompletionsStreamingWithDataClass.js
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message and set up data sources.
 
 ```javascript title="OpenAIChatCompletionsStreamingWithDataClass.js"
 constructor(openAIEndpoint, openAIAPIKey, openAIChatDeploymentName, openAISystemPrompt, searchEndpoint, searchAPIKey, searchIndexName, openAIEmbeddingsEndpoint) {
@@ -106,7 +106,7 @@ constructor(openAIEndpoint, openAIAPIKey, openAIChatDeploymentName, openAISystem
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ```javascript title="OpenAIChatCompletionsStreamingWithDataClass.js"
 clearConversation() {
@@ -116,7 +116,7 @@ clearConversation() {
 }
 ```
 
-**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update:
+**STEP 3**: Send the chat message history to the streaming OpenAI Chat API and process each update.
 
 ```javascript title="OpenAIChatCompletionsStreamingWithDataClass.js"
 async getChatCompletions(userInput, callback) {
@@ -132,7 +132,11 @@ async getChatCompletions(userInput, callback) {
       if (choice.finishReason === 'length') {
         content = `${content}\nERROR: Exceeded token limit!`;
       }
+```
 
+**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update.
+
+```javascript title="OpenAIChatCompletionsStreamingWithDataClass.js"
       if (content != null) {
         if(callback != null) {
           callback(content);
@@ -142,7 +146,11 @@ async getChatCompletions(userInput, callback) {
       }
     }
   }
+```
 
+**STEP 5**: Finally, add the assistant's response to the chat message history, and return response.
+
+```javascript title="OpenAIChatCompletionsStreamingWithDataClass.js"
   this.messages.push({ role: 'assistant', content: contentComplete });
   return contentComplete;
 }

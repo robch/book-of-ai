@@ -35,7 +35,7 @@ This sample demonstrates how to use the OpenAI Assistants API in a JavaScript co
 
 ## main.js
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ```javascript title="main.js"
 const ASSISTANT_ID = process.env.ASSISTANT_ID ?? "<insert your OpenAI assistant ID here>";
@@ -45,7 +45,7 @@ const AZURE_OPENAI_ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT ?? "<insert your
 const AZURE_OPENAI_BASE_URL = `${AZURE_OPENAI_ENDPOINT.replace(/\/+$, '')}/openai`;
 ```
 
-**STEP 2**: Check if the required environment variables are set:
+**STEP 2**: Check if the required environment variables are set.
 
 ```javascript title="main.js"
 const azureOk = 
@@ -79,7 +79,7 @@ if (!ok) {
 }
 ```
 
-**STEP 3**: Initialize the OpenAI client and the helper class with the configuration settings:
+**STEP 3**: Initialize the OpenAI client and the helper class with the configuration settings.
 
 ```javascript title="main.js"
 const openai = new OpenAI({
@@ -91,7 +91,7 @@ const openai = new OpenAI({
 const assistant = new OpenAIAssistantsClass(ASSISTANT_ID, openai);
 ```
 
-**STEP 4**: Create or retrieve the thread and display the messages if any:
+**STEP 4**: Create or retrieve the thread and display the messages if any.
 
 ```javascript title="main.js"
 const threadId = process.argv[2] || null;
@@ -106,7 +106,7 @@ if (threadId === null) {
 }
 ```
 
-**STEP 5**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 5**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ```javascript title="main.js"
 while (true) {
@@ -120,7 +120,7 @@ while (true) {
 
 ## OpenAIAssistantsClass.js
 
-**STEP 1**: Create the client and initialize the class with essential parameters:
+**STEP 1**: Create the client and initialize the class with essential parameters.
 
 ```javascript title="OpenAIAssistantsClass.js"
 constructor(openAIAssistantId, openai, simulateTypingDelay = 0) {
@@ -131,7 +131,7 @@ constructor(openAIAssistantId, openai, simulateTypingDelay = 0) {
 }
 ```
 
-**STEP 2**: Create a new thread:
+**STEP 2**: Create a new thread.
 
 ```javascript title="OpenAIAssistantsClass.js"
 async createThread() {
@@ -140,7 +140,7 @@ async createThread() {
 }
 ```
 
-**STEP 3**: Retrieve an existing thread:
+**STEP 3**: Retrieve an existing thread.
 
 ```javascript title="OpenAIAssistantsClass.js"
 async retrieveThread(threadId) {
@@ -149,7 +149,7 @@ async retrieveThread(threadId) {
 }
 ```
 
-**STEP 4**: Get the messages in the thread:
+**STEP 4**: Get the messages in the thread.
 
 ```javascript title="OpenAIAssistantsClass.js"
 async getThreadMessages(callback) {
@@ -163,7 +163,7 @@ async getThreadMessages(callback) {
 }
 ```
 
-**STEP 5**: When the user provides input, post the message on the thread and get the response:
+**STEP 5**: When the user provides input, post the message on the thread and get the response.
 
 ```javascript title="OpenAIAssistantsClass.js"
 async getResponse(userInput) {

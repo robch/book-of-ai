@@ -35,7 +35,7 @@ This sample demonstrates how to use the Azure Cognitive Services Speech SDK for 
 
 ## main.py
 
-**STEP 1**: Import necessary modules and set up configuration:
+**STEP 1**: Import necessary modules and set up configuration.
 
 ``` python title="main.py"
 from concurrent.futures import Future
@@ -52,7 +52,7 @@ input_file = sys.argv[1] if len(sys.argv) == 2 else None
 keyword_file = 'keyword.table'
 ```
 
-**STEP 2**: Check for input and keyword files, and create configurations:
+**STEP 2**: Check for input and keyword files, and create configurations.
 
 ``` python title="main.py"
 # Check to see if the input file exists
@@ -70,7 +70,7 @@ speech_config = SpeechConfig(subscription=speech_key, region=service_region, spe
 audio_config = AudioConfig(filename=input_file) if input_file is not None else AudioConfig(use_default_microphone=True)
 ```
 
-**STEP 3**: Initialize the speech recognizer and connect event handlers:
+**STEP 3**: Initialize the speech recognizer and connect event handlers.
 
 ``` python title="main.py"
 # Create the speech recognizer from the above configuration information
@@ -94,7 +94,7 @@ speech_recognizer.recognizing.connect(recognizing)
 speech_recognizer.recognized.connect(recognized)
 ```
 
-**STEP 4**: Handle session events and start keyword recognition:
+**STEP 4**: Handle session events and start keyword recognition.
 
 ``` python title="main.py"
 # Create a future to wait for the session to stop. This is needed in console apps to

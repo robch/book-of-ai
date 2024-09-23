@@ -34,7 +34,7 @@ This sample demonstrates how to use the Azure Cognitive Services Speech SDK for 
 
 ## main.py
 
-**STEP 1**: Import necessary modules and set up configuration:
+**STEP 1**: Import necessary modules and set up configuration.
 
 ```python title="main.py"
 from concurrent.futures import Future
@@ -48,14 +48,14 @@ service_region = os.environ.get('AZURE_AI_SPEECH_REGION') or "<insert your Speec
 speech_language = "en-US"
 ```
 
-**STEP 2**: Create instances of speech config and audio config:
+**STEP 2**: Create instances of speech config and audio config.
 
 ```python title="main.py"
 speech_config = SpeechConfig(subscription=speech_key, region=service_region, speech_recognition_language=speech_language)
 audio_config = AudioConfig(use_default_microphone=True)
 ```
 
-**STEP 3**: Create the speech recognizer and set up event handlers:
+**STEP 3**: Create the speech recognizer and set up event handlers.
 
 ```python title="main.py"
 speech_recognizer = SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
@@ -73,7 +73,7 @@ speech_recognizer.recognizing.connect(recognizing)
 speech_recognizer.recognized.connect(recognized)
 ```
 
-**STEP 4**: Handle session events and cancellation:
+**STEP 4**: Handle session events and cancellation.
 
 ```python title="main.py"
 session_stopped_no_error = Future()
@@ -102,7 +102,7 @@ def canceled(args):
 speech_recognizer.canceled.connect(canceled)
 ```
 
-**STEP 5**: Start continuous recognition and wait for user input to stop:
+**STEP 5**: Start continuous recognition and wait for user input to stop.
 
 ```python title="main.py"
 threading.Thread(target=lambda: (

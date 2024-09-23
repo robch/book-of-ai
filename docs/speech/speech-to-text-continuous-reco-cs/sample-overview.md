@@ -34,7 +34,7 @@ This sample demonstrates how to perform continuous speech recognition using the 
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ```csharp title="Program.cs"
 var speechKey = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_KEY") ?? "<insert your Speech Service API key here>";
@@ -42,7 +42,7 @@ var speechRegion = Environment.GetEnvironmentVariable("AZURE_AI_SPEECH_REGION") 
 var speechLanguage = "en-US"; // BCP-47 language code
 ```
 
-**STEP 2**: Create instances of a speech config, source language config, and audio config:
+**STEP 2**: Create instances of a speech config, source language config, and audio config.
 
 ```csharp title="Program.cs"
 var config = SpeechConfig.FromSubscription(speechKey, speechRegion);
@@ -50,7 +50,7 @@ var sourceLanguageConfig = SourceLanguageConfig.FromLanguage(speechLanguage);
 var audioConfig = AudioConfig.FromDefaultMicrophoneInput();
 ```
 
-**STEP 3**: Create the speech recognizer from the above configuration information:
+**STEP 3**: Create the speech recognizer from the above configuration information.
 
 ```csharp title="Program.cs"
 using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audioConfig))
@@ -61,6 +61,26 @@ using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audio
     recognizer.SessionStarted += (s, e) => HandleSessionStartedEvent(e);
     recognizer.SessionStopped += (s, e) => HandleSessionStoppedEvent(e, sessionStoppedNoError);
     recognizer.Canceled += (s, e) => HandleCanceledEvent(e, sessionStoppedNoError);
+```
+
+**STEP 4**: Subscribe to recognizing and recognized events for handling intermediate and final recognition results.
+
+```csharp title="Program.cs"
+    recognizer.Recognizing += (s, e) => HandleRecognizingEvent(e);
+    recognizer.Recognized += (s, e) => HandleRecognizedEvent(e);
+```
+
+**STEP 5**: Subscribe to session started, stopped, and canceled events for handling session events and cancellations.
+
+```csharp title="Program.cs"
+    recognizer.SessionStarted += (s, e) => HandleSessionStartedEvent(e);
+    recognizer.SessionStopped += (s, e) => HandleSessionStoppedEvent(e, sessionStoppedNoError);
+    recognizer.Canceled += (s, e) => HandleCanceledEvent(e, sessionStoppedNoError);
+```
+
+**STEP 6**: Start continuous recognition and wait for user input to stop.
+
+```csharp title="Program.cs"
     Task.Run(() =>
     {
         while (Console.ReadKey().Key != ConsoleKey.Enter) { }
@@ -72,7 +92,7 @@ using (var recognizer = new SpeechRecognizer(config, sourceLanguageConfig, audio
 }
 ```
 
-**STEP 4**: Handle intermediate and final recognition results:
+**STEP 7**: Handle intermediate and final recognition results.
 
 ```csharp title="Program.cs"
 private static void HandleRecognizingEvent(SpeechRecognitionEventArgs e)
@@ -93,7 +113,7 @@ private static void HandleRecognizedEvent(SpeechRecognitionEventArgs e)
 }
 ```
 
-**STEP 5**: Handle session start, stop, and cancellation events:
+**STEP 8**: Handle session start, stop, and cancellation events.
 
 ```csharp title="Program.cs"
 private static void HandleSessionStartedEvent(SessionEventArgs e)

@@ -35,7 +35,7 @@ This sample demonstrates how to use the OpenAI Chat API with streaming in a Java
 
 ## Main.js
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` javascript title="Main.js"
 const AZURE_OPENAI_SYSTEM_PROMPT = process.env.AZURE_OPENAI_SYSTEM_PROMPT ?? "You are a helpful AI assistant.";
@@ -51,7 +51,44 @@ const AZURE_OPENAI_ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT ?? "<insert your
 const AZURE_OPENAI_BASE_URL = `${AZURE_OPENAI_ENDPOINT.replace(/\/+$/, '')}/openai/deployments/${AZURE_OPENAI_CHAT_DEPLOYMENT}`;
 ```
 
-**STEP 2**: Create the client with the configuration settings and initialize the helper class:
+**STEP 2**: Validate the environment variables.
+
+``` javascript title="Main.js"
+// Check if the required environment variables are set
+const azureOk = 
+  AZURE_OPENAI_API_KEY != null && !AZURE_OPENAI_API_KEY.startsWith('<insert') &&
+  AZURE_OPENAI_API_VERSION != null && !AZURE_OPENAI_API_VERSION.startsWith('<insert') &&
+  AZURE_OPENAI_CHAT_DEPLOYMENT != null && !AZURE_OPENAI_CHAT_DEPLOYMENT.startsWith('<insert') &&
+  AZURE_OPENAI_ENDPOINT != null && !AZURE_OPENAI_ENDPOINT.startsWith('<insert');
+
+const ok = azureOk &&
+  AZURE_OPENAI_SYSTEM_PROMPT != null && !AZURE_OPENAI_SYSTEM_PROMPT.startsWith('<insert');
+
+if (!ok) {
+  console.error(
+    'To use Azure OpenAI, set the following environment variables:\n' +
+    '\n  AZURE_OPENAI_SYSTEM_PROMPT' +
+    '\n  AZURE_OPENAI_API_KEY' +
+    '\n  AZURE_OPENAI_API_VERSION' +
+    '\n  AZURE_OPENAI_CHAT_DEPLOYMENT' +
+    '\n  AZURE_OPENAI_ENDPOINT'
+  );
+  console.error(
+    '\nYou can easily do that using the Azure AI CLI by doing one of the following:\n' +
+    '\n  ai init' +
+    '\n  ai dev shell' +
+    '\n  node main.js' +
+    '\n' +
+    '\n  or' +
+    '\n' +
+    '\n  ai init' +
+    '\n  ai dev shell --run "node main.js"'
+  );
+  process.exit(1);
+}
+```
+
+**STEP 3**: Create the client with the configuration settings and initialize the helper class.
 
 ``` javascript title="Main.js"
 const openai = new OpenAI({
@@ -64,7 +101,7 @@ const openai = new OpenAI({
 const chat = new OpenAIChatCompletionsStreamingClass(AZURE_OPENAI_CHAT_DEPLOYMENT, AZURE_OPENAI_SYSTEM_PROMPT, openai, 20);
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` javascript title="Main.js"
 while (true) {
@@ -85,7 +122,7 @@ while (true) {
 
 ## OpenAIChatCompletionsStreamingClass.js
 
-**STEP 1**: Initialize chat message history with a system message:
+**STEP 1**: Initialize chat message history with a system message.
 
 ``` javascript title="OpenAIChatCompletionsStreamingClass.js"
 constructor(openAIModelOrDeploymentName, systemPrompt, openai, simulateTypingDelay = 0) {
@@ -104,13 +141,13 @@ clearConversation() {
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` javascript title="OpenAIChatCompletionsStreamingClass.js"
 this.messages.push({ role: 'user', content: userInput });
 ```
 
-**STEP 3**: Send the chat message history to the OpenAI Chat streaming API and process each update:
+**STEP 3**: Send the chat message history to the OpenAI Chat streaming API and process each update.
 
 ``` javascript title="OpenAIChatCompletionsStreamingClass.js"
 const events = await this.openai.chat.completions.create({
@@ -128,7 +165,7 @@ for await (const event of events) {
     }
 ```
 
-**STEP 4**: For each non-empty update, invoke the callback for the update, and accumulate the response
+**STEP 4**: For each non-empty update, invoke the callback for the update, and accumulate the response.
 
 ``` javascript title="OpenAIChatCompletionsStreamingClass.js"
 if (content != null) {
@@ -142,7 +179,7 @@ if (content != null) {
 }
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return the response:
+**STEP 5**: Finally, add the assistant's response to the chat message history, and return the response.
 
 ``` javascript title="OpenAIChatCompletionsStreamingClass.js"
 this.messages.push({ role: 'assistant', content: response });

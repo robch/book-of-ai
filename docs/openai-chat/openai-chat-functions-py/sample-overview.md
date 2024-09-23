@@ -37,14 +37,14 @@ This sample demonstrates how to use the OpenAI Chat API with function calling in
 
 ## openai_chat_completions_custom_functions.py
 
-**STEP 1**: Construct a function factory helper object to manage custom functions:
+**STEP 1**: Import the FunctionFactory class and create an instance.
 
 ``` python title="openai_chat_completions_custom_functions.py"
 from function_factory import FunctionFactory
 factory = FunctionFactory()
 ```
 
-**STEP 2**: Define custom functions and their schemas:
+**STEP 2**: Define and add the get_current_date, get_current_time, and get_current_weather functions to the factory.
 
 ``` python title="openai_chat_completions_custom_functions.py"
 @ignore_args_decorator
@@ -109,7 +109,7 @@ factory.add_function(get_current_weather_schema, get_current_weather)
 
 ## main.py
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` python title="main.py"
 openai_api_key = os.getenv('AZURE_OPENAI_API_KEY', '<insert your OpenAI API key here>')
@@ -119,13 +119,13 @@ openai_chat_deployment_name = os.getenv('AZURE_OPENAI_CHAT_DEPLOYMENT', '<insert
 openai_system_prompt = os.getenv('AZURE_OPENAI_SYSTEM_PROMPT', 'You are a helpful AI assistant.')
 ```
 
-**STEP 2**: Initialize the helper class with the configuration settings and the function factory:
+**STEP 2**: Initialize the helper class with the configuration settings and the function factory.
 
 ``` python title="main.py"
 chat = OpenAIChatCompletionsFunctionsStreaming(openai_api_version, openai_endpoint, openai_api_key, openai_chat_deployment_name, openai_system_prompt, factory)
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` python title="main.py"
 while True:
@@ -140,7 +140,7 @@ while True:
 
 ## openai_chat_completions_functions_streaming.py
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` python title="openai_chat_completions_functions_streaming.py"
 def __init__(self, openai_api_version, openai_endpoint, openai_key, openai_chat_deployment_name, openai_system_prompt, function_factory):
@@ -154,16 +154,21 @@ def __init__(self, openai_api_version, openai_endpoint, openai_key, openai_chat_
         )
     self.clear_conversation()
 
+def clear_conversation(self):
+    self.messages = [
+        {'role': 'system', 'content': self.openai_system_prompt}
+    ]
+    self.function_call_context = FunctionCallContext(self.function_factory, self.messages)
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` python title="openai_chat_completions_functions_streaming.py"
 def get_chat_completions(self, user_input, callback):
     self.messages.append({'role': 'user', 'content': user_input})
 ```
 
-**STEP 3**: Send the chat message history and the function schemas to the streaming API and process each update, including checking for function calls::
+**STEP 3**: Send the chat message history and the function schemas to the streaming API and process each update, including checking for function calls.
 
 ``` python title="openai_chat_completions_functions_streaming.py"
     complete_content = ''
@@ -190,7 +195,7 @@ def get_chat_completions(self, user_input, callback):
                 content += f"{content}\nERROR: Exceeded max token length!"
 ```
 
-**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update:
+**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update.
 
 ``` python title="openai_chat_completions_functions_streaming.py"
             if content is None: continue
@@ -199,7 +204,7 @@ def get_chat_completions(self, user_input, callback):
             callback(content)
 ```
 
-**STEP 5**: Check if the response contained function calls, and process them:
+**STEP 5**: Check if the response contained function calls, and process them.
 
 ``` python title="openai_chat_completions_functions_streaming.py"
         if self.function_call_context.try_call_function() is not None:
@@ -207,7 +212,7 @@ def get_chat_completions(self, user_input, callback):
             continue
 ```
 
-**STEP 6**: Finally, add the assistant's response to the chat message history, and return response:
+**STEP 6**: Finally, add the assistant's response to the chat message history and return the response.
 
 ``` python title="openai_chat_completions_functions_streaming.py"
     self.messages.append({'role': 'assistant', 'content': complete_content})

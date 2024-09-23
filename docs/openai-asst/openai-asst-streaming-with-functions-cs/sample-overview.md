@@ -43,7 +43,7 @@ This sample demonstrates how to use OpenAI Assistants with function calling in a
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
 var assistantId = Environment.GetEnvironmentVariable("ASSISTANT_ID") ?? "<insert your OpenAI assistant ID here>";
@@ -54,7 +54,17 @@ var openAIAPIKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ??
 var openAIEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? "<insert your Azure OpenAI endpoint here>";
 ```
 
-**STEP 2**: Initialize OpenAI Client:
+**STEP 2**: Validate the environment variables.
+
+``` csharp title="Program.cs"
+if (string.IsNullOrEmpty(openAIAPIKey) || string.IsNullOrEmpty(openAIEndpoint) || string.IsNullOrEmpty(assistantId))
+{
+    Console.WriteLine("Please set the environment variables: AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT, ASSISTANT_ID");
+    return;
+}
+```
+
+**STEP 3**: Initialize OpenAI Client.
 
 ``` csharp title="Program.cs"
 var client = string.IsNullOrEmpty(openAIAPIKey)
@@ -62,20 +72,20 @@ var client = string.IsNullOrEmpty(openAIAPIKey)
     : new AzureOpenAIClient(new Uri(openAIEndpoint), new AzureKeyCredential(openAIAPIKey));
 ```
 
-**STEP 3**: Register custom functions:
+**STEP 4**: Register custom functions.
 
 ``` csharp title="Program.cs"
 var factory = new FunctionFactory();
 factory.AddFunctions(typeof(OpenAIChatCompletionsCustomFunctions));
 ```
 
-**STEP 4**: Create the helper class:
+**STEP 5**: Create the helper class.
 
 ``` csharp title="Program.cs"
 var assistant = new OpenAIAssistantsFunctionsStreamingClass(client, assistantId, factory);
 ```
 
-**STEP 5**: Create or retrieve thread:
+**STEP 6**: Create or retrieve thread.
 
 ``` csharp title="Program.cs"
 if (string.IsNullOrEmpty(threadId))
@@ -92,7 +102,7 @@ else
 }
 ```
 
-**STEP 6**: User interaction loop:
+**STEP 7**: User interaction loop.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -110,7 +120,7 @@ while (true)
 
 ## OpenAIAssistantsFunctionsStreamingClass.cs
 
-**STEP 1**: Create the client and initialize chat message history with a system message:
+**STEP 1**: Create the client and initialize chat message history with a system message.
 
 ``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
 public OpenAIAssistantsFunctionsStreamingClass(OpenAIClient client, string assistantId, FunctionFactory factory)
@@ -127,7 +137,7 @@ public OpenAIAssistantsFunctionsStreamingClass(OpenAIClient client, string assis
 }
 ```
 
-**STEP 2**: Create or retrieve thread:
+**STEP 2**: Create or retrieve thread.
 
 ``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
 public async Task CreateThreadAsync()
@@ -143,7 +153,7 @@ public async Task RetrieveThreadAsync(string threadId)
 }
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
 public async Task GetResponseAsync(string userInput, Action<string> callback)
@@ -164,7 +174,7 @@ public async Task GetResponseAsync(string userInput, Action<string> callback)
             }
 ```
 
-**STEP 4**: Process each update, accumulate the response, and invoke the callback for the update:
+**STEP 4**: Process each update, accumulate the response, and invoke the callback for the update.
 
 ``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
             else if (update is RunUpdate runUpdate)

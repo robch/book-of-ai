@@ -36,7 +36,7 @@ This sample demonstrates how to use the OpenAI Assistants API with the Code Inte
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables and validate them.
 
 ``` csharp title="Program.cs"
 var assistantId = Environment.GetEnvironmentVariable("ASSISTANT_ID") ?? "<insert your OpenAI assistant ID here>";
@@ -55,7 +55,7 @@ if (string.IsNullOrEmpty(openAIAPIKey) || openAIAPIKey.StartsWith("<insert") ||
 }
 ```
 
-**STEP 2**: Initialize the OpenAI client and the helper class with the configuration settings:
+**STEP 2**: Initialize the OpenAI client and the helper class with the configuration settings.
 
 ``` csharp title="Program.cs"
 var client = string.IsNullOrEmpty(openAIAPIKey)
@@ -65,7 +65,7 @@ var client = string.IsNullOrEmpty(openAIAPIKey)
 var assistant = new OpenAIAssistantsCodeInterpreterStreamingClass(client, assistantId);
 ```
 
-**STEP 3**: Create or retrieve a thread, and get existing messages if a thread ID is provided:
+**STEP 3**: Create or retrieve a thread, and get existing messages if a thread ID is provided.
 
 ``` csharp title="Program.cs"
 if (string.IsNullOrEmpty(threadId))
@@ -82,7 +82,7 @@ else
 }
 ```
 
-**STEP 4**: Enter a loop to get user input, send it to the assistant, and display the responses as they are received:
+**STEP 4**: Enter a loop to get user input, send it to the assistant, and display the responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -102,7 +102,7 @@ Console.WriteLine($"Bye! (ThreadId: {assistant.Thread?.Id})");
 
 ## OpenAIAssistantsCodeInterpreterStreamingClass.cs
 
-**STEP 1**: Initialize the assistant client with the OpenAI client and assistant ID:
+**STEP 1**: Initialize the assistant client with the OpenAI client and assistant ID.
 
 ``` csharp title="OpenAIAssistantsCodeInterpreterStreamingClass.cs"
 public OpenAIAssistantsCodeInterpreterStreamingClass(OpenAIClient client, string assistantId)
@@ -112,7 +112,7 @@ public OpenAIAssistantsCodeInterpreterStreamingClass(OpenAIClient client, string
 }
 ```
 
-**STEP 2**: Create or retrieve a thread:
+**STEP 2**: Create or retrieve a thread.
 
 ``` csharp title="OpenAIAssistantsCodeInterpreterStreamingClass.cs"
 public async Task CreateThreadAsync()
@@ -128,7 +128,7 @@ public async Task RetrieveThreadAsync(string threadId)
 }
 ```
 
-**STEP 3**: Get existing messages from the thread and invoke the callback for each message:
+**STEP 3**: Get existing messages from the thread and invoke the callback for each message.
 
 ``` csharp title="OpenAIAssistantsCodeInterpreterStreamingClass.cs"
 public async Task GetThreadMessagesAsync(Action<string, string> callback)
@@ -142,7 +142,7 @@ public async Task GetThreadMessagesAsync(Action<string, string> callback)
 }
 ```
 
-**STEP 4**: Send user input to the assistant, stream and process each update:
+**STEP 4**: Send user input to the assistant, stream and process each update.
 
 ``` csharp title="OpenAIAssistantsCodeInterpreterStreamingClass.cs"
 public async Task GetResponseAsync(string userInput, Action<string> callback)

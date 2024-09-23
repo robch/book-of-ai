@@ -43,7 +43,7 @@ This sample demonstrates how to use the OpenAI Chat API with streaming and funct
 
 ## main.go
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` go title="main.go"
 openAIAPIKey := os.Getenv("AZURE_OPENAI_API_KEY")
@@ -92,77 +92,9 @@ for {
 }
 ```
 
-## function_call_context.go
-
-**STEP 1**: Create the `FunctionCallContext` struct and initialize it with the function factory and chat completion options:
-
-``` go title="function_call_context.go"
-type FunctionCallContext struct {
-    functionFactory   *FunctionFactory
-    options           *azopenai.ChatCompletionsOptions
-    functionName      string
-    functionArguments string
-}
-
-func NewFunctionCallContext(functionFactory *FunctionFactory, options *azopenai.ChatCompletionsOptions) *FunctionCallContext {
-    return &FunctionCallContext{
-        functionFactory:   functionFactory,
-        options:           options,
-        functionName:      "",
-        functionArguments: "",
-    }
-}
-```
-
-**STEP 2**: Define methods to check for function call updates, attempt to call a function, and clear the context:
-
-``` go title="function_call_context.go"
-func (fcc *FunctionCallContext) CheckForUpdate(choice azopenai.ChatChoice) bool {
-    updated := false
-
-    if choice.Delta != nil && choice.Delta.FunctionCall != nil {
-        name := choice.Delta.FunctionCall.Name
-        if name != nil && *name != "" {
-            fcc.functionName = *name
-            updated = true
-        }
-    }
-
-    if choice.Delta != nil && choice.Delta.FunctionCall != nil {
-        args := choice.Delta.FunctionCall.Arguments
-        if args != nil && *args != "" {
-            fcc.functionArguments = *args
-            updated = true
-        }
-    }
-
-    return updated
-}
-
-func (fcc *FunctionCallContext) TryCallFunction() string {
-    result := fcc.functionFactory.TryCallFunction(fcc.functionName, fcc.functionArguments)
-    if result == "" {
-        return ""
-    }
-
-    fmt.Printf("\rassistant-function: %s(%s) => %s\n", fcc.functionName, fcc.functionArguments, result)
-    fmt.Printf("\nAssistant: ")
-
-    fcc.options.Messages = append(fcc.options.Messages, azopenai.ChatMessage{Role: to.Ptr(azopenai.ChatRoleAssistant), Content: to.Ptr(""), FunctionCall: &azopenai.ChatMessageFunctionCall{Name: to.Ptr(fcc.functionName), Arguments: to.Ptr(fcc.functionArguments)}})
-    fcc.options.Messages = append(fcc.options.Messages, azopenai.ChatMessage{Role: to.Ptr(azopenai.ChatRoleFunction), Content: to.Ptr(result), Name: to.Ptr(fcc.functionName)})
-
-    return result
-}
-
-func (fcc *FunctionCallContext) Clear() {
-    fcc.functionName = ""
-    fcc.functionArguments = ""
-}
-```
-
 ## function_factory.go
 
-**STEP 1**: Create the `FunctionFactory` struct and methods to add functions, get function schemas, and try calling functions:
+**STEP 1**: Create the `FunctionFactory` struct and methods to add functions, get function schemas, and try calling functions.
 
 ``` go title="function_factory.go"
 type FunctionInfo struct {
@@ -194,7 +126,7 @@ func (ff *FunctionFactory) GetFunctionSchemas() []azopenai.FunctionDefinition {
 
 func (ff *FunctionFactory) TryCallFunction(functionName string, functionArguments string) string {
     functionInfo, exists := ff.functions[functionName]
-    if !exists {
+    if (!exists) {
         return ""
     }
 
@@ -204,7 +136,7 @@ func (ff *FunctionFactory) TryCallFunction(functionName string, functionArgument
 
 ## openai_chat_completions_custom_functions.go
 
-**STEP 1**: Define custom functions and their schemas:
+**STEP 1**: Define custom functions and their schemas.
 
 ``` go title="openai_chat_completions_custom_functions.go"
 func GetCurrentWeather(functionArguments string) string {
@@ -264,9 +196,77 @@ func NewFunctionFactoryWithCustomFunctions() *FunctionFactory {
 }
 ```
 
+## function_call_context.go
+
+**STEP 1**: Create the `FunctionCallContext` struct and initialize it with the function factory and chat completion options.
+
+``` go title="function_call_context.go"
+type FunctionCallContext struct {
+    functionFactory   *FunctionFactory
+    options           *azopenai.ChatCompletionsOptions
+    functionName      string
+    functionArguments string
+}
+
+func NewFunctionCallContext(functionFactory *FunctionFactory, options *azopenai.ChatCompletionsOptions) *FunctionCallContext {
+    return &FunctionCallContext{
+        functionFactory:   functionFactory,
+        options:           options,
+        functionName:      "",
+        functionArguments: "",
+    }
+}
+```
+
+**STEP 2**: Define methods to check for function call updates, attempt to call a function, and clear the context.
+
+``` go title="function_call_context.go"
+func (fcc *FunctionCallContext) CheckForUpdate(choice azopenai.ChatChoice) bool {
+    updated := false
+
+    if choice.Delta != nil && choice.Delta.FunctionCall != nil {
+        name := choice.Delta.FunctionCall.Name
+        if name != nil && *name != "" {
+            fcc.functionName = *name
+            updated = true
+        }
+    }
+
+    if choice.Delta != nil && choice.Delta.FunctionCall != nil {
+        args := choice.Delta.FunctionCall.Arguments
+        if args != nil && *args != "" {
+            fcc.functionArguments = *args
+            updated = true
+        }
+    }
+
+    return updated
+}
+
+func (fcc *FunctionCallContext) TryCallFunction() string {
+    result := fcc.functionFactory.TryCallFunction(fcc.functionName, fcc.functionArguments)
+    if result == "" {
+        return ""
+    }
+
+    fmt.Printf("\rassistant-function: %s(%s) => %s\n", fcc.functionName, fcc.functionArguments, result)
+    fmt.Printf("\nAssistant: ")
+
+    fcc.options.Messages = append(fcc.options.Messages, azopenai.ChatMessage{Role: to.Ptr(azopenai.ChatRoleAssistant), Content: to.Ptr(""), FunctionCall: &azopenai.ChatMessageFunctionCall{Name: to.Ptr(fcc.functionName), Arguments: to.Ptr(fcc.functionArguments)}})
+    fcc.options.Messages = append(fcc.options.Messages, azopenai.ChatMessage{Role: to.Ptr(azopenai.ChatRoleFunction), Content: to.Ptr(result), Name: to.Ptr(fcc.functionName)})
+
+    return result
+}
+
+func (fcc *FunctionCallContext) Clear() {
+    fcc.functionName = ""
+    fcc.functionArguments = ""
+}
+```
+
 ## openai_chat_completions_functions_streaming_hello_world.go
 
-**STEP 1**: Create a struct to manage the chat completions with function calling:
+**STEP 1**: Create a struct to manage the chat completions with function calling.
 
 ``` go title="openai_chat_completions_functions_streaming_hello_world.go"
 type OpenAIChatCompletionsFunctionsStreamingExample struct {
@@ -307,7 +307,7 @@ func NewOpenAIChatCompletionsFunctionsStreamingExample(openAIEndpoint string, op
 }
 ```
 
-**STEP 2**: Define methods to clear the conversation and get chat completions with function calling:
+**STEP 2**: Define methods to clear the conversation and get chat completions with function calling.
 
 ``` go title="openai_chat_completions_functions_streaming_hello_world.go"
 func (chat *OpenAIChatCompletionsFunctionsStreamingExample) ClearConversation() {
