@@ -155,64 +155,24 @@ For all the samples, the steps in the sample overview files are somewhat similar
 - Similarities exist across the programming languages for a given sample (e.g. `openai-asst-streaming-cs` is similar to `openai-asst-streaming-js` and `openai-asst-streaming-py`).  
 - Similarities exist across areas (such as `openai-*` samples, or across `onnx-*` samples, or across `speech-*` samples).  
 
-**Differences**:  
-- `openai-asst-*` samples don't have a chat history, per se, like other chat samples; instead they use "threads" to manage the conversation.  
-- `speech-*` samples are quite different from chat samples, as they deal with speech synthesis, recognition, and translation.  
-
 ## YOUR TASK
 
 We've recently updated the sample code for the one of the samples in the book. It's path and filename are: `{sample_overview}`.
 
-Your task is to read the source code for the sample in `docs/samples/{long-name}` and compare it to the steps in the `sample-overview.md` file.  
-You will then update the `sample-overview.md` file with the correct steps and updated source code from the current sample.  
+Your task is to read the source code for the sample in `docs/samples/{long-name}` and compare it to the source code in the `sample-overview.md` file.
+You will then update the `sample-overview.md` file with updated source code.  
 
-The steps in the `sample-overview.md` may or may not need to be changed to reflect the updated source code.  
-The source code blocks in the `sample-overview.md` may or may not need to be updated to reflect the current source code.  
-
-To better track the changes, you will be outputing 3 files, in addition to a new `sample-overview.md` file.  
-* You will be outputing a list of the steps that are **currently** in the `sample-overview.md` file.  
-* You will be outputing a list of the steps that **should** be in the `sample-overview.md` file.  
-* You will be outputing a list of source code that **should** be updated in the `sample-overview.md` file.  
-
-You will determine what the correct "steps" and "source code" should be for that sample by:
-- Inspecting the current steps and the source code in the current `sample-overview.md` file.  
-- Inspecting the updated source code for the sample in `docs/samples/{long-name}`.
-- Finding the changes to the updated source code that need to be reflected in the `sample-overview.md` file.
+To determine what sample overview source code updates to make to `sample-overview.md`, you will:  
+- Inspect the currently documented source code in the existing `sample-overview.md` file.  
+- Inspect the updated source code for the sample in `docs/samples/{long-name}`.
+- Compare the two sets of source code very carefully, one might even say pedantically.  
+- Find **ALL** the changes to the updated source code that need to be reflected in the `sample-overview.md` file.  
+- It's **CRITICAL** that you don't miss any changes; you **MUST** find **ALL** the changes.  
 - Do not remove steps that are already in the `sample-overview.md` file unless the underlying sample doesn't contain that code anymore.  
 
-You will document the "current" steps in a file named `sample-overview-current-steps.md`.  
-You will document the "should be" steps in a file named `sample-overview-should-be-steps.md`.  
-You will document the "source code updates" in a file named `sample-overview-source-code-updates.md`.  
-You will create a new `sample-overview.md` file with the correct steps and updated source code from the current sample.  
-
-These files will be located in a new `docs2/{area}/{long-name}` directory (so we can do a tree comparison between `docs/{area}` and `docs2/{area}`).
-This is a parallel directory to `docs/{area}/{long-name}` ...
-... where `area`==`speech`, `openai-chat`, `openai-asst`, `onnx-chat`, `azure-ai-chat`, etc.  
+You will update the existing `sample-overview.md` file with the updated source code from the current sample source code.  
 
 ## FORMATS
-
-`sample-overview-current-steps.md` and `sample-overview-should-be-steps.md` share the same format (tabbed here for readability... but not in the actual file):
-
-    # {short-name}
-
-    ## {sample_overview}
-  
-    `FILE1`:
-    STEP 1: ...
-    STEP 2: ...
-    STEP 3: ...
-    ...
-
-    `FILE2`:
-    STEP 1: ...
-    STEP 2: ...
-    ...
-
-    `...`:
-    ...
-
-Additionally, in the `sample-overview-should-be-steps.md` file, you should include a section at the end of the file that explains the changes you made and why you made them.
-- Specifically, call out which other samples/steps you used as a reference, and why you made the changes you did.
 
 `sample-overview.md` typically follows this format (tabbed here for readability... but not in the actual file):
 
@@ -276,6 +236,7 @@ NOTE:
 * Do **NOT** arbitrarily the indentation of existing code blocks (unless it's to fix a formatting issue that you're confident you'll be fixing by changing).  
 * Do **NOT** discuss wrapping `main()` with exception handling in python sample overviews.  
 * Do **NOT** discuss `requirements.txt` in the sample overview page for python samples.  
+* Do **NOT** update the docs/sample code with any private class member variables, unless they were already in the previous `sample-overview.md`.  
 * Readers of the `sample-overview.md` file will use it to boot strap their understanding of the sample. It's important that the steps are clear, concise, and accurate.
 * For some samples, the `{long-name}` might contain `-non-streaming` in the name. Sometimes that's not actually the `{long-name}` of the sample. If you can't find the sample in the `docs/samples` directory, then you should use the `{long-name}` without `-non-streaming` in the name.
 
@@ -283,14 +244,13 @@ NOTE:
 
 1. Read the contents of the `sample-overview.md` file. Write down your initial understanding and any questions that arise.  
 2. Read the updated source code for the sample in `docs/samples/{long-name}`. Pause periodically to jot down any notes or insights about the source code that may be pertinent to the overview.  
-3. After gathering all the information, form a cohesive understanding and decide what the correct "steps" and "source code" should be for that sample. You should do this by connecting the dots of all previously gathered information.
-4. Now, document your initial understanding (from step 1) as the "current" steps in a new file named `sample-overview-current-steps.md`, located in the `docs2/{area}/{long-name}` directory.
-5. Then, use your cohesive understanding (from step 3) to outline the new, corrected steps. Document these steps as the "should be" steps in a file named `sample-overview-should-be-steps.md`, also located in the `docs2/{area}/{long-name}` directory.
-6. Next, document the source code that should be updated in the `sample-overview.md` file. Document this in a file named `sample-overview-source-code-updates.md`, located in the `docs2/{area}/{long-name}` directory.  
-7. Finally, if changes are deemed necessary for steps or new source code, re-write the `sample-overview.md` file with the correct steps, and the correct source code, and save it in the `docs2/{area}/{long-name}` directory. The new `sample-overview.md` file should demonstrate a clear and logical progression from the current state to the desired state.  
+3. After gathering all the information, form a cohesive understanding and decide what the correct "source code" should be for that sample. You should do this by connecting the dots of all previously gathered information.  
+4. Finally, re-write the `sample-overview.md` file with the correct updated source code.
 
 ## DO IT NOW
 
 OK. Let's get started. It's important that you do a great job on this task. 
 
 Don't tell me about what you've learned. Don't tell me about what you're doing, or what you've done. Simply create the files requested.  
+
+Do not forget to save the updated file(s) to the disk using the functions provided. 
