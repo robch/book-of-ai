@@ -5,7 +5,7 @@ Use `dotnet` to install the Azure AI CLI (`ai`).
 ``` bash
 winget install -e --id Microsoft.DotNet.SDK.8
 winget install -e --id Microsoft.AzureCLI
-dotnet tool install -g Microsoft.Azure.AI.CLI --prerelease
+dotnet tool install -g Azure.AI.CLI --prerelease
 ```
 
 ??? tip "If you don't have `winget` ..."
