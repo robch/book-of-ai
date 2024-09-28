@@ -32,7 +32,8 @@ public class OpenAIAssistantsCodeInterpreterStreamingClass
 
     public async Task GetThreadMessagesAsync(Action<string, string> callback)
     {
-        await foreach (var message in _assistantClient.GetMessagesAsync(Thread, ListOrder.OldestFirst))
+        var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+        await foreach (var message in _assistantClient.GetMessagesAsync(Thread, options).GetAllValuesAsync())
         {
             var content = string.Join("", message.Content.Select(c => c.Text));
             var role = message.Role == MessageRole.User ? "user" : "assistant";
@@ -42,7 +43,7 @@ public class OpenAIAssistantsCodeInterpreterStreamingClass
 
     public async Task GetResponseAsync(string userInput, Action<string> callback)
     {
-        await _assistantClient.CreateMessageAsync(Thread, [ userInput ]);
+        await _assistantClient.CreateMessageAsync(Thread, MessageRole.User, [ userInput ]);
         var assistant = await _assistantClient.GetAssistantAsync(_assistantId);
         var stream = _assistantClient.CreateRunStreamingAsync(Thread, assistant.Value);
 

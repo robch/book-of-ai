@@ -5,8 +5,6 @@ hide:
 ---
 # OpenAI Chat with Data Streaming in C\#
 
---8<-- "warnings/warning-ai-generated.md"
-
 This sample demonstrates how to use the OpenAI Chat API incorporating data streaming from Azure AI Search in a C# console application.
 
 [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-chat-streaming-with-data-cs/Program.cs)  

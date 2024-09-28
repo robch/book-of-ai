@@ -32,7 +32,8 @@ public class OpenAIAssistantsClass
 
     public async Task GetThreadMessagesAsync(Action<string, string> callback)
     {
-        await foreach (var message in _assistantClient.GetMessagesAsync(Thread, ListOrder.OldestFirst))
+        var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+        await foreach (var message in _assistantClient.GetMessagesAsync(Thread, options).GetAllValuesAsync())
         {
             var content = string.Join("", message.Content.Select(c => c.Text));
             var role = message.Role == MessageRole.User ? "user" : "assistant";
@@ -42,7 +43,7 @@ public class OpenAIAssistantsClass
 
     public async Task<string> GetResponseAsync(string userInput)
     {
-        await _assistantClient.CreateMessageAsync(Thread, [ userInput ]);
+        await _assistantClient.CreateMessageAsync(Thread, MessageRole.User, [ userInput ]);
         var assistant = await _assistantClient.GetAssistantAsync(_assistantId);
 
         var result = await _assistantClient.CreateRunAsync(Thread, assistant);
@@ -55,7 +56,8 @@ public class OpenAIAssistantsClass
             run = result.Value;
         }
 
-        await foreach (var message in _assistantClient.GetMessagesAsync(run.ThreadId, ListOrder.NewestFirst))
+        var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+        await foreach (var message in _assistantClient.GetMessagesAsync(run.ThreadId, options).GetAllValuesAsync())
         {
             if (message.Role == MessageRole.Assistant)
             {

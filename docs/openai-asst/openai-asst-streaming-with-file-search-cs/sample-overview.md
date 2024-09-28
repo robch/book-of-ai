@@ -5,8 +5,6 @@ hide:
 ---
 # OpenAI Assistants with File Search Streaming in C\#
 
---8<-- "warnings/warning-ai-generated.md"
-
 This sample demonstrates how to use OpenAI Assistants with file search streaming in a C# console application.
 
 [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-file-search-cs/Program.cs)  
@@ -36,7 +34,7 @@ This sample demonstrates how to use OpenAI Assistants with file search streaming
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables.
+**STEP 1**: Read the configuration settings from environment variables and validate them.
 
 ``` csharp title="Program.cs"
 var assistantId = Environment.GetEnvironmentVariable("ASSISTANT_ID") ?? "<insert your OpenAI assistant ID here>";
@@ -56,7 +54,7 @@ if (string.IsNullOrEmpty(openAIAPIKey) || openAIAPIKey.StartsWith("<insert") ||
 }
 ```
 
-**STEP 2**: Initialize the OpenAI client and the assistant.
+**STEP 2**: Initialize the OpenAI client and the helper class.
 
 ``` csharp title="Program.cs"
 var client = string.IsNullOrEmpty(openAIAPIKey)
@@ -66,7 +64,7 @@ var client = string.IsNullOrEmpty(openAIAPIKey)
 var assistant = new OpenAIAssistantsFileSearchStreamingClass(client, assistantId);
 ```
 
-**STEP 3**: Create or retrieve a thread and get thread messages if thread ID is provided.
+**STEP 3**: Create or retrieve a thread, and get existing messages if a thread ID is provided.
 
 ``` csharp title="Program.cs"
 if (string.IsNullOrEmpty(threadId))
@@ -83,7 +81,7 @@ else
 }
 ```
 
-**STEP 4**: Implement the user interaction loop to get responses from the assistant.
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -103,7 +101,7 @@ Console.WriteLine($"Bye! (ThreadId: {assistant.Thread?.Id})");
 
 ## OpenAIAssistantsFileSearchStreamingClass.cs
 
-**STEP 1**: Create the client and initialize chat message history with a system message.
+**STEP 1**: Initialize the helper class using the OpenAI client and assistant ID.
 
 ``` csharp title="OpenAIAssistantsFileSearchStreamingClass.cs"
 public OpenAIAssistantsFileSearchStreamingClass(OpenAIClient client, string assistantId)
@@ -112,7 +110,11 @@ public OpenAIAssistantsFileSearchStreamingClass(OpenAIClient client, string assi
     _assistantClient = client.GetAssistantClient();
     _assistantId = assistantId;
 }
+```
 
+**STEP 2**: Create or retrieve a thread.
+
+``` csharp title="OpenAIAssistantsFileSearchStreamingClass.cs"
 public async Task CreateThreadAsync()
 {
     var result = await _assistantClient.CreateThreadAsync();
@@ -124,10 +126,15 @@ public async Task RetrieveThreadAsync(string threadId)
     var result = await _assistantClient.GetThreadAsync(threadId);
     Thread = result.Value;
 }
+```
 
+**STEP 3**: Get existing messages from the thread and invoke the callback for each.
+
+``` csharp title="OpenAIAssistantsFileSearchStreamingClass.cs"
 public async Task GetThreadMessagesAsync(Action<string, string> callback)
 {
-    await foreach (var message in _assistantClient.GetMessagesAsync(Thread, ListOrder.OldestFirst))
+    var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+    await foreach (var message in _assistantClient.GetMessagesAsync(Thread, options).GetAllValuesAsync())
     {
         var content = string.Join("", message.Content.Select(c => c.Text));
         var role = message.Role == MessageRole.User ? "user" : "assistant";
@@ -136,15 +143,19 @@ public async Task GetThreadMessagesAsync(Action<string, string> callback)
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history and process streaming responses.
+**STEP 4**: When the user provides input, add the user message to the thread and create a new streaming run.
 
 ``` csharp title="OpenAIAssistantsFileSearchStreamingClass.cs"
 public async Task GetResponseAsync(string userInput, Action<string> callback)
 {
-    await _assistantClient.CreateMessageAsync(Thread, [ userInput ]);
+    await _assistantClient.CreateMessageAsync(Thread, MessageRole.User, [ userInput ]);
     var assistant = await _assistantClient.GetAssistantAsync(_assistantId);
     var stream = _assistantClient.CreateRunStreamingAsync(Thread, assistant.Value);
+```
 
+**STEP 5**: Process the streaming updates, handling file search annotations, and invoking the callback for each content update.
+
+``` csharp title="OpenAIAssistantsFileSearchStreamingClass.cs"
     var cachedContent = string.Empty;
     await foreach (var update in stream) 
     {

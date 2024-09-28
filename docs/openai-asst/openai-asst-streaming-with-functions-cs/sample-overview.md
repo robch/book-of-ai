@@ -5,8 +5,6 @@ hide:
 ---
 # OpenAI Assistants with Function Calling in C\#
 
---8<-- "warnings/warning-ai-generated.md"
-
 This sample demonstrates how to use OpenAI Assistants with function calling in a C# console application.
 
 [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-functions-cs/Program.cs)  
@@ -57,10 +55,13 @@ var openAIEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")
 **STEP 2**: Validate the environment variables.
 
 ``` csharp title="Program.cs"
-if (string.IsNullOrEmpty(openAIAPIKey) || string.IsNullOrEmpty(openAIEndpoint) || string.IsNullOrEmpty(assistantId))
+if (string.IsNullOrEmpty(openAIAPIKey) || openAIAPIKey.StartsWith("<insert") ||
+    string.IsNullOrEmpty(openAIEndpoint) || openAIEndpoint.StartsWith("<insert") ||
+    string.IsNullOrEmpty(assistantId) || assistantId.StartsWith("<insert"))
 {
-    Console.WriteLine("Please set the environment variables: AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT, ASSISTANT_ID");
-    return;
+    Console.WriteLine("To use Azure OpenAI, set the following environment variables:");
+    Console.WriteLine("  ASSISTANT_ID\n  AZURE_OPENAI_API_KEY\n  AZURE_OPENAI_ENDPOINT");
+    Environment.Exit(1);
 }
 ```
 
@@ -79,13 +80,13 @@ var factory = new FunctionFactory();
 factory.AddFunctions(typeof(OpenAIChatCompletionsCustomFunctions));
 ```
 
-**STEP 5**: Create the helper class.
+**STEP 5**: Initialize the helper class with the OpenAI client, assistant ID, and function factory.
 
 ``` csharp title="Program.cs"
 var assistant = new OpenAIAssistantsFunctionsStreamingClass(client, assistantId, factory);
 ```
 
-**STEP 6**: Create or retrieve thread.
+**STEP 6**: Create or retrieve a thread, and get existing messages if a thread ID is provided.
 
 ``` csharp title="Program.cs"
 if (string.IsNullOrEmpty(threadId))
@@ -102,7 +103,7 @@ else
 }
 ```
 
-**STEP 7**: User interaction loop.
+**STEP 7**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -116,11 +117,13 @@ while (true)
         Console.Write(content);
     });
 }
+
+Console.WriteLine($"Bye! (ThreadId: {assistant.Thread?.Id})");
 ```
 
 ## OpenAIAssistantsFunctionsStreamingClass.cs
 
-**STEP 1**: Create the client and initialize chat message history with a system message.
+**STEP 1**: Initialize the helper class using the OpenAI client, assistant ID, and function factory.
 
 ``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
 public OpenAIAssistantsFunctionsStreamingClass(OpenAIClient client, string assistantId, FunctionFactory factory)
@@ -128,7 +131,11 @@ public OpenAIAssistantsFunctionsStreamingClass(OpenAIClient client, string assis
     _assistantClient = client.GetAssistantClient();
     _assistantId = assistantId;
     _functionFactory = factory;
+```
 
+**STEP 2**: Update the run options with the available tool definitions.
+
+``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
     _runOptions=  new RunCreationOptions();
     foreach (var tool in _functionFactory.GetToolDefinitions())
     {
@@ -137,7 +144,7 @@ public OpenAIAssistantsFunctionsStreamingClass(OpenAIClient client, string assis
 }
 ```
 
-**STEP 2**: Create or retrieve thread.
+**STEP 3**: Create or retrieve thread.
 
 ``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
 public async Task CreateThreadAsync()
@@ -153,15 +160,34 @@ public async Task RetrieveThreadAsync(string threadId)
 }
 ```
 
-**STEP 3**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
+**STEP 4**: Get existing messages from the thread and invoke the callback for each.
+
+``` csharp title="OpenAIAssistantsStreamingClass.cs"
+public async Task GetThreadMessagesAsync(Action<string, string> callback)
+{
+    var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+    await foreach (var message in _assistantClient.GetMessagesAsync(Thread, options).GetAllValuesAsync())
+    {
+        var content = string.Join("", message.Content.Select(c => c.Text));
+        var role = message.Role == MessageRole.User ? "user" : "assistant";
+        callback(role, content);
+    }
+}
+```
+
+**STEP 5**: When the user provides input, add the user message to the thread and create a new streaming run with the run options containing the tool definitions.
 
 ``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
 public async Task GetResponseAsync(string userInput, Action<string> callback)
 {
-    await _assistantClient.CreateMessageAsync(Thread, [ userInput ]);
+    await _assistantClient.CreateMessageAsync(Thread, MessageRole.User, [ userInput ]);
     var assistant = await _assistantClient.GetAssistantAsync(_assistantId);
     var stream = _assistantClient.CreateRunStreamingAsync(Thread, assistant.Value, _runOptions);
-    
+```
+
+**STEP 6**: Process the streaming updates, invoking the callback for each content update.
+
+``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
     ThreadRun? run = null;
     List<ToolOutput> toolOutputs = [];
     do
@@ -174,13 +200,9 @@ public async Task GetResponseAsync(string userInput, Action<string> callback)
             }
 ```
 
-**STEP 4**: Process each update, accumulate the response, and invoke the callback for the update.
+**STEP 7**: If the update is a required action, try calling the requested function, and cache the tool outputs
 
 ``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
-            else if (update is RunUpdate runUpdate)
-            {
-                run = runUpdate;
-            }
             else if (update is RequiredActionUpdate requiredActionUpdate)
             {
                 if (_functionFactory.TryCallFunction(requiredActionUpdate.FunctionName, requiredActionUpdate.FunctionArguments, out var result))
@@ -191,12 +213,21 @@ public async Task GetResponseAsync(string userInput, Action<string> callback)
                 }
             }
 
+            if (update is RunUpdate runUpdate)
+            {
+                run = runUpdate;
+            }
+
             if (run?.Status.IsTerminal == true)
             {
                 callback("\n\n");
             }
         }
+```
 
+**STEP 7**: After processing all the updates, submit the tool outputs to the run if there are any.
+
+``` csharp title="OpenAIAssistantsFunctionsStreamingClass.cs"
         if (toolOutputs.Count > 0 && run != null)
         {
             stream = _assistantClient.SubmitToolOutputsToRunStreamingAsync(run, toolOutputs);

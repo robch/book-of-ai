@@ -36,7 +36,7 @@ This sample demonstrates how to use the OpenAI Chat API with function calling in
 
 ## OpenAIChatCompletionsCustomFunctions.cs
 
-**STEP 1**: Define helper functions that can be called by the assistant:
+**STEP 1**: Define helper functions that can be called by the assistant.
 
 ``` csharp title="OpenAIChatCompletionsCustomFunctions.cs"
 [HelperFunctionDescription("Gets the current weather for a location.")]
@@ -62,7 +62,7 @@ public static string GetCurrentTime()
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
 var openAIAPIKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? "<insert your OpenAI API key here>";
@@ -71,21 +71,20 @@ var openAIChatDeploymentName = Environment.GetEnvironmentVariable("AZURE_OPENAI_
 var openAISystemPrompt = Environment.GetEnvironmentVariable("AZURE_OPENAI_SYSTEM_PROMPT") ?? "You are a helpful AI assistant.";
 ```
 
-**STEP 2**: Create a function factory, add functions from the `OpenAIChatCompletionsCustomFunctions` class
+**STEP 2**: Create a function factory, add functions from the `OpenAIChatCompletionsCustomFunctions` class.
 
 ``` csharp title="Program.cs"
 var factory = new FunctionFactory();
 factory.AddFunctions(typeof(OpenAIChatCompletionsCustomFunctions));
 ```
 
-**STEP 3**: Initialize the helper class with the configuration settings and the function factory:
+**STEP 3**: Initialize the helper class with the configuration settings and the function factory.
 
 ``` csharp title="Program.cs"
 var chat = new OpenAIChatCompletionsFunctionsStreamingClass(openAIEndpoint, openAIAPIKey, openAIChatDeploymentName, openAISystemPrompt, factory);
 ```
 
-
-**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received:
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -108,7 +107,7 @@ while (true)
 
 ## OpenAIChatCompletionsFunctionsStreamingClass.cs
 
-**STEP 1**: Create the client, initialize chat message history with a system message, and add available factory functions:
+**STEP 1**: Create the client, initialize chat message history with a system message, and add available factory functions.
 
 ``` csharp title="OpenAIChatCompletionsFunctionsStreamingClass.cs"
 public OpenAIChatCompletionsFunctionsStreamingClass(string openAIEndpoint, string openAIAPIKey, string openAIChatDeploymentName, string openAISystemPrompt, FunctionFactory factory)
@@ -140,7 +139,7 @@ public void ClearConversation()
 }
 ```
 
-**STEP 2**: When the user provides input, add the user message to the chat message history:
+**STEP 2**: When the user provides input, add the user message to the chat message history.
 
 ``` csharp title="OpenAIChatCompletionsFunctionsStreamingClass.cs"
 public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Action<StreamingChatCompletionUpdate>? callback = null)
@@ -148,7 +147,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     _messages.Add(ChatMessage.CreateUserMessage(userPrompt));
 ```
 
-**STEP 3**: Send the chat message history to the streaming API, processing each update, including checking for function calls:
+**STEP 3**: Send the chat message history to the streaming API, processing each update, including checking for function calls.
 
 ``` csharp title="OpenAIChatCompletionsFunctionsStreamingClass.cs"
     var responseContent = string.Empty;
@@ -169,7 +168,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
             }
 ```
 
-**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update:
+**STEP 4**: For each non-empty update, accumulate the response, and invoke the callback for the update.
 
 ``` csharp title="OpenAIChatCompletionsFunctionsStreamingClass.cs"
             if (string.IsNullOrEmpty(content)) continue;
@@ -179,7 +178,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
         }
 ```
 
-**STEP 5**: Check if the response contained function calls, and process them:
+**STEP 5**: Check if the response contained function calls, if so, process the function calls and continue processing the response.
 
 ``` csharp title="OpenAIChatCompletionsFunctionsStreamingClass.cs"
         if (_functionCallContext.TryCallFunctions(responseContent))
@@ -189,7 +188,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
         }
 ```
 
-**STEP 6**: Finally, add the assistant's response to the chat message history, and return the response:
+**STEP 6**: Finally, add the assistant's response to the chat message history, and return the response.
 
 ``` csharp title="OpenAIChatCompletionsFunctionsStreamingClass.cs"
         _messages.Add(ChatMessage.CreateAssistantMessage(responseContent));

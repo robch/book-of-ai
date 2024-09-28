@@ -5,8 +5,6 @@ hide:
 ---
 # OpenAI Assistants in C\#
 
---8<-- "warnings/warning-ai-generated.md"
-
 This sample demonstrates how to use the OpenAI Assistants API in a C# console application.
 
 [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-cs/Program.cs)  
@@ -37,7 +35,7 @@ This sample demonstrates how to use the OpenAI Assistants API in a C# console ap
 
 ## Program.cs
 
-**STEP 1**: Read the configuration settings from environment variables:
+**STEP 1**: Read the configuration settings from environment variables.
 
 ``` csharp title="Program.cs"
 var assistantId = Environment.GetEnvironmentVariable("ASSISTANT_ID") ?? "<insert your OpenAI assistant ID here>";
@@ -57,7 +55,7 @@ if (string.IsNullOrEmpty(openAIAPIKey) || openAIAPIKey.StartsWith("<insert") ||
 }
 ```
 
-**STEP 2**: Initialize the OpenAI client and the assistant helper class:
+**STEP 2**: Initialize the OpenAI client and the assistant helper class.
 
 ``` csharp title="Program.cs"
 var client = string.IsNullOrEmpty(openAIAPIKey)
@@ -67,7 +65,7 @@ var client = string.IsNullOrEmpty(openAIAPIKey)
 var assistant = new OpenAIAssistantsClass(client, assistantId);
 ```
 
-**STEP 3**: Create or retrieve a thread and get thread messages if a thread ID is provided:
+**STEP 3**: Create or retrieve a thread and get thread messages if a thread ID is provided.
 
 ``` csharp title="Program.cs"
 if (string.IsNullOrEmpty(threadId))
@@ -84,7 +82,7 @@ else
 }
 ```
 
-**STEP 4**: Loop to handle user input and display the assistant response:
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -103,7 +101,7 @@ Console.WriteLine($"Bye! (ThreadId: {assistant.Thread?.Id})");
 
 ## OpenAIAssistantsClass.cs
 
-**STEP 1**: Initialize the assistant client and assign the assistant ID:
+**STEP 1**: Initialize the assistant client and assign the assistant ID.
 
 ``` csharp title="OpenAIAssistantsClass.cs"
 public OpenAIAssistantsClass(OpenAIClient client, string assistantId)
@@ -113,7 +111,7 @@ public OpenAIAssistantsClass(OpenAIClient client, string assistantId)
 }
 ```
 
-**STEP 2**: Create a new thread:
+**STEP 2**: Create or retrieve a thread.
 
 ``` csharp title="OpenAIAssistantsClass.cs"
 public async Task CreateThreadAsync()
@@ -121,11 +119,7 @@ public async Task CreateThreadAsync()
     var result = await _assistantClient.CreateThreadAsync();
     Thread = result.Value;
 }
-```
 
-**STEP 3**: Retrieve an existing thread by ID:
-
-``` csharp title="OpenAIAssistantsClass.cs"
 public async Task RetrieveThreadAsync(string threadId)
 {
     var result = await _assistantClient.GetThreadAsync(threadId);
@@ -133,12 +127,13 @@ public async Task RetrieveThreadAsync(string threadId)
 }
 ```
 
-**STEP 4**: Get messages from the thread and invoke a callback for each message:
+**STEP 3**: Get existing messages from the thread and invoke the callback for each.
 
 ``` csharp title="OpenAIAssistantsClass.cs"
 public async Task GetThreadMessagesAsync(Action<string, string> callback)
 {
-    await foreach (var message in _assistantClient.GetMessagesAsync(Thread, ListOrder.OldestFirst))
+    var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+    await foreach (var message in _assistantClient.GetMessagesAsync(Thread, options).GetAllValuesAsync())
     {
         var content = string.Join("", message.Content.Select(c => c.Text));
         var role = message.Role == MessageRole.User ? "user" : "assistant";
@@ -147,17 +142,21 @@ public async Task GetThreadMessagesAsync(Action<string, string> callback)
 }
 ```
 
-**STEP 5**: Send user input to the assistant and get a response:
+**STEP 4**: When the user provides input, add the user message to the thread and create a new run.
 
 ``` csharp title="OpenAIAssistantsClass.cs"
 public async Task<string> GetResponseAsync(string userInput)
 {
-    await _assistantClient.CreateMessageAsync(Thread, [ userInput ]);
+    await _assistantClient.CreateMessageAsync(Thread, MessageRole.User, [ userInput ]);
     var assistant = await _assistantClient.GetAssistantAsync(_assistantId);
 
     var result = await _assistantClient.CreateRunAsync(Thread, assistant);
     var run = result.Value;
+```
 
+**STEP 5**: Poll the run until it is complete and retrieve the assistant's response.
+
+``` csharp title="OpenAIAssistantsClass.cs"
     while (!run.Status.IsTerminal)
     {
         System.Threading.Thread.Sleep(TimeSpan.FromMilliseconds(100));
@@ -165,7 +164,8 @@ public async Task<string> GetResponseAsync(string userInput)
         run = result.Value;
     }
 
-    await foreach (var message in _assistantClient.GetMessagesAsync(run.ThreadId, ListOrder.NewestFirst))
+    var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+    await foreach (var message in _assistantClient.GetMessagesAsync(run.ThreadId, options).GetAllValuesAsync())
     {
         if (message.Role == MessageRole.Assistant)
         {

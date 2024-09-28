@@ -132,7 +132,7 @@ public async Task<string> GetChatCompletionsStreamingAsync(string userPrompt, Ac
     }
 ```
 
-**STEP 5**: Finally, add the assistant's response to the chat message history, and return response.
+**STEP 5**: After processing all the updates, add the assistant's response to the chat message history and return the response.
 
 ``` csharp title="OpenAIChatCompletionsStreamingClass.cs"
     _messages.Add(ChatMessage.CreateAssistantMessage(responseContent));

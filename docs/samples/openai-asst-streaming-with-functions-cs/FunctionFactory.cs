@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using OpenAI.Chat;
 
 #pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable OPENAI001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
 public class FunctionFactory
 {

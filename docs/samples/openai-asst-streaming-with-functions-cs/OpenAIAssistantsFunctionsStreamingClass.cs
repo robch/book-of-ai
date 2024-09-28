@@ -39,7 +39,8 @@ public class OpenAIAssistantsFunctionsStreamingClass
 
     public async Task GetThreadMessagesAsync(Action<string, string> callback)
     {
-        await foreach (var message in _assistantClient.GetMessagesAsync(Thread, ListOrder.OldestFirst))
+        var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+        await foreach (var message in _assistantClient.GetMessagesAsync(Thread, options).GetAllValuesAsync())
         {
             var content = string.Join("", message.Content.Select(c => c.Text));
             var role = message.Role == MessageRole.User ? "user" : "assistant";
@@ -49,7 +50,7 @@ public class OpenAIAssistantsFunctionsStreamingClass
 
     public async Task GetResponseAsync(string userInput, Action<string> callback)
     {
-        await _assistantClient.CreateMessageAsync(Thread, [ userInput ]);
+        await _assistantClient.CreateMessageAsync(Thread, MessageRole.User, [ userInput ]);
         var assistant = await _assistantClient.GetAssistantAsync(_assistantId);
         var stream = _assistantClient.CreateRunStreamingAsync(Thread, assistant.Value, _runOptions);
 
@@ -64,10 +65,6 @@ public class OpenAIAssistantsFunctionsStreamingClass
                 {
                     callback(contentUpdate.Text);
                 }
-                else if (update is RunUpdate runUpdate)
-                {
-                    run = runUpdate;
-                }
                 else if (update is RequiredActionUpdate requiredActionUpdate)
                 {
                     if (_functionFactory.TryCallFunction(requiredActionUpdate.FunctionName, requiredActionUpdate.FunctionArguments, out var result))
@@ -76,6 +73,11 @@ public class OpenAIAssistantsFunctionsStreamingClass
                         callback("\nAssistant: ");
                         toolOutputs.Add(new ToolOutput(requiredActionUpdate.ToolCallId, result));
                     }
+                }
+
+                if (update is RunUpdate runUpdate)
+                {
+                    run = runUpdate;
                 }
 
                 if (run?.Status.IsTerminal == true)

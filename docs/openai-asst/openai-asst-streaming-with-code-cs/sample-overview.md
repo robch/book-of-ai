@@ -5,8 +5,6 @@ hide:
 ---
 # OpenAI Assistants with Code Interpreter Streaming in C\#
 
---8<-- "warnings/warning-ai-generated.md"
-
 This sample demonstrates how to use the OpenAI Assistants API with the Code Interpreter feature in a C# console application.
 
 [:material-file-code: Program.cs](https://raw.githubusercontent.com/robch/book-of-ai/main/docs/samples/openai-asst-streaming-with-code-cs/Program.cs)  
@@ -55,7 +53,7 @@ if (string.IsNullOrEmpty(openAIAPIKey) || openAIAPIKey.StartsWith("<insert") ||
 }
 ```
 
-**STEP 2**: Initialize the OpenAI client and the helper class with the configuration settings.
+**STEP 2**: Initialize the OpenAI client and the helper class.
 
 ``` csharp title="Program.cs"
 var client = string.IsNullOrEmpty(openAIAPIKey)
@@ -82,7 +80,7 @@ else
 }
 ```
 
-**STEP 4**: Enter a loop to get user input, send it to the assistant, and display the responses as they are received.
+**STEP 4**: Obtain user input, use the helper class to get the assistant's response, and display responses as they are received.
 
 ``` csharp title="Program.cs"
 while (true)
@@ -102,7 +100,7 @@ Console.WriteLine($"Bye! (ThreadId: {assistant.Thread?.Id})");
 
 ## OpenAIAssistantsCodeInterpreterStreamingClass.cs
 
-**STEP 1**: Initialize the assistant client with the OpenAI client and assistant ID.
+**STEP 1**: Initialize the helper class using the OpenAI client and assistant ID.
 
 ``` csharp title="OpenAIAssistantsCodeInterpreterStreamingClass.cs"
 public OpenAIAssistantsCodeInterpreterStreamingClass(OpenAIClient client, string assistantId)
@@ -128,12 +126,13 @@ public async Task RetrieveThreadAsync(string threadId)
 }
 ```
 
-**STEP 3**: Get existing messages from the thread and invoke the callback for each message.
+**STEP 3**: Get existing messages from the thread and invoke the callback for each.
 
 ``` csharp title="OpenAIAssistantsCodeInterpreterStreamingClass.cs"
 public async Task GetThreadMessagesAsync(Action<string, string> callback)
 {
-    await foreach (var message in _assistantClient.GetMessagesAsync(Thread, ListOrder.OldestFirst))
+    var options = new MessageCollectionOptions() { Order = ListOrder.OldestFirst };
+    await foreach (var message in _assistantClient.GetMessagesAsync(Thread, options).GetAllValuesAsync())
     {
         var content = string.Join("", message.Content.Select(c => c.Text));
         var role = message.Role == MessageRole.User ? "user" : "assistant";
@@ -142,15 +141,19 @@ public async Task GetThreadMessagesAsync(Action<string, string> callback)
 }
 ```
 
-**STEP 4**: Send user input to the assistant, stream and process each update.
+**STEP 4**: When the user provides input, add the user message to the thread and create a new streaming run.
 
 ``` csharp title="OpenAIAssistantsCodeInterpreterStreamingClass.cs"
 public async Task GetResponseAsync(string userInput, Action<string> callback)
 {
-    await _assistantClient.CreateMessageAsync(Thread, [ userInput ]);
+    await _assistantClient.CreateMessageAsync(Thread, MessageRole.User, [ userInput ]);
     var assistant = await _assistantClient.GetAssistantAsync(_assistantId);
     var stream = _assistantClient.CreateRunStreamingAsync(Thread, assistant.Value);
+```
 
+**STEP 5**: Process the streaming updates, invoking the callback for each content update or code interpreter input.
+
+``` csharp title="OpenAIAssistantsCodeInterpreterStreamingClass.cs"
     await foreach (var update in stream) 
     {
         if (update is MessageContentUpdate contentUpdate)
