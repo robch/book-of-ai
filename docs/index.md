@@ -14,8 +14,7 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     -   **AZURE `AI` CLI FEATURES**  
 
         :octicons-terminal-16: Access AI services from the command line.  
-        :simple-futurelearn: Learn + experiment w/ AI concepts (e.g. LLMs).
-
+        :simple-futurelearn: Learn + experiment w/ AI and LLM concepts.  
         :material-auto-fix: Solve real-world problems w/out writing code.  
         :material-file-code: Generate code samples for your projects.  
 
@@ -23,15 +22,13 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
 
         :material-microsoft-azure: Azure OpenAI Chat and Assistants!  
         :material-view-list: Azure AI Model Catalog!  
-
         :material-github: GitHub Model Marketplace!  
-        :simple-onnx: ONNX + Phi-3 models!  
+        :simple-onnx: ONNX[^1] + Phi-3[^2] models!  
 
     -  **CONTENT FOR ALL JOURNEY STAGES**  
 
         :fontawesome-solid-user-graduate: Tutorials for beginners and experts.  
         :material-toolbox: How-to guides and reference material.  
-
         :material-file-code: In depth sample code documentation.  
         :fontawesome-solid-person-walking-dashed-line-arrow-right: Links to additional resources.  
 
@@ -94,3 +91,7 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
     [:material-console: Create an ONNX Phi-3 Model app](/onnx-chat/basics.md#generate-code)  
 
 </div>
+
+[^1]: ONNX is an open format built to represent machine learning models.
+[^2]: Phi-3 is a family of open AI models developed by Microsoft.
+
