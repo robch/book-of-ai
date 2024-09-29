@@ -18,7 +18,7 @@ The Azure AI Command-Line Interface (the `ai` CLI) is a cross-platform command-l
 
 === "Linux (install)"
 
-    --8<-- "install-ai-cli/macos/install-ai-cli.md"
+    --8<-- "install-ai-cli/linux/install-ai-cli.md"
 
 === "Dev Container (VS Code)"
 
