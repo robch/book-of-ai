@@ -1,0 +1,23 @@
+{
+  "name": "chat-interface",
+  "version": "1.0.0",
+  "description": "Chat Interface with OpenAI",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@azure/identity": "4.1.0",
+    "highlight.js": "^11.7.2",
+    "marked": "^4.0.10",
+    "openai": "^4.31.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "vite": "^5.2.8"
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Chat Interface</title>
+</head>
+
+<body class="light-theme w3-cell-row">
+
+    <div id="toggleThemeButton" class="w3-container w3-right" tabindex="0">
+      <i class="fa fa-toggle-on"></i>
+    </div>
+
+    <div id="leftSide" class="w3-cell w3-center w3-hide-small w3-hide-medium">
+      <button id="newChatButton" class="w3-button w3-center" onclick="newChat()">
+        <div class="w3-left w3-medium"><img id="logoIcon" src="./ai.png" alt="Logo"> New chat</div>
+        <div class="w3-right"><i class="fa fa-edit"></i></div>
+      </button>
+
+      <!-- Thread Panel -->
+      <div id="threadPanel">
+        <div class="threadsOnDate">
+          <!-- Dynamic content will be added here -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="rightSide" class="w3-cell w3-padding-left w3-padding-right">
+
+    <div id="rightSideInside" class="w3-center">
+
+        <div id="header" class="w3-center">
+          <h3>chat.contoso.com</h3>
+        </div>
+    
+        <!-- Main Chat Area -->
+        <div id="main" class="w3-center">
+          <div class="w3-col">
+            <img id="logo" src="./ai.png" alt="Logo">
+
+            <!-- Chat Panel -->
+            <div id="chatPanel" class="w3-center w3-padding">
+                <!-- Dynamic content will be added here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- User Input Panel -->
+        <div id="userInputPanel" class="w3-center w3-bottom w3-padding w3-margin-bottom">
+          <textarea id="userInput" class="w3-border w3-input w3-cell w3-left" placeholder="Type your message..." rows="1"></textarea>
+          <button id="sendButton" class="w3-button w3-cell" onclick="sendMessage()">
+            <i class="fa fa-solid fa-arrow-up"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript for dynamic updates -->
+  <script type="module" src="/src/script.js"></script>
+
+</body>
+</html>

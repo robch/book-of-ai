@@ -1,0 +1,89 @@
+:root {
+  --md-console-output-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100 550 400"><polyline points="200,150 350,300 200,450" stroke="%23666" stroke-width="80" fill="transparent"/><polyline points="400,150 550,300 400,450" stroke="%23666" stroke-width="80" fill="transparent"/></svg>');
+}
+
+.toggle-output-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+.toggle-output-button:not(.focus-visible) {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.toggle-output-button:focus, .toggle-output-button:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.toggle-output-button {
+  border-radius: .1rem;
+  color: var(--md-default-fg-color--lightest);
+  cursor: pointer;
+  height: 2.5em;
+  outline-color: var(--md-accent-fg-color);
+  outline-offset: .1rem;
+  position: absolute;
+  right: .5em;
+  top: .5em;
+  transition: color .25s;
+  width: 2.5em;
+  z-index: 1;
+}
+
+.toggle-output-button:after {
+  background-color: currentcolor;
+  content: "";
+  display: block;
+  height: 1.125em;
+  margin: 0 auto;
+  -webkit-mask-image: var(--md-console-output-icon);
+  mask-image: var(--md-console-output-icon);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  width: 1.125em;
+}
+
+.toggle-output-button-rotated {
+  transform: rotate(90deg);
+  transition: transform 250ms ease-out;
+}
+
+.cli-command {
+  position: relative;
+  z-index: 1;
+}
+
+.cli-output {
+  height: 0;
+  opacity: 0;
+  transform: translateY(-16px);
+  margin-top: -1em;
+  position: relative;
+  z-index: 0;
+  visibility: hidden;
+}
+
+.cli-output code {
+  border-top: solid .05rem var(--md-code-bg-color);
+}
+
+.cli-output-open {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: opacity 250ms ease-out, transform 250ms ease-out;
+}
+
+.cli-output-open code {
+  border-top: solid .05rem var(--md-default-fg-color--lightest);
+  transition: border 250ms ease-out;
+}

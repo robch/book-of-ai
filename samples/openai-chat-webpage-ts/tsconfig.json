@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "strict": true,
+        "module": "es6",
+        "target": "es5",
+        "allowJs": true,
+        "typeRoots": ["./node_modules/@types", "./types"]
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

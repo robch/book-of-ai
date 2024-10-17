@@ -1,0 +1,16 @@
+{
+    "name": "openai-chat-streaming",
+    "version": "1.0.0",
+    "description": "",
+    "main": "Main.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "webpack": "webpack"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+      "@azure/openai": "1.0.0-beta.10"
+    }
+  }
+  

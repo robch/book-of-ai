@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speech Recognition App</title>
+    <link rel="stylesheet" href="./assets/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="text-box-container">
+            <!-- style="position: fixed; bottom: 20px; width: 100%; display: flex; justify-content: center; align-items: center;" -->
+            <input type="text" id="text-box" style="width: 60%; padding: 10px;" placeholder="Type here or press ENTER to start listening...">
+            <button id="submit-button" class="w3-button">
+                <i class="fa fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
