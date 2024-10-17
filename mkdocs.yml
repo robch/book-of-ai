@@ -81,7 +81,7 @@ markdown_extensions:
   - md_in_html
 
 copyright: |
-  &copy; 2024 <a href="https://github.com/robch/" target="_blank" rel="noopener">Rob Chambers</a>
+  &copy; 2024 <a href="https://github.com/robch/" target="_blank" rel="noopener">Microsoft Corporation</a>
 
 nav:
   - HOME: index.md
@@ -105,6 +105,8 @@ nav:
       - "\u2462 w/ Code Interpreter": openai-asst/code-interpreter.md
       - "\u2463 w/ Function Calling": openai-asst/functions.md
       - "\u2464 w/ File Search": openai-asst/file-search.md
+    - REALTIME API:
+      - "\u2460 Realtime Chat": openai-realtime-chat/basics.md
   - AZURE AI:
     - "Azure AI Model Setup": setup/azure-ai.md
     - "\u2460 &nbsp; AI Model Basics": azure-ai-chat/basics.md
