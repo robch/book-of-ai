@@ -54,8 +54,10 @@ Welcome to the Book of AI, where you'll learn everything you need to know to get
 
     **Azure.AI.Inference**  
     [:material-console: Azure AI Model Catalog](/setup/azure-ai.md)  
-    [:material-console: GitHub Model Marketplace](/setup/github.md)  
+    [:material-console: GitHub Model Marketplace](/setup/github.md) 
 
+    **Azure Developer CLI (azd)**  
+    [:material-console: AI Template Gallery](https://azure.github.io/ai-app-templates/)  
 
 -   :simple-onnx:{ .lg .middle } __ONNX GenAI Tutorials__
 
