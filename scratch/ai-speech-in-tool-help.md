@@ -8425,7 +8425,7 @@ EXAMPLES
   ai speech synthesize --files *.txt;*.ssml --audio output {id}.wav --zip test2.zip
   ai speech synthesize --files @URLs.txt --output zip output.zip --zip test3.zip
 
-  ai speech synthesize --foreach file;audio.output in @filelist.txt --zip test4.job --zip output output.zip
+  ai speech synthesize --foreach file in @filelist.txt --zip test4.job --zip output.zip
   ai webjob --upload test4.zip --run
 
 SEE ALSO
