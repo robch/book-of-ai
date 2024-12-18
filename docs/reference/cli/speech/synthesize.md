@@ -37,5 +37,5 @@ ai speech synthesize --text "Hello world" --speakers
 ```
 
 ``` bash title="Synthesize text to an audio file"
-ai speech synthesize --text "Hello world" --audio-output output hello_world.wav
+ai speech synthesize --text "Hello world" --audio-output hello_world.wav
 ```
